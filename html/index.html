@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC REX - Modern Tech Solutions</title>
+
+  <link rel="icon" type="image/x-icon" href="../src/assets/image/PCREX (1).png" sizes="100x100">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link your input/output CSS if you have customizations -->
+ 
+   <link href="../src/css/style.css" rel="stylesheet"> 
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+
+  <style>
+   
+    
+    /* Scrolling animation */
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .scroll-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: scroll 15s linear infinite; /* Slightly slower scroll */
+      width: max-content;
+    }
+    .scroll-content {
+      display: flex;
+      align-items: center;
+    }
+    .category-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px; /* Adjust as needed */
+      padding: 0 1rem; /* Add some padding */
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e5e7eb; /* gray-200 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #EF4444; /* red-500 */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #DC2626; /* red-600 */
+    }
+  
+        /* Define the scroll animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Scroll by the width of the first half of the content */
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            /* Adjust duration based on content width and desired speed */
+            /* More content or slower speed = longer duration */
+            animation: scroll 40s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .scroll-container:hover .animate-scroll {
+            animation-play-state: paused;
+        }
+
+        /* Optional: For the initial fade-in effect if you use JS */
+        .fade-in-section {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+        }
+    
+  </style>
+
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+ <!-- Navbar -->
+<nav class="bg-white shadow-lg sticky top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+          <img src="../src/assets/image/PCREXLOGO_FINAL.png" alt="PC REX Logo" class="h-10 w-auto">
+        </a>
+  
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-7">
+          <a href="index.html" class="text-gray-700 hover:text-red-600 transition duration-150 ease-in-out font-semibold">Home</a>
+  
+          <!-- About Us Dropdown -->
+          <div class="relative group">
+            <button class="text-gray-700 hover:text-red-600 flex items-center transition font-semibold">
+              About Us <span class="material-icons ml-1 text-base group-hover:rotate-180 transition-transform">expand_more</span>
+            </button>
+            <div class="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out origin-top-left">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white rounded-t-md">Our Story</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white">Our Products</a>
+              <a href="location.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white rounded-b-md">Our Location</a>
+            </div>
+          </div>
+  
+          <a href="#services-modern" class="text-gray-700 hover:text-red-600 font-semibold transition">Services</a>
+          <a href="#contact-section" class="text-gray-700 hover:text-red-600 font-semibold transition">Contact</a>
+        </div>
+  
+        <!-- Login + Mobile Button -->
+        <div class="flex items-center">
+            <a href="" class="hidden md:inline-block  text-black font-semibold text-xl">
+                <span class="material-icons">notifications_none</span>
+              </a>
+          <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-gray-500 hover:text-red-600 focus:outline-none">
+            <span class="material-icons text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar -->
+  <div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex justify-between items-center p-4 border-b">
+      <h2 class="text-lg font-semibold text-gray-800">PC REX SHOP</h2>
+      <button id="closeSidebar" class="text-gray-600 hover:text-red-600">
+        <span class="material-icons text-2xl">close</span>
+      </button>
+    </div>
+    <div class="p-4 space-y-3">
+      <a href="index.html" class="block text-gray-700 hover:text-red-600 font-semibold">Home</a>
+  
+      <!-- About Us (with nested links) -->
+      <div>
+        <p class="text-gray-700 font-semibold mb-1">About Us</p>
+        <div class="pl-4 space-y-1 text-sm">
+          <a href="#" class="block text-gray-600 hover:text-red-500 font-semibold ">Our Story</a>
+          <a href="#" class="block text-gray-600 hover:text-red-500 font-semibold">Our Products</a>
+          <a href="location.html" class="block text-gray-600 hover:text-red-500 font-semibold">Our Location</a>
+        </div>
+      </div>
+  
+      <a href="#services-modern" class="block text-gray-700 hover:text-red-600 font-semibold">Services</a>
+      <a href="#contact-section" class="block text-gray-700 hover:text-red-600 font-semibold">Contact</a>
+  
+      <a href="" class="hidden md:inline-block  text-red-600 font-semibold text-xl">
+        <span class="material-icons">notifications_none</span>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Backdrop -->
+  <div id="sidebarBackdrop" class="fixed inset-0 bg-black bg-opacity-30 z-40 hidden"></div>
+  
+  <script src="../src/js/nav.js"></script>
+
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out">
+
+  <!-- Background Text -->
+  <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-50 md:opacity-40">
+    <h2 class="text-[120px] sm:text-[180px] md:text-[240px] lg:text-[300px] heading-font font-black text-gray-300 leading-none -translate-y-8 sm:-translate-y-10 whitespace-nowrap tracking-tighter">
+      PC REX
+    </h2>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+    <!-- Text Content -->
+    <div class="text-center md:text-left space-y-6 md:space-y-8 md:w-1/2 lg:w-[45%] mt-10 md:mt-0">
+      <h3 class="text-lg sm:text-xl text-red-600 font-semibold tracking-wider uppercase heading-font">
+        Powered by PC REX
+      </h3>
+      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl heading text-gray-800 leading-tight">
+        CUSTOM<br class="hidden sm:inline"> BUILDS
+      </h1>
+      <p class="text-md sm:text-lg text-gray-700 max-w-md mx-auto md:mx-0 leading-relaxed">
+        High-performance PCs, meticulously crafted for your gaming, creative, or professional needs. Built by experts, fueled by passion.
+      </p>
+
+      <!-- Social Media Icons -->
+      <div class="flex justify-center md:justify-start space-x-3 sm:space-x-4 pt-2">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
+          <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
+        </a>
+        <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="text-white bg-sky-500 hover:bg-sky-600 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
+          <i class="fab fa-telegram-plane text-lg sm:text-xl"></i>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-white bg-black hover:bg-gray-800 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
+          <i class="fab fa-tiktok text-lg sm:text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="md:w-1/2 lg:w-[55%] relative mt-8 md:mt-0 w-full max-w-xl md:max-w-none mx-auto">
+      <!-- Carousel Container -->
+      <div id="carousel" class="flex overflow-x-auto scroll-smooth space-x-4 px-2 sm:px-4 no-scrollbar py-4">
+        <!-- Images should have consistent aspect ratio for best look, or use object-cover carefully -->
+        <!-- Using placeholder images for variety -->
+        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29tcHV0ZXIlMjBzZXR1cHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="w-72 h-48 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[420px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Custom PC Build 1" />
+        <img src="https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FtaW5nJTIwcGN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-72 h-48 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[420px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Gaming PC 2" />
+        <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29tcHV0ZXIlMjBzZXR1cHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="w-72 h-48 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[420px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Workstation PC 3" />
+        <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z2FtaW5nJTIwc2V0dXB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-72 h-48 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[420px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="RGB PC Build 4" />
+        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbXB1dGVyJTIwc2V0dXB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-72 h-48 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[420px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Clean PC Setup 5" />
+        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbXB1dGVyJTIwc2V0dXB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="w-72 h-48 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[420px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Clean PC Setup 5" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="../src/js/carousel.js"></script>
+
+
+<!-- Categories Scrolling Section -->
+<section class="py-3 sm:py-4 bg-gray-50 shadow-sm border-b border-gray-200 overflow-hidden fade-in-section" id="categoriesSection">
+  <div class="scroll-container w-full">
+      <div class="scroll-track flex">
+          <!-- The .animate-scroll div contains all items, including duplicates -->
+          <div class="animate-scroll flex-none flex items-center">
+              <!-- Original Content Set -->
+              <div class="category-group flex items-center gap-x-6 sm:gap-x-8 px-4 whitespace-nowrap">
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-desktop text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Components</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-microchip text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Processors</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-memory text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Memory (RAM)</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-server text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Pre-Built PCs</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-hdd text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Storage</span>
+                  </a>
+                   <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-keyboard text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Peripherals</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-cogs text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors" aria-hidden="true"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Accessories</span>
+                  </a>
+              </div>
+
+              <!-- Duplicated Content Set (for smooth infinite scroll) -->
+              <div class="category-group flex items-center gap-x-6 sm:gap-x-8 px-4 whitespace-nowrap" aria-hidden="true"> <!-- Hiding duplicate from screen readers -->
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-desktop text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Components</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-microchip text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Processors</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-memory text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Memory (RAM)</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-server text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Pre-Built PCs</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-hdd text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Storage</span>
+                  </a>
+                   <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-keyboard text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Peripherals</span>
+                  </a>
+                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
+                      <i class="fas fa-cogs text-lg sm:text-xl text-red-500 group-hover:text-red-600 transition-colors"></i>
+                      <span class="text-sm sm:text-base text-gray-700 font-medium group-hover:text-red-600 transition-colors">Accessories</span>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script src="../src/js/categoryScroll.js"></script>
+
+
+<!-- Promoted Categories Section -->
+<section id="promoted-categories" class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl  heading text-gray-900">Shop By Category</h2>
+            <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Find the perfect components for your next build or upgrade.</p>
+        </div>
+        <!-- Category Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+            <!-- Card 1: Motherboard -->
+            <div class="bg-emerald-500 rounded-xl overflow-hidden text-white group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] sm:col-span-2 lg:col-span-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="../src/assets/image/ProductImage/motherboard.png" alt="Motherboard" class="w-1/2 sm:w-2/5 max-w-[350px] absolute top-4 right-2 group-hover:scale-105 group-hover:rotate-[-3deg] transition-transform duration-300 -mr-4 sm:-mr-6 z-10 drop-shadow-lg">
+                <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
+                    <div>
+                        <p class="text-sm font-semibold text-emerald-200 uppercase tracking-wider">The Core</p>
+                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Motherboards</h3>
+                        <p class="text-emerald-100 mt-2 text-sm max-w-[60%]">The essential foundation for every PC build.</p>
+                    </div>
+                    <a href="#" class="mt-6 bg-white text-emerald-600 px-5 py-2 rounded-md text-sm font-semibold hover:bg-emerald-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Graphics Card (GPU) -->
+             <div class="bg-pink-500 rounded-xl overflow-hidden text-white group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                 <img src="../src/assets/image/ProductImage/GPU.png" alt="Graphics Card (GPU)" class="w-2/3 sm:w-3/4 max-w-[250px] absolute bottom-2 right-2 group-hover:scale-105 group-hover:rotate-[4deg] transition-transform duration-300 mb-2 mr-2 z-10 drop-shadow-lg">
+                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
+                    <div>
+                        <p class="text-sm font-semibold text-pink-200 uppercase tracking-wider">Visual Power</p>
+                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Graphics Cards</h3>
+                    </div>
+                    <a href="#" class="mt-6 bg-white text-pink-600 px-5 py-2 rounded-md text-sm font-semibold hover:bg-pink-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Processor (CPU) -->
+            <div class="bg-indigo-600 rounded-xl overflow-hidden text-white group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                 <img src="../src/assets/image/ProductImage/Processorr.png" alt="Processor (CPU)" class="w-1/2 sm:w-2/3 max-w-[200px] absolute bottom-2 right-2 group-hover:scale-110 transition-transform duration-300 mb-3 mr-3 z-10 drop-shadow-lg">
+                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
+                    <div>
+                        <p class="text-sm font-semibold text-indigo-200 uppercase tracking-wider">The Brain</p>
+                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Processors</h3>
+                    </div>
+                    <a href="#" class="mt-6 bg-white text-indigo-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-indigo-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
+                </div>
+            </div>
+
+            <!-- Card 4: RAM -->
+             <div class="bg-yellow-500 rounded-xl overflow-hidden text-white group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                 <img src="../src/assets/image/ProductImage/RAM.png" alt="RAM" class="w-1/2 sm:w-2/3 max-w-[220px] absolute bottom-2 right-2 group-hover:scale-105 group-hover:translate-x-1 transition-transform duration-300 mb-2 mr-2 z-10 drop-shadow-lg">
+                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
+                    <div>
+                        <p class="text-sm font-semibold text-yellow-100 uppercase tracking-wider">Multitask Faster</p>
+                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading text-yellow-900">RAM</h3>
+                    </div>
+                    <a href="#" class="mt-6 bg-white text-yellow-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-yellow-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
+                </div>
+            </div>
+
+            <!-- Card 5: Storage (SSD/HDD) -->
+            <div class="bg-teal-600 rounded-xl overflow-hidden text-white group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
+                 <img src="../src/assets/image/ProductImage/SSD.png" alt="Storage (SSD/HDD)" class="w-1/2 sm:w-2/3 max-w-[200px] absolute bottom-2 right-2 group-hover:scale-110 group-hover:rotate-[3deg] transition-transform duration-300 mb-3 mr-3 z-10 drop-shadow-lg">
+                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
+                    <div>
+                        <p class="text-sm font-semibold text-teal-100 uppercase tracking-wider">Load Instantly</p>
+                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Storage</h3>
+                    </div>
+                     <a href="#" class="mt-6 bg-white text-teal-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-teal-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
+                </div>
+            </div>
+
+            <!-- Card 6: Power Supply (PSU) -->
+            <div class="bg-gray-700 rounded-xl overflow-hidden text-white group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] sm:col-span-2 lg:col-span-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                 <img src="../src/assets/image/ProductImage/PSU.png" alt="Power Supply (PSU)" class="w-1/2 sm:w-2/5 max-w-[350px] absolute bottom-2 right-2 group-hover:scale-105 transition-transform duration-300 mb-2 mr-2 z-10 drop-shadow-lg">
+                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
+                    <div>
+                        <p class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Reliable Power</p>
+                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Power Supplies</h3>
+                         <p class="text-gray-200 mt-2 text-sm max-w-[60%]">Stable and efficient energy for peak performance.</p>
+                    </div>
+                    <a href="#" class="mt-6 bg-white text-gray-800 px-5 py-2 rounded-md text-sm font-semibold hover:bg-gray-200 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services-modern" class="py-16 sm:py-24 bg-white overflow-hidden opacity-0 transition-opacity duration-1000 ease-in-out">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-base font-semibold text-red-600 tracking-wide uppercase">Our Services</h2>
+            <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl heading">
+                Comprehensive Tech Expertise
+            </p>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                From custom builds to reliable repairs and expert advice, we ensure your tech works for you.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="mt-16 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-x-6 lg:gap-x-8 lg:gap-y-12">
+
+            <!-- Service Card Template -->
+            <div class="group relative bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
+                <div class="flex justify-center mb-5">
+                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-red-100 ring-4 ring-white">
+                        <i class="fas fa-wrench text-2xl text-red-600"></i>
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 text-center heading">Custom PC Builds</h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                    High-performance systems tailored precisely for your gaming, creative, or professional needs.
+                </p>
+            </div>
+
+             <div class="group relative bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
+                <div class="flex justify-center mb-5">
+                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-red-100 ring-4 ring-white">
+                        <i class="fas fa-tools text-2xl text-red-600"></i>
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 text-center heading">PC Repair & Maintenance</h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                    Expert diagnosis and repair services to keep your system running smoothly and efficiently.
+                </p>
+            </div>
+
+             <div class="group relative bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
+                <div class="flex justify-center mb-5">
+                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-red-100 ring-4 ring-white">
+                        <i class="fas fa-comments text-2xl text-red-600"></i>
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 text-center heading">Tech Consultation</h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                    Personalized advice to help you choose the right components, configurations, and upgrades.
+                </p>
+            </div>
+
+             <div class="group relative bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
+                <div class="flex justify-center mb-5">
+                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-red-100 ring-4 ring-white">
+                        <i class="fas fa-gamepad text-2xl text-red-600"></i>
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 text-center heading">Gaming Setup Optimization</h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                    Unlock maximum FPS and smooth gameplay with our expert optimization and tuning services.
+                </p>
+            </div>
+
+             <div class="group relative bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
+                <div class="flex justify-center mb-5">
+                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-red-100 ring-4 ring-white">
+                        <i class="fas fa-network-wired text-2xl text-red-600"></i>
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 text-center heading">Networking & Setup</h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                    Reliable home and office network setup, configuration, and troubleshooting solutions.
+                </p>
+            </div>
+
+             <div class="group relative bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
+                <div class="flex justify-center mb-5">
+                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-red-100 ring-4 ring-white">
+                        <i class="fas fa-download text-2xl text-red-600"></i>
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 text-center heading">Software Installation</h3>
+                <p class="mt-2 text-base text-gray-500 text-center">
+                    Hassle-free installation and setup of operating systems, essential drivers, and applications.
+                </p>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="mt-24 text-center">
+             <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl heading">Why Choose PC Rex?</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+                 Experience, dedication, and a passion for technology set us apart.
+            </p>
+            <div class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Reason 1 -->
+                <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0">
+                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white shadow-md">
+                             <i class="fas fa-shield-alt text-2xl"></i>
+                         </div>
+                    </div>
+                    <h3 class="mt-5 text-lg font-semibold text-gray-900 heading">Trusted Expertise</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                         Years of experience delivering top-quality custom builds and tech services you can rely on.
+                    </p>
+                </div>
+
+                <!-- Reason 2 -->
+                 <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0">
+                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white shadow-md">
+                             <i class="fas fa-headset text-2xl"></i>
+                         </div>
+                    </div>
+                    <h3 class="mt-5 text-lg font-semibold text-gray-900 heading">Dedicated Support</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                         We're here to help with your tech needs, offering support and advice when you need it.
+                    </p>
+                </div>
+
+                <!-- Reason 3 -->
+                <div class="flex flex-col items-center p-6">
+                    <div class="flex-shrink-0">
+                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white shadow-md">
+                             <i class="fas fa-thumbs-up text-2xl"></i>
+                         </div>
+                    </div>
+                    <h3 class="mt-5 text-lg font-semibold text-gray-900 heading">Customer Satisfaction</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Your satisfaction is our priority. We strive to exceed expectations with every interaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT Section -->
+<section id="contact-section" class="bg-black text-gray-100 py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
+    <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white heading">Get in Touch</h2>
+            <p class="text-lg mt-4 max-w-2xl text-gray-400 mx-auto">
+                Have questions or need assistance? Contact us today – we're ready to help.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+            <!-- Contact Form -->
+            <div class="bg-neutral-900 p-8 rounded-xl shadow-xl">
+                <h3 class="text-2xl font-semibold text-white mb-6 heading">Send Us a Message</h3>
+                <form class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="first-name" class="sr-only">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="First Name" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200 placeholder-gray-400">
+                        </div>
+                        <div>
+                            <label for="last-name" class="sr-only">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200 placeholder-gray-400">
+                        </div>
+                    </div>
+                     <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200 placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label for="phone" class="sr-only">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number (Optional)" class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200 placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition duration-200 placeholder-gray-400">
+                    </div>
+                    <div>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 h-36 transition duration-200 placeholder-gray-400 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-red-700 transition duration-300 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-red-500">
+                        <i class="fas fa-paper-plane mr-2"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info & Location -->
+            <div class="space-y-8">
+                 <div class="bg-neutral-900 text-gray-100 p-8 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-semibold text-white heading">Contact Details</h3>
+                    <div class="mt-5 space-y-4 text-gray-300">
+                        <p class="flex items-center text-lg">
+                            <i class="fas fa-map-marker-alt text-red-400 w-6 mr-3 text-center"></i>
+                            123 Tech Street, Silicon Valley, CA 94000
+                        </p>
+                        <p class="flex items-center text-lg">
+                            <i class="fas fa-phone-alt text-red-400 w-6 mr-3 text-center"></i>
+                            <a href="tel:+0123456789" class="hover:text-red-400 transition">+012 345 6789</a>
+                        </p>
+                        <p class="flex items-center text-lg">
+                            <i class="fas fa-envelope text-red-400 w-6 mr-3 text-center"></i>
+                             <a href="mailto:support@pcrex.com" class="hover:text-red-400 transition">support@pcrex.com</a>
+                        </p>
+                    </div>
+
+                     <div class="mt-6 pt-6 border-t border-neutral-700">
+                        <h4 class="text-xl font-semibold text-white heading">Business Hours</h4>
+                        <p class="mt-3 flex items-center text-gray-300 text-lg">
+                            <i class="fas fa-clock text-red-400 w-6 mr-3 text-center"></i> Mon - Fri: 9:00 AM - 7:00 PM
+                        </p>
+                         <p class="mt-1 flex items-center text-gray-300 text-lg">
+                            <i class="fas fa-clock text-red-400 w-6 mr-3 text-center opacity-0"></i> Sat: 10:00 AM - 5:00 PM
+                        </p>
+                         <p class="mt-1 flex items-center text-gray-300 text-lg">
+                            <i class="fas fa-clock text-red-400 w-6 mr-3 text-center opacity-0"></i> Sun: Closed
+                        </p>
+                    </div>
+                </div>
+
+                 <div class="bg-neutral-900 text-gray-100 p-8 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-semibold text-white heading">Visit Our Store</h3>
+                    <p class="mt-3 text-gray-300">Find us easily using the map below or click for directions.</p>
+                    <a href="location.html" class="mt-5 inline-flex items-center justify-center bg-red-600 text-white px-6 py-2.5 rounded-lg shadow-md font-semibold transition duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-red-500">
+                        <i class="fas fa-map-marked-alt mr-2"></i> View Location Page
+                    </a>
+                     <div class="mt-6">
+                        <h4 class="text-xl font-semibold text-white heading">Stay Connected</h4>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" aria-label="Facebook" class="bg-neutral-800 text-white p-2 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-red-600 hover:scale-110 transition duration-300 ease-in-out">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="bg-neutral-800 text-white p-2 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-red-600 hover:scale-110 transition duration-300 ease-in-out">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter / X" class="bg-neutral-800 text-white p-2 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-red-600 hover:scale-110 transition duration-300 ease-in-out">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Location Map Section -->
+<section id="location" class="py-16 sm:py-24 bg-gray-100 opacity-0 transition-opacity duration-1000 ease-in-out">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl  text-gray-900 heading">Our Store Location</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Visit us in person to explore our products and talk to our experts.</p>
+        <div class="mt-10 rounded-lg overflow-hidden shadow-xl border border-gray-200">
+             <iframe
+                class="w-full h-96 md:h-[500px]"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509315!2d144.9537353153159!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c920fd286a9f%3A0x1c6e3463e77d131d!2sPC%20Rex%20Computer%20Sales!5e0!3m2!1sen!2us!4v1640174211445"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map Location">
+             </iframe>
+             <!-- Note: Replaced the src with a generic placeholder URL. Use your specific embed URL -->
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-black text-gray-300 opacity-0 transition-opacity duration-1000 ease-in-out">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Newsletter Signup -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-8 mb-8 border-b border-gray-700">
+            <h3 class="text-lg font-semibold text-white text-center md:text-left">Join our newsletter for deals & updates!</h3>
+            <form class="flex w-full max-w-md mt-3 md:mt-0">
+                <label for="footer-email" class="sr-only">Email address</label>
+                <input
+                    type="email"
+                    id="footer-email"
+                    name="footer-email"
+                    placeholder="Enter your email"
+                    required
+                    class="flex-grow px-4 py-2 border bg-black text-white border-gray-600 rounded-l-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm placeholder-gray-400">
+                <button
+                    type="submit"
+                    class="bg-red-600 text-white px-4 py-2 rounded-r-md hover:bg-red-700 shadow-md transition text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-red-500">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+
+        <!-- Footer Links Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+            <!-- Company Info -->
+            <div>
+                <h4 class="text-lg font-semibold text-white heading">PC REX</h4>
+                <p class="mt-3 text-gray-400 leading-relaxed">Your destination for high-performance custom PCs, components, and expert tech support.</p>
+            </div>
+
+            <!-- Shop Links -->
+            <div>
+                <h5 class="font-semibold uppercase text-gray-400 tracking-wider">Shop</h5>
+                <ul class="mt-3 space-y-2">
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Custom Builds</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Components</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Peripherals</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Pre-builts</a></li>
+                </ul>
+            </div>
+
+            <!-- Customer Support Links -->
+            <div>
+                <h5 class="font-semibold uppercase text-gray-400 tracking-wider">Support</h5>
+                <ul class="mt-3 space-y-2">
+                    <li><a href="#contact-section" class="hover:text-red-400 transition duration-150 ease-in-out">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">FAQs</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Warranty Info</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Returns Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Policies Links -->
+            <div>
+                <h5 class="font-semibold uppercase text-gray-400 tracking-wider">Company</h5>
+                <ul class="mt-3 space-y-2">
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">About Us</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition duration-150 ease-in-out">Privacy Policy</a></li>
+                    <li><a href="location.html" class="hover:text-red-400 transition duration-150 ease-in-out">Our Location</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="bg-red-700 text-white py-4 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+            <p>© <span id="year"></span> PC REX Inc. All Rights Reserved.</p>
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+
+            <div class="flex space-x-5 mt-3 sm:mt-0">
+                <a href="#" aria-label="Facebook" class="hover:text-red-200 transition duration-150 ease-in-out">
+                    <i class="fab fa-facebook-f text-lg"></i>
+                </a>
+                <a href="#" aria-label="Twitter" class="hover:text-red-200 transition duration-150 ease-in-out">
+                    <i class="fab fa-twitter text-lg"></i>
+                </a>
+                <a href="#" aria-label="Instagram" class="hover:text-red-200 transition duration-150 ease-in-out">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- Your Custom JS -->
+  <script src="../src/js/html.js"></script>
+
+  <script>
+    // Basic JS for dropdowns and mobile menu (example)
+    document.addEventListener('DOMContentLoaded', function() {
+        // Desktop Dropdown
+        const aboutButton = document.getElementById('about-dropdown-button');
+        const aboutDropdown = document.getElementById('about-dropdown');
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden', 'opacity-0', 'scale-95');
+                mobileMenu.classList.add('opacity-100', 'scale-100');
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'scale-100');
+                mobileMenu.classList.add('opacity-0', 'scale-95');
+                // Use setTimeout to hide after transition
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); // Match duration-300
+            }
+        });
+
+        // Mobile Dropdown Toggle
+        const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+        const mobileDropdown = document.getElementById('mobile-dropdown');
+        mobileDropdownButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent closing the main mobile menu
+            mobileDropdown.classList.toggle('hidden');
+             // Optional: Rotate icon
+            mobileDropdownButton.querySelector('.material-icons').classList.toggle('rotate-180');
+        });
+
+        // Fade-in sections on load/scroll (Simple Example)
+        const sections = document.querySelectorAll('.opacity-0.transition-opacity');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.classList.add('opacity-100');
+                    // Optional: stop observing once visible
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% visible
+
+         // Apply fade-in to Navbar immediately
+        const navbar = document.querySelector('nav.opacity-0');
+        if (navbar) {
+            setTimeout(() => {
+                navbar.classList.remove('opacity-0');
+                navbar.classList.add('opacity-100');
+            }, 100); // Small delay
+        }
+
+        // Observe other sections
+        sections.forEach(section => {
+            // Don't observe the navbar again if it was handled separately
+            if (!section.matches('nav')) {
+                 observer.observe(section);
+            }
+        });
+
+         // Close dropdowns if clicking outside
+        document.addEventListener('click', function(event) {
+            // Desktop
+            if (aboutButton && !aboutButton.contains(event.target) && aboutDropdown && !aboutDropdown.contains(event.target)) {
+               // Handled by group-hover, no JS needed for closing typically
+            }
+             // Mobile (close if clicking outside the mobile menu itself)
+            if (mobileMenuButton && !mobileMenuButton.contains(event.target) && mobileMenu && !mobileMenu.contains(event.target)) {
+                 if (!mobileMenu.classList.contains('hidden')) {
+                      mobileMenu.classList.remove('opacity-100', 'scale-100');
+                      mobileMenu.classList.add('opacity-0', 'scale-95');
+                      setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                      // Also hide sub-dropdown if open
+                      if (!mobileDropdown.classList.contains('hidden')) {
+                         mobileDropdown.classList.add('hidden');
+                          mobileDropdownButton.querySelector('.material-icons').classList.remove('rotate-180');
+                      }
+                 }
+            }
+        });
+    });
+  </script>
+</body>
+</html>

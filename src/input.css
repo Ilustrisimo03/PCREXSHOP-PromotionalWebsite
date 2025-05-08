@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+body {
+    
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+.medium {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.semi-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 550;
+}
+
+.heading{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.logo{
+    font-size:x-large;
+}
