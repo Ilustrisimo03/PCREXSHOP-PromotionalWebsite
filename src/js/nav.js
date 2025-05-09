@@ -17,3 +17,7 @@ const burger = document.getElementById('burger');
       sidebar.classList.add('-translate-x-full');
       backdrop.classList.add('hidden');
     });
+
+
+
+    
