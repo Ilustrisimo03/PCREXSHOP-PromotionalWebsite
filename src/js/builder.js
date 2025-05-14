@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- INITIALIZATION ---
     async function initializeBuilder() {
         try {
-            const response = await fetch('../src/js/Products.json'); // Ensure this path is correct
+            const response = await fetch('../js/Products.json'); // Ensure this path is correct
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}, while fetching Products.json`);
             }
