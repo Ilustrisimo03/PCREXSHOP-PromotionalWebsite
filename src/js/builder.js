@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (componentSlotsContainer) {
                  // More user-friendly error message in the UI
                 componentSlotsContainer.innerHTML = `
-                    <div class="text-center text-red-600 py-10 bg-red-50 p-4 rounded-lg">
+                    <div class="text-center text-[#E31C25] py-10 bg-red-50 p-4 rounded-lg">
                         <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
                         <p class="font-semibold">Error Loading Product Data</p>
                         <p class="text-sm">${error.message}</p>
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (selectedComponent) {
                 detailsHTML = `
                     <p class="text-sm text-slate-800 font-medium">${selectedComponent.name}</p>
-                    <p class="text-xs ${isAvailable ? 'text-emerald-600' : 'text-red-600 font-semibold'}">${isAvailable ? 'In Stock' : 'Out of Stock'}</p>
+                    <p class="text-xs ${isAvailable ? 'text-emerald-600' : 'text-[#E31C25] font-semibold'}">${isAvailable ? 'In Stock' : 'Out of Stock'}</p>
                 `;
             }
             
@@ -129,14 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             } else {
                 actionButtonsHTML = `
-                    <button data-category="${categoryInfo.key}" class="select-component-btn bg-rose-600 hover:bg-rose-700 text-white px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors">Select</button>
+                    <button data-category="${categoryInfo.key}" class="select-component-btn bg-[#E31C25] hover:bg-rose-700 text-white px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors">Select</button>
                 `;
             }
     
             slotEl.innerHTML = `
                 <div class="flex items-center gap-3 flex-grow">
                      <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-rose-50 rounded-full">
-                        <i class="fas ${categoryInfo.icon} text-lg text-rose-600"></i>
+                        <i class="fas ${categoryInfo.icon} text-lg text-[#E31C25]"></i>
                      </div>
                     <div class="flex-grow">
                         <h4 class="text-md sm:text-lg font-semibold text-slate-800">${categoryInfo.name}</h4>
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const p = document.createElement('p');
                     p.className = 'flex justify-between items-center text-slate-700';
                     p.innerHTML = `
-                        <span><i class="fas ${cat.icon} fa-fw mr-2 text-rose-600"></i>${component.name}</span>
+                        <span><i class="fas ${cat.icon} fa-fw mr-2 text-[#E31C25]"></i>${component.name}</span>
                         <span class="font-medium text-slate-900">₱${component.price.toFixed(2)}</span>
                     `;
                     selectedComponentsSummaryEl.appendChild(p);
@@ -212,11 +212,11 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(`Category info not found for key: ${categoryKey}`);
             return;
         }
-        modalTitleEl.innerHTML = `<i class="fas ${categoryInfo.icon} fa-fw mr-2 text-rose-500"></i>Select ${categoryInfo.name}`;
-        modalBodyEl.innerHTML = `<div class="text-center py-4"><i class="fas fa-spinner fa-spin fa-2x text-rose-600"></i><p class="text-slate-700 mt-1">Loading components...</p></div>`;
+        modalTitleEl.innerHTML = `<i class="fas ${categoryInfo.icon} fa-fw mr-2 text-[#E31C25]"></i>Select ${categoryInfo.name}`;
+        modalBodyEl.innerHTML = `<div class="text-center py-4"><i class="fas fa-spinner fa-spin fa-2x text-[#E31C25]"></i><p class="text-slate-700 mt-1">Loading components...</p></div>`;
     
         if (!componentData || componentData.length === 0) {
-            modalBodyEl.innerHTML = '<p class="text-red-600 p-4 text-center">Component data is not available. Cannot load items.</p>';
+            modalBodyEl.innerHTML = '<p class="text-[#E31C25] p-4 text-center">Component data is not available. Cannot load items.</p>';
             modal.classList.remove('hidden');
             document.body.classList.add('overflow-hidden');
             return;
@@ -303,13 +303,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="flex-grow">
                                 <h5 class="font-semibold text-slate-800">${item.name}</h5>
                                 <p class="text-sm text-slate-600">Price: ₱${item.price.toFixed(2)}</p>
-                                <p class="text-xs ${item.stock > 0 ? 'text-emerald-600' : 'text-red-600 font-semibold'}">
+                                <p class="text-xs ${item.stock > 0 ? 'text-emerald-600' : 'text-[#E31C25] font-semibold'}">
                                     ${item.stock > 0 ? `In Stock (${item.stock} available)` : 'Out of Stock'}
                                 </p>
                                 ${suggestionReason ? `<p class="text-xs ${isCompatibleSuggestion ? 'text-sky-600' : 'text-amber-700'} font-medium mt-0.5"><i class="fas ${isCompatibleSuggestion ? 'fa-info-circle' : 'fa-exclamation-triangle'} mr-1"></i>${suggestionReason}</p>` : ''}
                             </div>
                         </div>
-                        <button class="select-item-btn ${isOutOfStock ? 'bg-slate-400 cursor-not-allowed' : (isCompatibleSuggestion ? 'bg-rose-600 hover:bg-rose-700' : 'bg-amber-500 hover:bg-amber-600')} text-white px-3 py-1.5 rounded text-sm shrink-0 ml-2 self-center" data-id="${item.id}" ${isOutOfStock ? 'disabled' : ''}>
+                        <button class="select-item-btn ${isOutOfStock ? 'bg-slate-400 cursor-not-allowed' : (isCompatibleSuggestion ? 'bg-[#E31C25] hover:bg-rose-700' : 'bg-amber-500 hover:bg-amber-600')} text-white px-3 py-1.5 rounded text-sm shrink-0 ml-2 self-center" data-id="${item.id}" ${isOutOfStock ? 'disabled' : ''}>
                             ${isOutOfStock ? 'Out of Stock' : (isCompatibleSuggestion ? 'Select' : 'Select Anyway')}
                         </button>
                     `;
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (statusEl && !statusEl.textContent.toLowerCase().includes("out of stock")) {
                      let currentText = statusEl.textContent;
                      updateSlotCompatibilityStatus(categoryKey, `${component.name} is Out of Stock. ${currentText}`.trim(), 'warning');
-                } else if (statusEl && statusEl.textContent.toLowerCase().includes("out of stock") && !statusEl.classList.contains('text-amber-600') && !statusEl.classList.contains('text-red-600')) {
+                } else if (statusEl && statusEl.textContent.toLowerCase().includes("out of stock") && !statusEl.classList.contains('text-amber-600') && !statusEl.classList.contains('text-[#E31C25]')) {
                      // If it says out of stock but not colored as warning/error, fix it
                      updateSlotCompatibilityStatus(categoryKey, statusEl.textContent, 'warning');
                 }
@@ -647,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
                 case 'incompatible':
                     iconHTML = '<i class="fas fa-times-circle text-red-500 mr-1"></i>';
-                    textColorClass = 'text-red-600 font-semibold';
+                    textColorClass = 'text-[#E31C25] font-semibold';
                     break;
                 case 'warning':
                     iconHTML = '<i class="fas fa-exclamation-triangle text-amber-500 mr-1"></i>';
