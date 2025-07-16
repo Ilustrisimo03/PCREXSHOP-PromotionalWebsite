@@ -124,8 +124,8 @@
               About Us <span class="material-icons ml-1 text-base group-hover:rotate-180 transition-transform">expand_more</span>
             </button>
             <div class="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out origin-top-left">
-              <a href="#" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-t-md">Our Story</a>
-              <a href="#" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white">Our Products</a>
+              <a href="#" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-t-md">Our Categories</a>
+              <a href="#" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white">PC Builder</a>
               <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-b-md">Our Location</a>
             </div>
           </div>
@@ -135,14 +135,19 @@
         </div>
   
         <!-- Login + Mobile Button -->
-        <div class="flex items-center">
-            <a href="" class="hidden md:inline-block text-black font-semibold text-xl">
-                <span class="material-icons">notifications_none</span>
-              </a>
-          <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
-            <span class="material-icons text-3xl">menu</span>
-          </button>
-        </div>
+            <div class="flex items-center">
+                <!-- Download App Link for Desktop -->
+                <a href="/path/to/your/application.apk" download="YourApp.apk" 
+                class="hidden md:flex items-center bg-[#E31C25] text-white font-semibold text-md py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300">
+                    <span class="material-icons mr-2">install_mobile</span>
+                    <span>Download App</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
+                    <span class="material-icons text-3xl">menu</span>
+                </button>
+            </div>
       </div>
     </div>
   </nav>
@@ -162,8 +167,8 @@
       <div>
         <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
         <div class="pl-4 space-y-1 text-sm">
-          <a href="#" class="block text-gray-600 hover:text-[#E31C25] font-semibold ">Our Story</a>
-          <a href="#" class="block text-gray-600 hover:text-[#E31C25] font-semibold">Our Products</a>
+          <a href="#" class="block text-gray-600 hover:text-[#E31C25] font-semibold ">Our Categories</a>
+          <a href="#" class="block text-gray-600 hover:text-[#E31C25] font-semibold">PC Builder</a>
           <a href="location.html" class="block text-gray-600 hover:text-[#E31C25] font-semibold">Our Location</a>
         </div>
       </div>
@@ -171,9 +176,13 @@
       <a href="#services-modern" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Services</a>
       <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Contact</a>
   
-      <a href="" class="hidden md:inline-block  text-[#E31C25] font-semibold text-xl">
-        <span class="material-icons">notifications_none</span>
-      </a>
+      <!-- Download App Link for Sidebar -->
+    <a href="/path/to/your/application.apk" download="YourApp.apk" 
+       class="flex items-center bg-[#E31C25] text-white py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300 font-semibold pt-2">
+      <span class="material-icons mr-2">install_mobile</span>
+      <span>Download App</span>
+    </a>
+
     </div>
   </div>
   
