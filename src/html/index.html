@@ -110,13 +110,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+        <a href="#Home" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
           <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC REX Logo" class="h-10 w-auto">
         </a>
   
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-7">
-          <a href="index.html" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
+          <a href="#Home" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
   
           <!-- About Us Dropdown -->
           <div class="relative group">
@@ -124,9 +124,9 @@
               About Us <span class="material-icons ml-1 text-base group-hover:rotate-180 transition-transform">expand_more</span>
             </button>
             <div class="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out origin-top-left">
-              <a href="#" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-t-md">Our Categories</a>
-              <a href="#" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white">PC Builder</a>
-              <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-b-md">Our Location</a>
+              <a href="#promoted-categories" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-t-md">Our Categories</a>
+              <a href="#Custom-build" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white">PC Builder</a>
+              <a href="#location" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-b-md">Our Location</a>
             </div>
           </div>
   
@@ -161,15 +161,15 @@
       </button>
     </div>
     <div class="p-4 space-y-3">
-      <a href="index.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Home</a>
+      <a href="#Home" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Home</a>
   
       <!-- About Us (with nested links) -->
       <div>
         <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
         <div class="pl-4 space-y-1 text-sm">
-          <a href="#" class="block text-gray-600 hover:text-[#E31C25] font-semibold ">Our Categories</a>
-          <a href="#" class="block text-gray-600 hover:text-[#E31C25] font-semibold">PC Builder</a>
-          <a href="location.html" class="block text-gray-600 hover:text-[#E31C25] font-semibold">Our Location</a>
+          <a href="#promoted-categories" class="block text-gray-600 hover:text-[#E31C25] font-semibold ">Our Categories</a>
+          <a href="#Custom-build" class="block text-gray-600 hover:text-[#E31C25] font-semibold">PC Builder</a>
+          <a href="#location" class="block text-gray-600 hover:text-[#E31C25] font-semibold">Our Location</a>
         </div>
       </div>
   
@@ -193,7 +193,7 @@
 
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out">
+<section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out">
 
   <!-- Background Text -->
   <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-50 md:opacity-40">
@@ -419,7 +419,8 @@
 
 
 <!-- CUSTOM BUILD SECTION -->
-<div class="container mx-auto p-4 sm:p-6 lg:p-8">
+<section id="Custom-build" class="py-16 sm:py-24 bg-[#FAF5F1]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <header class="mb-6 text-center">
         <h1 class="text-3xl md:text-4xl heading text-[#1C1C1C]">PC Part Builder</h1>
         <p class="text-gray-600 text-lg">Select components to build your custom PC and check compatibility.</p>
@@ -460,7 +461,8 @@
             </div>
         </div>
     </div>
-</div>
+    </div> 
+</section>
 
 
 
