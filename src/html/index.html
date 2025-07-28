@@ -7,11 +7,12 @@
 
   <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Link your input/output CSS if you have customizations -->
+      <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
  
-   <link href="../css/style.css" rel="stylesheet"> 
+  <!-- Link your input/output CSS if you have customizations -->
+    <link href="/src/css/output.css" rel="stylesheet"> 
+   <link href="/src/css/input.css" rel="stylesheet"> 
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -104,8 +105,7 @@
 
 </head>
 <body class="bg-[#FAF5F1]  antialiased">
-
- <!-- Navbar -->
+<!-- Navbar -->
 <nav class="bg-white shadow-lg sticky top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
@@ -115,18 +115,19 @@
         </a>
   
         <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-7">
+        <div class="hidden md:flex items-center gap-[30px]">
           <a href="#Home" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
   
           <!-- About Us Dropdown -->
-          <div class="relative group">
-            <button class="text-[#1C1C1C] hover:text-[#E31C25] flex items-center transition font-semibold">
-              About Us <span class="material-icons ml-1 text-base group-hover:rotate-180 transition-transform">expand_more</span>
+          <div class="relative" id="about-us-wrapper">
+            <button id="aboutUsBtn" class="text-[#1C1C1C] hover:text-[#E31C25] flex items-center transition font-semibold">
+              About Us 
+              <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
             </button>
-            <div class="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out origin-top-left">
-              <a href="#promoted-categories" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-t-md">Our Categories</a>
-              <a href="#Custom-build" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white">PC Builder</a>
-              <a href="#location" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-b-md">Our Location</a>
+            <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
+              <a href="#promoted-categories" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-t-md dropdown-link">Our Categories</a>
+              <a href="#Custom-build" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white dropdown-link">PC Builder</a>
+              <a href="#location" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-white rounded-b-md dropdown-link">Our Location</a>
             </div>
           </div>
   
@@ -135,61 +136,60 @@
         </div>
   
         <!-- Login + Mobile Button -->
-            <div class="flex items-center">
-                <!-- Download App Link for Desktop -->
-                <a href="/path/to/your/application.apk" download="YourApp.apk" 
-                class="hidden md:flex items-center bg-[#E31C25] text-white font-semibold text-md py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300">
-                    <span class="material-icons mr-2">install_mobile</span>
-                    <span>Download App</span>
-                </a>
+        <div class="flex items-center">
+            <!-- Download App Link for Desktop -->
+            <a href="/path/to/your/application.apk" download="YourApp.apk" 
+            class="hidden md:flex items-center bg-[#E31C25] text-white font-semibold text-md py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300">
+                <span class="material-icons mr-2">install_mobile</span>
+                <span>Download App</span>
+            </a>
 
-                <!-- Mobile Menu Button -->
-                <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
-                    <span class="material-icons text-3xl">menu</span>
-                </button>
-            </div>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- Sidebar -->
-  <div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
-    <div class="flex justify-between items-center p-4 border-b">
-      <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
-      <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
-        <span class="material-icons text-2xl">close</span>
-      </button>
-    </div>
-    <div class="p-4 space-y-3">
-      <a href="#Home" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Home</a>
-  
-      <!-- About Us (with nested links) -->
-      <div>
-        <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
-        <div class="pl-4 space-y-1 text-sm">
-          <a href="#promoted-categories" class="block text-gray-600 hover:text-[#E31C25] font-semibold ">Our Categories</a>
-          <a href="#Custom-build" class="block text-gray-600 hover:text-[#E31C25] font-semibold">PC Builder</a>
-          <a href="#location" class="block text-gray-600 hover:text-[#E31C25] font-semibold">Our Location</a>
+            <!-- Mobile Menu Button -->
+            <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
+                <span class="material-icons text-3xl">menu</span>
+            </button>
         </div>
       </div>
-  
-      <a href="#services-modern" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Services</a>
-      <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold">Contact</a>
-  
-      <!-- Download App Link for Sidebar -->
-    <a href="/path/to/your/application.apk" download="YourApp.apk" 
-       class="flex items-center bg-[#E31C25] text-white py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300 font-semibold pt-2">
-      <span class="material-icons mr-2">install_mobile</span>
-      <span>Download App</span>
-    </a>
-
     </div>
-  </div>
+</nav>
   
-  <!-- Backdrop -->
-  <div id="sidebarBackdrop" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-30 z-40 hidden"></div>
+<!-- Sidebar -->
+<div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
+        <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
+            <span class="material-icons text-2xl">close</span>
+        </button>
+    </div>
+    <div class="p-4 space-y-3">
+        <a href="#Home" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Home</a>
+
+        <!-- About Us (with nested links) -->
+        <div>
+            <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
+            <div class="pl-4 space-y-1 text-sm">
+                <a href="#promoted-categories" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Categories</a>
+                <a href="#Custom-build" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">PC Builder</a>
+                <a href="#location" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
+            </div>
+        </div>
+
+        <a href="#services-modern" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Services</a>
+        <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
+
+        <!-- Download App Link for Sidebar -->
+        <a href="/path/to/your/application.apk" download="YourApp.apk" 
+           class="flex items-center bg-[#E31C25] text-white py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300 font-semibold pt-2">
+            <span class="material-icons mr-2">install_mobile</span>
+            <span>Download App</span>
+        </a>
+    </div>
+</div>
   
-  <script src="../js/nav.js"></script>
+<!-- Backdrop -->
+<div id="sidebarBackdrop" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-30 z-40 hidden"></div>
+
+<script src="/src/js/nav.js" ></script>
 
 
 <!-- Hero Section -->
@@ -218,7 +218,7 @@
       </p>
 
       <!-- Social Media Icons -->
-      <div class="flex justify-center md:justify-start space-x-3 sm:space-x-4 pt-2">
+      <div class="flex justify-center md:justify-start gap-3 sm:gap-4 pt-2">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
           <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
         </a>
@@ -777,14 +777,14 @@
                     </a>
                      <div class="mt-6">
                         <h4 class="text-xl font-semibold text-white heading">Stay Connected</h4>
-                        <div class="flex space-x-4 mt-4">
-                            <a href="#" aria-label="Facebook" class="bg-neutral-800 text-white p-2 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
+                        <div class="flex mt-4">
+                            <a href="#" aria-label="Facebook" class="bg-neutral-800 text-white p-2 mr-4 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" aria-label="Instagram" class="bg-neutral-800 text-white p-2 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
+                            <a href="#" aria-label="Instagram" class="bg-neutral-800 text-white p-2 mr-4 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" aria-label="Twitter / X" class="bg-neutral-800 text-white p-2 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
+                            <a href="#" aria-label="Twitter / X" class="bg-neutral-800 text-white p-2 mr-4 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>
@@ -842,7 +842,7 @@
       </ul>
 
       <!-- Social Icons -->
-        <div class="flex space-x-4 mt-10 text-[#E31C25]">
+        <div class="flex gap-6 mt-10 text-[#E31C25]">
         <a href="#" class="hover:text-[#E31C25] text-2xl">
             <i class="fab fa-telegram"></i>
         </a>
