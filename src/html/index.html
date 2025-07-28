@@ -232,19 +232,18 @@
     </div>
 
     <!-- Carousel Section -->
-    <div class="md:w-1/2 lg:w-[55%] relative mt-8 md:mt-0 w-full max-w-xl md:max-w-none mx-auto">
-      <!-- Carousel Container -->
-      <div id="carousel" class="flex overflow-x-auto scroll-smooth space-x-4 px-2 sm:px-4 no-scrollbar py-4">
-        <!-- Images should have consistent aspect ratio for best look, or use object-cover carefully -->
-        <!-- Using placeholder images for variety -->
-        <img src="../assets/image/promotional2.png" class="w-100 h-100 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[600px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Custom PC Build 1" />
-        <img src="../assets/image/promotional1.png" class="w-100 h-100 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[600px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Gaming PC 2" />
-        <img src="../assets/image/promotional3.png" class="w-100 h-100 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[600px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Workstation PC 3" />
-        <img src="../assets/image/promotional4.png" class="w-100 h-100 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[600px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="RGB PC Build 4" />
-        <img src="../assets/image/promotional1.png" class="w-100 h-100 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[600px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Clean PC Setup 5" />
-        <img src="../assets/image/promotional2.png" class="w-100 h-100 sm:w-80 sm:h-56 md:w-[380px] md:h-[260px] lg:w-[600px] lg:h-[300px] object-cover rounded-xl shadow-xl flex-shrink-0" alt="Clean PC Setup 5" />
-      </div>
-    </div>
+<div class="md:w-1/2 lg:w-[55%] relative mt-8 md:mt-0 w-full max-w-xl md:max-w-none mx-auto">
+  <!-- Carousel Container -->
+  <!-- Ang div na ito ang magiging 'stage' para sa mga imahe -->
+  <div id="carousel" class="relative w-full h-56 md:h-[260px] lg:h-[300px] overflow-hidden rounded-xl shadow-xl">
+    <!-- Ang mga imahe ay ilalagay dito. Pare-pareho ang sukat nila base sa container. -->
+    <img src="../assets/image/promotional2.png" class="carousel-image" alt="Custom PC Build 1" />
+    <img src="../assets/image/promotional1.png" class="carousel-image" alt="Gaming PC 2" />
+    <img src="../assets/image/promotional3.png" class="carousel-image" alt="Workstation PC 3" />
+    <img src="../assets/image/promotional4.png" class="carousel-image" alt="RGB PC Build 4" />
+    <!-- Maaari mong ulitin ang mga imahe kung gusto mo para sa mas mahabang sequence -->
+  </div>
+</div>
 
   </div>
 </section>

@@ -29,3 +29,48 @@ body {
 .logo{
     font-size:x-large;
 }
+
+
+ /* This CSS hides the scrollbar */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none; /* For Chrome, Safari, and Opera */
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+          scrollbar-width: none;  /* For Firefox */
+      }
+
+
+      #carousel {
+  /* Tinitiyak na ang mga imahe sa loob na naka-absolute ay dito ibabase ang posisyon. */
+  position: relative; 
+}
+
+.carousel-image {
+  /* Lahat ng imahe ay magkakaroon ng parehong sukat ng container. */
+  width: 100%;
+  height: 100%;
+
+  /* Ito ang nagpapatong-patong sa mga imahe sa iisang pwesto. */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Sinasakop ng imahe ang buong space nang hindi nasisira ang itsura. */
+  object-fit: cover; 
+
+  /* Lahat ng imahe ay nakatago by default. */
+  opacity: 0; 
+
+  /* Ito ang nagbibigay ng smooth na 1-second fade effect. */
+  transition: opacity 1s ease-in-out; 
+}
+
+.carousel-image.active {
+  /* Ang may 'active' class lang ang makikita. */
+  opacity: 1; 
+}
+
+
+
+
