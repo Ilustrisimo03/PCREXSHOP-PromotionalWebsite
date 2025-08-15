@@ -1,673 +1,899 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // --- DATA ---
-    let componentData = []; // Initialize as empty, will be fetched
+
+// document.addEventListener('DOMContentLoaded', () => {
+
+//     // --- DATA ---
+//     // The JSON data you provided.
+//     const productData = [
+//       { "id": 13, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "AMD Wraith Stealth Cooler", "price": "17.99", "description": "The AMD Wraith Stealth is a low-profile stock CPU cooler...", "rate": 4.3, "stock": 13, "review": 48, "percent": 86, "category": { "name": "Components" }, "type": "CPU Cooling", "socket": ["AM4"] },
+//       { "id": 28, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "AMD Stock Heatsink Fan", "price": "14.99", "description": "A standard AMD stock CPU cooler...", "rate": 3.8, "stock": 2, "review": 19, "percent": 76, "category": { "name": "Components" }, "type": "CPU Cooling", "socket": ["AM4"] },
+//       { "id": 21, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Deepcool AG400 Cooler", "price": "29.99", "description": "A single-tower 120mm CPU cooler...", "rate": 4.6, "stock": 10, "review": 135, "percent": 92, "category": { "name": "Components" }, "type": "CPU Cooling", "socket": ["AM4", "AM5", "LGA 1700"]},
+//       { "id": 16, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "MSI PRO B650M-A WiFi", "price": "179.99", "description": "A Micro-ATX motherboard for AMD Ryzen 7000 series CPUs...", "rate": 4.2, "stock": 5, "review": 43, "percent": 84, "category": { "name": "Components" }, "type": "Motherboard", "socket": "AM5", "memoryType": "DDR5" },
+//       { "id": 20, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Biostar A520MHP Motherboard", "price": "54.99", "description": "A budget-friendly Micro-ATX motherboard...", "rate": 4.1, "stock": 6, "review": 38, "percent": 82, "category": { "name": "Components" }, "type": "Motherboard", "socket": "AM4", "memoryType": "DDR4" },
+//       { "id": 19, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Biostar RX 580 8GB", "price": "129.99", "description": "An 8GB GDDR5 graphics card...", "rate": 4.4, "stock": 2, "review": 74, "percent": 88, "category": { "name": "Components" }, "type": "Graphics Card" },
+//       { "id": 30, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "MSI GeForce RTX 3060 Ventus", "price": "289.99", "description": "A 12GB GDDR6 graphics card...", "rate": 4.7, "stock": 6, "review": 54, "percent": 94, "category": { "name": "Components" }, "type": "Graphics Card" },
+//       { "id": 25, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Acer AC-550 550W Power Supply", "price": "59.99", "description": "A 550W fully modular power supply...", "rate": 4.5, "stock": 4, "review": 93, "percent": 90, "category": { "name": "Components"}, "type": "Power Supply" },
+//       { "id": 22, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "InPlay GS750-Ultra 750W", "price": "49.99", "description": "An 80+ Bronze rated power supply...", "rate": 4.3, "stock": 7, "review": 88, "percent": 86, "category": { "name": "Components"}, "type": "Power Supply" },
+//       { "id": 29, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Seagate Barracuda 1TB HDD", "price": "44.99", "description": "A 1TB internal hard drive...", "rate": 4.2, "stock": 20, "review": 31, "percent": 84, "category": { "name": "Components"}, "type": "Storage" },
+//       { "id": 17, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Seagate ST2000DM008 2TB HDD", "price": "54.99", "description": "A 2TB internal hard drive...", "rate": 4.4, "stock": 12, "review": 23, "percent": 88, "category": { "name": "Components"}, "type": "Storage" },
+//       { "id": 26, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Kingston A400 480GB SSD", "price": "34.99", "description": "A 480GB SATA 2.5-inch solid-state drive...", "rate": 4.6, "stock": 9, "review": 17, "percent": 92, "category": { "name": "Components"}, "type": "Storage" },
+//       { "id": 18, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Team Elite T-Force Delta 16GB RGB", "price": "54.99", "description": "A 16GB (2x8GB) DDR4 memory kit...", "rate": 4.7, "stock": 3, "review": 109, "percent": 94, "category": { "name": "Components" }, "type": "Memory (RAM)", "memoryType": "DDR4" },
+//       { "id": 27, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Kingston Fury Beast 16GB RGB", "price": "49.99", "description": "A 16GB DDR4 memory module...", "rate": 4.7, "stock": 15, "review": 28, "percent": 94, "category": { "name": "Components" }, "type": "Memory (RAM)", "memoryType": "DDR4" },
+//       { "id": 11, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Kingston 16GB DDR5 SODIMM", "price": "39.99", "description": "A 16GB DDR5 3200MHz SODIMM memory module...", "rate": 4.8, "stock": 13, "review": 1111, "percent": 96, "category": { "name": "Components" }, "type": "Memory (RAM)", "memoryType": "DDR5" },
+//       { "id": 4, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "AMD Ryzen 5 5600X", "price": "149.99", "description": "A 6-core, 12-thread processor...", "rate": 4.8, "stock": 20, "review": 33, "percent": 96, "category": { "name": "Components" }, "type": "Processor", "socket": "AM4" },
+//       { "id": 6, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "AMD Ryzen 7 5700G", "price": "179.99", "description": "An 8-core, 16-thread processor with integrated graphics...", "rate": 4.7, "stock": 10, "review": 22, "percent": 94, "category": { "name": "Components" }, "type": "Processor", "socket": "AM4", "hasGpu": true },
+//       { "id": 32, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "AMD Ryzen 7 7700X", "price": "399.00", "description": "An 8-core, 16-thread processor...", "rate": 4.6, "stock": 10, "review": 22, "percent": 92, "category": { "name": "Components" }, "type": "Processor", "socket": "AM5", "hasGpu": true },
+//       { "id": 33, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "Intel Core i7-14700F", "price": "359.00", "description": "A 20-core, 28-thread processor from Intel...", "rate": 4.5, "stock": 10, "review": 22, "percent": 90, "category": { "name": "Components" }, "type": "Processor", "socket": "LGA 1700", "hasGpu": false },
+//       { "id": 8, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "InPlay Wind 05 Micro ATX Case", "price": "29.99", "description": "A Micro-ATX PC case...", "rate": 4.3, "stock": 13, "review": 3, "percent": 86, "category": { "name": "Furniture" }, "type": "PC Case" },
+//       { "id": 1, "images": ["https://drive.google.com/uc?export=view&id=1LrB58msapJOfj_rNMFsienaXu3onQnS7"], "name": "YGT V300 M-ATX Gaming PC Case", "price": "34.99", "description": "A white Micro-ATX gaming PC case...", "rate": 4.7, "stock": 0, "review": 111, "percent": 94, "category": { "name": "Furniture" }, "type": "PC Case" }
+//     ];
+
+//     const componentCategories = [
+//         { id: 'cpu', name: 'Processor (CPU)', type: 'Processor', icon: 'fa-microchip' },
+//         { id: 'motherboard', name: 'Motherboard', type: 'Motherboard', icon: 'fa-clipboard-list' },
+//         { id: 'memory', name: 'Memory (RAM)', type: 'Memory (RAM)', icon: 'fa-memory' },
+//         { id: 'gpu', name: 'Graphics Card (GPU)', type: 'Graphics Card', icon: 'fa-gamepad' },
+//         { id: 'storage', name: 'Storage (SSD/HDD)', type: 'Storage', icon: 'fa-hdd' },
+//         { id: 'psu', name: 'Power Supply (PSU)', type: 'Power Supply', icon: 'fa-plug' },
+//         { id: 'cooling', name: 'CPU Cooler', type: 'CPU Cooling', icon: 'fa-fan' },
+//         { id: 'case', name: 'PC Case', type: 'PC Case', icon: 'fa-cube' },
+//     ];
+
+//     let selectedComponents = {};
     
-    const componentCategories = [
-        { key: 'cpu', name: 'Processor', icon: 'fa-microchip' },
-        { key: 'motherboard', name: 'Motherboard', icon: 'fa-server' },
-        { key: 'ram', name: 'Memory', icon: 'fa-memory' },
-        { key: 'gpu', name: 'Graphics Card', icon: 'fa-desktop' },
-        { key: 'storage', name: 'Storage', icon: 'fa-hdd' },
-        { key: 'psu', name: 'Power Supply', icon: 'fa-plug' },
-    ];
+//     // --- DOM Elements ---
+//     const componentSlotsContainer = document.getElementById('component-slots');
+//     const modal = document.getElementById('component-modal');
+//     const modalTitle = document.getElementById('modal-title');
+//     const modalBody = document.getElementById('modal-body');
+//     const closeModalBtn = document.getElementById('close-modal-btn');
+//     const totalPriceEl = document.getElementById('total-price');
+//     const summaryContainer = document.getElementById('selected-components-summary');
+//     const clearBuildBtn = document.getElementById('clear-build-btn');
+//     const addToCartBtn = document.getElementById('add-to-cart-btn');
+
+//     // --- Functions ---
     
-    let currentBuild = {};
-    let currentModalCategory = null;
+//     function initializeBuilder() {
+//         renderComponentSlots();
+//         updateSummary();
+//         updateTotalPrice();
+//     }
+
+//     function renderComponentSlots() {
+//         componentSlotsContainer.innerHTML = '';
+//         componentCategories.forEach(cat => {
+//             const isSelected = selectedComponents[cat.id];
+//             const slotHTML = `
+//                 <div id="slot-${cat.id}" class="component-slot border border-slate-200 p-4 rounded-lg flex items-center justify-between gap-4">
+//                     <div class="flex items-center gap-4">
+//                         <i class="fas ${cat.icon} text-2xl text-slate-500 w-8 text-center"></i>
+//                         <div>
+//                             <h3 class="font-semibold text-slate-800">${cat.name}</h3>
+//                             <div class="text-sm text-slate-600 component-name-display">
+//                                 ${isSelected ? selectedComponents[cat.id].name : 'Not selected'}
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div class="flex items-center gap-2">
+//                         ${isSelected ? `
+//                             <button class="remove-btn text-sm bg-red-100 text-red-700 hover:bg-red-200 px-3 py-1 rounded-md" data-id="${cat.id}">Remove</button>
+//                         ` : ''}
+//                         <button class="choose-btn text-sm bg-[#E31C25] text-white hover:bg-red-700 font-semibold px-4 py-2 rounded-md" data-id="${cat.id}" data-type="${cat.type}" data-name="${cat.name}" data-icon="${cat.icon}">
+//                             Choose
+//                         </button>
+//                     </div>
+//                 </div>
+//             `;
+//             componentSlotsContainer.insertAdjacentHTML('beforeend', slotHTML);
+//         });
+//     }
+
+//     function openModal(category) {
+//         modalTitle.innerHTML = `<i class="fas ${category.icon} mr-3 text-[#E31C25]"></i> Select ${category.name}`;
+        
+//         let compatibleProducts = getCompatibleProducts(category.type);
+
+//         modalBody.innerHTML = ''; // Clear previous content
+//         if(compatibleProducts.length === 0) {
+//             modalBody.innerHTML = `<div class="text-center p-8 bg-yellow-50 border border-yellow-200 rounded-lg">
+//                 <h4 class="font-semibold text-yellow-800">Compatibility Alert!</h4>
+//                 <p class="text-yellow-700 mt-2">No compatible components found. Please select a CPU and Motherboard first, or check your existing selections.</p>
+//             </div>`;
+//         } else {
+//             compatibleProducts.forEach(product => {
+//                 const productHTML = `
+//                     <div class="modal-item flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 border rounded-lg hover:bg-slate-50 transition-colors">
+//                         <img src="${product.images[0]}" alt="${product.name}" class="w-24 h-24 object-cover rounded-md border">
+//                         <div class="flex-grow">
+//                             <h4 class="font-bold text-slate-900">${product.name}</h4>
+//                             <p class="text-xs text-slate-500 mt-1">${product.description.substring(0, 100)}...</p>
+//                             <div class="text-sm mt-2">
+//                                 <span class="font-semibold">Compatibility:</span>
+//                                 ${getCompatibilityInfo(product)}
+//                             </div>
+//                         </div>
+//                         <div class="text-center sm:text-right">
+//                             <p class="text-lg font-bold text-[#E31C25]">₱${parseFloat(product.price).toFixed(2)}</p>
+//                             <button class="select-component-btn mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-semibold" data-product-id="${product.id}" data-category-id="${category.id}">Select</button>
+//                         </div>
+//                     </div>
+//                 `;
+//                 modalBody.insertAdjacentHTML('beforeend', productHTML);
+//             });
+//         }
+        
+//         modal.classList.remove('hidden');
+//     }
     
-    // --- DOM Elements ---
-    const componentSlotsContainer = document.getElementById('component-slots');
-    const totalPriceEl = document.getElementById('total-price');
-    const overallCompatibilityStatusEl = document.getElementById('overall-compatibility-status');
-    const selectedComponentsSummaryEl = document.getElementById('selected-components-summary');
-    const clearBuildBtn = document.getElementById('clear-build-btn');
+//     function getCompatibilityInfo(product) {
+//         let info = '';
+//         if(product.socket) {
+//             const socketInfo = Array.isArray(product.socket) ? product.socket.join(', ') : product.socket;
+//             info += `<span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Socket: ${socketInfo}</span>`;
+//         }
+//         if(product.memoryType) {
+//             info += `<span class="bg-purple-100 text-purple-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Memory: ${product.memoryType}</span>`;
+//         }
+//         return info || '<span class="text-slate-500">General</span>';
+//     }
+
+//     function getCompatibleProducts(type) {
+//         const cpu = selectedComponents['cpu'];
+//         const motherboard = selectedComponents['motherboard'];
+
+//         return productData.filter(product => {
+//             if (product.type !== type) return false;
+
+//             // Motherboard compatibility with CPU
+//             if (type === 'Motherboard' && cpu) {
+//                 return product.socket === cpu.socket;
+//             }
+//             // CPU Cooler compatibility with Motherboard/CPU
+//             if (type === 'CPU Cooling' && motherboard) {
+//                 return product.socket.includes(motherboard.socket);
+//             }
+//             // RAM compatibility with Motherboard
+//             if (type === 'Memory (RAM)' && motherboard) {
+//                 return product.memoryType === motherboard.memoryType;
+//             }
+//             // If no specific dependencies, show all products of the type
+//             return true;
+//         });
+//     }
+
+//     function selectComponent(productId, categoryId) {
+//         const product = productData.find(p => p.id === parseInt(productId));
+//         selectedComponents[categoryId] = product;
+        
+//         // If a new CPU or Motherboard is selected, clear dependent components
+//         if (categoryId === 'cpu') {
+//             delete selectedComponents['motherboard'];
+//             delete selectedComponents['memory'];
+//             delete selectedComponents['cooling'];
+//         }
+//         if (categoryId === 'motherboard') {
+//             delete selectedComponents['memory'];
+//             delete selectedComponents['cooling'];
+//         }
+        
+//         closeModal();
+//         initializeBuilder();
+//     }
     
-    const modal = document.getElementById('component-modal');
-    const modalTitleEl = document.getElementById('modal-title');
-    const modalBodyEl = document.getElementById('modal-body');
-    const closeModalBtn = document.getElementById('close-modal-btn');
+//     function removeComponent(categoryId) {
+//         delete selectedComponents[categoryId];
+        
+//         // Also clear dependent components
+//          if (categoryId === 'cpu') {
+//             delete selectedComponents['motherboard'];
+//             delete selectedComponents['memory'];
+//             delete selectedComponents['cooling'];
+//         }
+//         if (categoryId === 'motherboard') {
+//             delete selectedComponents['memory'];
+//             delete selectedComponents['cooling'];
+//         }
+        
+//         initializeBuilder();
+//     }
+
+//     function closeModal() {
+//         modal.classList.add('hidden');
+//     }
     
-    // --- INITIALIZATION ---
-    async function initializeBuilder() {
-        try {
-            const response = await fetch('../js/Products.json'); // Ensure this path is correct
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}, while fetching Products.json`);
-            }
-            let rawData = await response.json();
+//     function updateSummary() {
+//         const selectedCount = Object.keys(selectedComponents).length;
+//         if(selectedCount === 0) {
+//             summaryContainer.innerHTML = '<p class="text-slate-500 italic">No components selected yet.</p>';
+//             addToCartBtn.disabled = true;
+//             addToCartBtn.classList.add('opacity-50', 'cursor-not-allowed');
+//             return;
+//         }
+
+//         summaryContainer.innerHTML = '';
+//         let allRequiredSelected = true;
+        
+//         for (const cat of componentCategories) {
+//             const item = selectedComponents[cat.id];
+//             if (item) {
+//                 const summaryItemHTML = `
+//                     <div class="flex justify-between items-center">
+//                         <div>
+//                             <p class="font-semibold text-slate-800">${cat.name}</p>
+//                             <p class="text-slate-600">${item.name}</p>
+//                         </div>
+//                         <p class="font-medium text-slate-700">₱${parseFloat(item.price).toFixed(2)}</p>
+//                     </div>
+//                 `;
+//                 summaryContainer.insertAdjacentHTML('beforeend', summaryItemHTML);
+//             } else {
+//                  allRequiredSelected = false; // You can define which parts are truly required here
+//             }
+//         }
+        
+//         // Enable Add to Cart button only if all components are selected
+//         if (selectedCount === componentCategories.length) {
+//             addToCartBtn.disabled = false;
+//             addToCartBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+//         } else {
+//             addToCartBtn.disabled = true;
+//             addToCartBtn.classList.add('opacity-50', 'cursor-not-allowed');
+//         }
+//     }
+
+//     function updateTotalPrice() {
+//         const total = Object.values(selectedComponents).reduce((sum, item) => sum + parseFloat(item.price), 0);
+//         totalPriceEl.textContent = `₱${total.toFixed(2)}`;
+//     }
     
-            if (!Array.isArray(rawData)) {
-                throw new Error("Products.json did not return a valid array.");
-            }
+//     function clearBuild() {
+//         selectedComponents = {};
+//         initializeBuilder();
+//     }
     
-            componentData = rawData.map(item => {
-                const price = typeof item.price === 'string' ? parseFloat(item.price) : (typeof item.price === 'number' ? item.price : 0);
-                const categoryName = (item.category && typeof item.category.name === 'string')
-                                      ? item.category.name
-                                      : (typeof item.category === 'string' ? item.category : 'Unknown');
-                
-                const powerDraw = typeof item.powerDraw === 'number' ? item.powerDraw : null;
-                // Ensure wattage is null if not a valid positive number
-                const wattage = (typeof item.wattage === 'number' && item.wattage > 0) ? item.wattage : null; 
+//     // --- Event Listeners ---
+//     componentSlotsContainer.addEventListener('click', e => {
+//         if (e.target.classList.contains('choose-btn')) {
+//             const category = {
+//                 id: e.target.dataset.id,
+//                 type: e.target.dataset.type,
+//                 name: e.target.dataset.name,
+//                 icon: e.target.dataset.icon,
+//             };
+//             openModal(category);
+//         }
+//         if (e.target.classList.contains('remove-btn')) {
+//             removeComponent(e.target.dataset.id);
+//         }
+//     });
+
+//     modal.addEventListener('click', e => {
+//         if (e.target.classList.contains('select-component-btn')) {
+//             selectComponent(e.target.dataset.productId, e.target.dataset.categoryId);
+//         }
+//     });
+
+//     closeModalBtn.addEventListener('click', closeModal);
+//     clearBuildBtn.addEventListener('click', clearBuild);
+
+//     // Close modal if user clicks outside of the modal content
+//     modal.addEventListener('click', e => {
+//         if (e.target.id === 'component-modal') {
+//             closeModal();
+//         }
+//     });
     
-                return {
-                    ...item,
-                    price: price,
-                    category: { name: categoryName },
-                    images: Array.isArray(item.images) ? item.images : [],
-                    stock: typeof item.stock === 'number' ? item.stock : 0,
-                    powerDraw: powerDraw,
-                    wattage: wattage
-                };
-            });
-    
-            renderComponentSlots();
-            updateSummary();
-            updateTotalPrice();
-            checkOverallCompatibility();
-    
-            if (clearBuildBtn) {
-                clearBuildBtn.addEventListener('click', clearBuild);
-            } else { console.warn("Element 'clear-build-btn' not found."); }
-    
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', closeModal);
-            } else { console.warn("Element 'close-modal-btn' not found."); }
-    
-            if (modal) {
-                 modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeModal();
-                });
-            } else { console.warn("Element 'component-modal' not found."); }
-    
-        } catch (error) {
-            console.error("Failed to load component data or initialize builder:", error);
-            if (componentSlotsContainer) {
-                 // More user-friendly error message in the UI
-                componentSlotsContainer.innerHTML = `
-                    <div class="text-center text-[#E31C25] py-10 bg-red-50 p-4 rounded-lg">
-                        <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
-                        <p class="font-semibold">Error Loading Product Data</p>
-                        <p class="text-sm">${error.message}</p>
-                        <p class="text-xs mt-2">Please check the console and ensure Products.json is accessible and correctly formatted.</p>
-                    </div>`;
-            }
-            if (overallCompatibilityStatusEl) {
-                 overallCompatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold bg-red-100 text-red-700 shadow-md';
-                 overallCompatibilityStatusEl.innerHTML = `<div class="flex items-center justify-center"><i class="fas fa-times-circle fa-lg mr-2"></i><strong>Error Loading Data</strong></div><p class="text-sm mt-1">Builder cannot function. Please check console.</p>`;
-            }
-        }
-    }
-    
-    // --- RENDERING FUNCTIONS ---
-    function renderComponentSlots() {
-        if (!componentSlotsContainer) {
-            console.error("Element 'component-slots' not found.");
-            return;
-        }
-        componentSlotsContainer.innerHTML = '';
-        componentCategories.forEach(categoryInfo => {
-            const selectedComponent = currentBuild[categoryInfo.key] ? componentData.find(c => c.id === currentBuild[categoryInfo.key]) : null;
-            const isAvailable = selectedComponent ? selectedComponent.stock > 0 : true;
-    
-            const slotEl = document.createElement('div');
-            slotEl.className = 'p-4 border border-slate-200 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 hover:shadow-sm transition-shadow duration-150';
-    
-            let detailsHTML = `<p class="text-sm text-slate-500 italic">Not selected</p>`;
-            if (selectedComponent) {
-                detailsHTML = `
-                    <p class="text-sm text-slate-800 font-medium">${selectedComponent.name}</p>
-                    <p class="text-xs ${isAvailable ? 'text-emerald-600' : 'text-[#E31C25] font-semibold'}">${isAvailable ? 'In Stock' : 'Out of Stock'}</p>
-                `;
-            }
+//     // --- Initial Load ---
+//     initializeBuilder();
+// });
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Data ng produkto (direktang inilagay mula sa JSON)
+//     const products = [
+//       { "id": 13, "name": "AMD Wraith Stealth Cooler", "price": "17.99", "description": "The AMD Wraith Stealth is a low-profile stock CPU cooler bundled with select Ryzen processors. It features an aluminum heatsink and a quiet fan, suitable for CPUs with a 65W TDP, making it a reliable choice for budget builds and standard computing tasks.", "rate": 4.3, "stock": 13, "review": 48, "percent": 86, "category": { "name": "Components" }, "type": "CPU Cooling" },
+//       { "id": 28, "name": "AMD Stock Heatsink Fan", "price": "14.99", "description": "A standard AMD stock CPU cooler designed to provide sufficient cooling for compatible processors under normal operating conditions. While generally better than competitor stock options, they can become audible under heavy CPU loads. [24, 25]", "rate": 3.8, "stock": 2, "review": 19, "percent": 76, "category": { "name": "Components" }, "type": "CPU Cooling" },
+//       { "id": 21, "name": "Deepcool AG400 Single Tower Hydro Bearing CPU Air Cooler ARGB White", "price": "29.99", "description": "A single-tower 120mm CPU cooler featuring four direct-touch copper heatpipes and a hydro bearing fan with ARGB lighting. It offers excellent thermal performance and RAM compatibility in a streamlined and budget-friendly package.", "rate": 4.6, "stock": 10, "review": 135, "percent": 92, "category": { "name": "Components" }, "type": "CPU Cooling" },
+//       { "id": 16, "name": "MSI PRO B650M-A WiFi D5 AM5 DDR5 Motherboard", "price": "179.99", "description": "A Micro-ATX motherboard for AMD Ryzen 7000 series CPUs, supporting DDR5 memory. It offers a robust feature set including PCIe 4.0, Wi-Fi 6E, and 2.5G LAN, aimed at professionals and builders looking for a balance of performance and value.", "rate": 4.2, "stock": 5, "review": 43, "percent": 84, "category": { "name": "Components" }, "type": "Motherboard" },
+//       { "id": 20, "name": "Biostar A520MHP Socket AM4 DDR4 Motherboard", "price": "54.99", "description": "A budget-friendly Micro-ATX motherboard with the AMD A520 chipset, supporting 3rd, 4th, and 5th Gen Ryzen CPUs. It features DDR4 memory support, a PCIe M.2 slot, and HDMI 4K resolution support, making it a solid foundation for entry-level builds.", "rate": 4.1, "stock": 6, "review": 38, "percent": 82, "category": { "name": "Components" }, "type": "Motherboard" },
+//       { "id": 19, "name": "Biostar RX 580 VA5805RV82 Dual Cooling Fan 8GB 256-bit GDDR5 Gaming Videocard", "price": "129.99", "description": "An 8GB GDDR5 graphics card with a dual cooling fan design, offering solid 1080p gaming performance. It's a capable and affordable option for gamers looking for good frame rates on a budget.", "rate": 4.4, "stock": 2, "review": 74, "percent": 88, "category": { "name": "Components" }, "type": "Graphics Card" },
+//       { "id": 30, "name": "MSI GeForce RTX 3060 Ventus 2X OC 12GB GDDR6 Gaming Graphics Card", "price": "289.99", "description": "A 12GB GDDR6 graphics card featuring a dual-fan thermal design. It delivers excellent performance for 1080p and 1440p gaming, with real-time ray tracing and AI-enhanced graphics.", "rate": 4.7, "stock": 6, "review": 54, "percent": 94, "category": { "name": "Components" }, "type": "Graphics Card" },
+//       { "id": 25, "name": "Acer AC-550 550W Full Modular 80+ Bronze Power Supply", "price": "59.99", "description": "A 550W fully modular power supply with 80+ Bronze certification, ensuring efficient power delivery and easy cable management. It provides reliable performance for mainstream gaming and productivity systems.", "rate": 4.5, "stock": 4, "review": 93, "percent": 90, "category": { "name": "Components"}, "type": "Power Supply" },
+//       { "id": 22, "name": "InPlay GS750-Ultra (750W, 450W, 650W) 80+ Bronze Rated Hydro Bearing RGB Power Supply", "price": "49.99", "description": "An 80+ Bronze rated power supply available in multiple wattage options. It features a hydro bearing RGB fan for quiet operation and customizable aesthetics, providing stable power for gaming rigs.", "rate": 4.3, "stock": 7, "review": 88, "percent": 86, "category": { "name": "Components"}, "type": "Power Supply" },
+//       { "id": 29, "name": "Seagate Barracuda ST1000DM010 1TB 7200RPM SATA HDD", "price": "44.99", "description": "A 1TB internal hard drive with a 7200 RPM spindle speed and 64MB cache. It is a cost-effective solution for desktop storage, offering reliable performance for everyday computing and data archiving. [6, 8, 18, 19, 37]", "rate": 4.2, "stock": 20, "review": 31, "percent": 84, "category": { "name": "Components"}, "type": "Storage (HDD / SSD)" },
+//       { "id": 17, "name": "Seagate ST2000DM008 2TB SATA HDD", "price": "54.99", "description": "A 2TB internal hard drive with a 7200 RPM spindle speed and 256MB cache. It provides ample storage for large files, games, and media, making it a great choice for desktop PCs and home servers.", "rate": 4.4, "stock": 12, "review": 23, "percent": 88, "category": { "name": "Components"}, "type": "Storage (HDD / SSD)" },
+//       { "id": 26, "name": "Kingston SSDNow A400 480GB SATA 2.5 SSD", "price": "34.99", "description": "A 480GB SATA 2.5-inch solid-state drive that dramatically improves the responsiveness of your existing system with incredible boot, loading, and transfer times. It's a reliable and affordable upgrade for laptops and desktops.", "rate": 4.6, "stock": 9, "review": 17, "percent": 92, "category": { "name": "Components"}, "type": "Storage (HDD / SSD)" },
+//       { "id": 24, "name": "Ramsta R600 256GB M.2 SATA SSD", "price": "19.99", "description": "A 256GB M.2 SATA solid-state drive offering a compact form factor and faster performance than traditional hard drives. It's a cost-effective choice for improving boot times and application loading.", "rate": 4.2, "stock": 5, "review": 66, "percent": 84, "category": { "name": "Components"}, "type": "Storage (HDD / SSD)" },
+//       { "id": 23, "name": "Kingston Fury Renegade SFYRS 500GB PCIe 4.0 NVMe SSD", "price": "69.99", "description": "A 500GB PCIe 4.0 NVMe M.2 SSD delivering cutting-edge performance with blazing-fast read/write speeds. It's ideal for gaming and content creation, providing top-tier performance for demanding users.", "rate": 4.8, "stock": 8, "review": 52, "percent": 96, "category": { "name": "Components" }, "type": "Storage (HDD / SSD)" },
+//       { "id": 18, "name": "Team Elite TForce Delta 16GB (2x8GB) 3200MHz DDR4 RGB White", "price": "54.99", "description": "A 16GB (2x8GB) DDR4 memory kit with a 3200MHz frequency and full-frame 120° ultra-wide-angle RGB lighting. It features a minimalist, asymmetrical heat spreader in white, perfect for stylish and high-performance PC builds. [12, 45]", "rate": 4.7, "stock": 3, "review": 109, "percent": 94, "category": { "name": "Components" }, "type": "Memory (RAM)" },
+//       { "id": 27, "name": "Kingston Fury Beast 16GB 3200MT/s DDR4 RGB Black", "price": "49.99", "description": "A 16GB DDR4 memory module with a speed of 3200MT/s and customizable RGB lighting. It provides a powerful performance boost for gaming, video editing, and rendering, with a stylish black heat spreader.", "rate": 4.7, "stock": 15, "review": 28, "percent": 94, "category": { "name": "Components" }, "type": "Memory (RAM)" },
+//       { "id": 11, "name": "Kingston KVR32S22S8/16 16GB 3200MHz DDR4 SODIMM", "price": "39.99", "description": "A 16GB DDR4 3200MHz SODIMM memory module designed for laptops and small form-factor PCs. It offers reliable, high-performance, and is a cost-effective way to upgrade your system's memory.", "rate": 4.8, "stock": 13, "review": 1111, "percent": 96, "category": { "name": "Components" }, "type": "Memory (RAM)" },
+//       { "id": 4, "name": "AMD Ryzen 5 5600X 6-Core 12-Thread AM4", "price": "149.99", "description": "A 6-core, 12-thread processor built on the Zen 3 architecture, offering a significant performance uplift for gaming and productivity tasks. It is highly power-efficient and a popular choice for mainstream PC builds. [3, 9, 16, 21, 24]", "rate": 4.8, "stock": 20, "review": 33, "percent": 96, "category": { "name": "Components" }, "type": "Processor" },
+//       { "id": 6, "name": "AMD Ryzen 7 5700G 8-Core 16-Thread AM4", "price": "179.99", "description": "An 8-core, 16-thread processor with powerful integrated Radeon graphics, making it an excellent all-in-one solution for gaming and content creation without the need for a discrete graphics card.", "rate": 4.7, "stock": 10, "review": 22, "percent": 94, "category": { "name": "Components" }, "type": "Processor" },
+//       { "id": 31, "name": "AMD Ryzen 3 3200G 4-Core AM4", "price": "93.00", "description": "A 4-core processor with built-in Radeon Vega 8 graphics. It's a budget-friendly choice for entry-level PCs, offering good performance for everyday tasks and light gaming. [1, 11, 25, 35, 36]", "rate": 4.2, "stock": 10, "review": 22, "percent": 84, "category": { "name": "Components" }, "type": "Processor" },
+//       { "id": 32, "name": "AMD Ryzen 7 7700X AM5", "price": "399.00", "description": "An 8-core, 16-thread processor based on the Zen 4 architecture, designed for the AM5 platform. It offers exceptional performance for gaming and content creation, with support for DDR5 memory and PCIe 5.0. [5, 10, 17, 32, 33]", "rate": 4.6, "stock": 10, "review": 22, "percent": 92, "category": { "name": "Components" }, "type": "Processor" },
+//       { "id": 33, "name": "Intel Core i7-14700F LGA 1700", "price": "359.00", "description": "A 20-core, 28-thread processor from Intel's 14th generation, featuring a hybrid architecture with 8 Performance-cores and 12 Efficient-cores. It delivers outstanding performance for demanding games and applications, but requires a discrete graphics card. [7, 29, 39, 41, 42]", "rate": 4.5, "stock": 10, "review": 22, "percent": 90, "category": { "name": "Components" }, "type": "Processor" },
+//       { "id": 8, "name": "InPlay Wind 05 and Wind 01 Acrylic Side Panel Micro ATX Tempered Glass Case", "price": "29.99", "description": "A Micro-ATX PC case featuring a tempered glass side panel and options for acrylic front panels. It offers good airflow and a clear view of your components, making it a stylish choice for budget to mid-range builds.", "rate": 4.3, "stock": 13, "review": 3, "percent": 86, "category": { "name": "Furniture" }, "type": "PC Case" },
+//       { "id": 1, "name": "YGT V300 M-ATX Tempered Glass Gaming PC Case White", "price": "34.99", "description": "A white Micro-ATX gaming PC case with a tempered glass side panel to showcase your build. It is designed for good airflow and offers a clean, modern aesthetic for a stylish gaming setup.", "rate": 4.7, "stock": 0, "review": 111, "percent": 94, "category": { "name": "Furniture" }, "type": "PC Case" }
+//     ];
+
+//     const componentSlotsContainer = document.getElementById('component-slots');
+//     const modal = document.getElementById('component-modal');
+//     const modalTitle = document.getElementById('modal-title');
+//     const modalBody = document.getElementById('modal-body');
+//     const closeModalBtn = document.getElementById('close-modal-btn');
+//     const totalPriceEl = document.getElementById('total-price');
+//     const summaryContainer = document.getElementById('selected-components-summary');
+//     const compatibilityStatusEl = document.getElementById('overall-compatibility-status');
+//     const clearBuildBtn = document.getElementById('clear-build-btn');
+
+//     let selectedComponents = {};
+//     let currentSlotId = null;
+
+//     // Estruktura ng PC Build
+//     const componentStructure = [
+//         { id: 'cpu', name: 'Processor (CPU)', type: 'Processor', required: true, icon: 'fa-microchip' },
+//         { id: 'motherboard', name: 'Motherboard', type: 'Motherboard', required: true, icon: 'fa-clipboard' },
+//         { id: 'memory', name: 'Memory (RAM)', type: 'Memory (RAM)', required: true, icon: 'fa-memory' },
+//         { id: 'storage', name: 'Storage (SSD/HDD)', type: 'Storage (HDD / SSD)', required: true, icon: 'fa-hdd' },
+//         { id: 'gpu', name: 'Graphics Card (GPU)', type: 'Graphics Card', required: false, icon: 'fa-gamepad' },
+//         { id: 'psu', name: 'Power Supply (PSU)', type: 'Power Supply', required: true, icon: 'fa-plug' },
+//         { id: 'cpu_cooler', name: 'CPU Cooler', type: 'CPU Cooling', required: false, icon: 'fa-fan' },
+//         { id: 'case', name: 'PC Case', type: 'PC Case', required: true, icon: 'fa-cube' }
+//     ];
+
+//     // Function para makuha ang mga detalye mula sa pangalan o description
+//     const getAttribute = (product, keywords) => {
+//         const text = `${product.name} ${product.description}`.toLowerCase();
+//         for (const keyword of keywords) {
+//             if (text.includes(keyword.toLowerCase())) return keyword;
+//         }
+//         return null;
+//     };
+//     const getCpuSocket = (product) => getAttribute(product, ['AM4', 'AM5', 'LGA 1700']);
+//     const getRamType = (product) => getAttribute(product, ['DDR4', 'DDR5']);
+//     const getRamFormFactor = (product) => getAttribute(product, ['SODIMM']);
+//     const getMoboFormFactor = (product) => getAttribute(product, ['Micro-ATX', 'Micro ATX']);
+//     const getStorageInterface = (product) => getAttribute(product, ['PCIe 4.0', 'M.2', 'SATA']);
+
+
+//     const checkCompatibility = () => {
+//         const issues = [];
+//         const { cpu, motherboard, memory, psu, cpu_cooler, pccase } = selectedComponents;
+
+//         if (cpu && motherboard) {
+//             const cpuSocket = getCpuSocket(cpu);
+//             const moboSocket = getCpuSocket(motherboard);
+//             if (cpuSocket !== moboSocket) {
+//                 issues.push(`Hindi tugma ang socket: CPU (${cpuSocket}) at Motherboard (${moboSocket}).`);
+//             }
+//         }
+
+//         if (memory && motherboard) {
+//             const memType = getRamType(memory);
+//             const moboMemType = getRamType(motherboard);
+//             if (memType !== moboMemType) {
+//                 issues.push(`Hindi tugma ang RAM: Memory (${memType}) at Motherboard (${moboMemType}).`);
+//             }
+//             if (getRamFormFactor(memory) === 'SODIMM') {
+//                  issues.push(`Ang napiling RAM (SODIMM) ay para sa laptop at hindi tugma sa desktop motherboard.`);
+//             }
+//         }
+        
+//         if (pccase && motherboard) {
+//             const moboFormFactor = getMoboFormFactor(motherboard);
+//             const caseFormFactor = getMoboFormFactor(pccase);
+//              if (moboFormFactor && caseFormFactor && moboFormFactor !== caseFormFactor) {
+//                 issues.push(`Hindi kasya: Motherboard (${moboFormFactor}) sa PC Case (${caseFormFactor}).`);
+//             }
+//         }
+        
+//         if (cpu_cooler && cpu) {
+//             const cpuSocket = getCpuSocket(cpu);
+//             // Simplistic check, real-world check is more complex
+//              if (cpuSocket === 'AM5' && cpu_cooler.name.includes('Wraith Stealth')) {
+//                 issues.push(`Warning: Ang ${cpu_cooler.name} ay maaaring hindi sapat para sa ${cpu.name}.`);
+//             }
+//         }
+
+//         if (issues.length > 0) {
+//             return {
+//                 compatible: false,
+//                 message: `<i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>May mga isyu sa compatibility`,
+//                 details: issues
+//             };
+//         }
+
+//         const allRequiredMet = componentStructure.every(slot => !slot.required || selectedComponents[slot.id]);
+//         if (!allRequiredMet) {
+//              return {
+//                 compatible: false,
+//                 message: `<i class="fas fa-info-circle text-[#E31C25] mr-2"></i>Punan ang lahat ng kinakailangang piyesa`,
+//                 details: []
+//             };
+//         }
+        
+//         return {
+//             compatible: true,
+//             message: `<i class="fas fa-check-circle text-green-500 mr-2"></i>Maganda! Compatible ang iyong build.`,
+//             details: []
+//         };
+//     };
+
+//     const updateBuildSummary = () => {
+//         let totalPrice = 0;
+//         summaryContainer.innerHTML = '';
+
+//         if (Object.keys(selectedComponents).length === 0) {
+//             summaryContainer.innerHTML = '<p class="text-slate-500 italic">Wala pang napipiling piyesa.</p>';
+//             totalPriceEl.textContent = '₱0.00';
+//             compatibilityStatusEl.innerHTML = 'Magsimulang pumili ng piyesa.';
+//             return;
+//         }
+
+//         for (const slotId in selectedComponents) {
+//             const product = selectedComponents[slotId];
+//             totalPrice += parseFloat(product.price);
             
-            const priceHTML = selectedComponent ? `<p class="text-md font-semibold text-slate-900 sm:mr-3 mb-1 sm:mb-0">₱${selectedComponent.price.toFixed(2)}</p>` : '';
-            let actionButtonsHTML = '';
-            if (selectedComponent) {
-                actionButtonsHTML = `
-                    <button data-category="${categoryInfo.key}" class="unselect-component-btn bg-slate-200 hover:bg-slate-300 text-slate-800 px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors">Remove</button>
-                    <button data-category="${categoryInfo.key}" class="select-component-btn bg-sky-600 hover:bg-sky-700 text-white px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors">Change</button>
-                `;
-            } else {
-                actionButtonsHTML = `
-                    <button data-category="${categoryInfo.key}" class="select-component-btn bg-[#E31C25] hover:bg-rose-700 text-white px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium transition-colors">Select</button>
-                `;
-            }
+//             const slotInfo = componentStructure.find(s => s.id === slotId);
+
+//             const summaryItem = document.createElement('div');
+//             summaryItem.className = 'flex justify-between items-center';
+//             summaryItem.innerHTML = `
+//                 <div>
+//                     <p class="font-semibold text-slate-800">${slotInfo.name}</p>
+//                     <p class="text-slate-600 truncate max-w-[180px]">${product.name}</p>
+//                 </div>
+//                 <p class="font-medium text-slate-700">₱${product.price}</p>
+//             `;
+//             summaryContainer.appendChild(summaryItem);
+//         }
+
+//         totalPriceEl.textContent = `₱${totalPrice.toFixed(2)}`;
+
+//         const compatibility = checkCompatibility();
+//         compatibilityStatusEl.innerHTML = compatibility.message;
+//         if (compatibility.details.length > 0) {
+//             const detailsList = document.createElement('ul');
+//             detailsList.className = 'list-disc list-inside text-left text-sm mt-2 font-normal';
+//             compatibility.details.forEach(issue => {
+//                 const listItem = document.createElement('li');
+//                 listItem.textContent = issue;
+//                 detailsList.appendChild(listItem);
+//             });
+//             compatibilityStatusEl.appendChild(detailsList);
+//         }
+//     };
+
+
+//     const renderComponentSlots = () => {
+//         componentSlotsContainer.innerHTML = '';
+//         componentStructure.forEach(slot => {
+//             const product = selectedComponents[slot.id];
+//             const slotDiv = document.createElement('div');
+//             slotDiv.className = 'component-slot flex items-center justify-between p-4 border rounded-lg';
+//             slotDiv.id = `slot-${slot.id}`;
+            
+//             let requiredText = slot.required ? `<span class="text-red-500 text-xs font-semibold ml-2">REQUIRED</span>` : '';
+
+//             if (product) {
+//                  slotDiv.innerHTML = `
+//                     <div class="flex items-center gap-4">
+//                        <i class="fas ${slot.icon} text-xl text-[#E31C25] w-6 text-center"></i>
+//                         <div>
+//                             <h4 class="font-bold text-slate-800">${slot.name}</h4>
+//                             <p class="text-slate-600">${product.name}</p>
+//                         </div>
+//                     </div>
+//                     <div class="text-right">
+//                         <p class="font-semibold text-lg text-slate-800">₱${product.price}</p>
+//                         <button class="remove-item-btn text-sm text-[#E31C25] hover:text-red-600 font-semibold" data-slot-id="${slot.id}">Palitan</button>
+//                     </div>
+//                 `;
+//             } else {
+//                 slotDiv.innerHTML = `
+//                     <div class="flex items-center gap-4">
+//                         <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
+//                         <h3 class="text-lg font-semibold text-slate-700">${slot.name} ${requiredText}</h3>
+//                     </div>
+//                     <button class="choose-btn bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2 px-4 rounded-md transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
+//                         Pumili <i class="fas fa-chevron-right ml-2 text-xs"></i>
+//                     </button>
+//                 `;
+//             }
+//             componentSlotsContainer.appendChild(slotDiv);
+//         });
+//     };
+
+//     const openModal = (slotId, type) => {
+//         currentSlotId = slotId;
+//         const slotInfo = componentStructure.find(s => s.id === slotId);
+//         modalTitle.innerHTML = `<i class="fas ${slotInfo.icon} mr-3 text-[#E31C25]"></i> Pumili ng ${slotInfo.name}`;
+//         modalBody.innerHTML = '';
+
+//         const filteredProducts = products.filter(p => p.type === type);
+
+//         if (filteredProducts.length === 0) {
+//             modalBody.innerHTML = `<p class="text-center text-slate-500">Walang available na piyesa para sa kategoryang ito.</p>`;
+//         } else {
+//             filteredProducts.forEach(product => {
+//                 const isSelected = selectedComponents[slotId] && selectedComponents[slotId].id === product.id;
+//                 const itemDiv = document.createElement('div');
+//                 itemDiv.className = `component-item flex justify-between items-center p-4 border rounded-lg cursor-pointer hover:border-red-500 hover:bg-red-50 ${isSelected ? 'selected' : ''}`;
+//                 itemDiv.innerHTML = `
+//                     <div>
+//                         <h5 class="font-bold text-slate-800">${product.name}</h5>
+//                         <p class="text-sm text-slate-500">${product.description.substring(0, 100)}...</p>
+//                         <p class="text-sm text-slate-500 mt-1">Rating: ${product.rate}/5 (${product.review} reviews)</p>
+//                     </div>
+//                     <div class="text-right flex-shrink-0 ml-4">
+//                         <p class="font-semibold text-xl text-[#E31C25]">₱${product.price}</p>
+//                          <button class="select-btn mt-2 bg-[#E31C25] text-white font-bold py-2 px-4 rounded-md" data-product-id="${product.id}">Piliin</button>
+//                     </div>
+//                 `;
+//                 itemDiv.querySelector('.select-btn').addEventListener('click', () => selectComponent(product.id));
+//                 modalBody.appendChild(itemDiv);
+//             });
+//         }
+//         modal.classList.remove('hidden');
+//     };
+
+//     const closeModal = () => {
+//         modal.classList.add('hidden');
+//     };
+
+//     const selectComponent = (productId) => {
+//         const product = products.find(p => p.id === productId);
+//         selectedComponents[currentSlotId] = product;
+        
+//         renderComponentSlots();
+//         updateBuildSummary();
+//         closeModal();
+//     };
     
-            slotEl.innerHTML = `
-                <div class="flex items-center gap-3 flex-grow">
-                     <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-rose-50 rounded-full">
-                        <i class="fas ${categoryInfo.icon} text-lg text-[#E31C25]"></i>
-                     </div>
-                    <div class="flex-grow">
-                        <h4 class="text-md sm:text-lg font-semibold text-slate-800">${categoryInfo.name}</h4>
-                        ${detailsHTML}
-                        <div id="comp-status-${categoryInfo.key}" class="text-xs mt-1 leading-tight"></div>
-                    </div>
+//     const removeComponent = (slotId) => {
+//         delete selectedComponents[slotId];
+//         renderComponentSlots();
+//         updateBuildSummary();
+//     };
+
+//     componentSlotsContainer.addEventListener('click', (e) => {
+//         if (e.target.closest('.choose-btn')) {
+//             const button = e.target.closest('.choose-btn');
+//             openModal(button.dataset.slotId, button.dataset.type);
+//         }
+//         if (e.target.closest('.remove-item-btn')) {
+//             const button = e.target.closest('.remove-item-btn');
+//             removeComponent(button.dataset.slotId);
+//         }
+//     });
+
+//     closeModalBtn.addEventListener('click', closeModal);
+//     modal.addEventListener('click', (e) => {
+//         if (e.target === modal) {
+//             closeModal();
+//         }
+//     });
+    
+//     clearBuildBtn.addEventListener('click', () => {
+//         if(confirm('Sigurado ka bang gusto mong i-clear ang buong build?')) {
+//             selectedComponents = {};
+//             renderComponentSlots();
+//             updateBuildSummary();
+//         }
+//     });
+
+//     // Initial render
+//     renderComponentSlots();
+//     updateBuildSummary();
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const componentSlotsContainer = document.getElementById('component-slots');
+    const loadingState = document.getElementById('loading-state');
+    const modal = document.getElementById('component-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const totalPriceEl = document.getElementById('total-price');
+    const summaryContainer = document.getElementById('selected-components-summary');
+    const compatibilityStatusEl = document.getElementById('overall-compatibility-status');
+    const clearBuildBtn = document.getElementById('clear-build-btn');
+
+    let allProducts = [];
+    let selectedComponents = {};
+    let currentSlotId = null;
+
+    const componentStructure = [
+        { id: 'cpu', name: 'Processor (CPU)', type: 'Processor', required: true, icon: 'fa-microchip' },
+        { id: 'motherboard', name: 'Motherboard', type: 'Motherboard', required: true, icon: 'fa-server' },
+        { id: 'memory', name: 'Memory (RAM)', type: 'Memory (RAM)', required: true, icon: 'fa-memory' },
+        { id: 'storage', name: 'Storage', type: 'Storage (HDD / SSD)', required: true, icon: 'fa-hdd' },
+        { id: 'gpu', name: 'Graphics Card (GPU)', type: 'Graphics Card', required: false, icon: 'fa-gamepad' },
+        { id: 'case', name: 'PC Case', type: 'PC Case', required: true, icon: 'fa-box' },
+        { id: 'psu', name: 'Power Supply (PSU)', type: 'Power Supply', required: true, icon: 'fa-box' },
+        { id: 'cpu_cooler', name: 'CPU Cooler', type: 'CPU Cooling', required: false, icon: 'fa-fan' }
+    ];
+
+    // --- UTILITY FUNCTIONS ---
+    const getAttribute = (product, keywords) => {
+        const text = `${product.name} ${product.description}`.toLowerCase();
+        for (const keyword of keywords) {
+            if (text.includes(keyword.toLowerCase())) return keyword;
+        }
+        return null;
+    };
+    const getCpuSocket = (product) => getAttribute(product, ['AM4', 'AM5', 'LGA 1700']);
+    const getRamType = (product) => getAttribute(product, ['DDR4', 'DDR5']);
+    const getRamFormFactor = (product) => getAttribute(product, ['SODIMM']);
+    const getMoboFormFactor = (product) => getAttribute(product, ['Micro-ATX', 'Micro ATX']);
+
+    // --- COMPATIBILITY CHECK ---
+    const checkCompatibility = () => {
+        const issues = [];
+        const { cpu, motherboard, memory, pccase, cpu_cooler } = selectedComponents;
+
+        if (cpu && motherboard) {
+            const cpuSocket = getCpuSocket(cpu);
+            const moboSocket = getCpuSocket(motherboard);
+            if (cpuSocket && moboSocket && cpuSocket !== moboSocket) {
+                issues.push(`Socket Mismatch: CPU (${cpuSocket}) vs Motherboard (${moboSocket}).`);
+            }
+        }
+
+        if (memory && motherboard) {
+            const memType = getRamType(memory);
+            const moboMemType = getRamType(motherboard);
+            if (memType && moboMemType && memType !== moboMemType) {
+                issues.push(`RAM Mismatch: Memory (${memType}) vs Motherboard (${moboMemType}).`);
+            }
+            if (getRamFormFactor(memory) === 'SODIMM') {
+                issues.push(`Form Factor Warning: SODIMM RAM is for laptops, not desktops.`);
+            }
+        }
+        
+        if (pccase && motherboard) {
+            const moboFormFactor = getMoboFormFactor(motherboard);
+            const caseFormFactor = getMoboFormFactor(pccase);
+             if (moboFormFactor && caseFormFactor && moboFormFactor !== caseFormFactor) {
+                issues.push(`Fit Warning: Motherboard (${moboFormFactor}) may not fit in Case (${caseFormFactor}).`);
+            }
+        }
+        
+        if (cpu_cooler && cpu) {
+            const cpuSocket = getCpuSocket(cpu);
+             if (cpuSocket === 'AM5' && cpu_cooler.name.includes('Wraith Stealth')) {
+                issues.push(`Cooling Warning: ${cpu_cooler.name} may be insufficient for ${cpu.name}.`);
+            }
+        }
+
+        if (issues.length > 0) {
+            return { compatible: false, message: `<i class="fas fa-exclamation-triangle text-orange-500 mr-2"></i>Compatibility Issues Found`, details: issues };
+        }
+
+        const allRequiredMet = componentStructure.every(slot => !slot.required || selectedComponents[slot.id]);
+        if (!allRequiredMet) {
+             return { compatible: false, message: `<i class="fas fa-info-circle text-[#E31C25] mr-2"></i>Please select all required parts`, details: [] };
+        }
+        
+        return { compatible: true, message: `<i class="fas fa-check-circle text-green-500 mr-2"></i>Your build is compatible!`, details: [] };
+    };
+
+    // --- UI RENDERING ---
+    const updateBuildSummary = () => {
+        let totalPrice = 0;
+        summaryContainer.innerHTML = '';
+
+        const selectedIds = Object.keys(selectedComponents);
+
+        if (selectedIds.length === 0) {
+            summaryContainer.innerHTML = '<p class="text-slate-500 italic pt-4 text-center">No components selected yet.</p>';
+            totalPriceEl.textContent = '$0.00';
+            compatibilityStatusEl.innerHTML = 'Start by selecting a component.';
+            compatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold mb-4 text-slate-700 bg-slate-100';
+            return;
+        }
+
+        selectedIds.forEach(slotId => {
+            const product = selectedComponents[slotId];
+            totalPrice += parseFloat(product.price);
+            
+            const slotInfo = componentStructure.find(s => s.id === slotId);
+            const summaryItem = document.createElement('div');
+            summaryItem.className = 'flex justify-between items-center';
+            summaryItem.innerHTML = `
+                <div>
+                    <p class="font-semibold text-slate-800">${slotInfo.name}</p>
+                    <p class="text-slate-500 truncate max-w-[180px]">${product.name}</p>
                 </div>
-                <div class="flex flex-col sm:flex-row items-end sm:items-center justify-end gap-x-3 gap-y-2 mt-2 sm:mt-0 shrink-0 w-full sm:w-auto">
-                    ${priceHTML}
-                    <div class="flex gap-2 w-full sm:w-auto justify-end sm:justify-normal">
-                        ${actionButtonsHTML}
-                    </div>
-                </div>
+                <p class="font-medium text-slate-700">$${product.price}</p>
             `;
-            componentSlotsContainer.appendChild(slotEl);
+            summaryContainer.appendChild(summaryItem);
         });
-    
-        document.querySelectorAll('.select-component-btn').forEach(btn => {
-            btn.addEventListener('click', () => openModal(btn.dataset.category));
-        });
-        document.querySelectorAll('.unselect-component-btn').forEach(btn => {
-            btn.addEventListener('click', () => unselectComponent(btn.dataset.category));
-        });
-    }
-    
-    function updateSummary() {
-        if (!selectedComponentsSummaryEl) return;
-        selectedComponentsSummaryEl.innerHTML = '';
-        let hasSelection = false;
-        componentCategories.forEach(cat => {
-            const componentId = currentBuild[cat.key];
-            if (componentId) {
-                hasSelection = true;
-                const component = componentData.find(c => c.id === componentId);
-                if (component) {
-                    const p = document.createElement('p');
-                    p.className = 'flex justify-between items-center text-slate-700';
-                    p.innerHTML = `
-                        <span><i class="fas ${cat.icon} fa-fw mr-2 text-[#E31C25]"></i>${component.name}</span>
-                        <span class="font-medium text-slate-900">₱${component.price.toFixed(2)}</span>
-                    `;
-                    selectedComponentsSummaryEl.appendChild(p);
-                }
-            }
-        });
-        if (!hasSelection) {
-            selectedComponentsSummaryEl.innerHTML = '<p class="text-slate-600 italic">No components selected yet.</p>';
+
+        totalPriceEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+        const { message, details } = checkCompatibility();
+        compatibilityStatusEl.innerHTML = message;
+        if (details.length > 0) {
+            const detailsList = document.createElement('ul');
+            detailsList.className = 'list-disc list-inside text-left text-sm mt-2 font-normal';
+            details.forEach(issue => {
+                const listItem = document.createElement('li');
+                listItem.textContent = issue;
+                detailsList.appendChild(listItem);
+            });
+            compatibilityStatusEl.appendChild(detailsList);
         }
-    }
-    
-    function updateTotalPrice() {
-        if (!totalPriceEl) return;
-        let total = 0;
-        for (const categoryKey in currentBuild) {
-            const componentId = currentBuild[categoryKey];
-            const component = componentData.find(c => c.id === componentId);
-            if (component) {
-                total += component.price;
-            }
+        // Update status color
+        if (message.includes('Issues')) {
+            compatibilityStatusEl.className = 'p-4 rounded-lg text-left font-semibold mb-4 text-orange-800 bg-orange-100';
+        } else if (message.includes('compatible')) {
+            compatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold mb-4 text-green-800 bg-green-100';
+        } else {
+             compatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold mb-4 text-blue-800 bg-blue-100';
         }
-        totalPriceEl.textContent = `₱${total.toFixed(2)}`;
-    }
-    
-    // --- MODAL FUNCTIONS ---
-    function openModal(categoryKey) {
-        if (!modal || !modalTitleEl || !modalBodyEl) {
-             console.error("Modal elements not found.");
-             return;
-        }
-        currentModalCategory = categoryKey;
-        const categoryInfo = componentCategories.find(c => c.key === categoryKey);
-        if (!categoryInfo) {
-            console.error(`Category info not found for key: ${categoryKey}`);
-            return;
-        }
-        modalTitleEl.innerHTML = `<i class="fas ${categoryInfo.icon} fa-fw mr-2 text-[#E31C25]"></i>Select ${categoryInfo.name}`;
-        modalBodyEl.innerHTML = `<div class="text-center py-4"><i class="fas fa-spinner fa-spin fa-2x text-[#E31C25]"></i><p class="text-slate-700 mt-1">Loading components...</p></div>`;
-    
-        if (!componentData || componentData.length === 0) {
-            modalBodyEl.innerHTML = '<p class="text-[#E31C25] p-4 text-center">Component data is not available. Cannot load items.</p>';
-            modal.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-            return;
-        }
-    
-        setTimeout(() => { 
-            modalBodyEl.innerHTML = '';
-            const itemsForCategory = componentData.filter(c =>
-                c.category && c.category.name && c.category.name.toLowerCase() === categoryKey.toLowerCase()
-            );
-    
-            if (itemsForCategory.length === 0) {
-                modalBodyEl.innerHTML = `<p class="text-slate-700 p-4 text-center">No components available for the "${categoryInfo.name}" category.</p>`;
-            } else {
-                const ul = document.createElement('ul');
-                ul.className = 'space-y-3 max-h-[60vh] overflow-y-auto pr-2 modal-body-custom-scrollbar'; // Ensure scrollbar style is defined in CSS
-                itemsForCategory.forEach(item => {
-                    let isCompatibleSuggestion = true;
-                    let suggestionReason = "";
-    
-                    // Compatibility checks for suggestions in modal
-                    if (categoryKey === 'cpu' && currentBuild.motherboard) {
-                        const mobo = componentData.find(c => c.id === currentBuild.motherboard);
-                        const moboSocket = mobo?.compatibility?.socket;
-                        const itemSocket = item.compatibility?.socket; 
-                        if (moboSocket && itemSocket && itemSocket !== moboSocket) {
-                            isCompatibleSuggestion = false; suggestionReason = `Socket mismatch (Mobo: ${moboSocket})`;
-                        } else if (moboSocket && !itemSocket) { suggestionReason = `CPU socket unknown (Mobo: ${moboSocket})`;
-                        } else if (!moboSocket && itemSocket) { suggestionReason = `Mobo socket unknown (CPU: ${itemSocket})`;}
-                    }
-                    if (categoryKey === 'motherboard' && currentBuild.cpu) {
-                        const cpu = componentData.find(c => c.id === currentBuild.cpu);
-                        const cpuSocket = cpu?.compatibility?.socket;
-                        const itemSocket = item.compatibility?.socket; 
-                        if (cpuSocket && itemSocket && itemSocket !== cpuSocket) {
-                            isCompatibleSuggestion = false; suggestionReason = `Socket mismatch (CPU: ${cpuSocket})`;
-                        } else if (cpuSocket && !itemSocket) { suggestionReason = `Mobo socket unknown (CPU: ${cpuSocket})`;
-                        } else if (!cpuSocket && itemSocket) { suggestionReason = `CPU socket unknown (Mobo: ${itemSocket})`;}
-                    }
-                    if (categoryKey === 'ram' && currentBuild.motherboard) {
-                        const mobo = componentData.find(c => c.id === currentBuild.motherboard);
-                        const moboRamType = mobo?.compatibility?.ramType;
-                        const itemRamType = item.compatibility?.type; 
-                        if (moboRamType && itemRamType && itemRamType !== moboRamType) {
-                            isCompatibleSuggestion = false; suggestionReason = `RAM Type mismatch (Mobo: ${moboRamType})`;
-                        } else if (moboRamType && !itemRamType) { suggestionReason = `RAM Type unknown (Mobo: ${moboRamType})`;
-                        } else if (!moboRamType && itemRamType) { suggestionReason = `Mobo RAM Type unknown (RAM: ${itemRamType})`;}
-                    }
-    
-                    const li = document.createElement('li');
-                    const isOutOfStock = item.stock === 0;
-                    let liClasses = 'p-3 border border-slate-200 rounded-md hover:shadow-lg transition-all duration-200 ease-in-out flex justify-between items-start';
-    
-                    if (isOutOfStock) {
-                        liClasses += ' opacity-60 bg-slate-100 cursor-not-allowed pointer-events-none';
-                    } else if (!isCompatibleSuggestion) {
-                        liClasses += ' bg-amber-50 border-amber-200'; // Highlight not ideal, but still allow interaction
-                    } else {
-                        liClasses += ' hover:border-rose-400 cursor-pointer bg-white';
-                    }
-                    li.className = liClasses;
-    
-                    let imageUrl = 'https://via.placeholder.com/80x80/E2E8F0/94A3B8?text=NoImg'; // Tailwind slate colors for placeholder
-                    if (item.images && item.images.length > 0 && item.images[0] && typeof item.images[0] === 'string' && item.images[0].trim() !== '') {
-                        const rawImageUrl = item.images[0].trim();
-                        if (rawImageUrl.includes('drive.google.com')) {
-                            let fileId = null;
-                            try {
-                                if (rawImageUrl.includes('/uc?') && rawImageUrl.includes('id=')) {
-                                    const url = new URL(rawImageUrl); fileId = url.searchParams.get('id');
-                                } else if (rawImageUrl.includes('/file/d/')) {
-                                    const parts = rawImageUrl.split('/'); const dIndex = parts.indexOf('d');
-                                    if (dIndex !== -1 && parts.length > dIndex + 1) fileId = parts[dIndex + 1];
-                                }
-                                if (fileId) imageUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w100-h100`;
-                                else console.warn("Could not extract file ID from Google Drive URL:", rawImageUrl);
-                            } catch (e) { console.warn("Error parsing Google Drive URL:", rawImageUrl, e); }
-                        } else { imageUrl = rawImageUrl; }
-                    }
-    
-                    li.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <img src="${imageUrl}" alt="${item.name}" class="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded shrink-0 border border-slate-200 bg-white p-0.5">
-                            <div class="flex-grow">
-                                <h5 class="font-semibold text-slate-800">${item.name}</h5>
-                                <p class="text-sm text-slate-600">Price: ₱${item.price.toFixed(2)}</p>
-                                <p class="text-xs ${item.stock > 0 ? 'text-emerald-600' : 'text-[#E31C25] font-semibold'}">
-                                    ${item.stock > 0 ? `In Stock (${item.stock} available)` : 'Out of Stock'}
-                                </p>
-                                ${suggestionReason ? `<p class="text-xs ${isCompatibleSuggestion ? 'text-sky-600' : 'text-amber-700'} font-medium mt-0.5"><i class="fas ${isCompatibleSuggestion ? 'fa-info-circle' : 'fa-exclamation-triangle'} mr-1"></i>${suggestionReason}</p>` : ''}
-                            </div>
+    };
+
+    const renderComponentSlots = () => {
+        componentSlotsContainer.innerHTML = '';
+        componentStructure.forEach(slot => {
+            const product = selectedComponents[slot.id];
+            const slotDiv = document.createElement('div');
+            slotDiv.className = 'component-slot flex items-center justify-between p-4 border border-slate-200 rounded-lg transition-all duration-300';
+            slotDiv.id = `slot-${slot.id}`;
+            
+            const requiredText = slot.required ? `<span class="text-red-500 text-xs font-semibold ml-2">REQUIRED</span>` : '';
+
+            if (product) {
+                 slotDiv.innerHTML = `
+                    <div class="flex items-center gap-4 min-w-0">
+                       <i class="fas ${slot.icon} text-xl text-[#E31C25] w-6 text-center"></i>
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-slate-800">${slot.name}</h4>
+                            <p class="text-slate-600 truncate">${product.name}</p>
                         </div>
-                        <button class="select-item-btn ${isOutOfStock ? 'bg-slate-400 cursor-not-allowed' : (isCompatibleSuggestion ? 'bg-[#E31C25] hover:bg-rose-700' : 'bg-amber-500 hover:bg-amber-600')} text-white px-3 py-1.5 rounded text-sm shrink-0 ml-2 self-center" data-id="${item.id}" ${isOutOfStock ? 'disabled' : ''}>
-                            ${isOutOfStock ? 'Out of Stock' : (isCompatibleSuggestion ? 'Select' : 'Select Anyway')}
-                        </button>
-                    `;
-    
-                    if (!isOutOfStock) {
-                        const selectBtn = li.querySelector('.select-item-btn');
-                        if (selectBtn) {
-                            selectBtn.addEventListener('click', (e) => {
-                                e.stopPropagation();
-                                selectComponent(item.id, currentModalCategory);
-                                closeModal();
-                            });
-                        }
-                        // Make entire LI clickable if it's a "good" suggestion
-                        if (isCompatibleSuggestion) {
-                            li.addEventListener('click', () => { 
-                                if (selectBtn && !selectBtn.disabled) { // Double check button not disabled
-                                    selectComponent(item.id, currentModalCategory);
-                                    closeModal();
-                                }
-                            });
-                        } else {
-                            li.title = suggestionReason ? suggestionReason + ". Click button to select anyway." : "This component might have compatibility issues with your current selection. Click button to select anyway.";
-                        }
-                    }
-                    ul.appendChild(li);
-                });
-                modalBodyEl.appendChild(ul);
-            }
-        }, 50); 
-    
-        modal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-    }
-    
-    function closeModal() {
-        if (!modal) return;
-        modal.classList.add('hidden');
-        currentModalCategory = null;
-        document.body.classList.remove('overflow-hidden');
-    }
-    
-    // --- CORE LOGIC ---
-    function selectComponent(componentId, categoryKey) {
-        const component = componentData.find(c => c.id === componentId);
-        if (!component) {
-            alert('Error: Component not found in dataset.'); return;
-        }
-        currentBuild[categoryKey] = componentId;
-        renderComponentSlots();
-        updateTotalPrice();
-        checkOverallCompatibility();
-        updateSummary();
-    }
-    
-    function unselectComponent(categoryKey) {
-        if (currentBuild[categoryKey]) {
-            delete currentBuild[categoryKey];
-            renderComponentSlots();
-            updateTotalPrice();
-            checkOverallCompatibility();
-            updateSummary();
-        }
-    }
-    
-    function clearBuild() {
-        currentBuild = {};
-        renderComponentSlots();
-        updateTotalPrice();
-        checkOverallCompatibility();
-        updateSummary();
-    }
-    
-    function checkOverallCompatibility() {
-        if (!overallCompatibilityStatusEl) return;
-    
-        let issues = [];
-        let warnings = [];
-    
-        componentCategories.forEach(cat => {
-            const component = currentBuild[cat.key] ? componentData.find(c => c.id === currentBuild[cat.key]) : null;
-            let baseMessage = "";
-            let baseStatus = 'info';
-            if (component) {
-                if (cat.key !== 'psu') {
-                    if (typeof component.powerDraw === 'number') {
-                        baseMessage = `Est. Draw: ${component.powerDraw}W`;
-                    } else if (component.powerDraw === null && cat.key !== 'storage') {
-                         baseMessage = `Power draw info missing.`;
-                         baseStatus = 'warning';
-                    }
-                }
-                 if (component.stock === 0) { // Add out of stock as a warning for this slot initially
-                    let stockMsg = `${component.name} is Out of Stock.`;
-                    baseMessage = baseMessage ? `${stockMsg} ${baseMessage}` : stockMsg;
-                    baseStatus = 'warning'; // Prioritize out of stock warning for the slot
-                    if (!warnings.some(w => w.includes(component.name) && w.includes("OUT OF STOCK"))) {
-                        warnings.push(`${component.name} (${componentCategories.find(c=>c.key===cat.key).name}) is OUT OF STOCK.`);
-                    }
-                }
+                    </div>
+                    <div class="text-right flex-shrink-0 ml-4">
+                        <p class="font-semibold text-lg text-slate-800">$${product.price}</p>
+                        <button class="remove-item-btn text-sm text-[#E31C25] hover:text-red-600 font-semibold" data-slot-id="${slot.id}">Change</button>
+                    </div>
+                `;
             } else {
-                if (cat.key === 'psu') baseMessage = "Select a PSU.";
+                slotDiv.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
+                        <h3 class="text-lg font-semibold text-slate-600">${slot.name} ${requiredText}</h3>
+                    </div>
+                    <button class="choose-btn bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 px-4 rounded-lg transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
+                        Choose <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </button>
+                `;
             }
-            updateSlotCompatibilityStatus(cat.key, baseMessage, baseStatus);
+            componentSlotsContainer.appendChild(slotDiv);
+        });
+    };
+
+    // --- MODAL CONTROLS ---
+    const openModal = (slotId, type) => {
+        currentSlotId = slotId;
+        const slotInfo = componentStructure.find(s => s.id === slotId);
+        modalTitle.innerHTML = `<i class="fas ${slotInfo.icon} mr-3 text-[#E31C25]"></i> Select a ${slotInfo.name}`;
+        modalBody.innerHTML = '';
+
+        const filteredProducts = allProducts.filter(p => p.type === type);
+
+        if (filteredProducts.length === 0) {
+            modalBody.innerHTML = `<p class="text-center text-slate-500">No available parts for this category.</p>`;
+        } else {
+            filteredProducts.forEach(product => {
+                const isSelected = selectedComponents[slotId]?.id === product.id;
+                const itemDiv = document.createElement('div');
+                itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border border-slate-200 rounded-lg transition-all duration-200 hover:border-[#E31C25] hover:bg-blue-50/50 ${isSelected ? 'selected' : ''}`;
+                itemDiv.innerHTML = `
+                    <div class="min-w-0">
+                        <h5 class="font-bold text-slate-800">${product.name}</h5>
+                        <p class="text-sm text-slate-500 mt-1">${product.description}</p>
+                        <p class="text-sm text-slate-400 mt-2">Rating: ${product.rate}/5 (${product.review} reviews)</p>
+                    </div>
+                    <div class="text-left sm:text-right flex-shrink-0 ml-0 sm:ml-4 mt-4 sm:mt-0">
+                        <p class="font-bold text-xl text-[#E31C25]">$${product.price}</p>
+                         <button class="select-btn w-full sm:w-auto mt-2 bg-[#E31C25] text-white font-bold py-2 px-5 rounded-lg transition-colors hover:bg-[#cf0610]" data-product-id="${product.id}">Select</button>
+                    </div>
+                `;
+                itemDiv.querySelector('.select-btn').addEventListener('click', () => selectComponent(product.id));
+                modalBody.appendChild(itemDiv);
+            });
+        }
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    };
+
+    const closeModal = () => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = ''; // Restore background scrolling
+    };
+
+    // --- EVENT HANDLERS ---
+    const selectComponent = (productId) => {
+        const product = allProducts.find(p => p.id === productId);
+        selectedComponents[currentSlotId] = product;
+        
+        renderComponentSlots();
+        updateBuildSummary();
+        closeModal();
+    };
+    
+    const removeComponent = (slotId) => {
+        delete selectedComponents[slotId];
+        renderComponentSlots();
+        updateBuildSummary();
+    };
+    
+    // --- MAIN INITIALIZATION ---
+    function initializeApp(products) {
+        allProducts = products;
+        loadingState.classList.add('hidden');
+        renderComponentSlots();
+        updateBuildSummary();
+
+        componentSlotsContainer.addEventListener('click', (e) => {
+            const chooseBtn = e.target.closest('.choose-btn');
+            const removeBtn = e.target.closest('.remove-item-btn');
+            if (chooseBtn) {
+                openModal(chooseBtn.dataset.slotId, chooseBtn.dataset.type);
+            } else if (removeBtn) {
+                removeComponent(removeBtn.dataset.slotId);
+            }
+        });
+
+        clearBuildBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear the entire build?')) {
+                selectedComponents = {};
+                renderComponentSlots();
+                updateBuildSummary();
+            }
+        });
+    }
+
+    // --- DATA FETCHING ---
+    fetch('../js/Item.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            initializeApp(data);
+        })
+        .catch(error => {
+            console.error('Fetch Error:', error);
+            componentSlotsContainer.innerHTML = `<div class="text-center text-red-500 py-10 bg-red-50 rounded-lg">
+                <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
+                <p class="font-semibold">Error: Could not load product data.</p>
+                <p class="text-sm">Please ensure 'Item.json' is in the correct folder ('../js/Item.json) and is a valid JSON file.</p>
+            </div>`;
         });
         
-        // Re-check stock for already processed slots if base message was different
-        for (const categoryKey in currentBuild) {
-            const componentId = currentBuild[categoryKey];
-            const component = componentData.find(c => c.id === componentId);
-            if (component && component.stock === 0) {
-                const catInfo = componentCategories.find(c => c.key === categoryKey);
-                const catName = catInfo ? catInfo.name : (component.category?.name || categoryKey);
-                if (!warnings.some(w => w.includes(component.name) && w.includes("OUT OF STOCK"))) {
-                     warnings.push(`${component.name} (${catName}) is OUT OF STOCK.`);
-                }
-                // Ensure slot status reflects out of stock if not already covered by base message
-                const statusEl = document.getElementById(`comp-status-${categoryKey}`);
-                if (statusEl && !statusEl.textContent.toLowerCase().includes("out of stock")) {
-                     let currentText = statusEl.textContent;
-                     updateSlotCompatibilityStatus(categoryKey, `${component.name} is Out of Stock. ${currentText}`.trim(), 'warning');
-                } else if (statusEl && statusEl.textContent.toLowerCase().includes("out of stock") && !statusEl.classList.contains('text-amber-600') && !statusEl.classList.contains('text-[#E31C25]')) {
-                     // If it says out of stock but not colored as warning/error, fix it
-                     updateSlotCompatibilityStatus(categoryKey, statusEl.textContent, 'warning');
-                }
-            }
-        }
-    
-    
-        const cpu = currentBuild.cpu ? componentData.find(c => c.id === currentBuild.cpu) : null;
-        const mobo = currentBuild.motherboard ? componentData.find(c => c.id === currentBuild.motherboard) : null;
-        const ram = currentBuild.ram ? componentData.find(c => c.id === currentBuild.ram) : null;
-    
-        let moboSlotMessages = [];
-        let moboOverallStatus = mobo?.stock === 0 ? 'warning' : 'info'; 
-    
-        if (cpu && mobo) {
-            const cpuSocket = cpu.compatibility?.socket;
-            const moboSocket = mobo.compatibility?.socket;
-            let cpuStatus = cpu.stock === 0 ? 'warning' : 'info';
-    
-            if (cpuSocket && moboSocket) {
-                if (cpuSocket !== moboSocket) {
-                    issues.push(`CPU socket (${cpuSocket}) incompatible with Motherboard socket (${moboSocket}).`);
-                    updateSlotCompatibilityStatus('cpu', `Socket: ${cpuSocket}. Incompatible with Mobo (Socket: ${moboSocket})`, 'incompatible');
-                    moboSlotMessages.push(`Socket: ${moboSocket}. Incompatible with CPU (Socket: ${cpuSocket})`);
-                    moboOverallStatus = 'incompatible';
-                } else {
-                    updateSlotCompatibilityStatus('cpu', `Socket: ${cpuSocket}. Compatible with Mobo.`, cpu.stock === 0 ? 'warning' : 'compatible');
-                    moboSlotMessages.push(`Socket: ${moboSocket}. Compatible with CPU.`);
-                    if (moboOverallStatus !== 'incompatible') moboOverallStatus = (cpu.stock === 0 || mobo.stock === 0) ? 'warning' : 'compatible';
-                }
-            } else { 
-                let cpuMsg = `Socket: ${cpuSocket || 'Info Missing'}.`;
-                let moboMsgPart = `Socket: ${moboSocket || 'Info Missing'}.`;
-                if (!cpuSocket) { warnings.push(`CPU (${cpu.name}) missing socket info.`); cpuStatus = 'warning'; }
-                if (!moboSocket) { warnings.push(`Motherboard (${mobo.name}) missing socket info.`); if(moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning'; }
-                
-                cpuMsg += ` (Mobo: ${moboSocket || 'Info Missing'})`;
-                moboMsgPart += ` (CPU: ${cpuSocket || 'Info Missing'})`;
-                
-                updateSlotCompatibilityStatus('cpu', cpuMsg, cpuStatus);
-                moboSlotMessages.push(moboMsgPart);
-                if (moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning';
-            }
-        } else if (cpu) { 
-            updateSlotCompatibilityStatus('cpu', `Socket: ${cpu.compatibility?.socket || 'Info Missing'}. Requires Motherboard for full check.`, cpu.stock === 0 || !cpu.compatibility?.socket ? 'warning' : 'info');
-            if (!cpu.compatibility?.socket) warnings.push(`CPU (${cpu.name}) missing socket info.`);
-        }
-    
-    
-        if (mobo && ram) {
-            const moboRamType = mobo.compatibility?.ramType;
-            const ramItemType = ram.compatibility?.type;
-            let ramStatus = ram.stock === 0 ? 'warning' : 'info';
-    
-            if (moboRamType && ramItemType) {
-                if (moboRamType !== ramItemType) {
-                    issues.push(`RAM type (${ramItemType}) incompatible with Motherboard (needs ${moboRamType}).`);
-                    updateSlotCompatibilityStatus('ram', `Type: ${ramItemType}. Incompatible with Mobo (Needs: ${moboRamType})`, 'incompatible');
-                    moboSlotMessages.push(`RAM Type: ${moboRamType}. Incompatible with RAM (Type: ${ramItemType})`);
-                    if (moboOverallStatus !== 'incompatible') moboOverallStatus = 'incompatible'; //This ensures mobo status reflects this critical issue
-                } else {
-                    updateSlotCompatibilityStatus('ram', `Type: ${ramItemType}. Compatible with Mobo.`, ram.stock === 0 ? 'warning' : 'compatible');
-                    moboSlotMessages.push(`RAM Type: ${moboRamType}. Compatible with RAM.`);
-                     if (moboOverallStatus !== 'incompatible') moboOverallStatus = (ram.stock === 0 || mobo.stock === 0 || moboOverallStatus === 'warning') ? 'warning' : 'compatible';
-                }
-            } else {
-                let ramMsg = `Type: ${ramItemType || 'Info Missing'}.`;
-                let moboMsgPart = `RAM Type: ${moboRamType || 'Info Missing'}.`;
-                if (!ramItemType) { warnings.push(`RAM (${ram.name}) missing type info.`); ramStatus = 'warning';}
-                if (!moboRamType) { warnings.push(`Motherboard (${mobo.name}) missing RAM type info.`); if(moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning'; }
-                
-                ramMsg += ` (Mobo RAM Type: ${moboRamType || 'Info Missing'})`;
-                moboMsgPart += ` (RAM Type: ${ramItemType || 'Info Missing'})`;
-    
-                updateSlotCompatibilityStatus('ram', ramMsg, ramStatus);
-                moboSlotMessages.push(moboMsgPart);
-                if (moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning';
-            }
-        } else if (ram) { 
-            updateSlotCompatibilityStatus('ram', `Type: ${ram.compatibility?.type || 'Info Missing'}. Requires Motherboard for full check.`, ram.stock === 0 || !ram.compatibility?.type ? 'warning' : 'info');
-            if (!ram.compatibility?.type) warnings.push(`RAM (${ram.name}) missing type info.`);
-        }
-    
-        if (mobo) {
-            let moboFinalMessages = [];
-            if (mobo.stock === 0) moboFinalMessages.push(`${mobo.name} is Out of Stock.`);
-            
-            // Add specific compatibility messages first
-            moboFinalMessages.push(...moboSlotMessages.filter(m => m.toLowerCase().includes('incompatible') || m.toLowerCase().includes('compatible')));
-            // Add info missing messages if not already covered by compatibility
-            moboSlotMessages.filter(m => m.toLowerCase().includes('info missing') && !moboFinalMessages.some(fm => fm.includes(m.split(':')[0])))
-                .forEach(m => moboFinalMessages.push(m));
-    
-            // Add base socket/RAM type if not mentioned
-            if (!moboFinalMessages.some(m => m.toLowerCase().includes('socket:'))) {
-                moboFinalMessages.push(mobo.compatibility?.socket ? `Socket: ${mobo.compatibility.socket}` : 'Socket info missing');
-                if(!mobo.compatibility?.socket && moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning';
-            }
-            if (!moboFinalMessages.some(m => m.toLowerCase().includes('ram type:'))) {
-                moboFinalMessages.push(mobo.compatibility?.ramType ? `RAM Type: ${mobo.compatibility.ramType}` : 'RAM type info missing');
-                if(!mobo.compatibility?.ramType && moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning';
-            }
-            
-            let finalMoboMessage = moboFinalMessages.filter(Boolean).join('; ').trim();
-            if (moboOverallStatus !== 'incompatible' && finalMoboMessage.toLowerCase().includes('info missing')) moboOverallStatus = 'warning';
-            if (mobo.stock === 0 && moboOverallStatus !== 'incompatible') moboOverallStatus = 'warning';
-    
-            updateSlotCompatibilityStatus('motherboard', finalMoboMessage, moboOverallStatus);
-        }
-    
-        let totalPowerDraw = 0;
-        let powerDrawInfoMissingForComponents = false;
-        componentCategories.forEach(cat => {
-            if (cat.key !== 'psu' && currentBuild[cat.key]) {
-                const comp = componentData.find(c => c.id === currentBuild[cat.key]);
-                if (comp) {
-                    if (typeof comp.powerDraw === 'number') {
-                        totalPowerDraw += comp.powerDraw;
-                    } else if (comp.powerDraw === null && cat.key !== 'storage') {
-                        if (!warnings.some(w => w.includes(comp.name) && w.includes("missing power draw"))) {
-                           warnings.push(`${comp.name} (${catInfoForLog(cat.key).name}) missing power draw. Total power est. may be inaccurate.`);
-                        }
-                        powerDrawInfoMissingForComponents = true;
-                    }
-                }
-            }
-        });
-        function catInfoForLog(categoryKey) { // Helper for logging
-            return componentCategories.find(c => c.key === categoryKey) || {name: categoryKey};
-        }
-    
-        const psu = currentBuild.psu ? componentData.find(c => c.id === currentBuild.psu) : null;
-        if (psu) {
-            let psuStockWarning = psu.stock === 0 ? `${psu.name} is Out of Stock. ` : "";
-            let psuStatus = psu.stock === 0 ? 'warning' : 'info';
-    
-            if (psu.wattage) { // psu.wattage is null if not a valid positive number
-                const headroom = psu.wattage - totalPowerDraw;
-                const usagePercentage = totalPowerDraw > 0 ? (totalPowerDraw / psu.wattage) * 100 : 0;
-                let psuMessageParts = [psuStockWarning];
-                psuMessageParts.push(`Capacity: ${psu.wattage}W.`);
-                psuMessageParts.push(`Est. Load: ${totalPowerDraw}W (${usagePercentage.toFixed(0)}% used).`);
-                psuMessageParts.push(`Headroom: ${headroom}W.`);
-                
-                if (powerDrawInfoMissingForComponents) psuMessageParts.push("(Note: Load is an estimate due to some missing component power data)");
-    
-                if (totalPowerDraw > psu.wattage) {
-                    issues.push(`PSU Wattage Insufficient: ${psu.name} (${psu.wattage}W) may not cover est. load (${totalPowerDraw}W).`);
-                    psuStatus = 'incompatible';
-                    psuMessageParts.push(`INSUFFICIENT!`);
-                } else if (totalPowerDraw > (psu.wattage * 0.85)) {
-                    if (!warnings.some(w => w.includes("PSU load high"))) {
-                        warnings.push(`PSU load high: Est. load (${totalPowerDraw}W) is ${usagePercentage.toFixed(0)}% of PSU capacity (${psu.wattage}W). Consider a higher wattage PSU.`);
-                    }
-                    if (psuStatus !== 'incompatible') psuStatus = 'warning';
-                    psuMessageParts.push(`Load is high. Consider a higher capacity PSU.`);
-                } else {
-                    if (psuStatus !== 'incompatible' && psuStatus !== 'warning') psuStatus = 'compatible';
-                }
-                updateSlotCompatibilityStatus('psu', psuMessageParts.filter(Boolean).join(' ').trim(), psuStatus);
-            } else {
-                if (!warnings.some(w => w.includes(psu.name) && w.includes("wattage information missing"))) {
-                    warnings.push(`Selected PSU (${psu.name}) has wattage information missing or invalid. Cannot verify power requirements.`);
-                }
-                updateSlotCompatibilityStatus('psu', `${psuStockWarning}Wattage information missing or invalid. Cannot check capacity.`.trim(), 'warning');
-            }
-        } else if (totalPowerDraw > 0) { 
-            if (!warnings.some(w => w.includes("No PSU selected"))) {
-                 warnings.push(`No PSU selected. Estimated system draw is ${totalPowerDraw}W. A PSU is required.`);
-            }
-            updateSlotCompatibilityStatus('psu', `Est. system draw: ${totalPowerDraw}W. PSU required. Select a PSU.`, 'warning');
-        } else if (!psu) { 
-            const psuStatusEl = document.getElementById(`comp-status-psu`);
-            if (psuStatusEl && !psuStatusEl.textContent?.trim()) {
-                updateSlotCompatibilityStatus('psu', 'Select a PSU.', 'info');
-            }
-        }
-    
-        const numSelected = Object.keys(currentBuild).length;
-        const allCategoriesSelected = numSelected === componentCategories.length;
-    
-        if (issues.length > 0) {
-            overallCompatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold bg-red-100 text-red-700 shadow-md';
-            overallCompatibilityStatusEl.innerHTML = `<div class="flex items-center justify-center mb-1"><i class="fas fa-times-circle fa-lg mr-2"></i><strong class="text-lg">Incompatible Build!</strong></div><ul class="text-sm list-disc list-inside text-left mt-1 space-y-0.5">${issues.map(i => `<li>${i}</li>`).join('')}</ul>`;
-        } else if (numSelected === 0) {
-            overallCompatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold bg-slate-100 text-slate-700 shadow';
-            overallCompatibilityStatusEl.textContent = 'Select components to start building and check compatibility.';
-        } else if (!allCategoriesSelected) {
-             overallCompatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold bg-sky-100 text-sky-700 shadow';
-             overallCompatibilityStatusEl.innerHTML = `<div class="flex items-center justify-center"><i class="fas fa-tools fa-lg mr-2"></i><strong class="text-lg">Partially Configured</strong></div><p class="text-sm mt-1">Selected components are compatible so far. Add remaining parts to complete your build.</p>`;
-        } else { // All categories selected, no hard issues
-            if (warnings.length > 0) {
-                overallCompatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold bg-amber-100 text-amber-700 shadow-md';
-                overallCompatibilityStatusEl.innerHTML = `<div class="flex items-center justify-center mb-1"><i class="fas fa-exclamation-triangle fa-lg mr-2"></i><strong class="text-lg">Build Compatible with Advisories</strong></div><p class="text-sm mt-1">Your build is compatible, but please review individual component details above for advisories (e.g., stock, power, or missing information).</p>`;
-            } else {
-                overallCompatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold bg-emerald-100 text-emerald-700 shadow-md';
-                overallCompatibilityStatusEl.innerHTML = `<div class="flex items-center justify-center"><i class="fas fa-check-circle fa-lg mr-2"></i><strong class="text-lg">Excellent Build!</strong></div><p class="text-sm mt-1">All selected components are compatible and ready.</p>`;
-            }
-        }
-    }
-    
-    function updateSlotCompatibilityStatus(categoryKey, message, statusType = 'info') {
-        const statusEl = document.getElementById(`comp-status-${categoryKey}`);
-        if (statusEl) {
-            statusEl.innerHTML = ''; 
-            let iconHTML = '';
-            let textColorClass = 'text-slate-500'; 
-    
-            switch (statusType) {
-                case 'compatible':
-                    iconHTML = '<i class="fas fa-check-circle text-emerald-500 mr-1"></i>';
-                    textColorClass = 'text-emerald-600';
-                    break;
-                case 'incompatible':
-                    iconHTML = '<i class="fas fa-times-circle text-red-500 mr-1"></i>';
-                    textColorClass = 'text-[#E31C25] font-semibold';
-                    break;
-                case 'warning':
-                    iconHTML = '<i class="fas fa-exclamation-triangle text-amber-500 mr-1"></i>';
-                    textColorClass = 'text-amber-600';
-                    break;
-                case 'info':
-                default:
-                    // iconHTML = '<i class="fas fa-info-circle text-sky-500 mr-1"></i>'; // Optional for info
-                    textColorClass = 'text-slate-500';
-                    break;
-            }
-            statusEl.className = 'text-xs mt-1 leading-tight flex items-center ' + textColorClass;
-            if (message && message.trim() !== '') {
-                statusEl.innerHTML = iconHTML + message;
-            } else {
-                statusEl.innerHTML = ''; // Keep it empty if no message (or only icon if desired)
-            }
-        }
-    }
-    
-    // --- START THE APP ---
-    initializeBuilder();
+    // Modal closing listeners
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
     });
+});

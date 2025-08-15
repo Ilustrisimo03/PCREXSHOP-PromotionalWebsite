@@ -58,37 +58,121 @@
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.getElementById('carousel');
-  // Kung walang carousel, itigil ang script.
-  if (!carousel) {
-    console.error("Carousel element with ID 'carousel' not found.");
-    return;
-  }
+// document.addEventListener('DOMContentLoaded', () => {
+//   const carousel = document.getElementById('carousel');
+//   // Kung walang carousel, itigil ang script.
+//   if (!carousel) {
+//     console.error("Carousel element with ID 'carousel' not found.");
+//     return;
+//   }
 
-  const images = carousel.querySelectorAll('.carousel-image');
-  if (images.length === 0) {
-    return; // Walang imahe, walang gagawin.
-  }
+//   const images = carousel.querySelectorAll('.carousel-image');
+//   if (images.length === 0) {
+//     return; // Walang imahe, walang gagawin.
+//   }
 
-  let currentIndex = 0;
+//   let currentIndex = 0;
 
-  // Ipakita agad ang unang imahe pagka-load ng page.
-  images[currentIndex].classList.add('active');
+//   // Ipakita agad ang unang imahe pagka-load ng page.
+//   images[currentIndex].classList.add('active');
 
-  // Function para palitan ang imahe.
-  const showNextImage = () => {
-    // Alisin ang 'active' class sa kasalukuyang imahe para mag-fade out ito.
-    images[currentIndex].classList.remove('active');
+//   // Function para palitan ang imahe.
+//   const showNextImage = () => {
+//     // Alisin ang 'active' class sa kasalukuyang imahe para mag-fade out ito.
+//     images[currentIndex].classList.remove('active');
 
-    // Kalkulahin ang index ng susunod na imahe.
-    // Ang '%' (modulo) operator ay sinisigurong bumabalik sa 0 kapag nasa dulo na.
-    currentIndex = (currentIndex + 1) % images.length;
+//     // Kalkulahin ang index ng susunod na imahe.
+//     // Ang '%' (modulo) operator ay sinisigurong bumabalik sa 0 kapag nasa dulo na.
+//     currentIndex = (currentIndex + 1) % images.length;
 
-    // Idagdag ang 'active' class sa susunod na imahe para mag-fade in ito.
-    images[currentIndex].classList.add('active');
-  };
+//     // Idagdag ang 'active' class sa susunod na imahe para mag-fade in ito.
+//     images[currentIndex].classList.add('active');
+//   };
 
-  // Ulitin ang pagpapalit ng imahe bawat 5 segundo (5000ms).
-  setInterval(showNextImage, 5000);
-});
+//   // Ulitin ang pagpapalit ng imahe bawat 5 segundo (5000ms).
+//   setInterval(showNextImage, 5000);
+// });
+
+ document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('carousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Since all images are the same size, we can get the width from the first one
+            // We use clientWidth which includes padding but not borders/margins
+            const imageWidth = carousel.clientWidth;
+
+            let currentIndex = 0;
+            let autoScrollInterval;
+
+            // Function to go to the next slide
+            const nextSlide = () => {
+                // If at the last slide, loop back to the first, otherwise go to the next one
+                currentIndex = (currentIndex + 1) % carousel.children.length;
+                carousel.scrollTo({
+                    left: currentIndex * imageWidth,
+                    behavior: 'smooth'
+                });
+            };
+
+            // Function to go to the previous slide
+            const prevSlide = () => {
+                // If at the first slide, loop to the last, otherwise go to the previous one
+                currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+                 carousel.scrollTo({
+                    left: currentIndex * imageWidth,
+                    behavior: 'smooth'
+                });
+            };
+
+            // Function to start the automatic scrolling
+            const startAutoScroll = () => {
+                // Set an interval to call nextSlide every 3000 milliseconds (3 seconds)
+                autoScrollInterval = setInterval(nextSlide, 3000);
+            };
+
+            // Function to stop the automatic scrolling
+            const stopAutoScroll = () => {
+                clearInterval(autoScrollInterval);
+            };
+
+            // Event listeners for the navigation buttons
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                // When user clicks, reset the auto-scroll timer
+                stopAutoScroll();
+                startAutoScroll();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                // When user clicks, reset the auto-scroll timer
+                stopAutoScroll();
+                startAutoScroll();
+            });
+
+            // Pause auto-scrolling when the mouse is over the carousel
+            carousel.addEventListener('mouseenter', stopAutoScroll);
+            // Resume auto-scrolling when the mouse leaves the carousel
+            carousel.addEventListener('mouseleave', startAutoScroll);
+
+            // Also pause when hovering over the buttons themselves
+            prevBtn.addEventListener('mouseenter', stopAutoScroll);
+            nextBtn.addEventListener('mouseenter', stopAutoScroll);
+
+            // A variable to prevent scroll event from firing too often
+            let scrollTimeout;
+            // Update current index when user scrolls manually (e.g., swiping)
+            carousel.addEventListener('scroll', () => {
+                // Clear the previous timeout to avoid unnecessary calculations
+                clearTimeout(scrollTimeout);
+                // Set a new timeout
+                scrollTimeout = setTimeout(() => {
+                    // Calculate the new index based on the scroll position
+                    currentIndex = Math.round(carousel.scrollLeft / imageWidth);
+                }, 100); // A small delay to wait for scroll to finish
+            });
+
+            // Kick off the auto-scrolling when the page loads
+            startAutoScroll();
+        });
