@@ -26,85 +26,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
 
-  <style>
-   
-    
-    /* Scrolling animation */
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .scroll-track {
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      animation: scroll 15s linear infinite; /* Slightly slower scroll */
-      width: max-content;
-    }
-    .scroll-content {
-      display: flex;
-      align-items: center;
-    }
-    .category-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 180px; /* Adjust as needed */
-      padding: 0 1rem; /* Add some padding */
-      cursor: pointer;
-      text-align: center;
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #FAF5F1; /* gray-200 */
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #E31C25; /* [#E31C25] */
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #E31C25; /* [#E31C25] */
-    }
   
-        /* Define the scroll animation */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                /* Scroll by the width of the first half of the content */
-                transform: translateX(-50%);
-            }
-        }
 
-        .animate-scroll {
-            /* Adjust duration based on content width and desired speed */
-            /* More content or slower speed = longer duration */
-            animation: scroll 40s linear infinite;
-        }
-
-        /* Pause animation on hover */
-        .scroll-container:hover .animate-scroll {
-            animation-play-state: paused;
-        }
-
-        /* Optional: For the initial fade-in effect if you use JS */
-        .fade-in-section {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-        }
-
-
-        
-    
-  </style>
 
 </head>
 <body class="bg-[#FAF5F1]  antialiased">
@@ -429,7 +352,7 @@
 
 
 <!-- CUSTOM BUILD SECTION -->
-<section id="custom-build" class="py-12 sm:py-16">
+<section id="custom-build" class="py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header class="mb-10 text-center">
             <h1 class="text-3xl md:text-4xl heading text-[#1C1C1C]">PC Part Builder</h1>
@@ -462,10 +385,10 @@
                     <div class="border-t border-slate-200 pt-4">
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-lg font-semibold text-[#1C1C1C]">Total Price:</span>
-                            <span id="total-price" class="text-3xl font-bold text-[#E31C25]">$0.00</span>
+                            <span id="total-price" class="text-3xl font-bold text-[#E31C25]">₱0.00</span>
                         </div>
                         
-                        <button id="clear-build-btn" class="w-full bg-[#E31C25] hover:bg-[#e20e19] text-[#FAF5F1] font-medium py-2.5 px-4 rounded-lg transition-all duration-300">
+                        <button id="clear-build-btn" class="w-full bg-[#FAF5F1] hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] font-medium py-2.5 px-4 rounded-lg transition-all duration-300">
                             <i class="fas fa-trash-alt mr-2"></i>Clear Build
                         </button>
                     </div>

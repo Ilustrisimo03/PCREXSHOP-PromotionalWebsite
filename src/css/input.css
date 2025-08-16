@@ -115,32 +115,95 @@ body {
 
 
 
+    /* Scrolling animation */
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .scroll-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: scroll 15s linear infinite; /* Slightly slower scroll */
+      width: max-content;
+    }
+    .scroll-content {
+      display: flex;
+      align-items: center;
+    }
+    .category-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px; /* Adjust as needed */
+      padding: 0 1rem; /* Add some padding */
+      cursor: pointer;
+      text-align: center;
+    }
 
-
-
-
-        /* Custom scrollbar for a modern look */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 8px;
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF5F1; /* gray-200 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E31C25; /* [#E31C25] */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #E31C25; /* [#E31C25] */
+    }
+  
+        /* Define the scroll animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Scroll by the width of the first half of the content */
+                transform: translateX(-50%);
+            }
         }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #e2e8f0; /* slate-200 */
+
+        .animate-scroll {
+            /* Adjust duration based on content width and desired speed */
+            /* More content or slower speed = longer duration */
+            animation: scroll 40s linear infinite;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #94a3b8; /* slate-400 */
-            border-radius: 4px;
+
+        /* Pause animation on hover */
+        .scroll-container:hover .animate-scroll {
+            animation-play-state: paused;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #64748b; /* slate-500 */
+
+        /* Optional: For the initial fade-in effect if you use JS */
+        .fade-in-section {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
-        /* Style for the selected item in the modal */
-        .component-item.selected {
-            border-color: #3b82f6; /* blue-500 */
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
-            background-color: #eff6ff; /* blue-50 */
+        .fade-in-section.is-visible {
+            opacity: 1;
         }
 
 
 
+
+    /* Custom scrollbar for a modern look */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #e2e8f0; /* slate-200 */
+    border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #94a3b8; /* slate-400 */
+    border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #64748b; /* slate-500 */
+}
 
 
