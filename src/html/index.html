@@ -51,7 +51,7 @@
               <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
             </button>
             <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAF5F1] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
-              <a href="#promoted-categories" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
+              <a href="#product-gallery" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
               <a href="#services-modern" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
               <a href="#location" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
             </div>
@@ -94,7 +94,7 @@
         <div>
             <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
             <div class="pl-4 space-y-1 text-sm">
-                <a href="#promoted-categories" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
+                <a href="#product-gallery" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
                 <a href="#custom-build" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
                 <a href="#location" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
             </div>
@@ -182,101 +182,41 @@
 <script src="../js/carousel.js"></script>
 
 
+
+
+
 <!-- Categories Scrolling Section -->
-<section class="py-3 sm:py-4 bg-gray-50 shadow-sm border-b border-gray-200 overflow-hidden fade-in-section" id="categoriesSection">
-  <div class="scroll-container w-full">
-      <div class="scroll-track flex">
-          <!-- The .animate-scroll div contains all items, including duplicates -->
-          <div class="animate-scroll flex-none flex items-center">
-              <!-- Original Content Set -->
-              <div class="category-group flex items-center gap-x-6 sm:gap-x-8 px-4 [#FAF5F1]space-nowrap">
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-desktop text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Components</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-microchip text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Processors</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-memory text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Memory (RAM)</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-server text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Pre-Built PCs</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-hdd text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Storage</span>
-                  </a>
-                   <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-keyboard text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Peripherals</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-cogs text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Accessories</span>
-                  </a>
-              </div>
-
-              <!-- Duplicated Content Set (for smooth infinite scroll) -->
-              <div class="category-group flex items-center gap-x-6 sm:gap-x-8 px-4 [#FAF5F1]space-nowrap" aria-hidden="true"> <!-- Hiding duplicate from screen readers -->
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-desktop text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Components</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-microchip text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Processors</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-memory text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Memory (RAM)</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-server text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Pre-Built PCs</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-hdd text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Storage</span>
-                  </a>
-                   <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-keyboard text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Peripherals</span>
-                  </a>
-                  <a href="#" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                      <i class="fas fa-cogs text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors"></i>
-                      <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">Accessories</span>
-                  </a>
-              </div>
-          </div>
-      </div>
-  </div>
+<section class="py-3 sm:py-4 bg-[#FAF5F1] overflow-hidden fade-in-section" id="categoriesSection">
+<div class="scroll-container w-full">
+<div class="scroll-track flex">
+<!-- This container will be populated by JavaScript -->
+<div id="scroll-content" class="animate-scroll flex-none flex items-center">
+<!-- Dynamic content will be inserted here -->
+</div>
+</div>
+</div>
 </section>
-
+<!-- Link to your JavaScript file -->
 <script src="../js/categoryScroll.js"></script>
 
 
 
-
-<!-- Promoted Categories Section -->
-<section id="promoted-categories" class="py-16 sm:py-24 bg-[#FAF5F1]">
+<!-- Product Gallery Section (New Design) -->
+<section id="product-gallery" class="py-16 sm:py-24 bg-[#FAF5F1]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-         <div class="text-center mb-12 md:mb-16">
+        <div class="text-center mb-12 md:mb-16">
             <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">Explore Our Products</h2>
-            <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Find the perfect components for your next build or upgrade.</p>
+            <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">A showcase of the components that power your passion.</p>
         </div>
-        <!-- Category Grid: Cards will be injected here by JavaScript -->
-        <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <!-- Dynamic content goes here -->
+        <!-- Gallery Grid: Cards will be injected here by JavaScript -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic product cards will be inserted here -->
         </div>
     </div>
 </section>
+
 <!-- Include the JavaScript file at the end of your body tag -->
 <script src="../js/ExploreProducts.js"></script>
-
 
 
 <!-- CUSTOM BUILD SECTION -->
@@ -653,7 +593,7 @@
 
 
 
-<footer class="bg-[#FAF5F1] text-[#1C1C1C] text-sm border-t-2 border-[#b3b3b3]" >
+<footer class="bg-[#FFFFFF] text-[#1C1C1C] text-sm border-t-2 border-[#b3b3b3]" >
   <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
     
     <!-- Left Column: Logo & Contact -->
