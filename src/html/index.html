@@ -201,19 +201,25 @@
 
 
 
-<!-- Product Gallery Section (New Design) -->
 <section id="product-gallery" class="py-16 sm:py-24 bg-[#FAF5F1]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12 md:mb-16">
-            <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">Explore Our Products</h2>
-            <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">A showcase of the components that power your passion.</p>
-        </div>
-        <!-- Gallery Grid: Cards will be injected here by JavaScript -->
-        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Dynamic product cards will be inserted here -->
-        </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C] font-extrabold">
+        Explore Our Products
+      </h2>
+      <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">
+        A showcase of the components that power your passion.
+      </p>
     </div>
+
+    <!-- Custom grid -->
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- JS will inject product cards with custom sizing -->
+    </div>
+  </div>
 </section>
+
+
 
 <!-- Include the JavaScript file at the end of your body tag -->
 <script src="../js/ExploreProducts.js"></script>

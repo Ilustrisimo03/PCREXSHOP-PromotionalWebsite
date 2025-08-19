@@ -1,65 +1,73 @@
-// --- DOM Element ---
 const galleryGrid = document.getElementById('gallery-grid');
 
-/**
- * Renders the product gallery cards into the grid.
- * @param {Array} products - An array of product objects from the JSON file.
- */
+// Dito nakalagay ang layout ng bawat card (hindi binago)
+const cardLayouts = [
+  "sm:col-span-1 sm:row-span-1 h-72", // small square
+  "sm:col-span-1 sm:row-span-1 h-72", // small square
+  "sm:col-span-2 sm:row-span-1 h-72", // wide rectangle
+  "sm:col-span-2 sm:row-span-1 h-72", // wide rectangle
+  "sm:col-span-1 sm:row-span-1 h-72", // small
+  "sm:col-span-1 sm:row-span-1 h-72"  // small
+];
+
 const renderGalleryCards = (products) => {
-    if (!galleryGrid) {
-        console.error('Gallery grid container not found!');
-        return;
-    }
+  if (!galleryGrid) return;
 
-    // Generate HTML for each card using the new image-centric template.
-    galleryGrid.innerHTML = products.map(product => `
-   <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 sm:h-96 cursor-pointer" style="background-color: ${product.color};">
-    <!-- Background Image -->
-   <img src="${product.image}" alt="${product.alt}"
-     class="absolute inset-0 w-3/4 h-3/4 object-contain m-auto transition-transform duration-500 ease-in-out group-hover:scale-105">
+  galleryGrid.innerHTML = products.map((product, index) => {
+    
+    // --- SIMULA NG PAGBABAGO ---
 
-    <!-- Semi-transparent overlay on hover (no gradient) -->
-    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    // Tinitingnan kung ang produkto ay "Processors" o "Memory (RAM)"
+    const isSpecialImage = product.title === "Processors" || product.title === "Memory (RAM)";
 
-    <!-- Floating Text -->
-    <div class="absolute bottom-0 left-0 right-0 p-6
-                transform translate-y-6 opacity-0
-                group-hover:translate-y-0 group-hover:opacity-100
-                transition-all duration-500 ease-out">
-        <h3 class="text-2xl font-bold tracking-tight text-[#FFFFFF] bg-[#E31C25] backdrop-blur-sm rounded-lg px-3 py-1 inline-block shadow-md">
-            ${product.title}
-        </h3>
-        <p class="mt-2 text-base text-[#ebebeb] bg-[#E31C25] backdrop-blur-sm rounded-md px-2 py-1 inline-block shadow">
-            ${product.subtitle}
-        </p>
-    </div>
+    // Naglalagay ng ibang class para sa image container kung special ito
+    // Dito, ginawa nating mas malaki at nakasentro ang special image
+    const imageContainerClasses = isSpecialImage
+      ? "absolute right-4 bottom-0" // Style para sa Processor at RAM
+      : "absolute right-4 bottom-0 w-40 h-40 sm:w-100 sm:h-100";   // Default style para sa iba
 
-    <!-- Hover border highlight -->
-    <div class="absolute inset-0 border-2 border-transparent rounded-2xl group-hover:border-red-500 transition duration-300 pointer-events-none"></div>
-</div>
-    `).join('');
+    // Naglalagay din ng ibang class para mismo sa <img> tag
+    const imageTagClasses = isSpecialImage
+      ? "object-contain w-60 h-60" // Mas malaking sukat ng image
+      : "object-contain w-full h-full"; // Default na sukat
+
+    // --- WAKAS NG PAGBABAGO ---
+
+    return `
+      <div class="relative rounded-2xl p-6 flex flex-col justify-between shadow-lg overflow-hidden
+                  transition-transform duration-300 hover:scale-[1.03] ${cardLayouts[index % cardLayouts.length]}"
+           style="background-color: ${product.color};">
+
+        <!-- Text (nilagyan ng z-index para mapatungan ang image) -->
+        <div class="relative z-10">
+          <p class="text-sm font-semibold uppercase text-white/90">Best</p>
+          <h3 class="text-2xl font-extrabold text-white">${product.title}</h3>
+          <p class="text-base text-white/90 mt-1">${product.subtitle}</p>
+        </div>
+
+        <!-- Product Image (ginagamit na ang bagong classes) -->
+        <div class="${imageContainerClasses}">
+          <img src="${product.image}" alt="${product.alt}" class="${imageTagClasses}">
+        </div>
+
+        <!-- Button (nilagyan ng z-index para hindi matabunan) -->
+        <button class="relative z-10 mt-auto w-fit px-4 py-2 bg-white text-[#E31C25] text-sm font-semibold rounded-lg shadow hover:bg-gray-100 transition">
+          Explore
+        </button>
+      </div>
+    `;
+  }).join('');
 };
 
-/**
- * Fetches product data from a JSON file and initiates rendering.
- * @param {string} url - The URL of the JSON file.
- */
 const loadProductData = async (url) => {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const productsData = await response.json();
-        renderGalleryCards(productsData);
-    } catch (error) {
-        console.error("Could not fetch or render product data:", error);
-        if (galleryGrid) {
-            galleryGrid.innerHTML = `<p class="text-center text-red-400 col-span-full">Failed to load products. Please try again later.</p>`;
-        }
-    }
+  try {
+    const response = await fetch(url);
+    const products = await response.json();
+    renderGalleryCards(products);
+  } catch (error) {
+    console.error("Could not fetch or render product data:", error);
+    galleryGrid.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load products.</p>`;
+  }
 };
 
-// --- Initial Load ---
-// Ensure the path points to your new JSON file.
 loadProductData('../data/ExploreProducts.json');
