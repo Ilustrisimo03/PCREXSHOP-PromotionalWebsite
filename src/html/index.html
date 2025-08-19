@@ -51,7 +51,7 @@
               <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
             </button>
             <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAF5F1] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
-              <a href="#promoted-categories" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Our Categories</a>
+              <a href="#promoted-categories" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
               <a href="#services-modern" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
               <a href="#location" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
             </div>
@@ -94,7 +94,7 @@
         <div>
             <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
             <div class="pl-4 space-y-1 text-sm">
-                <a href="#promoted-categories" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Categories</a>
+                <a href="#promoted-categories" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
                 <a href="#custom-build" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
                 <a href="#location" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
             </div>
@@ -259,95 +259,23 @@
 <script src="../js/categoryScroll.js"></script>
 
 
+
+
 <!-- Promoted Categories Section -->
 <section id="promoted-categories" class="py-16 sm:py-24 bg-[#FAF5F1]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
          <div class="text-center mb-12 md:mb-16">
-            <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">Shop By Categories</h2>
+            <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">Explore Our Products</h2>
             <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Find the perfect components for your next build or upgrade.</p>
         </div>
-        <!-- Category Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-
-            <!-- Card 1: Motherboard -->
-            <div class="bg-emerald-500 rounded-xl overflow-hidden text-[#FAF5F1] group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] sm:col-span-2 lg:col-span-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <img src="../assets/image/ProductImage/motherboard.png" alt="Motherboard" class="w-1/2 sm:w-3/5 max-w-[350px] absolute top-4 right-2 group-hover:scale-105 group-hover:rotate-[-3deg] transition-transform duration-300 -mr-4 sm:-mr-6 z-10 drop-shadow-lg">
-                <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
-                    <div>
-                        <p class="text-sm font-semibold text-emerald-200 uppercase tracking-wider">The Core</p>
-                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Motherboards</h3>
-                        <p class="text-emerald-100 mt-2 text-sm max-w-[60%]">The essential foundation for every PC build.</p>
-                    </div>
-                    <a href="#" class="mt-6 bg-[#FAF5F1] text-emerald-600 px-5 py-2 rounded-md text-sm font-semibold hover:bg-emerald-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
-                </div>
-            </div>
-
-            <!-- Card 2: Graphics Card (GPU) -->
-             <div class="bg-pink-500 rounded-xl overflow-hidden text-[#FAF5F1] group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                 <img src="../assets/image/ProductImage/GPU.png" alt="Graphics Card (GPU)" class="w-2/3 sm:w-3/4 max-w-[250px] absolute bottom-2 right-2 group-hover:scale-105 group-hover:rotate-[4deg] transition-transform duration-300 mb-2 mr-2 z-10 drop-shadow-lg">
-                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
-                    <div>
-                        <p class="text-sm font-semibold text-pink-200 uppercase tracking-wider">Visual Power</p>
-                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Graphics Cards</h3>
-                    </div>
-                    <a href="#" class="mt-6 bg-[#FAF5F1] text-pink-600 px-5 py-2 rounded-md text-sm font-semibold hover:bg-pink-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
-                </div>
-            </div>
-
-            <!-- Card 3: Processor (CPU) -->
-            <div class="bg-indigo-600 rounded-xl overflow-hidden text-[#FAF5F1] group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                 <img src="../assets/image/ProductImage/Processorr.png" alt="Processor (CPU)" class="w-1/2 sm:w-2/3 max-w-[200px] absolute bottom-2 right-2 group-hover:scale-110 transition-transform duration-300 mb-3 mr-3 z-10 drop-shadow-lg">
-                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
-                    <div>
-                        <p class="text-sm font-semibold text-indigo-200 uppercase tracking-wider">The Brain</p>
-                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Processors</h3>
-                    </div>
-                    <a href="#" class="mt-6 bg-[#FAF5F1] text-indigo-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-indigo-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
-                </div>
-            </div>
-
-            <!-- Card 4: RAM -->
-             <div class="bg-yellow-500 rounded-xl overflow-hidden text-[#FAF5F1] group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                 <img src="../assets/image/ProductImage/RAM.png" alt="RAM" class="w-1/2 sm:w-2/3 max-w-[220px] absolute bottom-2 right-2 group-hover:scale-105 group-hover:translate-x-1 transition-transform duration-300 mb-2 mr-2 z-10 drop-shadow-lg">
-                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
-                    <div>
-                        <p class="text-sm font-semibold text-yellow-100 uppercase tracking-wider">Multitask Faster</p>
-                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading text-yellow-900">RAM</h3>
-                    </div>
-                    <a href="#" class="mt-6 bg-[#FAF5F1] text-yellow-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-yellow-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
-                </div>
-            </div>
-
-            <!-- Card 5: Storage (SSD/HDD) -->
-            <div class="bg-teal-600 rounded-xl overflow-hidden text-[#FAF5F1] group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-lg hover:shadow-xl transition-shadow duration-300">
-                 <img src="../assets/image/ProductImage/SSD.png" alt="Storage (SSD/HDD)" class="w-1/2 sm:w-4/5 max-w-[200px] absolute bottom-2 right-2 group-hover:scale-110 group-hover:rotate-[3deg] transition-transform duration-300 mb-3 mr-3 z-10 drop-shadow-lg">
-                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
-                    <div>
-                        <p class="text-sm font-semibold text-teal-100 uppercase tracking-wider">Load Instantly</p>
-                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Storage</h3>
-                    </div>
-                     <a href="#" class="mt-6 bg-[#FAF5F1] text-teal-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-teal-100 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
-                </div>
-            </div>
-
-            <!-- Card 6: Power Supply (PSU) -->
-            <div class="bg-[#1C1C1C] rounded-xl overflow-hidden text-[#FAF5F1] group relative flex flex-col justify-between min-h-[280px] sm:min-h-[320px] sm:col-span-2 lg:col-span-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                 <img src="../assets/image/ProductImage/PSU.png" alt="Power Supply (PSU)" class="w-1/2 sm:w-3/5 max-w-[300px] absolute bottom-2 right-2 group-hover:scale-105 transition-transform duration-300 mb-2 mr-2 z-10 drop-shadow-lg">
-                 <div class="p-6 sm:p-8 flex flex-col justify-between h-full z-0 relative">
-                    <div>
-                        <p class="text-sm font-semibold text-gray-300 uppercase tracking-wider">Reliable Power</p>
-                        <h3 class="text-2xl sm:text-3xl font-bold uppercase mt-1 heading">Power Supplies</h3>
-                         <p class="text-gray-200 mt-2 text-sm max-w-[60%]">Stable and efficient energy for peak performance.</p>
-                    </div>
-                    <a href="#" class="mt-6 bg-[#FAF5F1] text-[#1C1C1C] px-5 py-2 rounded-md text-sm font-semibold hover:bg-gray-200 transition duration-150 ease-in-out self-start shadow-sm hover:shadow-md">Browse</a>
-                </div>
-            </div>
-
+        <!-- Category Grid: Cards will be injected here by JavaScript -->
+        <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <!-- Dynamic content goes here -->
         </div>
     </div>
 </section>
-
-
+<!-- Include the JavaScript file at the end of your body tag -->
+<script src="../js/ExploreProducts.js"></script>
 
 
 
