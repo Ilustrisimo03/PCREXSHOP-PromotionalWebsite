@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
                         <h3 class="text-sm lg:text-lg font-semibold text-slate-600">${slot.name} ${requiredText}</h3>
                     </div>
-                    <button class="choose-btn bg-slate-100 hover:bg-slate-200 text-sm lg:text-lg text-slate-700 font-bold py-2 px-4 rounded-lg transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
+                    <button class="choose-btn bg-[#E31C25] hover:bg-[#cf1c25] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-lg transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
                         Choose <i class="fas fa-chevron-right ml-2 text-sm lg:text-lg"></i>
                     </button>
                 `;
@@ -294,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
                  productListContainer.innerHTML = `<p class="text-center text-slate-500">No compatible parts found for your current selection.</p>`;
             }
         };
-
         compatToggle.addEventListener('change', renderProductsInModal);
         renderProductsInModal(); // Initial render
 
