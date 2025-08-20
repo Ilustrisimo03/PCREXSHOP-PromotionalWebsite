@@ -598,103 +598,75 @@
 </section>
 
 
-
-<footer class="bg-[#FFFFFF] text-[#1C1C1C] text-sm border-t-2 border-[#b3b3b3]" >
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-    
-    <!-- Left Column: Logo & Contact -->
-    <div>
-      <div class="flex items-center space-x-2 mb-4">
-        <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
-        <span class="text-xl heading text-[#1C1C1C]">PC REX SHOP</span>
-      </div>
-      <ul class="space-y-2 text-gray-600">
-        <li class="flex items-start">
-          <i class="fas fa-map-marker-alt w-5 mt-1 text-[#E31C25]"></i>
-          <span class="ml-2">043 San Pedro, Street, Quezon City, 1121 Metro Manila</span>
-        </li>
-        <li class="flex items-start">
-          <i class="fas fa-envelope w-5 mt-1 text-[#E31C25]"></i>
-          <span class="ml-2">pcrexshop@gmail.com</span>
-        </li>
-        <li class="flex items-start">
-          <i class="fas fa-phone w-5 mt-1 text-[#E31C25]"></i>
-          <span class="ml-2">09123456789</span>
-        </li>
-      </ul>
-
-      <!-- Social Icons -->
-        <div class="flex gap-6 mt-10 text-[#E31C25]">
-        <a href="#" class="hover:text-[#E31C25] text-2xl">
-            <i class="fab fa-telegram"></i>
-        </a>
-        <a href="#" class="hover:text-[#E31C25] text-2xl">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="#" class="hover:text-[#E31C25] text-2xl">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="hover:text-[#E31C25] text-2xl">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+<footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      
+      <!-- Left Column: Logo, About & Social -->
+      <div class="md:col-span-1">
+        <div class="flex items-center space-x-2 mb-4">
+          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
+          <span class="text-xl font-bold tracking-wider">PC REX SHOP</span>
         </div>
+        <p class="text-gray-400 mb-6 text-sm">
+          Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
 
+      <!-- Column 1: Useful Links -->
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-white">Useful Links</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Categories -->
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-white">Categories</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Furniture</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Accessories</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-Built</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Newsletter -->
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-white">Join Our Newsletter</h4>
+        <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
+        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
+          <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E31C25] text-white">
+          <button type="submit" class="bg-[#E31C25] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">Subscribe</button>
+        </form>
+        <p id="newsletterMessage" class="text-sm mt-2"></p>
+      </div>
     </div>
 
-    <!-- Column 1: Useful Links -->
-    <div>
-      <h4 class="font-semibold mb-3 text-[#1C1C1C]">Useful Links</h4>
-      <ul class="space-y-2 text-gray-600">
-        <li><a href="#" class="hover:text-[#E31C25]">About Us</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Contact Us</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">FAQs</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Terms of Service</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Privacy Policy</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 2: Categories -->
-    <div>
-      <h4 class="font-semibold mb-3 text-[#1C1C1C]">Categories</h4>
-      <ul class="space-y-2 text-gray-600">
-        <li><a href="#" class="hover:text-[#E31C25]">Components</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Peripherals</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Furniture</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Accessories</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Pre-Built</a></li>
-      </ul>
-    </div>
-
-    <!-- Column 3: Resources -->
-    <div>
-      <h4 class="font-semibold mb-3 text-[#1C1C1C]">Resources</h4>
-      <ul class="space-y-2 text-gray-600">
-        <li><a href="#" class="hover:text-[#E31C25]">Events</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Community</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Social Media</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Newsletter</a></li>
-        <li><a href="#" class="hover:text-[#E31C25]">Subscribe</a></li>
-      </ul>
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <p>&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
+      </div>
     </div>
   </div>
-
-  <!-- Footer Bottom -->
-  <div class="bg-[#E31C25] border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center text-[#FAF5F1] px-6">
-    <div class="mb-4 md:mb-0 text-sm font-semibold">&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</div>
-    <div class="flex space-x-4 text-sm">
-      <a href="#" class="hover:text-[#E31C25]">Privacy Policy</a>
-      <a href="#" class="hover:text-[#E31C25]">Terms of Service</a>
-      <a href="#" class="hover:text-[#E31C25]">Cookie Policy</a>
-    </div>
-  </div>
-
-  <!-- Auto Year Script -->
-  <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
 </footer>
-
-
+    <script src="../js/footer.js"></script>
 
   <!-- Your Custom JS -->
   <script src="../js/html.js"></script>
