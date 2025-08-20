@@ -4,14 +4,14 @@
     "subtitle": "The essential foundation for every PC build.",
     "image": "../assets/image/ProductImage/motherboard.png",
     "alt": "A modern computer motherboard",
-    "color": "#FF3B30" 
+    "color": "#FF3B30"
   },
   {
     "title": "Graphics Cards",
     "subtitle": "Experience next-level visuals and performance.",
     "image": "../assets/image/ProductImage/GPU.png",
     "alt": "A powerful graphics card",
-    "color": "#FFD60A"
+    "color": "#FF9500"
   },
   {
     "title": "Processors",
@@ -39,6 +39,6 @@
     "subtitle": "Reliable and efficient power for your system.",
     "image": "../assets/image/ProductImage/PSU.png",
     "alt": "A computer power supply unit",
-    "color": "#1C1C1E"
+    "color": "#AF52DE"
   }
 ]

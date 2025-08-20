@@ -10,7 +10,8 @@
     "review": 48,
     "percent": 86,
     "category": { "name": "Components" },
-    "type": "CPU Cooling"
+    "type": "CPU Cooling",
+    "isBestSeller": true
   },
   {
     "id": 28,
@@ -36,7 +37,9 @@
     "review": 135,
     "percent": 92,
     "category": { "name": "Components" },
-    "type": "CPU Cooling"
+    "type": "CPU Cooling",
+    "isBestSeller": true
+    
   },
   {
     "id": 16,
@@ -49,7 +52,8 @@
     "review": 43,
     "percent": 84,
     "category": { "name": "Components" },
-    "type": "Motherboard"
+    "type": "Motherboard",
+    "isBestSeller": true
   },
   {
     "id": 20,
@@ -75,7 +79,8 @@
     "review": 74,
     "percent": 88,
     "category": { "name": "Components" },
-    "type": "Graphics Card"
+    "type": "Graphics Card",
+    "isBestSeller": true
   },
   {
     "id": 30,
@@ -88,7 +93,8 @@
     "review": 54,
     "percent": 94,
     "category": { "name": "Components" },
-    "type": "Graphics Card"
+    "type": "Graphics Card",
+    "isBestSeller": true
   },
   {
     "id": 25,
@@ -101,7 +107,8 @@
     "review": 93,
     "percent": 90,
     "category": { "name": "Components"},
-    "type": "Power Supply"
+    "type": "Power Supply",
+    "isBestSeller": true
   },
   {
     "id": 22,
@@ -127,7 +134,8 @@
     "review": 31,
     "percent": 84,
     "category": { "name": "Components"},
-    "type": "Storage (HDD / SSD)"
+    "type": "Storage (HDD / SSD)",
+    "isBestSeller": true
   },
   {
     "id": 17,
@@ -166,7 +174,8 @@
     "review": 66,
     "percent": 84,
     "category": { "name": "Components"},
-    "type": "Storage (HDD / SSD)"
+    "type": "Storage (HDD / SSD)",
+    "isBestSeller": true
   },
   {
     "id": 23,
@@ -179,7 +188,8 @@
     "review": 52,
     "percent": 96,
     "category": { "name": "Components" },
-    "type": "Storage (HDD / SSD)"
+    "type": "Storage (HDD / SSD)",
+    "isBestSeller": true
   },
   {
     "id": 18,
@@ -192,7 +202,8 @@
     "review": 109,
     "percent": 94,
     "category": { "name": "Components" },
-    "type": "Memory (RAM)"
+    "type": "Memory (RAM)",
+    "isBestSeller": true
   },
   {
     "id": 27,
@@ -218,7 +229,8 @@
     "review": 1111,
     "percent": 96,
     "category": { "name": "Components" },
-    "type": "Memory (RAM)"
+    "type": "Memory (RAM)",
+    "isBestSeller": true
   },
   {
     "id": 4,
@@ -231,7 +243,8 @@
     "review": 33,
     "percent": 96,
     "category": { "name": "Components" },
-    "type": "Processor"
+    "type": "Processor",
+    "isBestSeller": true
   },
   {
     "id": 6,
@@ -244,7 +257,8 @@
     "review": 22,
     "percent": 94,
     "category": { "name": "Components" },
-    "type": "Processor"
+    "type": "Processor",
+    "isBestSeller": true
   },
   {
     "id": 31,
@@ -270,7 +284,8 @@
     "review": 22,
     "percent": 92,
     "category": { "name": "Components" },
-    "type": "Processor"
+    "type": "Processor",
+    "isBestSeller": true
   },
   {
     "id": 33,
@@ -322,7 +337,8 @@
     "review": 99,
     "percent": 96,
     "category": { "name": "Peripherals" },
-    "type": "Keyboard"
+    "type": "Keyboard",
+    "isBestSeller": true
   },
   {
     "id": 5,
@@ -348,7 +364,8 @@
     "review": 1022,
     "percent": 92,
     "category": { "name": "Peripherals" },
-    "type": "Monitor"
+    "type": "Monitor",
+    "isBestSeller": true
   },
   {
     "id": 37,
@@ -413,7 +430,8 @@
     "review": 76,
     "percent": 90,
     "category": { "name": "Peripherals" },
-    "type": "Accessories"
+    "type": "Accessories",
+    "isBestSeller": true
   },
   {
     "id": 8,
@@ -439,7 +457,8 @@
     "review": 111,
     "percent": 94,
     "category": { "name": "Furniture" },
-    "type": "PC Case"
+    "type": "PC Case",
+    "isBestSeller": true
   }
 ]
 

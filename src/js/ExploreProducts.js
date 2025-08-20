@@ -6,89 +6,95 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
 
-  // Dito nakalagay ang layout ng bawat card (hindi binago)
   const cardLayouts = [
-    "sm:col-span-1 sm:row-span-1 h-72", // small square
-    "sm:col-span-1 sm:row-span-1 h-72", // small square
-    "sm:col-span-2 sm:row-span-1 h-72", // wide rectangle
-    "sm:col-span-2 sm:row-span-1 h-72", // wide rectangle
-    "sm:col-span-1 sm:row-span-1 h-72", // small
-    "sm:col-span-1 sm:row-span-1 h-72" // small
+    "sm:col-span-2 sm:row-span-1 h-72",
+    "sm:col-span-1 sm:row-span-1 h-72",
+    "sm:col-span-1 sm:row-span-1 h-72",
+    "sm:col-span-1 sm:row-span-1 h-72",
+    "sm:col-span-1 sm:row-span-1 h-72",
+    "sm:col-span-2 sm:row-span-1 h-72",
   ];
 
-  let allItems = []; // Itatabi natin dito ang lahat ng produkto galing sa Item.json
+  let allItems = [];
 
-  // Binago para tumanggap ng allItems data
+  // --- renderGalleryCards: Walang binago dito ---
   const renderGalleryCards = (products) => {
     if (!galleryGrid) return;
-
     galleryGrid.innerHTML = products.map((product, index) => {
       const isSpecialImage = product.title === "Processors" || product.title === "Memory (RAM)";
-      const imageContainerClasses = isSpecialImage ?
-        "absolute right-4 bottom-0" :
-        "absolute right-4 bottom-0 w-40 h-40 sm:w-100 sm:h-100";
-      const imageTagClasses = isSpecialImage ?
-        "object-contain w-60 h-60" :
-        "object-contain w-full h-full";
-
-      // Nagdagdag ng data-title attribute para malaman kung anong kategorya ang iclick
+      const imageContainerClasses = isSpecialImage ? "absolute -right-2 bottom-0" : "absolute right-4 bottom-0 w-40 h-40 sm:w-52 sm:h-52";
+      const imageTagClasses = isSpecialImage ? "object-contain w-60 h-60" : "object-contain w-full h-full";
       return `
         <div class="relative rounded-2xl p-6 flex flex-col justify-between shadow-lg overflow-hidden
                     transition-transform duration-300 hover:scale-[1.03] ${cardLayouts[index % cardLayouts.length]}"
              style="background-color: ${product.color};">
-          <div class="relative z-10">
-            <p class="text-sm font-semibold uppercase text-white/90">Best</p>
-            <h3 class="text-2xl font-extrabold text-white">${product.title}</h3>
-            <p class="text-base text-white/90 mt-1">${product.subtitle}</p>
+          <div class="relative z-10 text-white">
+            <h3 class="text-3xl font-extrabold">${product.title}</h3>
+            <p class="text-white/90 mt-1 max-w-xs">${product.subtitle}</p>
           </div>
           <div class="${imageContainerClasses}">
-            <img src="${product.image}" alt="${product.alt}" class="${imageTagClasses}">
+            <img src="${product.image}" alt="${product.alt}" class="${imageTagClasses} drop-shadow-2xl">
           </div>
-          <button data-title="${product.title}" class="explore-btn relative z-10 mt-auto w-fit px-4 py-2 bg-white text-[#E31C25] text-sm font-semibold rounded-lg shadow hover:bg-gray-100 transition">
+          <button data-title="${product.title}" class="explore-btn relative z-10 mt-auto w-fit px-4 py-2 bg-white text-gray-800 text-sm font-semibold rounded-lg shadow hover:bg-gray-100 transition">
             Explore
           </button>
         </div>
       `;
     }).join('');
-
-    // Pagkatapos mag-render, ilagay ang event listeners
     addEventListenersToButtons();
   };
 
-  // --- BAGONG FUNCTIONS PARA SA MODAL ---
-
+  // --- GANAP NA BINAGO: openModal na may bagong UI/UX ---
   const openModal = (title) => {
-    modalTitle.textContent = `${title} Selections`;
+    modalTitle.textContent = `${title} Showcase`;
 
-    // Itinatama ang pangalan ng 'type' para tumugma sa Item.json
     let itemType = title;
+    // (Mapping logic)
     if (title === "Processors") itemType = "Processor";
     if (title === "Graphics Cards") itemType = "Graphics Card";
     if (title === "CPU Coolings") itemType = "CPU Cooling";
     if (title === "Power Supplies") itemType = "Power Supply";
     if (title === "Storage Drives") itemType = "Storage (HDD / SSD)";
     if (title === "Motherboards") itemType = "Motherboard";
+    if (title === "Memory (RAM)") itemType = "Memory (RAM)";
 
-
-    // I-filter ang mga produkto base sa title
     const filteredItems = allItems.filter(item => item.type === itemType);
 
+    // I-reset ang modal body style para sa grid
+    modalBody.className = 'overflow-y-auto p-6 md:p-8';
+
     if (filteredItems.length > 0) {
-      modalBody.innerHTML = filteredItems.map(item => `
-        <div class="flex flex-col sm:flex-row items-center gap-6 p-4 border-b last:border-b-0">
-          <img src="${item.images[0]}" alt="${item.name}" class="w-24 h-24 object-contain rounded-lg bg-gray-100">
-          <div class="flex-1 text-center sm:text-left">
-            <h4 class="font-bold text-lg text-gray-800">${item.name}</h4>
-            <p class="text-sm text-gray-600 mt-1">${item.description}</p>
-            <div class="flex items-center justify-center sm:justify-start gap-4 mt-2">
-               <span class="text-xl font-extrabold text-[#E31C25]">$${item.price}</span>
-               <span class="text-sm text-gray-500">${item.stock} in stock</span>
+      // BAGONG MODAL LAYOUT: Grid ng mga product card
+      modalBody.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          ${filteredItems.map(item => `
+            <div class="relative flex flex-col rounded-xl bg-gray-50 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border">
+              <!-- Image Area -->
+              <div class="relative bg-white p-4 h-48 flex items-center justify-center">
+                <img src="${item.images[0]}" alt="${item.name}" class="max-h-full max-w-full object-contain">
+                ${item.isBestSeller ? '<span class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">Best Seller</span>' : ''}
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-4 flex flex-col flex-grow">
+                <h4 class="font-bold text-md text-gray-800 leading-tight">${item.name}</h4>
+                
+                <!-- Social Proof: Star Rating & Reviews -->
+                <div class="flex items-center my-2 gap-2">
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                    <span class="text-xs text-gray-600 ml-1 font-medium">${item.rate}</span>
+                  </div>
+                  <span class="text-gray-300">|</span>
+                  <span class="text-xs text-gray-500">${item.review} Reviews</span>
+                </div>
+              </div>
             </div>
-          </div>
+          `).join('')}
         </div>
-      `).join('');
+      `;
     } else {
-      modalBody.innerHTML = `<p class="text-center text-gray-500 py-8">No items found for this category.</p>`;
+      modalBody.innerHTML = `<p class="text-center text-gray-500 py-12">No product details available for this category.</p>`;
     }
 
     modal.classList.remove('hidden');
@@ -110,37 +116,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // --- BINAGONG DATA LOADING ---
-
   const loadAllData = async () => {
     try {
       const [productsRes, itemsRes] = await Promise.all([
         fetch('../data/ExploreProducts.json'),
         fetch('../data/Item.json')
       ]);
-
+      if (!productsRes.ok || !itemsRes.ok) throw new Error('Network response was not ok');
       const products = await productsRes.json();
-      allItems = await itemsRes.json(); // Itabi ang data
-
+      allItems = await itemsRes.json();
       renderGalleryCards(products);
-
     } catch (error) {
       console.error("Could not fetch or render data:", error);
       if (galleryGrid) {
-          galleryGrid.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load products.</p>`;
+        galleryGrid.innerHTML = `<p class="text-center text-red-500 col-span-full">Failed to load product categories.</p>`;
       }
     }
   };
 
-  // Event listeners para isara ang modal
   closeModalBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
+    if (e.target === modal) closeModal();
   });
 
-  // Simulan ang pag-load ng lahat ng data
   loadAllData();
-
 });

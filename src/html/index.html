@@ -196,47 +196,50 @@
 
 
 
-
-
-<!-- ExploreProducts Scrolling Section -->
-<section id="ExploreProducts" class="py-16 sm:py-24 bg-[#FAF5F1] opacity-0 transition-opacity duration-1000 ease-in-out">
+<!-- BAGONG UI: Explore Products Gallery Section -->
+<section id="ExploreProducts" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C] font-extrabold">
-        Explore Our Products
+      <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">
+        Explore Our Product Categories
       </h2>
       <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">
-        A showcase of the components that power your passion.
+        Discover the high-quality components that power the most demanding PC builds.
       </p>
     </div>
 
-    <!-- Custom grid -->
+    <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
     <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- JS will inject product cards with custom sizing -->
+      <!-- Ang JavaScript ang maglalagay ng mga product card dito -->
     </div>
   </div>
 </section>
-<!-- Include the JavaScript file at the end of your body tag -->
-<script src="../js/ExploreProducts.js"></script>
 
-
-<!-- The Modal -->
-<div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
+<!-- BAGONG UI: "For Viewing Only" Modal -->
+<div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 transition-opacity duration-300">
   <!-- Modal content -->
-  <div class="m-4 max-h-[90vh] w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300">
+  <div class="m-4 max-h-[90vh] w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 flex flex-col">
+    <!-- Modal Header -->
     <div class="flex items-center justify-between border-b border-gray-200 bg-gray-50 p-6">
-      <h3 id="modalTitle" class="text-2xl font-bold text-gray-800">Related Products</h3>
-      <button id="closeModal" class="text-gray-400 hover:text-gray-600">
-        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <h3 id="modalTitle" class="text-2xl font-bold text-gray-800">Product Selections</h3>
+      <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+        <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
-    <div id="modalBody" class="overflow-y-auto p-6" style="max-height: calc(90vh - 140px);">
-      <!-- Dito ilalagay ang mga product items galing sa JS -->
+    <!-- Modal Body na may simpleng listahan -->
+    <div id="modalBody" class="overflow-y-auto p-6 md:p-8 space-y-6">
+      <!-- Dito ilalagay ng JavaScript ang listahan ng mga produkto -->
     </div>
   </div>
 </div>
+
+<!-- I-link ang JavaScript file -->
+<script src="../js/ExploreProducts.js"></script>
+
+
+
 
 
 
