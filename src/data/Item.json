@@ -1,7 +1,7 @@
 [
   {
     "id": 13,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/GPU.png" ],
     "name": "AMD Wraith Stealth Cooler",
     "price": "17.99",
     "description": "The AMD Wraith Stealth is a low-profile stock CPU cooler bundled with select Ryzen processors. It features an aluminum heatsink and a quiet fan, suitable for CPUs with a 65W TDP, making it a reliable choice for budget builds and standard computing tasks.",
@@ -14,7 +14,7 @@
   },
   {
     "id": 28,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/GPU.png" ],
     "name": "AMD Stock Heatsink Fan",
     "price": "14.99",
     "description": "A standard AMD stock CPU cooler designed to provide sufficient cooling for compatible processors under normal operating conditions. While generally better than competitor stock options, they can become audible under heavy CPU loads. [24, 25]",
@@ -27,7 +27,7 @@
   },
   {
     "id": 21,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/GPU.png" ],
     "name": "Deepcool AG400 Single Tower Hydro Bearing CPU Air Cooler ARGB White",
     "price": "29.99",
     "description": "A single-tower 120mm CPU cooler featuring four direct-touch copper heatpipes and a hydro bearing fan with ARGB lighting. It offers excellent thermal performance and RAM compatibility in a streamlined and budget-friendly package.",
@@ -66,7 +66,7 @@
   },
   {
     "id": 19,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/GPU.png" ],
     "name": "Biostar RX 580 VA5805RV82 Dual Cooling Fan 8GB 256-bit GDDR5 Gaming Videocard",
     "price": "129.99",
     "description": "An 8GB GDDR5 graphics card with a dual cooling fan design, offering solid 1080p gaming performance. It's a capable and affordable option for gamers looking for good frame rates on a budget.",
@@ -79,7 +79,7 @@
   },
   {
     "id": 30,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/GPU.png" ],
     "name": "MSI GeForce RTX 3060 Ventus 2X OC 12GB GDDR6 Gaming Graphics Card",
     "price": "289.99",
     "description": "A 12GB GDDR6 graphics card featuring a dual-fan thermal design. It delivers excellent performance for 1080p and 1440p gaming, with real-time ray tracing and AI-enhanced graphics.",
@@ -92,7 +92,7 @@
   },
   {
     "id": 25,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/PSU.png" ],
     "name": "Acer AC-550 550W Full Modular 80+ Bronze Power Supply",
     "price": "59.99",
     "description": "A 550W fully modular power supply with 80+ Bronze certification, ensuring efficient power delivery and easy cable management. It provides reliable performance for mainstream gaming and productivity systems.",
@@ -105,7 +105,7 @@
   },
   {
     "id": 22,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/PSU.png" ],
     "name": "InPlay GS750-Ultra (750W, 450W, 650W) 80+ Bronze Rated Hydro Bearing RGB Power Supply",
     "price": "49.99",
     "description": "An 80+ Bronze rated power supply available in multiple wattage options. It features a hydro bearing RGB fan for quiet operation and customizable aesthetics, providing stable power for gaming rigs.",
@@ -118,7 +118,7 @@
   },
   {
     "id": 29,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/SSD.png" ],
     "name": "Seagate Barracuda ST1000DM010 1TB 7200RPM SATA HDD",
     "price": "44.99",
     "description": "A 1TB internal hard drive with a 7200 RPM spindle speed and 64MB cache. It is a cost-effective solution for desktop storage, offering reliable performance for everyday computing and data archiving. [6, 8, 18, 19, 37]",
@@ -131,7 +131,7 @@
   },
   {
     "id": 17,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/SSD.png" ],
     "name": "Seagate ST2000DM008 2TB SATA HDD",
     "price": "54.99",
     "description": "A 2TB internal hard drive with a 7200 RPM spindle speed and 256MB cache. It provides ample storage for large files, games, and media, making it a great choice for desktop PCs and home servers.",
@@ -144,7 +144,7 @@
   },
   {
     "id": 26,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/SSD.png" ],
     "name": "Kingston SSDNow A400 480GB SATA 2.5 SSD",
     "price": "34.99",
     "description": "A 480GB SATA 2.5-inch solid-state drive that dramatically improves the responsiveness of your existing system with incredible boot, loading, and transfer times. It's a reliable and affordable upgrade for laptops and desktops.",
@@ -157,7 +157,7 @@
   },
   {
     "id": 24,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/SSD.png" ],
     "name": "Ramsta R600 256GB M.2 SATA SSD",
     "price": "19.99",
     "description": "A 256GB M.2 SATA solid-state drive offering a compact form factor and faster performance than traditional hard drives. It's a cost-effective choice for improving boot times and application loading.",
@@ -170,7 +170,7 @@
   },
   {
     "id": 23,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/SSD.png" ],
     "name": "Kingston Fury Renegade SFYRS 500GB PCIe 4.0 NVMe SSD",
     "price": "69.99",
     "description": "A 500GB PCIe 4.0 NVMe M.2 SSD delivering cutting-edge performance with blazing-fast read/write speeds. It's ideal for gaming and content creation, providing top-tier performance for demanding users.",
@@ -183,7 +183,7 @@
   },
   {
     "id": 18,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/RAM.png" ],
     "name": "Team Elite TForce Delta 16GB (2x8GB) 3200MHz DDR4 RGB White",
     "price": "54.99",
     "description": "A 16GB (2x8GB) DDR4 memory kit with a 3200MHz frequency and full-frame 120° ultra-wide-angle RGB lighting. It features a minimalist, asymmetrical heat spreader in white, perfect for stylish and high-performance PC builds. [12, 45]",
@@ -196,7 +196,7 @@
   },
   {
     "id": 27,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/RAM.png" ],
     "name": "Kingston Fury Beast 16GB 3200MT/s DDR4 RGB Black",
     "price": "49.99",
     "description": "A 16GB DDR4 memory module with a speed of 3200MT/s and customizable RGB lighting. It provides a powerful performance boost for gaming, video editing, and rendering, with a stylish black heat spreader.",
@@ -209,7 +209,7 @@
   },
   {
     "id": 11,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/RAM.png" ],
     "name": "Kingston KVR32S22S8/16 16GB 3200MHz DDR4 SODIMM",
     "price": "39.99",
     "description": "A 16GB DDR4 3200MHz SODIMM memory module designed for laptops and small form-factor PCs. It offers reliable, high-performance, and is a cost-effective way to upgrade your system's memory.",
@@ -222,7 +222,7 @@
   },
   {
     "id": 4,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/Processorr.png" ],
     "name": "AMD Ryzen 5 5600X 6-Core 12-Thread AM4",
     "price": "149.99",
     "description": "A 6-core, 12-thread processor built on the Zen 3 architecture, offering a significant performance uplift for gaming and productivity tasks. It is highly power-efficient and a popular choice for mainstream PC builds. [3, 9, 16, 21, 24]",
@@ -235,7 +235,7 @@
   },
   {
     "id": 6,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/Processorr.png" ],
     "name": "AMD Ryzen 7 5700G 8-Core 16-Thread AM4",
     "price": "179.99",
     "description": "An 8-core, 16-thread processor with powerful integrated Radeon graphics, making it an excellent all-in-one solution for gaming and content creation without the need for a discrete graphics card.",
@@ -248,7 +248,7 @@
   },
   {
     "id": 31,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/Processorr.png" ],
     "name": "AMD Ryzen 3 3200G 4-Core AM4",
     "price": "93.00",
     "description": "A 4-core processor with built-in Radeon Vega 8 graphics. It's a budget-friendly choice for entry-level PCs, offering good performance for everyday tasks and light gaming. [1, 11, 25, 35, 36]",
@@ -261,7 +261,7 @@
   },
   {
     "id": 32,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/Processorr.png" ],
     "name": "AMD Ryzen 7 7700X AM5",
     "price": "399.00",
     "description": "An 8-core, 16-thread processor based on the Zen 4 architecture, designed for the AM5 platform. It offers exceptional performance for gaming and content creation, with support for DDR5 memory and PCIe 5.0. [5, 10, 17, 32, 33]",
@@ -274,7 +274,7 @@
   },
   {
     "id": 33,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/Processorr.png" ],
     "name": "Intel Core i7-14700F LGA 1700",
     "price": "359.00",
     "description": "A 20-core, 28-thread processor from Intel's 14th generation, featuring a hybrid architecture with 8 Performance-cores and 12 Efficient-cores. It delivers outstanding performance for demanding games and applications, but requires a discrete graphics card. [7, 29, 39, 41, 42]",
@@ -287,7 +287,7 @@
   },
   {
     "id": 38,
-    "images": [ "../assets/image/ProductImage/motherboard.png" ],
+    "images": [ "../assets/image/ProductImage/Processorr.png" ],
     "name": "InPlay NK680-B Red Switch Mechanical Keyboard Black",
     "price": "14.99",
     "description": "A 68-key mechanical gaming keyboard with red switches for fast and quiet keystrokes. It features a compact 65% layout, a metal top cover, and customizable RGB lighting, offering a great entry into mechanical keyboards. [13, 43, 44, 46]",
