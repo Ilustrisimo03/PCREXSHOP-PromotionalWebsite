@@ -1,0 +1,18 @@
+[
+  {
+    "src": "../assets/image/promotional1.png",
+    "alt": "Custom PC Build 1"
+  },
+  {
+    "src": "../assets/image/promotional3.png",
+    "alt": "Gaming PC 2"
+  },
+  {
+    "src": "../assets/image/promotional4.png",
+    "alt": "Workstation PC 3"
+  },
+  {
+    "src": "../assets/image/promotional2.png",
+    "alt": "RGB PC Build 4"
+  }
+]

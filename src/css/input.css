@@ -37,81 +37,62 @@ body {
     background: linear-gradient(90deg, rgba(227, 28, 37, 1) 0%, rgba(181, 0, 9, 1) 100%);
 }
 
+
+
+
+
 /* Carousel Container Styling */
-        .carousel-container {
-            position: relative;
-            width: 90%;
-            max-width: 800px; /* You can adjust the max-width */
-            margin: auto;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-        /* Carousel track/stage */
-        #carousel {
-            display: flex;
-            /* Allows for smooth manual scrolling */
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; /* For smooth scrolling on mobile devices */
-            scrollbar-width: none; /* Hides scrollbar for Firefox */
-            scroll-behavior: smooth; /* Smooth scrolling for JS actions */
-        }
+.carousel-track {
+    display: flex;
+}
 
-        /* Hides scrollbar for Chrome, Safari, and Opera */
-        #carousel::-webkit-scrollbar {
-            display: none;
-        }
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
 
-        /* Carousel Image Styling */
-        .carousel-image {
-            flex: 0 0 100%;
-            width: 100%;
-            scroll-snap-align: start; /* Snaps image to the start of the container */
-            object-fit: cover;
-            display: block;
-        }
+.carousel-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
 
-        /* Navigation Button Styling */
-    .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.15);  
-        backdrop-filter: blur(6px);
-        color: #fff;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 12px;
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
+/* Dot Indicators Styling */
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Space between dots */
+}
 
-    .carousel-button:hover {
-        background: rgba(255, 255, 255, 0.25);
-        border-color: rgba(255, 255, 255, 0.4);
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-    }
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    /* Positioning for Previous and Next buttons */
-    .prev {
-        left: 15px;
-    }
+.carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
 
-    .next {
-        right: 15px;
-    }
-
-
+.carousel-dot.active {
+    background-color: #E31C25;
+}
 
 
 
