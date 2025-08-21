@@ -65,9 +65,9 @@
         <div class="flex items-center">
             <!-- Download App Link for Desktop -->
             <a href="/path/to/your/application.apk" download="YourApp.apk" 
-            class="hidden md:flex items-center bg-[#E31C25] text-[#FAF5F1] font-semibold text-md py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300">
+            class="hidden md:flex hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-full items-center justify-center shadow-lg hover:scale-105 transform">
                 <span class="material-icons mr-2">install_mobile</span>
-                <span>Download App</span>
+                <span class="text-md font-semibold">Download App</span>
             </a>
 
             <!-- Mobile Menu Button -->
@@ -105,7 +105,7 @@
 
         <!-- Download App Link for Sidebar -->
         <a href="/path/to/your/application.apk" download="YourApp.apk" 
-           class="flex items-center bg-[#E31C25] text-[#FAF5F1] py-2 px-4 rounded-full hover:bg-red-700 transition-colors duration-300 font-semibold pt-2">
+           class="hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transform">
             <span class="material-icons mr-2">install_mobile</span>
             <span>Download App</span>
         </a>
@@ -142,19 +142,17 @@
       <p class="text-md sm:text-lg text-[#1C1C1C] max-w-md mx-auto md:mx-0 leading-relaxed">
         High-performance PCs, meticulously crafted for your gaming, creative, or professional needs. Built by experts, fueled by passion.
       </p>
-
-      <!-- Social Media Icons -->
-      <div class="flex justify-center md:justify-start gap-3 sm:gap-4 pt-2">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-[#FAF5F1] bg-blue-600 hover:bg-blue-700 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
-          <i class="fab fa-facebook-f text-lg sm:text-xl"></i>
-        </a>
-        <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="text-[#FAF5F1] bg-sky-500 hover:bg-sky-600 transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
-          <i class="fab fa-telegram-plane text-lg sm:text-xl"></i>
-        </a>
-        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-[#FAF5F1] bg-black hover:bg-[#1C1C1C] transition-all duration-300 w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform">
-          <i class="fab fa-tiktok text-lg sm:text-xl"></i>
-        </a>
-      </div>
+      
+            <!-- Custom PC Builder Button -->
+            <div class="flex justify-center pt-2 md:justify-start">
+                <a
+                    href="#custom-build"
+                    class="inline-flex items-center justify-center rounded-full border border-[#E31C25] px-4 py-3 font-semibold text-[#E31C25] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E31C25] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:ring-offset-2 sm:text-lg"
+                >
+                    <span>Build Your Own PC</span>
+                    <span class="material-icons ml-2">chevron_right</span>
+                </a>
+            </div>
     </div>
 
   <div class="carousel-container">
@@ -199,14 +197,14 @@
 <!-- BAGONG UI: Explore Products Gallery Section -->
 <section id="ExploreProducts" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 md:mb-16">
+    <!-- <div class="text-center mb-12 md:mb-16">
       <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">
         Explore Our Product Categories
       </h2>
       <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">
         Discover the high-quality components that power the most demanding PC builds.
       </p>
-    </div>
+    </div> -->
 
     <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
     <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -281,7 +279,7 @@
                             <span id="total-price" class="text-3xl font-bold text-[#E31C25]">₱0.00</span>
                         </div>
                         
-                        <button id="clear-build-btn" class="w-full bg-[#FAF5F1] hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] font-medium py-2.5 px-4 rounded-lg transition-all duration-300">
+                        <button id="clear-build-btn" class="w-full bg-[#FAF5F1] hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
                             <i class="fas fa-trash-alt mr-2"></i>Clear Build
                         </button>
                     </div>
