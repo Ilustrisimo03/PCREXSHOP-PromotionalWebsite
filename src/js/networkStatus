@@ -1,0 +1,36 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const toast = document.getElementById('network-status-toast');
+    const closeBtn = document.getElementById('close-toast-btn');
+
+    // Function to show the notification
+    const showOfflineToast = () => {
+        if (toast) {
+            toast.classList.remove('hidden');
+        }
+    };
+
+    // Function to hide the notification
+    const hideOfflineToast = () => {
+        if (toast) {
+            toast.classList.add('hidden');
+        }
+    };
+    
+    // --- Event Listeners ---
+
+    // Listen for the browser going offline
+    window.addEventListener('offline', showOfflineToast);
+
+    // Listen for the browser coming back online
+    window.addEventListener('online', hideOfflineToast);
+
+    // Check the connection status when the page first loads
+    if (!navigator.onLine) {
+        showOfflineToast();
+    }
+
+    // Allow the user to manually close the toast
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideOfflineToast);
+    }
+});

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- ELEMENT SELECTORS ---
     const componentSlotsContainer = document.getElementById('component-slots');
     const loadingState = document.getElementById('loading-state');
     const modal = document.getElementById('component-modal');
@@ -10,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryContainer = document.getElementById('selected-components-summary');
     const compatibilityStatusEl = document.getElementById('overall-compatibility-status');
     const clearBuildBtn = document.getElementById('clear-build-btn');
+
+    // --- NEW: Selectors for the Confirmation Modal ---
+    const confirmationModal = document.getElementById('confirmation-modal');
+    const confirmClearBtn = document.getElementById('confirm-clear-btn');
+    const cancelClearBtn = document.getElementById('cancel-clear-btn');
 
     let allProducts = [];
     let selectedComponents = {};
@@ -74,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return { compatible: true, reason: null };
     };
-
 
     // --- COMPATIBILITY CHECK ---
     const checkCompatibility = () => {
@@ -339,11 +344,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // --- NEW: Event Listeners for Custom Confirmation Modal ---
         clearBuildBtn.addEventListener('click', () => {
-            if (confirm('Are you sure you want to clear the entire build?')) {
-                selectedComponents = {};
-                renderComponentSlots();
-                updateBuildSummary();
+            confirmationModal.classList.remove('hidden');
+        });
+
+        cancelClearBtn.addEventListener('click', () => {
+            confirmationModal.classList.add('hidden');
+        });
+
+        confirmClearBtn.addEventListener('click', () => {
+            selectedComponents = {};
+            renderComponentSlots();
+            updateBuildSummary();
+            confirmationModal.classList.add('hidden');
+        });
+        
+        confirmationModal.addEventListener('click', (event) => {
+            if (event.target === confirmationModal) {
+                confirmationModal.classList.add('hidden');
             }
         });
     }

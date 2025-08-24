@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PC REX Shop</title>
+  <title>Builder PC</title>
 
   <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
 
@@ -32,6 +32,7 @@
 </head>
 <body class="bg-[#FAF5F1]  antialiased">
 
+
 <!-- ===== PAGE LOADER START ===== -->
 <div id="page-loader" class="fixed inset-0 z-[9999] bg-white bg-opacity-80 backdrop-blur-sm hidden">
     <!-- Centering Container -->
@@ -52,18 +53,20 @@
 
 <script src="/src/js/loader.js" ></script>
 
+
+
 <!-- Navbar -->
 <nav class="bg-[#FAF5F1] shadow-lg sticky top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
-        <a href="#Home" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+        <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
           <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC REX Logo" class="h-10 w-auto">
         </a>
   
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-[30px]">
-          <a href="#Home" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
+          <a href="index.html" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
   
           <!-- About Us Dropdown -->
           <div class="relative" id="about-us-wrapper">
@@ -72,14 +75,14 @@
               <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
             </button>
             <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAF5F1] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
-              <a href="#ExploreProducts" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
-              <a href="#services-modern" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
-              <a href="#location" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
+              <a href="exploreProducts.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
+              <a href="services.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
+              <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
             </div>
           </div>
   
           <a href="builder.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">PC Builder</a>
-          <a href="#contact-section" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
+          <a href="contact.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
         </div>
   
         <!-- Login + Mobile Button -->
@@ -109,20 +112,20 @@
         </button>
     </div>
     <div class="p-4 space-y-3">
-        <a href="#Home" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Home</a>
+        <a href="index.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Home</a>
 
         <!-- About Us (with nested links) -->
         <div>
             <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
             <div class="pl-4 space-y-1 text-sm">
-                <a href="#ExploreProducts" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
-                <a href="#services-modern" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
-                <a href="#location" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
+                <a href="exploreProducts.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
+                <a href="services.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
+                <a href="location.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
             </div>
         </div>
 
         <a href="builder.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">PC Builder</a>
-        <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
+        <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
 
         <!-- Download App Link for Sidebar -->
         <a href="/path/to/your/application.apk" download="YourApp.apk" 
@@ -138,169 +141,6 @@
 
 <script src="/src/js/nav.js" ></script>
 
-
-<!-- Hero Section -->
-<section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out">
-
-  <!-- Background Text -->
-  <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-50 md:opacity-40">
-    <h2 class="text-[86px] sm:text-[180px] md:text-[180px] lg:text-[250px] heading font-black text-gray-300 leading-none -translate-y-8 sm:-translate-y-10 [#FAF5F1]space-nowrap tracking-tighter">
-    COMPUTER
-    </h2>
-  </div>
-
-  <!-- Main Content Container -->
-  <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-
-    <!-- Text Content -->
-    <div class="text-center md:text-left space-y-6 md:space-y-8 md:w-1/2 lg:w-[45%] mt-10 md:mt-0">
-      <h3 class="text-lg sm:text-xl text-[#E31C25] font-semibold tracking-wider uppercase heading-font">
-        Powered by PC REX
-      </h3>
-      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl heading text-[#1C1C1C] leading-tight">
-        BUY PC<br class="hidden sm:inline">PARTS
-      </h1>
-      <p class="text-md sm:text-lg text-[#1C1C1C] max-w-md mx-auto md:mx-0 leading-relaxed">
-        High-performance PCs, meticulously crafted for your gaming, creative, or professional needs. Built by experts, fueled by passion.
-      </p>
-      
-            <!-- Custom PC Builder Button -->
-            <div class="flex justify-center pt-2 md:justify-start">
-                <a
-                    href="builder.html"
-                    class="inline-flex items-center justify-center rounded-full border border-[#E31C25] px-4 py-3 font-semibold text-[#E31C25] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E31C25] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:ring-offset-2 sm:text-lg"
-                >
-                    <span>Build Your Own PC</span>
-                    <span class="material-icons ml-2">chevron_right</span>
-                </a>
-            </div>
-    </div>
-
-  <div class="carousel-container">
-        <div class="carousel-track">
-            <!-- Dito ilalagay ng JavaScript ang mga imahe -->
-        </div>
-        <div class="carousel-dots">
-            <!-- Dito ilalagay ng JavaScript ang mga dot -->
-        </div>
-    </div>
-
-
-  </div>
-</section>
-
-<script src="../js/carousel.js"></script>
-
-
-
-
-
-<!-- Categories Scrolling Section -->
-<section class="py-3 sm:py-4 bg-[#FAF5F1] overflow-hidden fade-in-section" id="categoriesSection">
-<div class="scroll-container w-full">
-<div class="scroll-track flex">
-<!-- This container will be populated by JavaScript -->
-<div id="scroll-content" class="animate-scroll flex-none flex items-center">
-<!-- Dynamic content will be inserted here -->
-</div>
-</div>
-</div>
-</section>
-<!-- Link to your JavaScript file -->
-<script src="../js/categoryScroll.js"></script>
-
-
-
-
-
-
-
-<!-- BAGONG UI: Explore Products Gallery Section -->
-<section id="ExploreProducts" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">
-        Explore Our Product Categories
-      </h2>
-      <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">
-        Discover the high-quality components that power the most demanding PC builds.
-      </p>
-    </div> -->
-
-    <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
-    <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Ang JavaScript ang maglalagay ng mga product card dito -->
-    </div>
-  </div>
-</section>
-
-<!-- BAGONG UI: "For Viewing Only" Modal -->
-<div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 transition-opacity duration-300">
-  <!-- Modal content -->
-  <div class="m-4 max-h-[90vh] w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 flex flex-col">
-    <!-- Modal Header -->
-    <div class="flex items-center justify-between border-b border-gray-200 bg-gray-50 p-6">
-      <h3 id="modalTitle" class="text-2xl font-bold text-gray-800">Product Selections</h3>
-      <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
-        <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <!-- Modal Body na may simpleng listahan -->
-    <div id="modalBody" class="overflow-y-auto p-6 md:p-8 space-y-6">
-      <!-- Dito ilalagay ng JavaScript ang listahan ng mga produkto -->
-    </div>
-  </div>
-</div>
-
-<!-- I-link ang JavaScript file -->
-<script src="../js/ExploreProducts.js"></script>
-
-
-
-
-
-
-<!-- NEW TUTORIAL SECTION -->
-<section class="bg-[#FAF5F1] py-12 sm:py-16 opacity-0 transition-opacity duration-1000 ease-in-out"> <!-- Added a light background for the whole section -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-[#FAF5F1] p-6 sm:p-8 lg:p-10 rounded-xl shadow-2xl overflow-hidden"> <!-- Enhanced rounding and shadow -->
-            <header class="mb-8 text-center">
-                
-                <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">
-                    New to PC Building?
-                </h2>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-                    Don't worry, we've got you covered! Watch our comprehensive step-by-step guide designed specifically for beginners.
-                </p>
-            </header>
-
-            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl border border-slate-200 mx-auto max-w-4xl">
-                <!-- Corrected YouTube embed URL -->
-                <iframe 
-                    src="https://www.youtube.com/embed/dWE1Hmf1XPc" 
-                    title="PC Building Tutorial for Beginners" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    class="w-full h-full"
-                ></iframe>
-            </div>
-
-            <div class="mt-8 prose prose-lg sm:prose-xl text-slate-700 max-w-3xl mx-auto text-center">
-                <!-- Using Tailwind Typography plugin classes for better text rendering -->
-                <p>
-                    This tutorial will walk you through everything from unboxing your components to the thrill of your first successful boot-up.
-                </p>
-                <p class="font-semibold text-[#E31C25] mt-4">
-                    Ready to build your dream PC? Let's get started!
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- END OF NEW TUTORIAL SECTION -->
 
 
 
@@ -444,134 +284,20 @@
     </div>
 </section>
 
-<!-- CONTACT Section -->
-<section id="contact-section" class="bg-[#1C1C1C] text-gray-100 py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
-    <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12 md:mb-16">
-            <h2 class="text-3xl md:text-4xl text-[#FAF5F1] font-bold">Get in Touch</h2>
-            <p class="text-lg mt-4 max-w-2xl text-gray-400 mx-auto">
-                Have questions or need assistance? Contact us today – we're ready to help.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
-            <!-- Contact Form -->
-            <div class="bg-neutral-900 p-8 rounded-xl shadow-xl">
-                <h3 class="text-2xl font-semibold text-[#FAF5F1] mb-6">Send Us a Message</h3>
-                <form class="space-y-5">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label for="first-name" class="sr-only">First Name</label>
-                            <input type="text" id="first-name" name="first-name" placeholder="First Name" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] transition duration-200 placeholder-gray-400">
-                        </div>
-                        <div>
-                            <label for="last-name" class="sr-only">Last Name</label>
-                            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] transition duration-200 placeholder-gray-400">
-                        </div>
-                    </div>
-                     <div>
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Email Address" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] transition duration-200 placeholder-gray-400">
-                    </div>
-                    <div>
-                        <label for="phone" class="sr-only">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number (Optional)" class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] transition duration-200 placeholder-gray-400">
-                    </div>
-                    <div>
-                        <label for="subject" class="sr-only">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] transition duration-200 placeholder-gray-400">
-                    </div>
-                    <div>
-                        <label for="message" class="sr-only">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] h-36 transition duration-200 placeholder-gray-400 resize-none"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-[#E31C25] text-[#FAF5F1] py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-red-700 transition duration-300 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[#E31C25]">
-                        <i class="fas fa-paper-plane mr-2"></i> Send Message
-                    </button>
-                </form>
-            </div>
-
-            <!-- Contact Info & Location -->
-            <div class="space-y-8">
-                 <div class="bg-neutral-900 text-gray-100 p-8 rounded-xl shadow-xl">
-                    <h3 class="text-2xl font-semibold text-[#FAF5F1]">Contact Details</h3>
-                    <div class="mt-5 space-y-4 text-gray-300">
-                        <p class="flex items-center text-lg">
-                            <i class="fas fa-map-marker-alt text-[#E31C25] w-6 mr-3 text-center"></i>
-                            123 Tech Street, Silicon Valley, CA 94000
-                        </p>
-                        <p class="flex items-center text-lg">
-                            <i class="fas fa-phone-alt text-[#E31C25] w-6 mr-3 text-center"></i>
-                            <a href="tel:+0123456789" class="hover:text-[#E31C25] transition">+012 345 6789</a>
-                        </p>
-                        <p class="flex items-center text-lg">
-                            <i class="fas fa-envelope text-[#E31C25] w-6 mr-3 text-center"></i>
-                             <a href="mailto:support@pcrex.com" class="hover:text-[#E31C25] transition">support@pcrex.com</a>
-                        </p>
-                    </div>
-
-                     <div class="mt-6 pt-6 border-t border-neutral-700">
-                        <h4 class="text-xl font-semibold text-[#FAF5F1]">Business Hours</h4>
-                        <p class="mt-3 flex items-center text-gray-300 text-lg">
-                            <i class="fas fa-clock text-[#E31C25] w-6 mr-3 text-center"></i> Mon - Fri: 9:00 AM - 7:00 PM
-                        </p>
-                         <p class="mt-1 flex items-center text-gray-300 text-lg">
-                            <i class="fas fa-clock text-[#E31C25] w-6 mr-3 text-center opacity-0"></i> Sat: 10:00 AM - 5:00 PM
-                        </p>
-                         <p class="mt-1 flex items-center text-gray-300 text-lg">
-                            <i class="fas fa-clock text-[#E31C25] w-6 mr-3 text-center opacity-0"></i> Sun: Closed
-                        </p>
-                    </div>
-                </div>
-
-                 <div class="bg-neutral-900 text-gray-100 p-8 rounded-xl shadow-xl">
-                    <h3 class="text-2xl font-semibold text-[#FAF5F1]">Visit Our Store</h3>
-                    <p class="mt-3 text-gray-300">Find us easily using the map below or click for directions.</p>
-                    <a href="#" class="mt-5 inline-flex items-center justify-center bg-[#E31C25] text-[#FAF5F1] px-6 py-2.5 rounded-lg shadow-md font-semibold transition duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[#E31C25]">
-                        <i class="fas fa-map-marked-alt mr-2"></i> View Location Page
-                    </a>
-                     <div class="mt-6">
-                        <h4 class="text-xl font-semibold text-[#FAF5F1]">Stay Connected</h4>
-                        <div class="flex mt-4">
-                            <a href="#" aria-label="Facebook" class="bg-neutral-800 text-[#FAF5F1] p-2 mr-4 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" aria-label="Instagram" class="bg-neutral-800 text-[#FAF5F1] p-2 mr-4 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" aria-label="Twitter / X" class="bg-neutral-800 text-[#FAF5F1] p-2 mr-4 rounded-full shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.tailwindcss.com"></script>
-</section>
 
 
-<!-- Location Map Section -->
-<section id="location" class="py-16 sm:py-24 bg-[#FAF5F1] opacity-0 transition-opacity duration-1000 ease-in-out">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">Our Store Location</h2>
-        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Visit us in person to explore our products and talk to our experts.</p>
-        <div class="mt-10 rounded-lg overflow-hidden shadow-xl border border-gray-200">
-             <iframe
-                class="w-full h-96 md:h-[500px]"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509315!2d144.9537353153159!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c920fd286a9f%3A0x1c6e3463e77d131d!2sPC%20Rex%20Computer%20Sales!5e0!3m2!1sen!2us!4v1640174211445"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Google Map Location">
-             </iframe>
-             <!-- Note: Replaced the src with a generic placeholder URL. Use your specific embed URL -->
-        </div>
-    </div>
-</section>
 
 
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+
+
+
+
+
+<!-- FOOTER SECTION -->
 <footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
@@ -645,6 +371,9 @@
   <!-- Your Custom JS -->
   <script src="../js/html.js"></script>
 
+
+
+
   <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
 <div id="network-status-toast" class="fixed bottom-5 right-5 z-[9999] hidden">
     <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
@@ -667,6 +396,6 @@
 <!-- Add this new line to all HTML files -->
 <script src="/src/js/networkStatus.js"></script>
 
-
+  
 </body>
 </html>

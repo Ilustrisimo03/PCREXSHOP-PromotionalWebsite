@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Builder PC</title>
+
+  <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
+
+      <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ 
+  <!-- Link your input/output CSS if you have customizations -->
+    <link href="/src/css/output.css" rel="stylesheet"> 
+   <link href="/src/css/input.css" rel="stylesheet"> 
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+
+  
+
+
+</head>
+<body class="bg-[#FAF5F1]  antialiased">
+
+
+
+<!-- ===== PAGE LOADER START ===== -->
+<div id="page-loader" class="fixed inset-0 z-[9999] bg-white bg-opacity-80 backdrop-blur-sm hidden">
+    <!-- Centering Container -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <!-- Relative container for positioning the spinner and logo -->
+        <div class="relative h-20 w-20 flex items-center justify-center">
+            
+            <!-- The Spinner -->
+            <div class="absolute h-full w-full animate-spin rounded-full border-4 border-solid border-[#E31C25] border-t-transparent"></div>
+            
+            <!-- Your Logo -->
+            <img src="../assets/image/PCREX_MAIN_LOGO1.png" alt="Loading..." class="h-12 w-12">
+
+        </div>
+    </div>
+</div>
+<!-- ===== PAGE LOADER END ===== -->
+
+<script src="/src/js/loader.js" ></script>
+
+
+
+
+<!-- Navbar -->
+<nav class="bg-[#FAF5F1] shadow-lg sticky top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC REX Logo" class="h-10 w-auto">
+        </a>
+  
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-[30px]">
+          <a href="index.html" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
+  
+          <!-- About Us Dropdown -->
+          <div class="relative" id="about-us-wrapper">
+            <button id="aboutUsBtn" class="text-[#1C1C1C] hover:text-[#E31C25] flex items-center transition font-semibold">
+              About Us 
+              <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
+            </button>
+            <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAF5F1] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
+              <a href="exploreProducts.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
+              <a href="services.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
+              <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
+            </div>
+          </div>
+  
+          <a href="#custom-build" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">PC Builder</a>
+          <a href="contact.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
+        </div>
+  
+        <!-- Login + Mobile Button -->
+        <div class="flex items-center">
+            <!-- Download App Link for Desktop -->
+            <a href="/path/to/your/application.apk" download="YourApp.apk" 
+            class="hidden md:flex hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-full items-center justify-center shadow-lg hover:scale-105 transform">
+                <span class="material-icons mr-2">install_mobile</span>
+                <span class="text-md font-semibold">Download App</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
+                <span class="material-icons text-3xl">menu</span>
+            </button>
+        </div>
+      </div>
+    </div>
+</nav>
+  
+<!-- Sidebar -->
+<div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FAF5F1] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
+        <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
+            <span class="material-icons text-2xl">close</span>
+        </button>
+    </div>
+    <div class="p-4 space-y-3">
+        <a href="index.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Home</a>
+
+        <!-- About Us (with nested links) -->
+        <div>
+            <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
+            <div class="pl-4 space-y-1 text-sm">
+                <a href="exploreProducts.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
+                <a href="services.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
+                <a href="location.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
+            </div>
+        </div>
+
+        <a href="#custom-build" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">PC Builder</a>
+        <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
+
+        <!-- Download App Link for Sidebar -->
+        <a href="/path/to/your/application.apk" download="YourApp.apk" 
+           class="hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transform">
+            <span class="material-icons mr-2">install_mobile</span>
+            <span>Download App</span>
+        </a>
+    </div>
+</div>
+  
+<!-- Backdrop -->
+<div id="sidebarBackdrop" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-30 z-40 hidden"></div>
+
+<script src="/src/js/nav.js" ></script>
+
+
+
+
+<!-- CUSTOM BUILD SECTION -->
+<section id="custom-build" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="mb-10 text-center">
+            <h1 class="text-3xl md:text-4xl heading text-[#1C1C1C]">PC Part Builder</h1>
+            <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">Build your dream PC. Select parts and we'll check compatibility for you.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Component Slots -->
+            <div class="lg:col-span-2 bg-[#FAF5F1] p-6 rounded-xl shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-[#1C1C1C] border-b border-slate-200 pb-4">Choose Your Components</h2>
+                <div id="component-slots" class="space-y-4">
+                    <!-- Loading state -->
+                    <div class="text-center text-slate-500 py-10" id="loading-state">
+                        <i class="fas fa-circle-notch fa-spin fa-2x text-[#E31C25] mb-3"></i>
+                        <p>Loading components, please wait...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary and Actions -->
+            <div class="lg:col-span-1">
+                <div class="bg-[#FAF5F1] p-6 rounded-xl shadow-md sticky top-8">
+                    <h2 class="text-2xl font-bold mb-4 text-[#1C1C1C]">Build Summary</h2>
+                    <div id="overall-compatibility-status" class="p-4 rounded-lg text-center font-semibold mb-4 text-slate-700 bg-slate-100">
+                        Start by selecting a component.
+                    </div>
+                    <div id="selected-components-summary" class="space-y-3 text-sm mb-4 min-h-[120px]">
+                        <p class="text-slate-500 italic pt-4 text-center">No components selected yet.</p>
+                    </div>
+                    <div class="border-t border-slate-200 pt-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-lg font-semibold text-[#1C1C1C]">Total Price:</span>
+                            <span id="total-price" class="text-3xl font-bold text-[#E31C25]">₱0.00</span>
+                        </div>
+                        
+                        <button id="clear-build-btn" class="w-full bg-[#FAF5F1] hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                            <i class="fas fa-trash-alt mr-2"></i>Clear Build
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Component Selection Modal -->
+<div id="component-modal" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-60 flex items-center justify-center p-4 hidden z-50 transition-opacity duration-300">
+    <div class="bg-[#FAF5F1] rounded-xl shadow-2xl w-full max-w-4xl transform transition-all duration-300 max-h-[90vh] flex flex-col">
+        <div class="flex justify-between items-center p-5 border-b border-slate-200 sticky top-0 bg-[#FAF5F1] z-10 rounded-t-xl">
+            <h3 id="modal-title" class="text-xl font-bold text-[#1C1C1C] flex items-center"></h3>
+            <button id="close-modal-btn" class="text-slate-400 hover:text-[#E31C25] transition-colors text-2xl">&times;</button>
+        </div>
+        <div id="modal-body" class="p-6 custom-scrollbar overflow-y-auto space-y-4"></div>
+    </div>
+</div>
+
+
+
+<!-- Confirmation Modal -->
+<div id="confirmation-modal" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-60 flex items-center justify-center p-4 hidden z-50 transition-opacity duration-300">
+    <div class="bg-[#FAF5F1] rounded-xl shadow-2xl w-full max-w-md transform transition-all duration-300">
+        <div class="p-6 text-center">
+            <div class="flex justify-center mb-4">
+                <!-- Regular (trash can style) -->
+                <i class="fa-regular fa-trash-can text-4xl text-[#E31C25]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#1C1C1C] mb-2">Are you sure?</h3>
+            <p class="text-slate-600 mb-6">
+                This will clear your entire build. This action cannot be undone.
+            </p>
+            <div class="flex justify-center gap-4">
+                <button id="cancel-clear-btn" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                    Cancel
+                </button>
+                <button id="confirm-clear-btn" class="w-full bg-[#E31C25] hover:bg-[#c0121b] text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                    Yes, Clear It
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../js/builder.js"></script> <!-- Ensure this path is correct -->
+
+
+
+
+
+
+<!-- FOOTER SECTION -->
+<footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      
+      <!-- Left Column: Logo, About & Social -->
+      <div class="md:col-span-1">
+        <div class="flex items-center space-x-2 mb-4">
+          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
+          <span class="text-xl font-bold tracking-wider">PC REX SHOP</span>
+        </div>
+        <p class="text-gray-400 mb-6 text-sm">
+          Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 1: Useful Links -->
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-white">Useful Links</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Categories -->
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-white">Categories</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Furniture</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Accessories</a></li>
+          <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-Built</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Newsletter -->
+      <div>
+        <h4 class="font-semibold text-lg mb-4 text-white">Join Our Newsletter</h4>
+        <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
+        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
+          <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E31C25] text-white">
+          <button type="submit" class="bg-[#E31C25] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">Subscribe</button>
+        </form>
+        <p id="newsletterMessage" class="text-sm mt-2"></p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <p>&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script src="../js/footer.js"></script>
+
+  <!-- Your Custom JS -->
+  <script src="../js/html.js"></script>
+
+
+  
+
+  <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
+<div id="network-status-toast" class="fixed bottom-5 right-5 z-[9999] hidden">
+    <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+        <!-- Icon -->
+        <div class="flex-shrink-0">
+            <i class="fas fa-exclamation-triangle text-2xl text-yellow-400"></i>
+        </div>
+        <!-- Text Content -->
+        <div class="flex-1">
+            <p class="font-bold">No Internet Connection</p>
+            <p class="text-sm text-neutral-300">Please check your network settings.</p>
+        </div>
+        <!-- Optional Close Button -->
+        <div class="flex-shrink-0">
+            <button id="close-toast-btn" class="text-neutral-400 hover:text-white">&times;</button>
+        </div>
+    </div>
+</div>
+<!-- ===== NO INTERNET CONNECTION TOAST END ===== -->
+<!-- Add this new line to all HTML files -->
+<script src="/src/js/networkStatus.js"></script>
+
+
+</body>
+</html>
