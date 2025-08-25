@@ -87,7 +87,7 @@
         <div class="flex items-center">
             <!-- Download App Link for Desktop -->
             <a href="/path/to/your/application.apk" download="YourApp.apk" 
-            class="hidden md:flex hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-full items-center justify-center shadow-lg hover:scale-105 transform">
+            class="hidden md:flex bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-full items-center justify-center hover:scale-105 transform">
                 <span class="material-icons mr-2">install_mobile</span>
                 <span class="text-md font-semibold">Download App</span>
             </a>
@@ -127,9 +127,9 @@
 
         <!-- Download App Link for Sidebar -->
         <a href="/path/to/your/application.apk" download="YourApp.apk" 
-           class="hover:bg-[#e20e19] hover:text-[#FFFFFF] text-[#E31C25] border border-[#E31C25] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transform">
+           class="bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transform">
             <span class="material-icons mr-2">install_mobile</span>
-            <span>Download App</span>
+            <span class="text-md font-semibold">Download App</span>
         </a>
     </div>
 </div>
@@ -169,7 +169,7 @@
             <div class="flex justify-center pt-2 md:justify-start">
                 <a
                     href="builder.html"
-                    class="inline-flex items-center justify-center rounded-full border border-[#E31C25] px-4 py-3 font-semibold text-[#E31C25] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#E31C25] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:ring-offset-2 sm:text-lg"
+                    class="inline-flex items-center justify-center bg-[#E31C25] py-3 px-6 rounded-lg text-lg shadow-md font-semibold text-[#FFFFFF] transition-all duration-300 hover:scale-105  sm:text-md"
                 >
                     <span>Build Your Own PC</span>
                     <span class="material-icons ml-2">chevron_right</span>
@@ -189,7 +189,7 @@
 
   </div>
 </section>
-
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="../js/carousel.js"></script>
 
 
@@ -219,14 +219,6 @@
 <!-- BAGONG UI: Explore Products Gallery Section -->
 <section id="ExploreProducts" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">
-        Explore Our Product Categories
-      </h2>
-      <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">
-        Discover the high-quality components that power the most demanding PC builds.
-      </p>
-    </div> -->
 
     <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
     <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
 
+  // Tinanggal ko ang 'CPU Coolings' dito dahil wala ito sa iyong JSON data para sa gallery
   const cardLayouts = [
     "sm:col-span-2 sm:row-span-1 h-72",
     "sm:col-span-1 sm:row-span-1 h-72",
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let allItems = [];
 
-  // --- renderGalleryCards: Walang binago dito ---
+  // --- BINAGO: Nagdagdag ng 'data-color' sa explore button ---
   const renderGalleryCards = (products) => {
     if (!galleryGrid) return;
     galleryGrid.innerHTML = products.map((product, index) => {
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="${imageContainerClasses}">
             <img src="${product.image}" alt="${product.alt}" class="${imageTagClasses} drop-shadow-2xl">
           </div>
-          <button data-title="${product.title}" class="explore-btn relative z-10 mt-auto w-fit px-4 py-2 bg-white text-gray-800 text-sm font-semibold rounded-lg shadow hover:bg-gray-100 transition">
+          <button data-title="${product.title}" data-color="${product.color}" class="explore-btn relative z-10 mt-auto w-fit px-4 py-2 bg-white text-gray-800 text-sm font-semibold rounded-lg shadow hover:bg-gray-100 transition">
             Explore
           </button>
         </div>
@@ -44,15 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
     addEventListenersToButtons();
   };
 
-  // --- GANAP NA BINAGO: openModal na may bagong UI/UX ---
-  const openModal = (title) => {
+  // --- GANAP NA BINAGO: Tumatanggap na ng 'color' at nagpapakita ng 'description' ---
+  const openModal = (title, color) => {
     modalTitle.textContent = `${title} Showcase`;
 
     let itemType = title;
-    // (Mapping logic)
+    // (Mapping logic para i-match ang title sa 'type' sa Item.json)
     if (title === "Processors") itemType = "Processor";
     if (title === "Graphics Cards") itemType = "Graphics Card";
-    if (title === "CPU Coolings") itemType = "CPU Cooling";
+    if (title === "CPU Coolings") itemType = "CPU Cooling"; // Kahit wala sa gallery, iniiwan ko ang logic
     if (title === "Power Supplies") itemType = "Power Supply";
     if (title === "Storage Drives") itemType = "Storage (HDD / SSD)";
     if (title === "Motherboards") itemType = "Motherboard";
@@ -60,15 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filteredItems = allItems.filter(item => item.type === itemType);
 
-    // I-reset ang modal body style para sa grid
     modalBody.className = 'overflow-y-auto p-6 md:p-8';
 
     if (filteredItems.length > 0) {
-      // BAGONG MODAL LAYOUT: Grid ng mga product card
       modalBody.innerHTML = `
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           ${filteredItems.map(item => `
-            <div class="relative flex flex-col rounded-xl bg-gray-50 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border">
+            <!-- BINAGO: Nagdagdag ng inline style para sa border-top at isinama ang description -->
+            <div class="relative flex flex-col rounded-xl bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200"
+                 style="border-top: 5px solid ${color};">
               <!-- Image Area -->
               <div class="relative bg-white p-4 h-48 flex items-center justify-center">
                 <img src="${item.images[0]}" alt="${item.name}" class="max-h-full max-w-full object-contain">
@@ -79,8 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="p-4 flex flex-col flex-grow">
                 <h4 class="font-bold text-md text-gray-800 leading-tight">${item.name}</h4>
                 
+                <!-- BAGONG ELEMENT: Description -->
+                <p class="text-xs text-gray-600 mt-2 flex-grow">${item.description}</p>
+
                 <!-- Social Proof: Star Rating & Reviews -->
-                <div class="flex items-center my-2 gap-2">
+                <div class="flex items-center mt-3 gap-2 border-t pt-3">
                   <div class="flex items-center">
                     <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
                     <span class="text-xs text-gray-600 ml-1 font-medium">${item.rate}</span>
@@ -106,12 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('flex');
   };
 
+  // --- BINAGO: Kinukuha na rin ang 'data-color' ---
   const addEventListenersToButtons = () => {
     const exploreButtons = document.querySelectorAll('.explore-btn');
     exploreButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         const title = e.currentTarget.getAttribute('data-title');
-        openModal(title);
+        const color = e.currentTarget.getAttribute('data-color'); // Kuhanin ang kulay
+        openModal(title, color); // Ipasa ang kulay sa modal
       });
     });
   };
