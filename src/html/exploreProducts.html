@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Builder PC</title>
+  <title>Explore Products</title>
 
   <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
 
@@ -274,27 +274,48 @@
 
 
 
-  <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
-<div id="network-status-toast" class="fixed bottom-5 right-5 z-[9999] hidden">
-    <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
-        <!-- Icon -->
-        <div class="flex-shrink-0">
-            <i class="fas fa-exclamation-triangle text-2xl text-yellow-400"></i>
-        </div>
-        <!-- Text Content -->
-        <div class="flex-1">
-            <p class="font-bold">No Internet Connection</p>
-            <p class="text-sm text-neutral-300">Please check your network settings.</p>
-        </div>
-        <!-- Optional Close Button -->
-        <div class="flex-shrink-0">
-            <button id="close-toast-btn" class="text-neutral-400 hover:text-white">&times;</button>
+ <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
+    <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">
+        <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+            <!-- Icon -->
+            <div class="flex-shrink-0">
+                <!-- No Wifi Icon -->
+                <i class="fa-solid fa-wifi text-2xl text-red-700"></i>
+            </div>
+            <!-- Text Content -->
+            <div class="flex-1">
+                <p class="font-bold">No Internet Connection</p>
+                <p class="text-sm text-neutral-300">Please check your network settings.</p>
+            </div>
+            <!-- Optional Close Button -->
+            <div class="flex-shrink-0">
+                <button id="close-toast-btn-offline" class="text-neutral-400 hover:text-white">&times;</button>
+            </div>
         </div>
     </div>
-</div>
-<!-- ===== NO INTERNET CONNECTION TOAST END ===== -->
+    <!-- ===== NO INTERNET CONNECTION TOAST END ===== -->
+
+    <!-- ===== INTERNET CONNECTION RESTORED TOAST START ===== -->
+    <div id="network-status-toast-online" class="fixed bottom-5 right-5 z-[9999] hidden">
+        <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+            <!-- Icon -->
+            <div class="flex-shrink-0">
+                <i class="fa-solid fa-wifi text-2xl text-green-400"></i>
+            </div>
+            <!-- Text Content -->
+            <div class="flex-1">
+                <p class="font-bold">Back Online</p>
+                <p class="text-sm text-neutral-300">Your internet connection was restored.</p>
+            </div>
+             <!-- Optional Close Button -->
+            <div class="flex-shrink-0">
+                <button id="close-toast-btn-online" class="text-neutral-400 hover:text-white">&times;</button>
+            </div>
+        </div>
+    </div>
+    <!-- ===== INTERNET CONNECTION RESTORED TOAST END ===== -->
 <!-- Add this new line to all HTML files -->
-<script src="/src/js/networkStatus.js"></script>  
+<script src="/src/js/networkStatus.js"></script>
   
 </body>
 </html>
