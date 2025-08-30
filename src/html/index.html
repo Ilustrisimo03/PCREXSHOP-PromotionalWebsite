@@ -7,8 +7,7 @@
 
   <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
 
-      <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
  
   <!-- Link your input/output CSS if you have customizations -->
     <link href="/src/css/output.css" rel="stylesheet"> 
@@ -140,6 +139,15 @@
 <script src="/src/js/nav.js" ></script>
 
 
+
+
+
+
+
+
+
+
+
 <!-- Hero Section -->
 <section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out">
 
@@ -151,7 +159,7 @@
   </div>
 
   <!-- Main Content Container -->
-  <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-0 sm:px-6 lg:px-8 py-16 sm:py-24">
 
     <!-- Text Content -->
     <div class="text-center md:text-left space-y-6 md:space-y-8 md:w-1/2 lg:w-[45%] mt-10 md:mt-0">
@@ -184,6 +192,13 @@
         <div class="carousel-dots">
             <!-- Dito ilalagay ng JavaScript ang mga dot -->
         </div>
+        <!-- Navigation Buttons -->
+        <button id="prevBtn" class="carousel-btn prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full z-20 hover:bg-opacity-75 transition-all duration-300">
+            <span class="material-icons">chevron_left</span>
+        </button>
+        <button id="nextBtn" class="carousel-btn next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full z-20 hover:bg-opacity-75 transition-all duration-300">
+            <span class="material-icons">chevron_right</span>
+        </button>
     </div>
 
 
