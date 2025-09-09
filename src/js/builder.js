@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             summaryContainer.innerHTML = '<p class="text-slate-500 italic pt-4 text-center">No components selected yet.</p>';
             totalPriceEl.textContent = '₱0.00';
             compatibilityStatusEl.innerHTML = 'Start by selecting a component.';
-            compatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold mb-4 text-slate-700 bg-slate-100';
+            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-semibold mb-4 text-slate-700 bg-slate-100';
             return;
         }
 
@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (message.includes('Issues')) {
-            compatibilityStatusEl.className = 'p-4 rounded-lg text-left font-semibold mb-4 text-orange-800 bg-orange-100';
+            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-left font-semibold mb-4 text-orange-800 bg-orange-100';
         } else if (message.includes('compatible')) {
-            compatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold mb-4 text-green-800 bg-green-100';
+            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-semibold mb-4 text-green-800 bg-green-100';
         } else {
-             compatibilityStatusEl.className = 'p-4 rounded-lg text-center font-semibold mb-4 text-blue-800 bg-blue-100';
+             compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-semibold mb-4 text-blue-800 bg-blue-100';
         }
     };
 
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         componentStructure.forEach(slot => {
             const product = selectedComponents[slot.id];
             const slotDiv = document.createElement('div');
-            slotDiv.className = 'component-slot flex items-center justify-between p-4 border border-slate-200 rounded-lg transition-all duration-300';
+            slotDiv.className = 'component-slot flex items-center justify-between p-4 border border-slate-200 rounded-[15px] transition-all duration-300';
             slotDiv.id = `slot-${slot.id}`;
             
             const requiredText = slot.required ? `<span class="text-red-500 text-[10px] lg:text-md font-semibold ml-2">REQUIRED</span>` : '';
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
                         <h3 class="text-sm lg:text-lg font-semibold text-slate-600">${slot.name} ${requiredText}</h3>
                     </div>
-                    <button class="choose-btn bg-[#E31C25] hover:bg-[#cf1c25] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-lg transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
+                    <button class="choose-btn bg-[#E31C25] hover:bg-[#cf1c25] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-[15px] transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
                         Choose <i class="fas fa-chevron-right ml-2 text-sm lg:text-lg"></i>
                     </button>
                 `;
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const isSelected = selectedComponents[slotId]?.id === product.id;
                 const itemDiv = document.createElement('div');
-                itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border rounded-lg transition-all duration-200 ${!compatible ? 'border-orange-300 bg-orange-50/50' : 'border-slate-200 hover:border-[#E31C25] hover:bg-blue-50/50'} ${isSelected ? 'selected' : ''}`;
+                itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border rounded-[15px] transition-all duration-200 ${!compatible ? 'border-orange-300 bg-orange-50/50' : 'border-slate-200 hover:border-[#E31C25] hover:bg-blue-50/50'} ${isSelected ? 'selected' : ''}`;
                 
                 const imageUrl = (product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/150';
                 
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 itemDiv.innerHTML = `
                     <div class="flex items-center gap-4 min-w-0">
-                        <img src="${imageUrl}" alt="${product.name}" class="w-20 h-20 object-contain rounded-lg flex-shrink-0 bg-white p-1 border">
+                        <img src="${imageUrl}" alt="${product.name}" class="w-20 h-20 object-contain rounded-[15px] flex-shrink-0 bg-white p-1 border">
                         <div class="min-w-0">
                             <h5 class="font-bold text-slate-800">${product.name}</h5>
                             <p class="text-sm text-slate-500 mt-1">${product.description}</p>
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="text-left sm:text-right flex-shrink-0 ml-0 sm:ml-4 mt-4 sm:mt-0">
                         <p class="font-bold text-xl text-[#E31C25]">₱${product.price}</p>
-                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-lg transition-colors ${compatible ? 'bg-[#E31C25] text-white hover:bg-[#cf0610]' : 'bg-slate-300 text-slate-500 cursor-not-allowed'}" data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
+                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-[15px] transition-colors ${compatible ? 'bg-[#E31C25] text-white hover:bg-[#cf0610]' : 'bg-slate-300 text-slate-500 cursor-not-allowed'}" data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
                     </div>
                 `;
                 if(compatible) {
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Fetch Error:', error);
             loadingState.classList.add('hidden');
-            componentSlotsContainer.innerHTML = `<div class="text-center text-red-500 py-10 bg-red-50 rounded-lg">
+            componentSlotsContainer.innerHTML = `<div class="text-center text-red-500 py-10 bg-red-50 rounded-[15px]">
                 <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
                 <p class="font-semibold">Error: Could not load product data.</p>
                 <p class="text-sm">Please ensure 'Item.json' is in the correct folder and is a valid JSON file.</p>
