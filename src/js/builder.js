@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             summaryContainer.innerHTML = '<p class="text-slate-500 italic pt-4 text-center">No components selected yet.</p>';
             totalPriceEl.textContent = '₱0.00';
             compatibilityStatusEl.innerHTML = 'Start by selecting a component.';
-            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-semibold mb-4 text-slate-700 bg-slate-100';
+            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-bold mb-4 text-slate-700 bg-slate-100';
             return;
         }
 
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             summaryItem.className = 'flex justify-between items-center';
             summaryItem.innerHTML = `
                 <div>
-                    <p class="font-semibold text-slate-800">${slotInfo.name}</p>
+                    <p class="font-bold text-slate-800">${slotInfo.name}</p>
                     <p class="text-slate-500 truncate max-w-[180px]">${product.name}</p>
                 </div>
                 <p class="font-medium text-slate-700">₱${product.price}</p>
@@ -180,11 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (message.includes('Issues')) {
-            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-left font-semibold mb-4 text-orange-800 bg-orange-100';
+            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-left font-bold mb-4 text-orange-800 bg-orange-100';
         } else if (message.includes('compatible')) {
-            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-semibold mb-4 text-green-800 bg-green-100';
+            compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-bold mb-4 text-green-800 bg-green-100';
         } else {
-             compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-semibold mb-4 text-blue-800 bg-blue-100';
+             compatibilityStatusEl.className = 'p-4 rounded-[15px] text-center font-bold mb-4 text-blue-800 bg-blue-100';
         }
     };
 
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slotDiv.className = 'component-slot flex items-center justify-between p-4 border border-slate-200 rounded-[15px] transition-all duration-300';
             slotDiv.id = `slot-${slot.id}`;
             
-            const requiredText = slot.required ? `<span class="text-red-500 text-[10px] lg:text-md font-semibold ml-2">REQUIRED</span>` : '';
+            const requiredText = slot.required ? `<span class="text-red-500 text-[10px] lg:text-md font-bold ml-2">REQUIRED</span>` : '';
 
             if (product) {
                  const imageUrl = (product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/150';
@@ -209,15 +209,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="text-right flex-shrink-0 ml-4">
-                        <p class="font-semibold text-sm lg:text-lg text-slate-800">₱${product.price}</p>
-                        <button class="remove-item-btn text-sm lg:text-lg text-[#E31C25] hover:text-red-600 font-semibold" data-slot-id="${slot.id}">Change</button>
+                        <p class="font-bold text-sm lg:text-lg text-slate-800">₱${product.price}</p>
+                        <button class="remove-item-btn text-sm lg:text-lg text-[#E31C25] hover:text-red-600 font-bold" data-slot-id="${slot.id}">Change</button>
                     </div>
                 `;
             } else {
                 slotDiv.innerHTML = `
                     <div class="flex items-center gap-4">
                         <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
-                        <h3 class="text-sm lg:text-lg font-semibold text-slate-600">${slot.name} ${requiredText}</h3>
+                        <h3 class="text-sm lg:text-lg font-bold text-slate-600">${slot.name} ${requiredText}</h3>
                     </div>
                     <button class="choose-btn bg-[#E31C25] hover:bg-[#cf1c25] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-[15px] transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
                         Choose <i class="fas fa-chevron-right ml-2 text-sm lg:text-lg"></i>
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 let compatibilityHTML = '';
                 if (!compatible) {
-                    compatibilityHTML = `<p class="text-xs text-orange-600 mt-2 font-semibold"><i class="fas fa-exclamation-triangle mr-1"></i> Incompatible: ${reason}</p>`;
+                    compatibilityHTML = `<p class="text-xs text-orange-600 mt-2 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i> Incompatible: ${reason}</p>`;
                 }
                 
                 itemDiv.innerHTML = `
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingState.classList.add('hidden');
             componentSlotsContainer.innerHTML = `<div class="text-center text-red-500 py-10 bg-red-50 rounded-[15px]">
                 <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
-                <p class="font-semibold">Error: Could not load product data.</p>
+                <p class="font-bold">Error: Could not load product data.</p>
                 <p class="text-sm">Please ensure 'Item.json' is in the correct folder and is a valid JSON file.</p>
             </div>`;
         });

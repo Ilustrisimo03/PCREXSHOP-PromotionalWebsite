@@ -52,9 +52,8 @@
 
 <script src="/src/js/loader.js" ></script>
 
-
 <!-- Navbar -->
-<nav class="bg-[#FAFAFA] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-5 rounded-[15px]">
+<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-5 rounded-[15px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -80,14 +79,14 @@
           </div>
   
           <a href="builder.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">PC Builder</a>
-          <a href="contact.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
+          <a href="#contact-section" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
         </div>
   
         <!-- Login + Mobile Button -->
         <div class="flex items-center">
             <!-- Download App Link for Desktop -->
             <a href="/path/to/your/application.apk" download="YourApp.apk" 
-            class="hidden md:flex bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-full items-center justify-center hover:scale-105 transform">
+            class="hidden md:flex bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-[15px] items-center justify-center hover:scale-105 transform">
                 <span class="material-icons mr-2">install_mobile</span>
                 <span class="text-md font-semibold">Download App</span>
             </a>
@@ -102,7 +101,7 @@
 </nav>
   
 <!-- Sidebar -->
-<div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FAFAFA] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+<div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex justify-between items-center p-4 border-b">
         <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
         <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
@@ -123,11 +122,11 @@
         </div>
 
         <a href="builder.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">PC Builder</a>
-        <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
+        <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
 
         <!-- Download App Link for Sidebar -->
         <a href="/path/to/your/application.apk" download="YourApp.apk" 
-           class="bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transform">
+           class="bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-[15px] flex items-center justify-center shadow-lg hover:scale-105 transform">
             <span class="material-icons mr-2">install_mobile</span>
             <span class="text-md font-semibold">Download App</span>
         </a>
@@ -138,6 +137,7 @@
 <div id="sidebarBackdrop" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-30 z-40 hidden"></div>
 
 <script src="/src/js/nav.js" ></script>
+
 
 
 
@@ -154,7 +154,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             <!-- Contact Form -->
             <div class="bg-neutral-900 p-8 rounded-xl shadow-xl">
-                <h3 class="text-2xl font-semibold text-[#FAF5F1] mb-6">Send Us a Message</h3>
+                <h3 class="text-2xl heading text-[#FAF5F1] mb-6">Send Us a Message</h3>
                 <form class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
@@ -182,7 +182,7 @@
                         <label for="message" class="sr-only">Message</label>
                         <textarea id="message" name="message" placeholder="Your Message" required class="w-full px-4 py-2.5 bg-black text-gray-100 border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E31C25] focus:border-[#E31C25] h-36 transition duration-200 placeholder-gray-400 resize-none"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-[#E31C25] text-[#FAF5F1] py-3 px-6 rounded-[15px] font-semibold shadow-md hover:bg-red-700 transition duration-300 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[#E31C25]">
+                    <button type="submit" class="w-full bg-[#E31C25] text-[#FAF5F1] py-3 px-6 rounded-[15px] font-bold tracking-wider shadow-md hover:bg-red-700 transition duration-300 ease-in-out flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[#E31C25]">
                         <i class="fas fa-paper-plane mr-2"></i> Send Message
                     </button>
                 </form>
@@ -191,7 +191,7 @@
             <!-- Contact Info & Location -->
             <div class="space-y-8">
                  <div class="bg-neutral-900 text-gray-100 p-8 rounded-xl shadow-xl">
-                    <h3 class="text-2xl font-semibold text-[#FAF5F1]">Contact Details</h3>
+                    <h3 class="text-2xl heading text-[#FAF5F1]">Contact Details</h3>
                     <div class="mt-5 space-y-4 text-gray-300">
                         <p class="flex items-center text-lg">
                             <i class="fas fa-map-marker-alt text-[#E31C25] w-6 mr-3 text-center"></i>
@@ -208,7 +208,7 @@
                     </div>
 
                      <div class="mt-6 pt-6 border-t border-neutral-700">
-                        <h4 class="text-xl font-semibold text-[#FAF5F1]">Business Hours</h4>
+                        <h4 class="text-xl heading text-[#FAF5F1]">Business Hours</h4>
                         <p class="mt-3 flex items-center text-gray-300 text-lg">
                             <i class="fas fa-clock text-[#E31C25] w-6 mr-3 text-center"></i> Mon - Fri: 9:00 AM - 7:00 PM
                         </p>
@@ -222,13 +222,13 @@
                 </div>
 
                  <div class="bg-neutral-900 text-gray-100 p-8 rounded-xl shadow-xl">
-                    <h3 class="text-2xl font-semibold text-[#FAF5F1]">Visit Our Store</h3>
+                    <h3 class="text-2xl heading text-[#FAF5F1]">Visit Our Store</h3>
                     <p class="mt-3 text-gray-300">Find us easily using the map below or click for directions.</p>
                     <a href="#" class="mt-5 inline-flex items-center justify-center bg-[#E31C25] text-[#FAF5F1] px-6 py-2.5 rounded-[15px] shadow-md font-semibold transition duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-[#E31C25]">
                         <i class="fas fa-map-marked-alt mr-2"></i> View Location Page
                     </a>
                      <div class="mt-6">
-                        <h4 class="text-xl font-semibold text-[#FAF5F1]">Stay Connected</h4>
+                        <h4 class="text-xl font-regular text-[#FAF5F1]">Stay Connected</h4>
                         <div class="flex mt-4">
                             <a href="#" aria-label="Facebook" class="bg-neutral-800 text-[#FAF5F1] p-2 mr-4 rounded-[15px] shadow-md flex items-center justify-center w-10 h-10 hover:bg-[#E31C25] hover:scale-110 transition duration-300 ease-in-out">
                                 <i class="fab fa-facebook-f"></i>
@@ -249,7 +249,7 @@
 </section>
 
 
-<!-- FOOTER SECTION -->
+
 <footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
@@ -258,7 +258,7 @@
       <div class="md:col-span-1">
         <div class="flex items-center space-x-2 mb-4">
           <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
-          <span class="text-xl font-bold tracking-wider">PC REX SHOP</span>
+          <span class="text-xl heading tracking-wider">PC REX SHOP</span>
         </div>
         <p class="text-gray-400 mb-6 text-sm">
           Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
@@ -273,7 +273,7 @@
 
       <!-- Column 1: Useful Links -->
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-white">Useful Links</h4>
+        <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
         <ul class="space-y-3 text-gray-400">
           <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
           <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
@@ -285,7 +285,7 @@
 
       <!-- Column 2: Categories -->
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-white">Categories</h4>
+        <h4 class="font-bold text-lg mb-4 text-white">Categories</h4>
         <ul class="space-y-3 text-gray-400">
           <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
           <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
@@ -297,7 +297,7 @@
 
       <!-- Column 3: Newsletter -->
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-white">Join Our Newsletter</h4>
+        <h4 class="font-bold text-lg mb-4 text-white">Join Our Newsletter</h4>
         <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
         <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
           <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E31C25] text-white">
@@ -323,15 +323,9 @@
   <!-- Your Custom JS -->
   <script src="../js/html.js"></script>
 
-
-
-
-
-
-
  <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
     <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">
-        <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+        <div class="flex items-center gap-4 rounded-[15px] bg-neutral-800 p-4 text-white shadow-lg">
             <!-- Icon -->
             <div class="flex-shrink-0">
                 <!-- No Wifi Icon -->
@@ -352,7 +346,7 @@
 
     <!-- ===== INTERNET CONNECTION RESTORED TOAST START ===== -->
     <div id="network-status-toast-online" class="fixed bottom-5 right-5 z-[9999] hidden">
-        <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+        <div class="flex items-center gap-4 rounded-[15px] bg-neutral-800 p-4 text-white shadow-lg">
             <!-- Icon -->
             <div class="flex-shrink-0">
                 <i class="fa-solid fa-wifi text-2xl text-green-400"></i>

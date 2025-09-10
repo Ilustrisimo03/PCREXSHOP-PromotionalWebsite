@@ -52,8 +52,13 @@
 <!-- ===== PAGE LOADER END ===== -->
 
 <script src="/src/js/loader.js" ></script>
+
+
+
+
+
 <!-- Navbar -->
-<nav class="bg-[#FAFAFA] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-5 rounded-[15px]">
+<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-5 rounded-[15px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -101,7 +106,7 @@
 </nav>
   
 <!-- Sidebar -->
-<div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FAFAFA] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+<div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex justify-between items-center p-4 border-b">
         <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
         <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
@@ -141,17 +146,10 @@
 
 
 
+
 <!-- BAGONG UI: Explore Products Gallery Section -->
 <section id="ExploreProducts" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">
-        Explore Our Product Categories
-      </h2>
-      <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">
-        Discover the high-quality components that power the most demanding PC builds.
-      </p>
-    </div>
 
     <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
     <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -193,7 +191,7 @@
 
 
 
-<!-- FOOTER SECTION -->
+
 <footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
@@ -202,7 +200,7 @@
       <div class="md:col-span-1">
         <div class="flex items-center space-x-2 mb-4">
           <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
-          <span class="text-xl font-bold tracking-wider">PC REX SHOP</span>
+          <span class="text-xl heading tracking-wider">PC REX SHOP</span>
         </div>
         <p class="text-gray-400 mb-6 text-sm">
           Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
@@ -217,7 +215,7 @@
 
       <!-- Column 1: Useful Links -->
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-white">Useful Links</h4>
+        <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
         <ul class="space-y-3 text-gray-400">
           <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
           <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
@@ -229,7 +227,7 @@
 
       <!-- Column 2: Categories -->
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-white">Categories</h4>
+        <h4 class="font-bold text-lg mb-4 text-white">Categories</h4>
         <ul class="space-y-3 text-gray-400">
           <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
           <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
@@ -241,7 +239,7 @@
 
       <!-- Column 3: Newsletter -->
       <div>
-        <h4 class="font-semibold text-lg mb-4 text-white">Join Our Newsletter</h4>
+        <h4 class="font-bold text-lg mb-4 text-white">Join Our Newsletter</h4>
         <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
         <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
           <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E31C25] text-white">
@@ -267,16 +265,9 @@
   <!-- Your Custom JS -->
   <script src="../js/html.js"></script>
 
-
-
-
-
-
-
-
  <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
     <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">
-        <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+        <div class="flex items-center gap-4 rounded-[15px] bg-neutral-800 p-4 text-white shadow-lg">
             <!-- Icon -->
             <div class="flex-shrink-0">
                 <!-- No Wifi Icon -->
@@ -297,7 +288,7 @@
 
     <!-- ===== INTERNET CONNECTION RESTORED TOAST START ===== -->
     <div id="network-status-toast-online" class="fixed bottom-5 right-5 z-[9999] hidden">
-        <div class="flex items-center gap-4 rounded-lg bg-neutral-800 p-4 text-white shadow-lg">
+        <div class="flex items-center gap-4 rounded-[15px] bg-neutral-800 p-4 text-white shadow-lg">
             <!-- Icon -->
             <div class="flex-shrink-0">
                 <i class="fa-solid fa-wifi text-2xl text-green-400"></i>
