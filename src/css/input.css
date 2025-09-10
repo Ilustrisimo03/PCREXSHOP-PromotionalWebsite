@@ -3,17 +3,17 @@
 
 body {
     
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
 
 .medium {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
 .semi-bold {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 550;
 }
 
@@ -23,7 +23,7 @@ body {
 }
 
 .bold {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
