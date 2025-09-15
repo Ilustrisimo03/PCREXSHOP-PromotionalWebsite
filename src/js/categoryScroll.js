@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const createCategoryGroupHtml = (categories, isDuplicate = false) => {
         // Create an HTML string for each category item
         const itemsHtml = categories.map(category => `
-            <a href="${category.url}" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-red-50 rounded-lg transition-all duration-200">
-                <i class="${category.icon} text-lg sm:text-xl text-[#E31C25] group-hover:text-[#E31C25] transition-colors" aria-hidden="true"></i>
-                <span class="text-sm sm:text-base text-[#1C1C1C] font-medium group-hover:text-[#E31C25] transition-colors">${category.name}</span>
+            <a href="${category.url}" class="category-item group flex items-center gap-2 sm:gap-3 px-3 py-2 hover:bg-[#FFFFFF] rounded-lg transition-all duration-200">
+                <i class="${category.icon} text-lg sm:text-xl text-[#FFFFFF] group-hover:text-[#074ec2] transition-colors" aria-hidden="true"></i>
+                <span class="text-sm sm:text-base text-[#FFFFFF] font-medium group-hover:text-[#074ec2] transition-colors">${category.name}</span>
             </a>
         `).join(''); // Join all item strings together
 

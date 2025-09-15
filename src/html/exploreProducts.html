@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Products</title>
 
-  <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
+  <link rel="icon" type="image/png" sizes="256x256" href="../assets/image/PCREXBIGLOGO (1).png">
 
       <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -32,114 +32,109 @@
 </head>
 <body class="bg-[#FFFFFF]  antialiased">
 
-
 <!-- ===== PAGE LOADER START ===== -->
 <div id="page-loader" class="fixed inset-0 z-[9999] bg-white bg-opacity-80 backdrop-blur-sm hidden">
-    <!-- Centering Container -->
-    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <!-- Relative container for positioning the spinner and logo -->
-        <div class="relative h-20 w-20 flex items-center justify-center">
-            
-            <!-- The Spinner -->
-            <div class="absolute h-full w-full animate-spin rounded-full border-4 border-solid border-[#E31C25] border-t-transparent"></div>
-            
-            <!-- Your Logo -->
-            <img src="../assets/image/PCREX_MAIN_LOGO1.png" alt="Loading..." class="h-12 w-12">
+  <!-- Centering Container -->
+  <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <!-- Relative container for positioning the spinner and logo -->
+      <div class="relative h-20 w-20 flex items-center justify-center">
+          
+          <!-- The Spinner -->
+          <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
+          
+          <!-- Your Logo -->
+          <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="Loading..." class="h-10 w-1h-10">
 
-        </div>
-    </div>
+      </div>
+  </div>
 </div>
 <!-- ===== PAGE LOADER END ===== -->
 
 <script src="/src/js/loader.js" ></script>
 
-
-
-
-
 <!-- Navbar -->
-<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-5 rounded-[15px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
-          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC REX Logo" class="h-10 w-auto">
-        </a>
-  
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-[30px]">
-          <a href="index.html" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
-  
-          <!-- About Us Dropdown -->
-          <div class="relative" id="about-us-wrapper">
-            <button id="aboutUsBtn" class="text-[#1C1C1C] hover:text-[#E31C25] flex items-center transition font-semibold">
-              About Us 
-              <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
-            </button>
-            <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAFAFA] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
-              <a href="#ExploreProducts" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
-              <a href="services.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
-              <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
-            </div>
-          </div>
-  
-          <a href="builder.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">PC Builder</a>
-          <a href="contact.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
-        </div>
-  
-        <!-- Login + Mobile Button -->
-        <div class="flex items-center">
-            <!-- Download App Link for Desktop -->
-            <a href="/path/to/your/application.apk" download="YourApp.apk" 
-            class="hidden md:flex bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-[15px] items-center justify-center hover:scale-105 transform">
-                <span class="material-icons mr-2">install_mobile</span>
-                <span class="text-md font-semibold">Download App</span>
-            </a>
+<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-3 rounded-[15px]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+        <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="PC REX Logo" class="h-10 w-auto">
+      </a>
 
-            <!-- Mobile Menu Button -->
-            <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
-                <span class="material-icons text-3xl">menu</span>
-            </button>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-[30px]">
+        <a href="index.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] transition duration-150 ease-in-out font-semibold relative">Home</a>
+
+        <!-- About Us Dropdown -->
+        <div class="relative" id="about-us-wrapper">
+          <button id="aboutUsBtn" class="text-[#1C1C1C] hover:text-[#074ec2] flex items-center transition font-semibold">
+            About Us 
+            <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
+          </button>
+          <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAFAFA] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
+            <a href="exploreProducts.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#074ec2] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
+            <a href="services.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#074ec2] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
+            <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#074ec2] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
+          </div>
         </div>
+
+        <a href="builder.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">PC Builder</a>
+        <a href="contact.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">Contact</a>
+      </div>
+
+      <!-- Login + Mobile Button -->
+      <div class="flex items-center">
+          <!-- Notification Icon -->
+              <a href="#"
+              class="hidden md:flex bg-[#074ec2] text-[#FFFFFF] transition-all duration-300 w-12 h-12 rounded-full items-center justify-center hover:scale-105 transform">
+              <span class="material-icons">notifications</span>
+              </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#074ec2] focus:outline-none">
+              <span class="material-icons text-3xl">menu</span>
+          </button>
       </div>
     </div>
+  </div>
 </nav>
-  
+
 <!-- Sidebar -->
 <div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
-    <div class="flex justify-between items-center p-4 border-b">
-        <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
-        <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
-            <span class="material-icons text-2xl">close</span>
-        </button>
-    </div>
-    <div class="p-4 space-y-3">
-        <a href="index.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Home</a>
+  <div class="flex justify-between items-center p-4 border-b">
+      <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="PC REX Logo" class="h-10 w-auto"> <!-- Changed from h2 to img -->
+      <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#074ec2]">
+          <span class="material-icons text-2xl">close</span>
+      </button>
+  </div>
+  <div class="p-4 space-y-3">
+      <a href="index.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Home</a>
 
-        <!-- About Us (with nested links) -->
-        <div>
-            <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
-            <div class="pl-4 space-y-1 text-sm">
-                <a href="#ExploreProducts" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
-                <a href="services.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
-                <a href="location.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
-            </div>
-        </div>
+      <!-- About Us (with nested links) -->
+      <div>
+          <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
+          <div class="pl-4 space-y-1 text-sm">
+              <a href="exploreProducts.html" class="block text-[#1C1C1C] hover:text-[#074ec2] text-sm sidebar-link relative">Explore Our Products</a>
+              <a href="services.html" class="block text-[#1C1C1C] hover:text-[#074ec2] text-sm sidebar-link relative">Our Services</a>
+              <a href="location.html" class="block text-[#1C1C1C] hover:text-[#074ec2] text-sm sidebar-link relative">Our Location</a>
+          </div>
+      </div>
 
-        <a href="builder.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">PC Builder</a>
-        <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
+      <a href="builder.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">PC Builder</a>
+      <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Contact</a>
 
-        <!-- Download App Link for Sidebar -->
-        <a href="/path/to/your/application.apk" download="YourApp.apk" 
-           class="bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-[15px] flex items-center justify-center shadow-lg hover:scale-105 transform">
-            <span class="material-icons mr-2">install_mobile</span>
-            <span class="text-md font-semibold">Download App</span>
-        </a>
-    </div>
+      <!-- Notification Icon for Sidebar -->
+      <a href="#"
+      class="bg-[#074ec2] text-[#FFFFFF] transition-all duration-300 w-12 h-12 rounded-full flex items-center justify-center hover:scale-105 transform mt-4">
+      <span class="material-icons">notifications</span>
+      </a>
+  </div>
 </div>
-  
+
 <!-- Backdrop -->
 <div id="sidebarBackdrop" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-30 z-40 hidden"></div>
+
+
 
 <script src="/src/js/nav.js" ></script>
 
@@ -149,7 +144,7 @@
 
 <!-- BAGONG UI: Explore Products Gallery Section -->
 <section id="ExploreProducts" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-10">
 
     <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
     <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -182,8 +177,8 @@
 <script src="../js/ExploreProducts.js"></script>
 
 
-
 <script src="https://cdn.tailwindcss.com"></script>
+
 
 
 
@@ -198,9 +193,9 @@
       
       <!-- Left Column: Logo, About & Social -->
       <div class="md:col-span-1">
-        <div class="flex items-center space-x-2 mb-4">
-          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
-          <span class="text-xl heading tracking-wider">PC REX SHOP</span>
+        <div class="flex items-center mb-6">
+          <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="PC Rex Logo" class="h-10 w-auto" />
+          
         </div>
         <p class="text-gray-400 mb-6 text-sm">
           Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
@@ -242,8 +237,8 @@
         <h4 class="font-bold text-lg mb-4 text-white">Join Our Newsletter</h4>
         <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
         <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
-          <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E31C25] text-white">
-          <button type="submit" class="bg-[#E31C25] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">Subscribe</button>
+          <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#074ec2] text-white">
+          <button type="submit" class="bg-[#074ec2] hover:bg-[#074ec2] text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">Subscribe</button>
         </form>
         <p id="newsletterMessage" class="text-sm mt-2"></p>
       </div>

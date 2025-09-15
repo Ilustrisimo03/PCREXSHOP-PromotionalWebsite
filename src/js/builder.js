@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const allRequiredMet = componentStructure.every(slot => !slot.required || selectedComponents[slot.id]);
         if (!allRequiredMet) {
-             return { compatible: false, message: `<i class="fas fa-info-circle text-[#E31C25] mr-2"></i>Please select all required parts`, details: [] };
+             return { compatible: false, message: `<i class="fas fa-info-circle text-[#074ec2] mr-2"></i>Please select all required parts`, details: [] };
         }
         
         return { compatible: true, message: `<i class="fas fa-check-circle text-green-500 mr-2"></i>Your build is compatible!`, details: [] };
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="font-bold text-slate-800">${slotInfo.name}</p>
                     <p class="text-slate-500 truncate max-w-[180px]">${product.name}</p>
                 </div>
-                <p class="font-medium text-slate-700">₱${product.price}</p>
+                <p class="font-bold text-[#074ec2]">₱${product.price}</p>
             `;
             summaryContainer.appendChild(summaryItem);
         });
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="text-right flex-shrink-0 ml-4">
                         <p class="font-bold text-sm lg:text-lg text-slate-800">₱${product.price}</p>
-                        <button class="remove-item-btn text-sm lg:text-lg text-[#E31C25] hover:text-red-600 font-bold" data-slot-id="${slot.id}">Change</button>
+                        <button class="remove-item-btn text-sm lg:text-lg text-[#074ec2] hover:text-[#074fc2d7] font-bold" data-slot-id="${slot.id}">Change</button>
                     </div>
                 `;
             } else {
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
                         <h3 class="text-sm lg:text-lg font-bold text-slate-600">${slot.name} ${requiredText}</h3>
                     </div>
-                    <button class="choose-btn bg-[#E31C25] hover:bg-[#cf1c25] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-[15px] transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
+                    <button class="choose-btn bg-[#074ec2] hover:bg-[#074fc2da] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-[15px] transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
                         Choose <i class="fas fa-chevron-right ml-2 text-sm lg:text-lg"></i>
                     </button>
                 `;
@@ -232,12 +232,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const openModal = (slotId, type) => {
         currentSlotId = slotId;
         const slotInfo = componentStructure.find(s => s.id === slotId);
-        modalTitle.innerHTML = `<i class="fas ${slotInfo.icon} mr-3 text-[#E31C25]"></i> Select a ${slotInfo.name}`;
+        modalTitle.innerHTML = `<i class="fas ${slotInfo.icon} mr-3 text-[#074ec2]"></i> Select a ${slotInfo.name}`;
         
         modalBody.innerHTML = `
             <div class="flex items-center justify-end mb-4 px-4 sm:px-0">
                 <label for="compat-toggle" class="mr-3 text-sm font-medium text-slate-700">Show only compatible parts</label>
-                <input type="checkbox" id="compat-toggle" class="h-4 w-4 rounded border-slate-300 text-[#E31C25] focus:ring-[#E31C25]" checked>
+                <input type="checkbox" id="compat-toggle" class="h-4 w-4 rounded border-[#074ec2] text-[#074ec2] focus:ring-[#074ec2]" checked>
             </div>
             <div id="modal-product-list" class="space-y-3"></div>
         `;
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const isSelected = selectedComponents[slotId]?.id === product.id;
                 const itemDiv = document.createElement('div');
-                itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border rounded-[15px] transition-all duration-200 ${!compatible ? 'border-orange-300 bg-orange-50/50' : 'border-slate-200 hover:border-[#E31C25] hover:bg-blue-50/50'} ${isSelected ? 'selected' : ''}`;
+                itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border rounded-[15px] transition-all duration-200 ${!compatible ? 'border-orange-300 bg-orange-50/50' : 'border-slate-200 hover:border-[#074ec2] hover:bg-blue-50/50'} ${isSelected ? 'selected' : ''}`;
                 
                 const imageUrl = (product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/150';
                 
@@ -285,8 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="text-left sm:text-right flex-shrink-0 ml-0 sm:ml-4 mt-4 sm:mt-0">
-                        <p class="font-bold text-xl text-[#E31C25]">₱${product.price}</p>
-                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-[15px] transition-colors ${compatible ? 'bg-[#E31C25] text-white hover:bg-[#cf0610]' : 'bg-slate-300 text-slate-500 cursor-not-allowed'}" data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
+                        <p class="font-bold text-xl text-[#074ec2]">₱${product.price}</p>
+                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-[15px] transition-colors ${compatible ? 'bg-[#074ec2] text-white hover:bg-[#074fc2d5]' : 'bg-slate-300 text-slate-500 cursor-not-allowed'}" data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
                     </div>
                 `;
                 if(compatible) {
@@ -304,6 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
+        
     };
 
     const closeModal = () => {
@@ -347,10 +348,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- NEW: Event Listeners for Custom Confirmation Modal ---
         clearBuildBtn.addEventListener('click', () => {
             confirmationModal.classList.remove('hidden');
+            confirmationModal.classList.add('flex');
+            document.body.classList.add('overflow-hidden'); // Pigilan ang pag-scroll ng background
         });
 
         cancelClearBtn.addEventListener('click', () => {
             confirmationModal.classList.add('hidden');
+            confirmationModal.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden'); // Ibalik ang pag-scroll ng background
         });
 
         confirmClearBtn.addEventListener('click', () => {
@@ -358,6 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderComponentSlots();
             updateBuildSummary();
             confirmationModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden'); // Ibalik ang pag-scroll ng background
         });
         
         confirmationModal.addEventListener('click', (event) => {

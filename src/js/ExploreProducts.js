@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
 
-  // Tinanggal ko ang 'CPU Coolings' dito dahil wala ito sa iyong JSON data para sa gallery
   const cardLayouts = [
     "sm:col-span-2 sm:row-span-1 h-72",
     "sm:col-span-1 sm:row-span-1 h-72",
@@ -18,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let allItems = [];
 
-  // --- BINAGO: Nagdagdag ng 'data-color' sa explore button ---
   const renderGalleryCards = (products) => {
     if (!galleryGrid) return;
     galleryGrid.innerHTML = products.map((product, index) => {
+      // Logic para sa special image sizes
       const isSpecialImage = product.title === "Processors" || product.title === "Memory (RAM)";
       const imageContainerClasses = isSpecialImage ? "absolute -right-2 bottom-0" : "absolute right-4 bottom-0 w-40 h-40 sm:w-52 sm:h-52";
       const imageTagClasses = isSpecialImage ? "object-contain w-60 h-60" : "object-contain w-full h-full";
@@ -43,31 +42,32 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }).join('');
     addEventListenersToButtons();
+    // Gawing visible ang section pagkatapos ma-render ang content
+    document.getElementById('ExploreProducts').classList.remove('opacity-0');
   };
 
-  // --- GANAP NA BINAGO: Tumatanggap na ng 'color' at nagpapakita ng 'description' ---
   const openModal = (title, color) => {
     modalTitle.textContent = `${title} Showcase`;
 
     let itemType = title;
-    // (Mapping logic para i-match ang title sa 'type' sa Item.json)
+    // Mapping logic para i-match ang title sa 'type' sa Item.json
     if (title === "Processors") itemType = "Processor";
-    if (title === "Graphics Cards") itemType = "Graphics Card";
-    if (title === "CPU Coolings") itemType = "CPU Cooling"; // Kahit wala sa gallery, iniiwan ko ang logic
-    if (title === "Power Supplies") itemType = "Power Supply";
-    if (title === "Storage Drives") itemType = "Storage (HDD / SSD)";
-    if (title === "Motherboards") itemType = "Motherboard";
-    if (title === "Memory (RAM)") itemType = "Memory (RAM)";
+    else if (title === "Graphics Cards") itemType = "Graphics Card";
+    else if (title === "CPU Coolings") itemType = "CPU Cooling";
+    else if (title === "Power Supplies") itemType = "Power Supply";
+    else if (title === "Storage Drives") itemType = "Storage (HDD / SSD)";
+    else if (title === "Motherboards") itemType = "Motherboard";
+    else if (title === "Memory (RAM)") itemType = "Memory (RAM)";
 
     const filteredItems = allItems.filter(item => item.type === itemType);
 
-    modalBody.className = 'overflow-y-auto p-6 md:p-8';
+    // I-reset ang class ng modalBody bago magdagdag ng content
+    modalBody.className = 'overflow-y-auto p-6 md:p-8 space-y-6'; // Ibinalik ang space-y-6
 
     if (filteredItems.length > 0) {
       modalBody.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           ${filteredItems.map(item => `
-            <!-- BINAGO: Nagdagdag ng inline style para sa border-top at isinama ang description -->
             <div class="relative flex flex-col rounded-xl bg-white shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-200"
                  style="border-top: 5px solid ${color};">
               <!-- Image Area -->
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="p-4 flex flex-col flex-grow">
                 <h4 class="font-bold text-md text-gray-800 leading-tight">${item.name}</h4>
                 
-                <!-- BAGONG ELEMENT: Description -->
+                <!-- Description -->
                 <p class="text-xs text-gray-600 mt-2 flex-grow">${item.description}</p>
 
                 <!-- Social Proof: Star Rating & Reviews -->
@@ -103,21 +103,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
+    document.body.classList.add('overflow-hidden'); // Pigilan ang pag-scroll ng background
   };
 
   const closeModal = () => {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden'); // Ibalik ang pag-scroll ng background
   };
 
-  // --- BINAGO: Kinukuha na rin ang 'data-color' ---
   const addEventListenersToButtons = () => {
     const exploreButtons = document.querySelectorAll('.explore-btn');
     exploreButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         const title = e.currentTarget.getAttribute('data-title');
-        const color = e.currentTarget.getAttribute('data-color'); // Kuhanin ang kulay
-        openModal(title, color); // Ipasa ang kulay sa modal
+        const color = e.currentTarget.getAttribute('data-color');
+        openModal(title, color);
       });
     });
   };

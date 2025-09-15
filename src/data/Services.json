@@ -1,0 +1,51 @@
+{
+    "services": [
+      {
+        "icon": "fas fa-desktop",
+        "title": "PC Rentals",
+        "description": "Rent powerful PCs for short-term projects, events, or flexible work setups."
+      },
+      {
+        "icon": "fas fa-gamepad",
+        "title": "Gaming",
+        "description": "Experience high-performance gaming with our dedicated setups and facilities."
+      },
+      {
+        "icon": "fas fa-copy",
+        "title": "Photocopy & Printing",
+        "description": "High-quality photocopy and printing services for all your document needs."
+      },
+      {
+        "icon": "fas fa-print",
+        "title": "Scanning Services",
+        "description": "Digitize your documents quickly and efficiently with our professional scanning services."
+      },
+      {
+        "icon": "fas fa-tools",
+        "title": "Computer Repair & Upgrade",
+        "description": "Expert diagnosis, repair, reformatting, and upgrades for all types of computers."
+      },
+      {
+        "icon": "fas fa-laptop-house",
+        "title": "Parts & Home Office Services",
+        "description": "A wide range of computer parts and accessories, plus services for your home office needs."
+      }
+    ],
+    "whyChooseUs": [
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "Trusted Expertise",
+        "description": "Years of experience delivering top-quality custom builds and tech services you can rely on."
+      },
+      {
+        "icon": "fas fa-headset",
+        "title": "Dedicated Support",
+        "description": "We're here to help with your tech needs, offering support and advice when you need it."
+      },
+      {
+        "icon": "fas fa-thumbs-up",
+        "title": "Customer Satisfaction",
+        "description": "Your satisfaction is our priority. We strive to exceed expectations with every interaction."
+      }
+    ]
+  }

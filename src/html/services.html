@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services</title>
 
-  <link rel="icon" type="image/x-icon" href="../assets/image/PRLOGO_MAIN_LOGO2.png" sizes="100x100">
+  <link rel="icon" type="image/png" sizes="256x256" href="../assets/image/PCREXBIGLOGO (1).png">
 
       <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -32,7 +32,6 @@
 </head>
 <body class="bg-[#FFFFFF]  antialiased">
 
-
 <!-- ===== PAGE LOADER START ===== -->
 <div id="page-loader" class="fixed inset-0 z-[9999] bg-white bg-opacity-80 backdrop-blur-sm hidden">
     <!-- Centering Container -->
@@ -41,61 +40,58 @@
         <div class="relative h-20 w-20 flex items-center justify-center">
             
             <!-- The Spinner -->
-            <div class="absolute h-full w-full animate-spin rounded-full border-4 border-solid border-[#E31C25] border-t-transparent"></div>
+            <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
             
             <!-- Your Logo -->
-            <img src="../assets/image/PCREX_MAIN_LOGO1.png" alt="Loading..." class="h-12 w-12">
-
+            <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="Loading..." class="h-10 w-1h-10">
+  
         </div>
     </div>
-</div>
-<!-- ===== PAGE LOADER END ===== -->
-
-<script src="/src/js/loader.js" ></script>
-
-
+  </div>
+  <!-- ===== PAGE LOADER END ===== -->
+  
+  <script src="/src/js/loader.js" ></script>
 
 <!-- Navbar -->
-<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-5 rounded-[15px]">
+<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-3 rounded-[15px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-20">
         <!-- Logo -->
         <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
-          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC REX Logo" class="h-10 w-auto">
+          <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="PC REX Logo" class="h-10 w-auto">
         </a>
   
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-[30px]">
-          <a href="index.html" class="text-[#1C1C1C] hover:text-[#E31C25] transition duration-150 ease-in-out font-semibold">Home</a>
+          <a href="index.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] transition duration-150 ease-in-out font-semibold relative">Home</a>
   
           <!-- About Us Dropdown -->
           <div class="relative" id="about-us-wrapper">
-            <button id="aboutUsBtn" class="text-[#1C1C1C] hover:text-[#E31C25] flex items-center transition font-semibold">
+            <button id="aboutUsBtn" class="text-[#1C1C1C] hover:text-[#074ec2] flex items-center transition font-semibold">
               About Us 
               <span class="material-icons ml-1 text-base transition-transform">expand_more</span>
             </button>
             <div id="aboutUsDropdown" class="absolute left-0 mt-2 w-48 bg-[#FAFAFA] shadow-xl rounded-md ring-1 ring-black ring-opacity-5 py-1 transition-all duration-200 ease-out origin-top-left hidden">
-              <a href="exploreProducts.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
-              <a href="#services-modern" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
-              <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#E31C25] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
+              <a href="exploreProducts.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#074ec2] hover:text-[#FAF5F1] rounded-t-md dropdown-link">Explore Our Products</a>
+              <a href="services.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#074ec2] hover:text-[#FAF5F1] dropdown-link">Our Services</a>
+              <a href="location.html" class="block px-4 py-2 text-sm text-[#1C1C1C] hover:bg-[#074ec2] hover:text-[#FAF5F1] rounded-b-md dropdown-link">Our Location</a>
             </div>
           </div>
   
-          <a href="builder.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">PC Builder</a>
-          <a href="contact.html" class="text-[#1C1C1C] hover:text-[#E31C25] font-semibold transition">Contact</a>
+          <a href="builder.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">PC Builder</a>
+          <a href="contact.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">Contact</a>
         </div>
   
         <!-- Login + Mobile Button -->
         <div class="flex items-center">
-            <!-- Download App Link for Desktop -->
-            <a href="/path/to/your/application.apk" download="YourApp.apk" 
-            class="hidden md:flex bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-2 rounded-[15px] items-center justify-center hover:scale-105 transform">
-                <span class="material-icons mr-2">install_mobile</span>
-                <span class="text-md font-semibold">Download App</span>
-            </a>
+            <!-- Notification Icon -->
+                <a href="#"
+                class="hidden md:flex bg-[#074ec2] text-[#FFFFFF] transition-all duration-300 w-12 h-12 rounded-full items-center justify-center hover:scale-105 transform">
+                <span class="material-icons">notifications</span>
+                </a>
 
             <!-- Mobile Menu Button -->
-            <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#E31C25] focus:outline-none">
+            <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#074ec2] focus:outline-none">
                 <span class="material-icons text-3xl">menu</span>
             </button>
         </div>
@@ -106,32 +102,31 @@
 <!-- Sidebar -->
 <div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex justify-between items-center p-4 border-b">
-        <h2 class="text-lg font-semibold text-[#E31C25]">PC REX SHOP</h2>
-        <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#E31C25]">
+        <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="PC REX Logo" class="h-10 w-auto"> <!-- Changed from h2 to img -->
+        <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#074ec2]">
             <span class="material-icons text-2xl">close</span>
         </button>
     </div>
     <div class="p-4 space-y-3">
-        <a href="index.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Home</a>
+        <a href="index.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Home</a>
 
         <!-- About Us (with nested links) -->
         <div>
             <p class="text-[#1C1C1C] font-semibold mb-1">About Us</p>
             <div class="pl-4 space-y-1 text-sm">
-                <a href="exploreProducts.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Explore Our Products</a>
-                <a href="#services-modern" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Services</a>
-                <a href="location.html" class="block text-[#1C1C1C] hover:text-[#E31C25] text-sm sidebar-link">Our Location</a>
+                <a href="exploreProducts.html" class="block text-[#1C1C1C] hover:text-[#074ec2] text-sm sidebar-link relative">Explore Our Products</a>
+                <a href="services.html" class="block text-[#1C1C1C] hover:text-[#074ec2] text-sm sidebar-link relative">Our Services</a>
+                <a href="location.html" class="block text-[#1C1C1C] hover:text-[#074ec2] text-sm sidebar-link relative">Our Location</a>
             </div>
         </div>
 
-        <a href="builder.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">PC Builder</a>
-        <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#E31C25] font-semibold sidebar-link">Contact</a>
+        <a href="builder.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">PC Builder</a>
+        <a href="contact.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Contact</a>
 
-        <!-- Download App Link for Sidebar -->
-        <a href="/path/to/your/application.apk" download="YourApp.apk" 
-           class="bg-[#E31C25] text-[#FFFFFF] transition-all duration-300 w-auto h-auto px-4 py-3 rounded-[15px] flex items-center justify-center shadow-lg hover:scale-105 transform">
-            <span class="material-icons mr-2">install_mobile</span>
-            <span class="text-md font-semibold">Download App</span>
+        <!-- Notification Icon for Sidebar -->
+        <a href="#"
+        class="bg-[#074ec2] text-[#FFFFFF] transition-all duration-300 w-12 h-12 rounded-full flex items-center justify-center hover:scale-105 transform mt-4">
+        <span class="material-icons">notifications</span>
         </a>
     </div>
 </div>
@@ -139,98 +134,30 @@
 <!-- Backdrop -->
 <div id="sidebarBackdrop" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-30 z-40 hidden"></div>
 
+
+
 <script src="/src/js/nav.js" ></script>
+
+
 
 
 
 <!-- Services Section -->
 <section id="services-modern" class="py-16 sm:py-24 bg-[#FFFFFF] overflow-hidden opacity-0 transition-opacity duration-1000 ease-in-out">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-            <h2 class="text-2xl font-bold text-[#E31C25] tracking-wide uppercase">Our Services</h2>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-10">
+        <div class="text-center ">
+            <h2 class="text-2xl font-bold text-[#074ec2] tracking-wide uppercase">Our Services</h2>
             <p class="mt-2 text-3xl md:text-4xl heading text-[#1C1C1C]">
                 Comprehensive Tech Expertise
             </p>
             <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-                From custom builds to reliable repairs and expert advice, we ensure your tech works for you.
+                From PC rentals to computer repair and accessories, we've got your tech needs covered.
             </p>
         </div>
 
-        <!-- Services Grid -->
-        <div class="mt-16 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-x-6 lg:gap-x-8 lg:gap-y-12">
-
-            <!-- Service Card Template -->
-            <div class="group relative bg-[#FFFFFF] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
-                <div class="flex justify-center mb-5">
-                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-[15px] bg-red-100 ring-4 ring-[#FAF5F1]">
-                        <i class="fas fa-wrench text-2xl text-[#E31C25]"></i>
-                    </span>
-                </div>
-                <h3 class="text-lg  text-[#1C1C1C] text-center heading">Custom PC Builds</h3>
-                <p class="mt-2 font-regular text-md text-gray-500 text-center">
-                    High-performance systems tailored precisely for your gaming, creative, or professional needs.
-                </p>
-            </div>
-
-             <div class="group relative bg-[#FFFFFF] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
-                <div class="flex justify-center mb-5">
-                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-[15px] bg-red-100 ring-4 ring-[#FAF5F1]">
-                        <i class="fas fa-tools text-2xl text-[#E31C25]"></i>
-                    </span>
-                </div>
-                <h3 class="text-lg  text-[#1C1C1C] text-center heading">PC Repair & Maintenance</h3>
-                <p class="mt-2 font-regular text-md text-gray-500 text-center">
-                    Expert diagnosis and repair services to keep your system running smoothly and efficiently.
-                </p>
-            </div>
-
-             <div class="group relative bg-[#FFFFFF] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
-                <div class="flex justify-center mb-5">
-                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-[15px] bg-red-100 ring-4 ring-[#FAF5F1]">
-                        <i class="fas fa-comments text-2xl text-[#E31C25]"></i>
-                    </span>
-                </div>
-                <h3 class="text-lg  text-[#1C1C1C] text-center heading">Tech Consultation</h3>
-                <p class="mt-2 font-regular text-md text-gray-500 text-center">
-                    Personalized advice to help you choose the right components, configurations, and upgrades.
-                </p>
-            </div>
-
-             <div class="group relative bg-[#FFFFFF] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
-                <div class="flex justify-center mb-5">
-                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-[15px] bg-red-100 ring-4 ring-[#FAF5F1]">
-                        <i class="fas fa-gamepad text-2xl text-[#E31C25]"></i>
-                    </span>
-                </div>
-                <h3 class="text-lg text-[#1C1C1C] text-center heading">Gaming Setup Optimization</h3>
-                <p class="mt-2 font-regular text-md text-gray-500 text-center">
-                    Unlock maximum FPS and smooth gameplay with our expert optimization and tuning services.
-                </p>
-            </div>
-
-             <div class="group relative bg-[#FFFFFF] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
-                <div class="flex justify-center mb-5">
-                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-[15px] bg-red-100 ring-4 ring-[#FAF5F1]">
-                        <i class="fas fa-network-wired text-2xl text-[#E31C25]"></i>
-                    </span>
-                </div>
-                <h3 class="text-lg text-[#1C1C1C] text-center heading">Networking & Setup</h3>
-                <p class="mt-2 font-regular text-md text-gray-500 text-center">
-                    Reliable home and office network setup, configuration, and troubleshooting solutions.
-                </p>
-            </div>
-
-             <div class="group relative bg-[#FFFFFF] p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-gray-200">
-                <div class="flex justify-center mb-5">
-                    <span class="inline-flex items-center justify-center h-14 w-14 rounded-[15px] bg-red-100 ring-4 ring-[#FAF5F1]">
-                        <i class="fas fa-download text-2xl text-[#E31C25]"></i>
-                    </span>
-                </div>
-                <h3 class="text-lg text-[#1C1C1C] text-center heading">Software Installation</h3>
-                <p class="mt-2 font-regular text-md text-gray-500 text-center">
-                    Hassle-free installation and setup of operating systems, essential drivers, and applications.
-                </p>
-            </div>
+        <!-- Services Grid - Populated by JavaScript -->
+        <div id="services-grid" class="mt-16 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-x-6 lg:gap-x-8 lg:gap-y-12">
+            <!-- Service cards will be inserted here by JavaScript -->
         </div>
 
         <!-- Why Choose Us Section -->
@@ -239,49 +166,14 @@
             <p class="mt-4 max-w-2xl mx-auto font-regular text-lg text-gray-600">
                  Experience, dedication, and a passion for technology set us apart.
             </p>
-            <div class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Reason 1 -->
-                <div class="flex flex-col items-center p-6">
-                    <div class="flex-shrink-0">
-                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-[#E31C25] text-[#FAF5F1] shadow-md">
-                             <i class="fas fa-shield-alt text-2xl"></i>
-                         </div>
-                    </div>
-                    <h3 class="mt-5 text-lg font-regular text-[#1C1C1C] heading">Trusted Expertise</h3>
-                    <p class="mt-2 text-base text-gray-500">
-                         Years of experience delivering top-quality custom builds and tech services you can rely on.
-                    </p>
-                </div>
-
-                <!-- Reason 2 -->
-                 <div class="flex flex-col items-center p-6">
-                    <div class="flex-shrink-0">
-                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-[#E31C25] text-[#FAF5F1] shadow-md">
-                             <i class="fas fa-headset text-2xl"></i>
-                         </div>
-                    </div>
-                    <h3 class="mt-5 text-lg font-regular text-[#1C1C1C] heading">Dedicated Support</h3>
-                    <p class="mt-2 text-base text-gray-500">
-                         We're here to help with your tech needs, offering support and advice when you need it.
-                    </p>
-                </div>
-
-                <!-- Reason 3 -->
-                <div class="flex flex-col items-center p-6">
-                    <div class="flex-shrink-0">
-                         <div class="flex items-center justify-center h-12 w-12 rounded-md bg-[#E31C25] text-[#FAF5F1] shadow-md">
-                             <i class="fas fa-thumbs-up text-2xl"></i>
-                         </div>
-                    </div>
-                    <h3 class="mt-5 text-lg font-regular text-[#1C1C1C] heading">Customer Satisfaction</h3>
-                    <p class="mt-2 text-base text-gray-500">
-                        Your satisfaction is our priority. We strive to exceed expectations with every interaction.
-                    </p>
-                </div>
+            <div id="why-choose-us-grid" class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Why Choose Us cards will be inserted here by JavaScript -->
             </div>
         </div>
     </div>
 </section>
+
+<script src="../js/Services.js" ></script>
 
 
 
@@ -297,77 +189,77 @@
 
 
 <footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-      
-      <!-- Left Column: Logo, About & Social -->
-      <div class="md:col-span-1">
-        <div class="flex items-center space-x-2 mb-4">
-          <img src="../assets/image/PRLOGO_MAIN_LOGO2.png" alt="PC Rex Logo" class="h-10 w-10" />
-          <span class="text-xl heading tracking-wider">PC REX SHOP</span>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+        
+        <!-- Left Column: Logo, About & Social -->
+        <div class="md:col-span-1">
+          <div class="flex items-center mb-6">
+            <img src="../assets/image/PCREXBIGLOGO-removebg-preview.png" alt="PC Rex Logo" class="h-10 w-auto" />
+            
+          </div>
+          <p class="text-gray-400 mb-6 text-sm">
+            Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+          </div>
         </div>
-        <p class="text-gray-400 mb-6 text-sm">
-          Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
-        </p>
-        <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-telegram-plane"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+  
+        <!-- Column 1: Useful Links -->
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+          </ul>
+        </div>
+  
+        <!-- Column 2: Categories -->
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Categories</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Furniture</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Accessories</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-Built</a></li>
+          </ul>
+        </div>
+  
+        <!-- Column 3: Newsletter -->
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Join Our Newsletter</h4>
+          <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
+          <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
+            <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#074ec2] text-white">
+            <button type="submit" class="bg-[#074ec2] hover:bg-[#074ec2] text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">Subscribe</button>
+          </form>
+          <p id="newsletterMessage" class="text-sm mt-2"></p>
         </div>
       </div>
-
-      <!-- Column 1: Useful Links -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
-        <ul class="space-y-3 text-gray-400">
-          <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 2: Categories -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Categories</h4>
-        <ul class="space-y-3 text-gray-400">
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Furniture</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Accessories</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-Built</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Newsletter -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Join Our Newsletter</h4>
-        <p class="text-gray-400 mb-4 text-sm">Get the latest deals and product updates straight to your inbox.</p>
-        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-2">
-          <input type="email" id="emailInput" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#E31C25] text-white">
-          <button type="submit" class="bg-[#E31C25] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300">Subscribe</button>
-        </form>
-        <p id="newsletterMessage" class="text-sm mt-2"></p>
+  
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
+        </div>
       </div>
     </div>
-
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-      <p>&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</p>
-      <div class="flex space-x-4 mt-4 md:mt-0">
-        <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
-        <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
-      </div>
-    </div>
-  </div>
-</footer>
-    <script src="../js/footer.js"></script>
-
-  <!-- Your Custom JS -->
-  <script src="../js/html.js"></script>
+  </footer>
+      <script src="../js/footer.js"></script>
+  
+    <!-- Your Custom JS -->
+    <script src="../js/html.js"></script>
 
  <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
     <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">
