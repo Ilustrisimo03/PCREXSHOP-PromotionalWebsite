@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas ${slot.icon} text-xl text-slate-400 w-6 text-center"></i>
                         <h3 class="text-sm lg:text-lg font-bold text-slate-600">${slot.name} ${requiredText}</h3>
                     </div>
-                    <button class="choose-btn bg-[#074ec2] hover:bg-[#074fc2da] text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-[15px] transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
+                    <button class="choose-btn BG-gradient text-sm lg:text-lg text-[#FFFFFF] font-bold py-2 px-4 rounded-[15px] transition-colors" data-slot-id="${slot.id}" data-type="${slot.type}">
                         Choose <i class="fas fa-chevron-right ml-2 text-sm lg:text-lg"></i>
                     </button>
                 `;
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="text-left sm:text-right flex-shrink-0 ml-0 sm:ml-4 mt-4 sm:mt-0">
                         <p class="font-bold text-xl text-[#074ec2]">₱${product.price}</p>
-                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-[15px] transition-colors ${compatible ? 'bg-[#074ec2] text-white hover:bg-[#074fc2d5]' : 'bg-slate-300 text-slate-500 cursor-not-allowed'}" data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
+                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-[15px] transition-colors ${compatible ? 'BG-gradient text-white hover:bg-[#074fc2d5]' : 'bg-slate-300 text-slate-500 cursor-not-allowed'}" data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
                     </div>
                 `;
                 if(compatible) {

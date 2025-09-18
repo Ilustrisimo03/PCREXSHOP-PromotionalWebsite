@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Populate Services Grid
         data.services.forEach((service, index) => {
             const isBlue = index % 2 === 0; // Alternating colors based on index
-            const cardBgClass = isBlue ? 'bg-[#074ec2]' : 'bg-[#FFFFFF]';
+            const cardBgClass = isBlue ? 'BG-gradient' : 'bg-[#FFFFFF]';
             const cardTextClass = isBlue ? 'text-[#FFFFFF]' : 'text-[#1C1C1C]';
             const cardDescriptionClass = isBlue ? 'text-gray-300' : 'text-gray-700';
             const iconBgClass = isBlue ? 'bg-[#FFFFFF]' : 'bg-[#074ec2]';
