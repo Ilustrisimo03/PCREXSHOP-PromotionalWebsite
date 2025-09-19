@@ -53,8 +53,15 @@ body {
 
 
 
+.BG-gradient-hover:hover{
+    background: #095be0;
 
+  }
+  
+  .BG-gradient{
+    background: #074EC2;
 
+  }
 
 
 
@@ -298,12 +305,3 @@ body {
   }
 
 
-  .BG-gradient-hover:hover{
-    background: #095be0;
-background: linear-gradient(90deg, rgba(7, 78, 194, 1) 0%, rgba(50, 127, 250, 1) 100%);
-  }
-  
-  .BG-gradient{
-    background: #074EC2;
-background: linear-gradient(90deg, rgba(7, 78, 194, 1) 0%, rgba(50, 127, 250, 1) 100%);
-  }
