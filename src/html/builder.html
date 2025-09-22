@@ -143,94 +143,149 @@
 
 
 
+   <style>
 
-<!-- CUSTOM BUILD SECTION -->
-<section id="custom-build" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
-    <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-0 py-16 sm:py-10">
-        <header class="mb-10 text-center">
-            <h1 class="text-3xl md:text-4xl heading text-[#1C1C1C]">PC Part Builder</h1>
-            <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">Build your dream PC. Select parts and we'll check compatibility for you.</p>
-        </header>
+        /* Specific styles for selected item in modal */
+        .component-item.selected {
+            border-color: #074ec2;
+            background-color: #e0f2fe;
+        }
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Left Column: Component Slots -->
-            <div class="lg:col-span-2 bg-[#FFFFFF] p-6 rounded-xl shadow-md">
-                <h2 class="text-2xl font-bold mb-6 text-[#1C1C1C] border-b border-slate-200 pb-4">Choose Your Components</h2>
-                <div id="component-slots" class="space-y-4">
-                    <!-- Loading state -->
-                    <div class="text-center text-slate-500 py-10" id="loading-state">
-                        <i class="fas fa-circle-notch fa-spin fa-2x text-[#074ec2] mb-3"></i>
-                        <p>Loading components, please wait...</p>
-                    </div>
-                </div>
-            </div>
+        /* Opacity for section transition */
+        #custom-build.opacity-0 {
+            opacity: 0;
+        }
+        #custom-build.opacity-100 {
+            opacity: 1;
+        }
 
-            <!-- Right Column: Summary and Actions -->
-            <div class="lg:col-span-1">
-                <div class="bg-[#FFFFFF] p-6 rounded-xl shadow-md sticky top-8">
-                    <h2 class="text-2xl font-bold mb-4 text-[#1C1C1C]">Build Summary</h2>
-                    <div id="overall-compatibility-status" class="p-4 rounded-lg text-center font-semibold mb-4 text-slate-700 bg-slate-100">
-                        Start by selecting a component.
-                    </div>
-                    <div id="selected-components-summary" class="space-y-3 text-sm mb-4 min-h-[120px]">
-                        <p class="text-slate-500 italic pt-4 text-center">No components selected yet.</p>
-                    </div>
-                    <div class="border-t border-slate-200 pt-4">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-lg font-semibold text-[#1C1C1C]">Total Price:</span>
-                            <span id="total-price" class="text-3xl font-bold text-[#074ec2]">₱0.00</span>
+        /* Basic overflow hidden for body when modal is open */
+        body.overflow-hidden {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- CUSTOM BUILD SECTION -->
+    <section id="custom-build" class="py-16 sm:py-24 opacity-0 transition-opacity duration-1000 ease-in-out">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-10">
+            <header class="mb-10 text-center">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">PC Part Builder</h1>
+                <p class="text-gray-600 text-lg mt-3 max-w-2xl mx-auto">Build your dream PC. Select parts and we'll check compatibility for you.</p>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: Component Slots -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b border-gray-200 pb-4">Choose Your Components</h2>
+                    <div id="component-slots" class="space-y-4">
+                        <!-- Loading state -->
+                        <div class="text-center text-gray-500 py-10" id="loading-state">
+                            <i class="fas fa-circle-notch fa-spin fa-2x text-blue-700 mb-3"></i>
+                            <p>Loading components, please wait...</p>
                         </div>
-                        
-                        <button id="clear-build-btn" class="w-full BG-gradient  text-[#FFFFFF] border  font-semibold py-2.5 px-4 rounded-[15px] transition-all duration-300">
-                            <i class="fas fa-trash-alt mr-2"></i>Clear Build
-                        </button>
+                        <!-- Component slots will be rendered here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right Column: Summary and Actions -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white p-6 rounded-xl shadow-lg sticky lg:top-8">
+                        <h2 class="text-2xl font-bold mb-4 text-gray-900">Build Summary</h2>
+                        <div id="overall-compatibility-status" class="p-4 rounded-lg text-center font-semibold mb-4 text-gray-700 bg-gray-100">
+                            Start by selecting a component.
+                        </div>
+                        <div id="selected-components-summary" class="space-y-3 text-sm mb-4 min-h-[120px]">
+                            <p class="text-gray-500 italic pt-4 text-center">No components selected yet.</p>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-lg font-semibold text-gray-900">Total Price:</span>
+                                <span id="total-price" class="text-3xl font-bold text-blue-700">₱0.00</span>
+                            </div>
+                            
+                            <div class="flex flex-col space-y-3">
+                                <button id="save-build-btn" class="w-full BG-gradient text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 hover:opacity-90">
+                                    <i class="fas fa-save mr-2"></i>Save Build
+                                </button>
+                                <button id="load-build-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                                    <i class="fas fa-folder-open mr-2"></i>Load Saved Build
+                                </button>
+                                <button id="clear-build-btn" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                                    <i class="fas fa-trash-alt mr-2"></i>Clear Build
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Component Selection Modal -->
-<div id="component-modal" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-60 flex items-center justify-center p-4 hidden z-50 transition-opacity duration-300">
-    <div class="bg-[#FFFFFF] rounded-xl shadow-2xl w-full max-w-4xl transform transition-all duration-300 max-h-[90vh] flex flex-col">
-        <div class="flex justify-between items-center p-5 border-b border-slate-200 sticky top-0 bg-[#FFFFFF] z-10 rounded-t-xl">
-            <h3 id="modal-title" class="text-xl font-bold text-[#1C1C1C] flex items-center"></h3>
-            <button id="close-modal-btn" class="text-slate-400 hover:text-[#074ec2] transition-colors text-2xl">&times;</button>
-        </div>
-        <div id="modal-body" class="p-6 custom-scrollbar overflow-y-auto space-y-4"></div>
-    </div>
-</div>
-
-
-
-<!-- Confirmation Modal -->
-<div id="confirmation-modal" class="fixed inset-0 bg-[#1C1C1C] bg-opacity-60 flex items-center justify-center p-4 hidden z-50 transition-opacity duration-300">
-    <div class="bg-[#FFFFFF] rounded-xl shadow-2xl w-full max-w-md transform transition-all duration-300">
-        <div class="p-6 text-center">
-            <div class="flex justify-center mb-4">
-                <!-- Regular (trash can style) -->
-                <i class="fa-regular fa-trash-can text-4xl text-[#074ec2]"></i>
+    <!-- Component Selection Modal -->
+    <div id="component-modal" class="fixed inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-5 border-b border-gray-200 sticky top-0 bg-white z-10 rounded-t-xl">
+                <h3 id="modal-title" class="text-xl font-bold text-gray-900 flex items-center"></h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-blue-700 transition-colors text-2xl">&times;</button>
             </div>
-            <h3 class="text-xl font-bold text-[#1C1C1C] mb-2">Are you sure?</h3>
-            <p class="text-slate-600 mb-6">
-                This will clear your entire build. This action cannot be undone.
-            </p>
-            <div class="flex justify-center gap-4">
-                <button id="cancel-clear-btn" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
-                    Cancel
-                </button>
-                <button id="confirm-clear-btn" class="w-full BG-gradient text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
-                    Yes, Clear It
-                </button>
+            <div id="modal-body" class="p-6 custom-scrollbar overflow-y-auto space-y-4">
+                <!-- Products list and compatibility toggle will be rendered here by JavaScript -->
             </div>
         </div>
     </div>
+
+    <!-- Confirmation Modal (for Clear Build, Load Build) -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md transform scale-95 transition-all duration-300">
+            <div class="p-6 text-center">
+                <div class="flex justify-center mb-4">
+                    <i id="confirm-modal-icon" class="fa-solid fa-triangle-exclamation text-4xl text-yellow-500"></i>
+                </div>
+                <h3 id="confirm-modal-title" class="text-xl font-bold text-gray-900 mb-2">Are you sure?</h3>
+                <p id="confirm-modal-message" class="text-gray-600 mb-6">
+                    This will clear your entire build. This action cannot be undone.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <button id="cancel-action-btn" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                        Cancel
+                    </button>
+                    <button id="confirm-action-btn" class="w-full BG-gradient text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300">
+                        Yes, Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+<div id="success-toast" 
+     class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  
+            bg-green-800 text-white px-5 py-3 rounded-lg shadow-lg hidden 
+            opacity-0 transition-opacity duration-300 z-50">
+    <span id="toast-message">Build Saved Successfully!</span>
 </div>
 
+<!-- Error Toast Notification -->
+<div id="error-toast" 
+     class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  
+            bg-red-600 text-white px-5 py-3 rounded-lg shadow-lg hidden 
+            opacity-0 transition-opacity duration-300 z-50">
+    <span id="error-toast-message">An error occurred.</span>
+</div>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="../js/builder.js"></script> <!-- Ensure this path is correct -->
+    <!-- Your custom JavaScript file -->
+    <script src="../js/builder.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Reveal the custom build section after everything is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('custom-build').classList.remove('opacity-0');
+            document.getElementById('custom-build').classList.add('opacity-100');
+        });
+    </script>
 
 
 

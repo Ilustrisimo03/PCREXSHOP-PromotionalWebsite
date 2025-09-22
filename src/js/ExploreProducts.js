@@ -49,20 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const openModal = (title, color) => {
     modalTitle.textContent = `${title} Showcase`;
 
-    let itemType = title;
-    // Mapping logic para i-match ang title sa 'type' sa Item.json
-    if (title === "Processors") itemType = "Processor";
-    else if (title === "Graphics Cards") itemType = "Graphics Card";
-    else if (title === "CPU Coolings") itemType = "CPU Cooling";
-    else if (title === "Power Supplies") itemType = "Power Supply";
-    else if (title === "Storage Drives") itemType = "Storage (HDD / SSD)";
-    else if (title === "Motherboards") itemType = "Motherboard";
-    else if (title === "Memory (RAM)") itemType = "Memory (RAM)";
+    let itemTypesToFilter = [];
 
-    const filteredItems = allItems.filter(item => item.type === itemType);
+    // Corrected Mapping logic to match title to 'type' in Item.json
+    if (title === "Processors") itemTypesToFilter = ["Processor"];
+    else if (title === "Graphics Cards") itemTypesToFilter = ["Graphics Card"];
+    else if (title === "CPU Coolings") itemTypesToFilter = ["CPU Cooling"];
+    else if (title === "Power Supplies") itemTypesToFilter = ["Power Supply"];
+    else if (title === "Storage Drives") itemTypesToFilter = ["HDD", "SSD"]; // Corrected: Filter for both HDD and SSD
+    else if (title === "Motherboards") itemTypesToFilter = ["Motherboard"];
+    else if (title === "Memory (RAM)") itemTypesToFilter = ["Memory (RAM)"];
+    else if (title === "Peripherals") itemTypesToFilter = ["Keyboard", "Mouse", "Monitor", "AVR", "Headset", "Speaker"]; // Added other peripherals
+    else if (title === "Accessories") itemTypesToFilter = ["Cable", "Networking"]; // Added accessories
+    else if (title === "Pre-Built PC") itemTypesToFilter = ["PC"]; // Added for pre-built PCs
+
+    const filteredItems = allItems.filter(item => itemTypesToFilter.includes(item.type));
 
     // I-reset ang class ng modalBody bago magdagdag ng content
-    modalBody.className = 'overflow-y-auto p-6 md:p-8 space-y-6'; // Ibinalik ang space-y-6
+    modalBody.className = 'overflow-y-auto p-6 md:p-8 space-y-6';
 
     if (filteredItems.length > 0) {
       modalBody.innerHTML = `
@@ -79,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
               <!-- Content Area -->
               <div class="p-4 flex flex-col flex-grow">
                 <h4 class="font-bold text-md text-gray-800 leading-tight">${item.name}</h4>
+                
+                <!-- Price -->
+                <p class="text-xl font-bold text-gray-900 mt-2">₱${item.price}</p>
                 
                 <!-- Description -->
                 <p class="text-xs text-gray-600 mt-2 flex-grow">${item.description}</p>
@@ -125,9 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loadAllData = async () => {
     try {
+      // Assuming ExploreProducts.json is still correct or adjusted if needed.
+      // If you've updated your categories, ensure this JSON matches the 'title' values
+      // used in your ExploreProducts.json.
       const [productsRes, itemsRes] = await Promise.all([
-        fetch('../data/ExploreProducts.json'),
-        fetch('../data/Item.json')
+        fetch('../data/ExploreProducts.json'), // Make sure this path is correct
+        fetch('../data/Item.json') // Make sure this path is correct
       ]);
       if (!productsRes.ok || !itemsRes.ok) throw new Error('Network response was not ok');
       const products = await productsRes.json();
