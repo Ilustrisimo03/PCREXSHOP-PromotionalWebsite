@@ -86,9 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <!-- Price -->
                 <p class="text-xl font-bold text-gray-900 mt-2">₱${item.price}</p>
-                
-                <!-- Description -->
-                <p class="text-xs text-gray-600 mt-2 flex-grow">${item.description}</p>
 
                 <!-- Social Proof: Star Rating & Reviews -->
                 <div class="flex items-center mt-3 gap-2 border-t pt-3">
