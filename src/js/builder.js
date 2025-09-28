@@ -451,73 +451,92 @@ document.addEventListener('DOMContentLoaded', () => {
         const compatToggle = document.getElementById('compat-toggle');
 
         const renderProductsInModal = () => {
-            productListContainer.innerHTML = ''; 
-            const showOnlyCompatible = compatToggle.checked;
-            let availableProducts = allProducts.filter(p => p.type === type);
-            
-            // Filter by subType for storage slots
-            if (subType === 'SATA' && type === 'SSD') {
-                availableProducts = availableProducts.filter(p => getStorageType(p) === 'SATA');
-            } else if (subType === 'M.2' && type === 'SSD') {
-                availableProducts = availableProducts.filter(p => getStorageType(p) === 'M.2');
-            } else if (type === 'HDD') { // For HDD slot, ensure it's an HDD
-                availableProducts = availableProducts.filter(p => p.type === 'HDD' && getStorageType(p) === 'SATA');
+        productListContainer.innerHTML = '';
+        const showOnlyCompatible = compatToggle.checked;
+
+        // Determine current slot details from the global state/variables
+        // Assuming 'type', 'subType', 'currentSlotId', 'slotId' are available in the scope
+        // For example, if currentSlot is a global object as in the first example:
+        // const currentSlot = { id: currentSlotId, type: type, subType: subType };
+
+        let availableProducts = allProducts.filter(p => p.type === type); // Initial filter by main type
+
+        // --- Refined filtering by subType for SSD and HDD, similar to renderModalProductList ---
+        // Note: The original renderProductsInModal used 'subType' and 'type' directly,
+        // which aligns with how currentSlot?.id implies these for storage.
+        if (subType === 'SATA' && type === 'SSD') { // Equivalent to currentSlot?.id === 'ssd_sata'
+            availableProducts = availableProducts.filter(p => getStorageType(p) === 'SATA');
+        } else if (subType === 'M.2' && type === 'SSD') { // Equivalent to currentSlot?.id === 'ssd_m2'
+            availableProducts = availableProducts.filter(p => getStorageType(p) === 'M.2');
+        } else if (type === 'HDD') { // Equivalent to currentSlot?.id === 'hdd'
+            // Ensure it's an actual HDD type and detected as SATA
+            availableProducts = availableProducts.filter(p => p.type === 'HDD' && getStorageType(p) === 'SATA');
+        }
+
+        // --- NEW: Filter out products with 0 stock (added based on first example's logic) ---
+        // Assuming 'stock' property exists on product objects
+        availableProducts = availableProducts.filter(p => p.stock > 0);
+
+
+        // --- Handle case where no parts are available after initial filtering ---
+        if (availableProducts.length === 0) {
+            productListContainer.innerHTML = `<p class="text-center text-gray-500 py-10">No parts available for this category.</p>`;
+            return;
+        }
+
+        // --- Apply compatibility filter if showOnlyCompatible is true ---
+        const filteredProducts = showOnlyCompatible ?
+            availableProducts.filter(p => getCompatibilityInfo(p, type, currentSlotId, selectedComponents).compatible) :
+            availableProducts;
+
+        // --- Handle case where no compatible parts are found after compatibility filtering ---
+        if (filteredProducts.length === 0) {
+            productListContainer.innerHTML = `<p class="text-center text-gray-500 py-10">No compatible parts found for your current selection.</p>`;
+            return;
+        }
+
+        // Now render the filteredProducts
+        filteredProducts.forEach(product => {
+            const { compatible, reason } = getCompatibilityInfo(product, type, currentSlotId, selectedComponents);
+            // Note: With the new filtering, if showOnlyCompatible is true, 'compatible' will always be true here.
+            // If showOnlyCompatible is false, 'compatible' can still be false for some items, which will be styled differently.
+
+            const isSelected = selectedComponents[slotId]?.id === product.id;
+            const itemDiv = document.createElement('div');
+            itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border rounded-xl transition-all duration-200
+                                ${!compatible ? 'border-orange-300 bg-orange-50' : 'border-gray-200 hover:border-blue-700 hover:bg-blue-50'}
+                                ${isSelected ? 'selected' : ''}`;
+
+            const imageUrl = (product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/150/f1f5f9/94a3b8?text=No+Image';
+
+            let compatibilityHTML = '';
+            if (!compatible) {
+                compatibilityHTML = `<p class="text-xs text-orange-600 mt-2 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i> Incompatible: ${reason}</p>`;
             }
 
-            let displayedCount = 0;
-
-            if (availableProducts.length === 0) {
-                productListContainer.innerHTML = `<p class="text-center text-gray-500 py-10">No available parts for this category.</p>`;
-                return;
-            }
-
-            availableProducts.forEach(product => {
-                const { compatible, reason } = getCompatibilityInfo(product, type, currentSlotId, selectedComponents); // Pass currentSlotId for specific storage checks
-                if (showOnlyCompatible && !compatible) {
-                    return; // Skip rendering this item
-                }
-                displayedCount++;
-
-                const isSelected = selectedComponents[slotId]?.id === product.id;
-                const itemDiv = document.createElement('div');
-                itemDiv.className = `component-item flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 border rounded-xl transition-all duration-200 
-                                     ${!compatible ? 'border-orange-300 bg-orange-50' : 'border-gray-200 hover:border-blue-700 hover:bg-blue-50'} 
-                                     ${isSelected ? 'selected' : ''}`;
-                
-                const imageUrl = (product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/150/f1f5f9/94a3b8?text=No+Image';
-                
-                let compatibilityHTML = '';
-                if (!compatible) {
-                    compatibilityHTML = `<p class="text-xs text-orange-600 mt-2 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i> Incompatible: ${reason}</p>`;
-                }
-                
-                itemDiv.innerHTML = `
-                    <div class="flex items-center gap-4 min-w-0">
-                        <img src="${imageUrl}" alt="${product.name}" class="w-20 h-20 object-contain rounded-lg flex-shrink-0 bg-white p-1 border border-gray-200">
-                        <div class="min-w-0">
-                            <h5 class="font-bold text-gray-800">${product.name}</h5>
-                            <p class="text-sm text-gray-500 mt-1">${product.description || ''}</p>
-                            <p class="text-sm text-gray-400 mt-2">Rating: ${product.rate}/5 (${product.review} reviews)</p>
-                             ${compatibilityHTML}
-                        </div>
+            itemDiv.innerHTML = `
+                <div class="flex items-center gap-4 min-w-0">
+                    <img src="${imageUrl}" alt="${product.name}" class="w-20 h-20 object-contain rounded-lg flex-shrink-0 bg-white p-1 border border-gray-200">
+                    <div class="min-w-0">
+                        <h5 class="font-bold text-gray-800">${product.name}</h5>
+                        <p class="text-sm text-gray-500 mt-1">${product.description || ''}</p>
+                        <p class="text-sm text-gray-400 mt-2">Rating: ${product.rate}/5 (${product.review} reviews)</p>
+                        ${compatibilityHTML}
                     </div>
-                    <div class="text-left sm:text-right flex-shrink-0 ml-0 sm:ml-4 mt-4 sm:mt-0">
-                        <p class="font-bold text-xl text-blue-700">${formatPrice(product.price)}</p>
-                         <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-lg transition-colors 
-                         ${compatible ? 'BG-gradient text-white hover:opacity-90' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}" 
-                         data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
-                    </div>
-                `;
-                if(compatible) {
-                    itemDiv.querySelector('.select-btn').addEventListener('click', () => selectComponent(product.id));
-                }
-                productListContainer.appendChild(itemDiv);
-            });
-            
-            if (displayedCount === 0) {
-                 productListContainer.innerHTML = `<p class="text-center text-gray-500 py-10">No compatible parts found for your current selection.</p>`;
+                </div>
+                <div class="text-left sm:text-right flex-shrink-0 ml-0 sm:ml-4 mt-4 sm:mt-0">
+                    <p class="font-bold text-xl text-blue-700">${formatPrice(product.price)}</p>
+                    <button class="select-btn w-full sm:w-auto mt-2 font-bold py-2 px-5 rounded-lg transition-colors
+                    ${compatible ? 'BG-gradient text-white hover:opacity-90' : 'bg-gray-300 text-gray-500 cursor-not-allowed'}"
+                    data-product-id="${product.id}" ${!compatible ? 'disabled' : ''}>Select</button>
+                </div>
+            `;
+            if (compatible) {
+                itemDiv.querySelector('.select-btn').addEventListener('click', () => selectComponent(product.id));
             }
-        };
+            productListContainer.appendChild(itemDiv);
+        });
+    };
         compatToggle.addEventListener('change', renderProductsInModal);
         renderProductsInModal(); // Initial render
 
