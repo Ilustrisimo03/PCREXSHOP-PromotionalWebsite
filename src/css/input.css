@@ -89,7 +89,7 @@ body {
 
 .carousel-image {
     width: 100%;
-    height: 350px;
+    height: 400px;
     object-fit: cover;
     display: block;
 }
@@ -120,7 +120,7 @@ body {
 }
 
 .carousel-dot.active {
-    background-color: #074ec2;
+    background-color: #FFFFFF;
 }
 
 /* Navigation Button Styling */

@@ -1,18 +1,22 @@
 [
   {
-    "src": "../assets/image/promotional1.png",
-    "alt": "Custom PC Build 1"
+    "src": "../assets/image/PROMOTIONAL(1).png",
+    "alt": "Pre-Built 1"
   },
   {
-    "src": "../assets/image/promotional3.png",
-    "alt": "Gaming PC 2"
+    "src": "../assets/image/PROMOTIONAL(2).png",
+    "alt": "Pre-Built 2"
   },
   {
-    "src": "../assets/image/promotional4.png",
-    "alt": "Workstation PC 3"
+    "src": "../assets/image/PROMOTIONAL(3).png",
+    "alt": "Pre-Built 3"
   },
   {
-    "src": "../assets/image/promotional2.png",
-    "alt": "RGB PC Build 4"
+    "src": "../assets/image/PROMOTIONAL(4).png",
+    "alt": "Pre-Built 4"
+  },
+    {
+    "src": "../assets/image/PROMOTIONAL(5).png",
+    "alt": "Pre-Built"
   }
 ]
