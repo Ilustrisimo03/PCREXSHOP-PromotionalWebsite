@@ -32,24 +32,15 @@
 </head>
 <body>
 
-<!-- ===== PAGE LOADER START ===== -->
-<div id="page-loader" class="fixed inset-0 z-[9999] bg-white  hidden">
-    <!-- Centering Container -->
+<!--  PAGE LOADER -->
+<div id="page-loader" class="fixed inset-0 z-[9999] bg-white hidden">
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <!-- Relative container for positioning the spinner and logo -->
         <div class="relative h-20 w-20 flex items-center justify-center">
-            
-            <!-- The Spinner -->
             <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
-            
-            <!-- Your Logo -->
             <img src="../assets/image/PCREXBIGLOGO1.png" alt="Loading..." class="h-20 w-1h-20">
-  
         </div>
     </div>
-  </div>
-  <!-- ===== PAGE LOADER END ===== -->
-  
+</div>
   <script src="/src/js/loader.js" ></script>
 
 <!-- Navbar -->
@@ -209,16 +200,13 @@
 
 <!-- Categories Scrolling Section -->
 <section class="py-3 sm:py-4 BG-gradient overflow-hidden fade-in-section" id="categoriesSection">
-<div class="scroll-container w-full">
-<div class="scroll-track flex">
-<!-- This container will be populated by JavaScript -->
-<div id="scroll-content" class="animate-scroll flex-none flex items-center">
-<!-- Dynamic content will be inserted here -->
-</div>
-</div>
-</div>
+  <div class="scroll-container w-full">
+    <div class="scroll-track flex">
+      <div id="scroll-content" class="animate-scroll flex-none flex items-center">
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Link to your JavaScript file -->
 <script src="../js/categoryScroll.js"></script>
 
 
@@ -430,7 +418,7 @@
                      <div class="mt-6">
                         <h4 class="text-xl font-regular text-[#1C1C1C]">Stay Connected</h4>
                         <div class="flex mt-4">
-                            <a href="#" aria-label="Facebook" class="bg-gray-200 text-[#1C1C1C] hover:text-[#FFFFFF] p-2 mr-4 rounded-[15px] shadow-md flex items-center justify-center w-10 h-10 BG-gradient-hover hover:scale-110 transition duration-300 ease-in-out">
+                            <a href="https://www.facebook.com/pcrex.abdon" aria-label="Facebook" class="bg-gray-200 text-[#1C1C1C] hover:text-[#FFFFFF] p-2 mr-4 rounded-[15px] shadow-md flex items-center justify-center w-10 h-10 BG-gradient-hover hover:scale-110 transition duration-300 ease-in-out">
                                 <i class="fab fa-facebook-f hover:text-[#FFFFFF]"></i>
                             </a>
                         </div>
@@ -477,7 +465,7 @@
           Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
         </p>
         <div class="flex gap-4">
-          <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/pcrex.abdon" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
 
@@ -539,52 +527,42 @@
 </footer>
     <script src="../js/footer.js"></script>
 
-  <!-- Your Custom JS -->
   <script src="../js/html.js"></script>
 
- <!-- ===== NO INTERNET CONNECTION TOAST START ===== -->
+ <!--  NO INTERNET CONNECTION TOAST  -->
     <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">
         <div class="flex items-center gap-4 rounded-[15px] bg-neutral-800 p-4 text-white shadow-lg">
-            <!-- Icon -->
             <div class="flex-shrink-0">
-                <!-- No Wifi Icon -->
                 <i class="fa-solid fa-wifi text-2xl text-red-700"></i>
             </div>
-            <!-- Text Content -->
             <div class="flex-1">
                 <p class="font-bold">No Internet Connection</p>
                 <p class="text-sm text-neutral-300">Please check your network settings.</p>
             </div>
-            <!-- Optional Close Button -->
             <div class="flex-shrink-0">
                 <button id="close-toast-btn-offline" class="text-neutral-400 hover:text-white">&times;</button>
             </div>
         </div>
     </div>
-    <!-- ===== NO INTERNET CONNECTION TOAST END ===== -->
 
-    <!-- ===== INTERNET CONNECTION RESTORED TOAST START ===== -->
+
+    <!--  INTERNET CONNECTION RESTORED TOAST   -->
     <div id="network-status-toast-online" class="fixed bottom-5 right-5 z-[9999] hidden">
         <div class="flex items-center gap-4 rounded-[15px] bg-neutral-800 p-4 text-white shadow-lg">
             <!-- Icon -->
             <div class="flex-shrink-0">
                 <i class="fa-solid fa-wifi text-2xl text-green-400"></i>
             </div>
-            <!-- Text Content -->
             <div class="flex-1">
                 <p class="font-bold">Back Online</p>
                 <p class="text-sm text-neutral-300">Your internet connection was restored.</p>
             </div>
-             <!-- Optional Close Button -->
             <div class="flex-shrink-0">
                 <button id="close-toast-btn-online" class="text-neutral-400 hover:text-white">&times;</button>
             </div>
         </div>
     </div>
-    <!-- ===== INTERNET CONNECTION RESTORED TOAST END ===== -->
-<!-- Add this new line to all HTML files -->
 <script src="/src/js/networkStatus.js"></script>
-
 
 </body>
 </html>
