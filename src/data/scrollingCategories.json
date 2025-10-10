@@ -5,26 +5,6 @@
     "url": "#"
   },
   {
-    "name": "Processors",
-    "icon": "fas fa-microchip",
-    "url": "#"
-  },
-  {
-    "name": "Memory (RAM)",
-    "icon": "fas fa-memory",
-    "url": "#"
-  },
-  {
-    "name": "Pre-Built PCs",
-    "icon": "fas fa-server",
-    "url": "#"
-  },
-  {
-    "name": "Storage",
-    "icon": "fas fa-hdd",
-    "url": "#"
-  },
-  {
     "name": "Peripherals",
     "icon": "fas fa-keyboard",
     "url": "#"
@@ -32,6 +12,16 @@
   {
     "name": "Accessories",
     "icon": "fas fa-cogs",
+    "url": "#"
+  },
+  {
+    "name": "Furniture",
+    "icon": "fas fa-chair",
+    "url": "#"
+  },
+  {
+    "name": "Pre-Built PCs",
+    "icon": "fas fa-server",
     "url": "#"
   }
 ]
