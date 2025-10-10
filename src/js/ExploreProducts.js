@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h4 class="font-bold text-md text-gray-800 leading-tight">${item.name}</h4>
                 
                 <!-- Price -->
-                <p class="text-xl font-bold text-gray-900 mt-2">₱${item.price}</p>
+                <p class="text-xl font-bold text-[#074ec2] mt-2">₱${item.price}</p>
 
                 <!-- Social Proof: Star Rating & Reviews -->
                 <div class="flex items-center mt-3 gap-2 border-t pt-3">
