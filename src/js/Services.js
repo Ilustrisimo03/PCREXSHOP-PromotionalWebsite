@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Fetch the JSON data from services.json
-    fetch('../data/Services.json')
+    fetch('/src/data/Services.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

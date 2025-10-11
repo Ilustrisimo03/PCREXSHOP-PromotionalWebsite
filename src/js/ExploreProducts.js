@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // If you've updated your categories, ensure this JSON matches the 'title' values
       // used in your ExploreProducts.json.
       const [productsRes, itemsRes] = await Promise.all([
-        fetch('../data/ExploreProducts.json'), // Make sure this path is correct
-        fetch('../data/Item.json') // Make sure this path is correct
+        fetch('/src/data/ExploreProducts.json'), // Make sure this path is correct
+        fetch('/src/data/Item.json') // Make sure this path is correct
       ]);
       if (!productsRes.ok || !itemsRes.ok) throw new Error('Network response was not ok');
       const products = await productsRes.json();

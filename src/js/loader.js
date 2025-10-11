@@ -1,40 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-      const loader = document.getElementById('page-loader');
-      
-      // Select all links that don't start with '#' (for in-page anchors),
-      // don't have a 'download' attribute, and are not just for javascript actions.
-      const navLinks = document.querySelectorAll('a[href]:not([href^="#"]):not([download]):not([href^="javascript:"])');
+  const loader = document.getElementById("page-loader");
 
-      navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          // Get the destination URL
-          const destination = this.href;
+  // Select all valid navigation links
+  const navLinks = document.querySelectorAll(
+    'a[href]:not([href^="#"]):not([download]):not([href^="javascript:"])'
+  );
 
-          // Check if the link is opening in a new tab
-          if (this.target === '_blank' || e.ctrlKey || e.metaKey) {
-            // If it's a new tab, don't show the loader, just let the browser do its thing.
-            return;
-          }
-          
-          // Prevent the browser from navigating immediately
-          e.preventDefault();
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const destination = this.href;
 
-          // Show the loader
-          if(loader) {
-            loader.classList.remove('hidden');
-          }
+      // If opening in new tab, do nothing
+      if (this.target === "_blank" || e.ctrlKey || e.metaKey) return;
 
-          // Navigate to the new page after a short delay to allow the loader to be seen
-          setTimeout(function () {
-            window.location.href = destination;
-          }, 200); // 200 milliseconds delay
-        });
-      });
+      // Prevent immediate navigation
+      e.preventDefault();
 
-      // Hide loader when the page is fully loaded or when navigating back/forward
-      window.addEventListener('pageshow', function(event) {
-        if (loader) {
-          loader.classList.add('hidden');
-        }
-      });
+      // Show loader (remove hidden, add flex)
+      if (loader) {
+        loader.classList.remove("hidden");
+        loader.classList.add("flex");
+      }
+
+      // Navigate after short delay
+      setTimeout(function () {
+        window.location.href = destination;
+      }, 300);
     });
+  });
+
+  // Hide loader when page finishes loading or when using back/forward
+  window.addEventListener("pageshow", function () {
+    if (loader) {
+      loader.classList.add("hidden");
+      loader.classList.remove("flex");
+    }
+  });
+});

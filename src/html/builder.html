@@ -34,13 +34,13 @@
 
 
 
-<!--  PAGE LOADER -->
-<div id="page-loader" class="fixed inset-0 z-[9999] bg-white hidden">
-    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div class="relative h-20 w-20 flex items-center justify-center">
-            <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
-            <img src="../assets/image/PCREXBIGLOGO1.png" alt="Loading..." class="h-20 w-1h-20">
-        </div>
+<!-- PAGE LOADER -->
+<div id="page-loader" class="fixed inset-0 z-[9999] bg-white items-center justify-center hidden">
+    <div class="relative flex items-center justify-center">
+        <!-- Spinner -->
+        <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
+        <!-- Logo -->
+        <img src="/src/assets/image/PCREXBIGLOGO1.png" alt="Loading..." class="h-20 w-20 object-contain">
     </div>
 </div>
   <script src="/src/js/loader.js" ></script>
@@ -50,13 +50,13 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <!-- Logo -->
-      <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+      <a href="../../index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
         <img src="../assets/image/PCREXBIGLOGOFINAL.png" alt="PC REX Logo" class="h-14 w-auto lg:h-20">
       </a>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-[30px]">
-        <a href="index.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] transition duration-150 ease-in-out font-semibold relative">Home</a>
+        <a href="../../index.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] transition duration-150 ease-in-out font-semibold relative">Home</a>
 
         <!-- About Us Dropdown -->
         <div class="relative" id="about-us-wrapper">
@@ -101,7 +101,7 @@
       </button>
   </div>
   <div class="p-4 space-y-3">
-      <a href="index.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Home</a>
+      <a href="../../index.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Home</a>
 
       <!-- About Us (with nested links) -->
       <div>
@@ -250,21 +250,22 @@
         </div>
     </div>
 
-    <!-- Success Toast Notification -->
-<div id="success-toast" 
-     class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  
-            bg-[#4BB543] text-white px-5 py-3 rounded-lg shadow-lg hidden 
-            opacity-0 transition-opacity duration-300 z-50">
-    <span id="toast-message">Build Saved Successfully!</span>
-</div>
+   <!-- ✅ Success Toast Notification -->
+    <div id="success-toast" 
+        class="fixed inset-0  items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg text-center font-medium">
+            <span id="toast-message">✅ Build Saved Successfully!</span>
+        </div>
+    </div>
 
-<!-- Error Toast Notification -->
-<div id="error-toast" 
-     class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  
-            bg-red-600 text-white px-5 py-3 rounded-lg shadow-lg hidden 
-            opacity-0 transition-opacity duration-300 z-50">
-    <span id="error-toast-message">An error occurred.</span>
-</div>
+    <!-- ❌ Error Toast Notification -->
+    <div id="error-toast" 
+        class="fixed inset-0  items-center justify-center p-4 hidden z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg text-center font-medium">
+            <span id="error-toast-message">❌ An error occurred.</span>
+        </div>
+    </div>
+
 
     <!-- Your custom JavaScript file -->
     <script src="../js/builder.js"></script>
@@ -306,7 +307,7 @@
       <div>
         <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
         <ul class="space-y-3 text-gray-400">
-          <li><a href="index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="../../index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
             <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
             <li><a href="location.html" class="hover:text-white transition-colors duration-300">Location</a></li>
             <li><a href="services.html" class="hover:text-white transition-colors duration-300">Services</a></li>

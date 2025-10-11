@@ -2,7 +2,7 @@
   {
     "id": 1,
     "images": [
-        "../assets/image/ProductImage/CPUcooling.png"
+        "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "AMD Wraith Stealth Cooler",
     "price": "500",
@@ -17,7 +17,7 @@
   {
     "id": 2,
     "images": [
-      "../assets/image/ProductImage/CPUcooling.png"
+      "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "AMD Stock Heatsink Fan",
     "price": "500",
@@ -32,7 +32,7 @@
   {
     "id": 3,
     "images": [
-      "../assets/image/ProductImage/CPUcooling.png"
+      "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "Deepcool AG400 Single Tower Hydro Bearing CPU Air Cooler ARGB White",
     "price": "1400",
@@ -47,7 +47,7 @@
   {
     "id": 4,
     "images": [
-      "../assets/image/ProductImage/motherboard.png"
+      "/src/assets/image/ProductImage/motherboard.png"
     ],
     "name": "MSI PRO B650M-A WiFi D5 AM5 DDR5 Motherboard",
     "price": "3000",
@@ -62,7 +62,7 @@
   {
     "id": 5,
     "images": [
-      "../assets/image/ProductImage/motherboard.png"
+      "/src/assets/image/ProductImage/motherboard.png"
     ],
     "name": "Biostar A520MHP Socket AM4 DDR4 Motherboard",
     "price": "3500",
@@ -77,7 +77,7 @@
   {
     "id": 6,
     "images": [
-      "../assets/image/ProductImage/GPU.png"
+      "/src/assets/image/ProductImage/GPU.png"
     ],
     "name": "Biostar RX 580 VA5805RV82 Dual Cooling Fan 8GB 256-bit GDDR5 Gaming Videocard",
     "price": "6000",
@@ -92,7 +92,7 @@
   {
     "id": 7,
     "images": [
-      "../assets/image/ProductImage/GPU.png"
+      "/src/assets/image/ProductImage/GPU.png"
     ],
     "name": "MSI GeForce RTX 3060 Ventus 2X OC 12GB GDDR6 Gaming Graphics Card",
     "price": "20",
@@ -107,7 +107,7 @@
   {
     "id": 8,
     "images": [
-      "../assets/image/ProductImage/PSU.png"
+      "/src/assets/image/ProductImage/PSU.png"
     ],
     "name": "Acer AC-550 550W Full Modular 80+ Bronze Power Supply",
     "price": "500",
@@ -122,7 +122,7 @@
   {
     "id": 9,
     "images": [
-      "../assets/image/ProductImage/PSU.png"
+      "/src/assets/image/ProductImage/PSU.png"
     ],
     "name": "InPlay GS750-Ultra (750W, 450W, 650W) 80+ Bronze Rated Hydro Bearing RGB Power Supply",
     "price": "49",
@@ -137,7 +137,7 @@
   {
     "id": 10,
     "images": [
-      "../assets/image/ProductImage/HDD.png"
+      "/src/assets/image/ProductImage/HDD.png"
     ],
     "name": "Seagate Barracuda ST1000DM010 1TB 7200RPM SATA HDD",
     "price": "44",
@@ -152,7 +152,7 @@
   {
     "id": 11,
     "images": [
-      "../assets/image/ProductImage/HDD.png"
+      "/src/assets/image/ProductImage/HDD.png"
     ],
     "name": "Seagate ST2000DM008 2TB SATA HDD",
     "price": "4200",
@@ -167,7 +167,7 @@
   {
     "id": 12,
     "images": [
-      "../assets/image/ProductImage/SSD.png"
+      "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Kingston SSDNow A400 480GB SATA 2.5 SSD",
     "price": "34",
@@ -182,7 +182,7 @@
   {
     "id": 13,
     "images": [
-      "../assets/image/ProductImage/SSD.png"
+      "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta R600 256GB M.2 SATA SSD",
     "price": "19",
@@ -197,7 +197,7 @@
   {
     "id": 14,
     "images": [
-    "../assets/image/ProductImage/SSD.png"
+    "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Kingston Fury Renegade SFYRS 500GB PCIe 4.0 NVMe SSD",
     "price": "4500",
@@ -212,7 +212,7 @@
   {
     "id": 15,
     "images": [
-      "../assets/image/ProductImage/RAM.png"
+      "/src/assets/image/ProductImage/RAM.png"
     ],
     "name": "Team Elite TForce Delta 16GB (2x8GB) 3200MHz DDR4 RGB White",
     "price": "2500",
@@ -227,7 +227,7 @@
   {
     "id": 16,
     "images": [
-      "../assets/image/ProductImage/RAM.png"
+      "/src/assets/image/ProductImage/RAM.png"
     ],
     "name": "Kingston Fury Beast 16GB 3200MT/s DDR4 RGB Black",
     "price": "49",
@@ -242,7 +242,7 @@
   {
     "id": 17,
     "images": [
-      "../assets/image/ProductImage/RAM.png"
+      "/src/assets/image/ProductImage/RAM.png"
     ],
     "name": "Kingston KVR32S22S8/16 16GB 3200MHz DDR4 SODIMM",
     "price": "39",
@@ -257,7 +257,7 @@
   {
     "id": 18,
     "images": [
-      "../assets/image/ProductImage/Processorr.png"
+      "/src/assets/image/ProductImage/Processorr.png"
     ],
     "name": "AMD Ryzen 5 5600X 6-Core 12-Thread AM4",
     "price": "5500",
@@ -272,7 +272,7 @@
   {
     "id": 19,
     "images": [
-      "../assets/image/ProductImage/Processorr.png"
+      "/src/assets/image/ProductImage/Processorr.png"
     ],
     "name": "AMD Ryzen 7 5700G 8-Core 16-Thread AM4 APU with Radeon Vega 8 Graphics & Wraith Stealth Cooler MPK",
     "price": "7500",
@@ -287,7 +287,7 @@
   {
     "id": 20,
     "images": [
-      "../assets/image/ProductImage/Processorr.png"
+      "/src/assets/image/ProductImage/Processorr.png"
     ],
     "name": "AMD Ryzen 3 3200g Socket Am4 3.6ghz with Radeon Vega 8 Processor MPK",
     "price": "2800",
@@ -302,7 +302,7 @@
   {
     "id": 21,
     "images": [
-     "../assets/image/ProductImage/Processorr.png"
+     "/src/assets/image/ProductImage/Processorr.png"
     ],
     "name": "AMD Ryzen 7 7700X AM5",
     "price": "99.00",
@@ -317,7 +317,7 @@
   {
     "id": 22,
     "images": [
-     "../assets/image/ProductImage/Processorr.png"
+     "/src/assets/image/ProductImage/Processorr.png"
     ],
     "name": "Intel Core i7-14700F LGA 1700",
     "price": "19000",
@@ -502,7 +502,7 @@
   {
     "id": 33,
     "images": [
-      "../assets/image/ProductImage/PCHERO.png"
+      "/src/assets/image/ProductImage/PCHERO.png"
     ],
     "name": "InPlay Wind 05 and Wind 01 Acrylic Side Panel Micro ATX Tempered Glass Case",
     "price": "1700",
@@ -517,7 +517,7 @@
   {
     "id": 34,
     "images": [
-      "../assets/image/ProductImage/PCHERO.png"
+      "/src/assets/image/ProductImage/PCHERO.png"
     ],
     "name": "YGT V300 M-ATX Tempered Glass Gaming PC Case White",
     "price": "1500",
@@ -648,7 +648,7 @@
   {
     "id": 40,
     "images": [
-     "../assets/image/ProductImage/SSD.png"
+     "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta Solid State Drive SSD 128GB",
     "price": "700",
@@ -665,7 +665,7 @@
   {
     "id": 41,
     "images": [
-     "../assets/image/ProductImage/SSD.png"
+     "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta Solid State Drive SSD 256GB",
     "price": "900",
@@ -682,7 +682,7 @@
   {
     "id": 42,
     "images": [
-      "../assets/image/ProductImage/SSD.png"
+      "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta Solid State Drive SSD 512GB",
     "price": "1200",
@@ -699,7 +699,7 @@
   {
     "id": 43,
     "images": [
-      "../assets/image/ProductImage/SSD.png"
+      "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta Solid State Drive SSD 1TB",
     "price": "3600",
@@ -792,7 +792,7 @@
   {
     "id": 48,
     "images": [
-      "../assets/image/ProductImage/CPUcooling.png"
+      "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "HSF MA400 CPU Cooler Series 1500RPM 4 Copper Pipes Black and White",
     "price": "450",
@@ -809,7 +809,7 @@
   {
     "id": 49,
     "images": [
-      "../assets/image/ProductImage/PCHERO.png"
+      "/src/assets/image/ProductImage/PCHERO.png"
     ],
     "name": "MMA Gaming Glass Case",
     "price": "850",
@@ -940,7 +940,7 @@
   {
     "id": 56,
     "images": [
-     "../assets/image/ProductImage/SSD.png"
+     "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta M.2 SSD 128GB",
     "price": "800",
@@ -957,7 +957,7 @@
   {
     "id": 57,
     "images": [
-     "../assets/image/ProductImage/SSD.png"
+     "/src/assets/image/ProductImage/SSD.png"
     ],
     "name": "Ramsta M.2 SSD 256GB",
     "price": "1500",
@@ -1050,7 +1050,7 @@
   {
     "id": 62,
     "images": [
-      "../assets/image/ProductImage/PCHERO.png"
+      "/src/assets/image/ProductImage/PCHERO.png"
     ],
     "name": "Inplay Lite X10 Generic Case Black with Power Supply",
     "price": "750",
@@ -1067,7 +1067,7 @@
   {
     "id": 63,
     "images": [
-     "../assets/image/ProductImage/CPUcooling.png"
+     "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "HSF Jonsbro CR-1400 Silent Series 90mm Tower Cooler 4 Pipes ARGB 180w White",
     "price": "850",
@@ -1084,7 +1084,7 @@
   {
     "id": 64,
     "images": [
-      "../assets/image/ProductImage/CPUcooling.png"
+      "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "HSF CR-1200 Jonsbro RGB 90mm Single Tower CPU Cooler LGA and AMD",
     "price": "400",
@@ -1101,7 +1101,7 @@
   {
     "id": 65,
     "images": [
-      "../assets/image/ProductImage/CPUcooling.png"
+      "/src/assets/image/ProductImage/CPUcooling.png"
     ],
     "name": "Inplay RF-P4 CPU Cooler 4 Heatpipe RGB",
     "price": "500",
@@ -1175,7 +1175,7 @@
   {
     "id": 69,
     "images": [
-      "../assets/image/ProductImage/PCHERO.png"
+      "/src/assets/image/ProductImage/PCHERO.png"
     ],
     "name": "Cyborg Case Keytech",
     "price": "2600",
@@ -1192,7 +1192,7 @@
   {
     "id": 70,
     "images": [
-      "../assets/image/ProductImage/PCHERO.png"
+      "/src/assets/image/ProductImage/PCHERO.png"
     ],
     "name": "Speaker Mini Digital M-i054 White and Black 2.0",
     "price": "250",

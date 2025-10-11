@@ -2,42 +2,42 @@
   {
     "title": "Motherboards",
     "subtitle": "The essential foundation for every PC build.",
-    "image": "../assets/image/ProductImage/motherboard.png",
+    "image": "/src/assets/image/ProductImage/motherboard.png",
     "alt": "A modern computer motherboard",
     "color": "#FF3B30"
   },
   {
     "title": "Graphics Cards",
     "subtitle": "Experience next-level visuals and performance.",
-    "image": "../assets/image/ProductImage/GPU.png",
+    "image": "/src/assets/image/ProductImage/GPU.png",
     "alt": "A powerful graphics card",
     "color": "#FF9500"
   },
   {
     "title": "Processors",
     "subtitle": "The command center of your digital world.",
-    "image": "../assets/image/ProductImage/Processorr.png",
+    "image": "/src/assets/image/ProductImage/Processorr.png",
     "alt": "A computer processor CPU",
     "color": "#34C759"
   },
   {
     "title": "Memory (RAM)",
     "subtitle": "Unlock seamless multitasking and speed.",
-    "image": "../assets/image/ProductImage/RAM.png",
+    "image": "/src/assets/image/ProductImage/RAM.png",
     "alt": "A set of RAM sticks",
     "color": "#007AFF"
   },
   {
     "title": "Storage Drives",
     "subtitle": "Load games and applications in an instant.",
-    "image": "../assets/image/ProductImage/SSD.png",
+    "image": "/src/assets/image/ProductImage/SSD.png",
     "alt": "An M.2 SSD storage drive",
     "color": "#5856D6"
   },
   {
     "title": "Power Supplies",
     "subtitle": "Reliable and efficient power for your system.",
-    "image": "../assets/image/ProductImage/PSU.png",
+    "image": "/src/assets/image/ProductImage/PSU.png",
     "alt": "A computer power supply unit",
     "color": "#AF52DE"
   }

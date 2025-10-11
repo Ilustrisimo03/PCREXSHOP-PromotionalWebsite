@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PC REX Shop</title>
 
-  <link rel="icon" type="image/png" sizes="256x256" href="../assets/image/PCREXBIGLOGOFINAL.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/src/assets/image/PCREXBIGLOGOFINAL.png">
 
 
  
@@ -32,16 +32,18 @@
 </head>
 <body>
 
-<!--  PAGE LOADER -->
-<div id="page-loader" class="fixed inset-0 z-[9999] bg-white hidden">
-    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div class="relative h-20 w-20 flex items-center justify-center">
-            <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
-            <img src="../assets/image/PCREXBIGLOGO1.png" alt="Loading..." class="h-20 w-1h-20">
-        </div>
+<!-- ✅ PAGE LOADER -->
+<div id="page-loader" class="fixed inset-0 z-[9999] bg-white items-center justify-center hidden">
+    <div class="relative flex items-center justify-center">
+        <!-- Spinner -->
+        <div class="absolute h-24 w-24 animate-spin rounded-full border-4 border-solid border-[#074ec2] border-t-transparent"></div>
+        <!-- Logo -->
+        <img src="/src/assets/image/PCREXBIGLOGO1.png" alt="Loading..." class="h-20 w-20 object-contain">
     </div>
 </div>
-  <script src="/src/js/loader.js" ></script>
+
+<script src="/src/js/loader.js"></script>
+
 
 <!-- Navbar -->
 <nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-3 rounded-[15px]">
@@ -49,7 +51,7 @@
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
         <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
-          <img src="../assets/image/PCREXBIGLOGOFINAL.png" alt="PC REX Logo" class="h-14 w-auto lg:h-20">
+          <img src="/src/assets/image/PCREXBIGLOGOFINAL.png" alt="PC REX Logo" class="h-14 w-auto lg:h-20">
         </a>
   
         <!-- Desktop Menu -->
@@ -69,7 +71,7 @@
             </div>
           </div>
   
-          <a href="builder.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">Build A PC</a>
+          <a href="src/html/builder.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">Build A PC</a>
           <a href="#contact-section" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">Contact</a>
         </div>
   
@@ -93,7 +95,7 @@
 <!-- Sidebar -->
 <div id="mobileSidebar" class="fixed top-0 left-0 h-full w-64 bg-[#FFFFFF] shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
     <div class="flex justify-between items-center p-4 border-b">
-        <img src="../assets/image/PCREXBIGLOGOFINAL.png" alt="PC REX Logo" class="h-14 w-auto"> <!-- Changed from h2 to img -->
+        <img src="/src/assets/image/PCREXBIGLOGOFINAL.png" alt="PC REX Logo" class="h-14 w-auto"> <!-- Changed from h2 to img -->
         <button id="closeSidebar" class="text-[#1C1C1C] hover:text-[#074ec2]">
             <span class="material-icons text-2xl">close</span>
         </button>
@@ -111,7 +113,7 @@
             </div>
         </div>
 
-        <a href="/src/html/builder.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Build A PC</a>
+        <a href="src/html/builder.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Build A PC</a>
         <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Contact</a>
 
         <!-- Notification Icon for Sidebar -->
@@ -167,7 +169,7 @@
             <!-- Custom Build A PC Button -->
             <div class="flex justify-center pt-2 md:justify-start">
                 <a
-                    href="builder.html"
+                    href="src/html/builder.html"
                     class="inline-flex items-center justify-center BG-gradient py-3 px-6 rounded-[15px] text-md shadow-md font-bold text-[#FFFFFF] transition-all duration-300 hover:scale-105  sm:text-md"
                 >
                     <span>Build Your Own PC</span>
@@ -192,7 +194,7 @@
   </div>
 </section>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="../js/BannerSlider.js"></script>
+<script src="/src/js/BannerSlider.js"></script>
 
 
 
@@ -207,7 +209,7 @@
     </div>
   </div>
 </section>
-<script src="../js/categoryScroll.js"></script>
+<script src="/src/js/categoryScroll.js"></script>
 
 
 
@@ -247,7 +249,7 @@
 </div>
 
 <!-- I-link ang JavaScript file -->
-<script src="../js/ExploreProducts.js"></script>
+<script src="/src/js/ExploreProducts.js"></script>
 
 
 
@@ -291,6 +293,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.tailwindcss.com"></script>
 </section>
 <!-- END OF NEW TUTORIAL SECTION -->
 
@@ -327,7 +330,7 @@
     </div>
 </section>
 
-<script src="../js/Services.js" ></script>
+<script src="/src/js/Services.js" ></script>
 
 
 
@@ -454,7 +457,7 @@
       <!-- Left Column: Logo, About & Social -->
       <div class="md:col-span-1">
         <div class="flex items-center mb-2">
-          <img src="../assets/image/PCREXBIGLOGOFINAL.png" alt="PC Rex Logo" class="h-28 w-auto" />
+          <img src="/src/assets/image/PCREXBIGLOGOFINAL.png" alt="PC Rex Logo" class="h-28 w-auto" />
           
         </div>
         <p class="text-gray-400 mb-6 text-sm">
@@ -521,9 +524,9 @@
     </div>
   </div>
 </footer>
-    <script src="../js/footer.js"></script>
+    <script src="/src/js/footer.js"></script>
 
-  <script src="../js/html.js"></script>
+  <script src="/src/js/html.js"></script>
 
  <!--  NO INTERNET CONNECTION TOAST  -->
     <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">

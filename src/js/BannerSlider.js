@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     async function initializeCarousel() {
         try {
-            const response = await fetch('../data/BannerSlider.json'); 
+            const response = await fetch('/src/data/BannerSlider.json'); 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

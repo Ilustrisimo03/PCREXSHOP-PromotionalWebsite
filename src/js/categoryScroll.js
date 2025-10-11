@@ -64,5 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initial Load ---
     // Trigger the function to fetch and render the categories.
     // Ensure the path to your JSON file is correct.
-    loadScrollingCategories('../data/scrollingCategories.json');
+    loadScrollingCategories('/src/data/scrollingCategories.json');
 });
