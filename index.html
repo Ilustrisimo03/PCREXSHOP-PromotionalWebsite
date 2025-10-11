@@ -142,55 +142,66 @@
 
 
 <!-- Hero Section -->
-<section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out">
+<section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden opacity-100 transition-opacity duration-1000 ease-in-out py-16">
+  <!-- Added py-16 for consistent vertical padding on all screens -->
 
   <!-- Background Text -->
   <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-50 md:opacity-40">
-    <h2 class="text-[86px] sm:text-[180px] md:text-[180px] lg:text-[250px] heading font-black text-gray-300 leading-none -translate-y-8 sm:-translate-y-10 [#FAF5F1]space-nowrap tracking-tighter">
-    COMPUTER
+    <!-- Adjusted font size for better responsiveness across different breakpoints -->
+    <h2 class="text-[80px] sm:text-[130px] md:text-[140px] lg:text-[200px] xl:text-[250px] heading font-black text-gray-300 leading-none -translate-y-10 sm:-translate-y-10 whitespace-nowrap tracking-tighter">
+      COMPUTER
     </h2>
   </div>
 
   <!-- Main Content Container -->
-  <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-0 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <!-- Adjusted max-w and padding for better control on smaller screens -->
+  <div class="relative z-10 max-w-xl mx-auto md:max-w-7xl w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-4 sm:px-6 lg:px-8">
 
     <!-- Text Content -->
+    <!-- Used md:w-1/2 and lg:w-[45%] for responsive width, added text-center on small screens, md:text-left for larger -->
     <div class="text-center md:text-left space-y-6 md:space-y-8 md:w-1/2 lg:w-[45%] mt-10 md:mt-0">
       <h3 class="text-lg sm:text-xl text-[#074ec2] font-regular tracking-wider uppercase heading-font">
         Powered by PC REX
       </h3>
+      <!-- Adjusted font sizes for h1 to scale better -->
       <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl heading text-[#1C1C1C] leading-tight">
         BUY PC<br class="hidden sm:inline">PARTS
       </h1>
       <p class="text-md sm:text-lg text-[#1C1C1C] max-w-md mx-auto md:mx-0 leading-relaxed">
         High-performance PCs, meticulously crafted for your gaming, creative, or professional needs. Built by experts, fueled by passion.
       </p>
-      
-            <!-- Custom Build A PC Button -->
-            <div class="flex justify-center pt-2 md:justify-start">
-                <a
-                    href="src/html/builder.html"
-                    class="inline-flex items-center justify-center BG-gradient py-3 px-6 rounded-[15px] text-md shadow-md font-bold text-[#FFFFFF] transition-all duration-300 hover:scale-105  sm:text-md"
-                >
-                    <span>Build Your Own PC</span>
-                    <span class="material-icons ml-2">chevron_right</span>
-                </a>
-            </div>
+
+      <!-- Custom Build A PC Button -->
+      <!-- Centered button on small screens, left-aligned on medium and up -->
+      <div class="flex justify-center pt-2 md:justify-start">
+        <a href="src/html/builder.html" class="inline-flex items-center justify-center BG-gradient py-3 px-6 rounded-[15px] text-md shadow-md font-bold text-[#FFFFFF] transition-all duration-300 hover:scale-105 sm:text-md">
+          <span>Build Your Own PC</span>
+          <span class="material-icons ml-2">chevron_right</span>
+        </a>
+      </div>
     </div>
 
-      <div class="carousel-container relative w-4/5 max-w-7xl mx-auto my-8 overflow-hidden rounded-2xl shadow-xl group">
-          <div class="carousel-track flex transition-transform duration-500 ease-in-out">
-          </div>
-          <div class="carousel-dots absolute flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-          </div>
-          <button id="prevBtn" class="carousel-btn prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out hover:bg-[#FAFAFA] hover:scale-110">
-              <span class="material-icons">chevron_left</span>
-          </button>
-          <button id="nextBtn" class="carousel-btn next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out hover:bg-[#FAFAFA] hover:scale-110">
-              <span class="material-icons">chevron_right</span>
-          </button>
-      </div>
 
+ <div class="carousel-container relative w-full md:w-1/2 lg:w-[55%] my-8 md:my-0 overflow-hidden rounded-2xl shadow-xl group">
+    <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+        <!-- Slides will be inserted here by JavaScript -->
+    </div>
+    <div class="carousel-dots absolute flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <!-- Dots will be inserted here by JavaScript -->
+    </div>
+
+    <!-- New container to center both buttons -->
+    <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 md:px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <!-- Previous button -->
+        <button id="prevBtn" class="carousel-btn prev-btn bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 transition-all duration-300 ease-in-out hover:bg-[#FAFAFA] ">
+            <span class="material-icons">chevron_left</span>
+        </button>
+        <!-- Next button -->
+        <button id="nextBtn" class="carousel-btn next-btn bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 transition-all duration-300 ease-in-out hover:bg-[#FAFAFA] ">
+            <span class="material-icons">chevron_right</span>
+        </button>
+    </div>
+</div>
   </div>
 </section>
 <script src="https://cdn.tailwindcss.com"></script>

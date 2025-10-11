@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.querySelector('.carousel-dots');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    
+    const carouselWrapper = document.querySelector('.carousel-container'); // Get wrapper for touch events
+
     let currentIndex = 0;
     let slides = [];
     let dots = [];
@@ -12,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollInterval = 3000; // 3 seconds
     let autoScrollTimer;
     let isTransitioning = false; // To prevent rapid clicks during animation
+
+    // Variables for swipe functionality
+    let startX;
+    let isDragging = false;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
 
     /**
      * Fetches carousel data and initializes the carousel.
@@ -64,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex = 1; 
         carouselTrack.style.transition = 'none'; // Disable transition for initial positioning
         carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentTranslate = -currentIndex * carouselTrack.offsetWidth; // Initialize currentTranslate for swipe
+
         // Re-enable transition after a small delay
         setTimeout(() => {
             carouselTrack.style.transition = 'transform 0.5s ease-in-out';
@@ -74,8 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDots();
         startAutoScroll();
 
-        // Event listeners
-        const carouselWrapper = document.querySelector('.carousel-container'); 
+        // Event listeners for hover (for auto-scroll pause)
         if (carouselWrapper) {
             carouselWrapper.addEventListener('mouseenter', stopAutoScroll);
             carouselWrapper.addEventListener('mouseleave', startAutoScroll);
@@ -92,16 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
             moveToSlide(targetIndex);
         });
 
-        // Navigation button listeners
-        prevBtn.addEventListener('click', () => {
-            if (isTransitioning) return;
-            moveToPrevSlide();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (isTransitioning) return;
-            moveToNextSlide();
-        });
+        // Navigation button listeners (only visible on larger screens now)
+        if (prevBtn) { // Check if buttons exist (they might be hidden by CSS)
+            prevBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                moveToPrevSlide();
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                moveToNextSlide();
+            });
+        }
 
         // Listen for end of transition
         carouselTrack.addEventListener('transitionend', () => {
@@ -116,6 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentIndex = slideCount; // Jump to the actual last slide
                 carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
+            // Update currentTranslate after a jump
+            currentTranslate = -currentIndex * carouselTrack.offsetWidth;
             // Re-enable transition after a very short delay to ensure it applies for next movement
             setTimeout(() => {
                 carouselTrack.style.transition = 'transform 0.5s ease-in-out';
@@ -123,17 +137,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateDots();
         });
+
+        // Add touch/pointer event listeners for swipe
+        carouselTrack.addEventListener('pointerdown', startDrag);
+        carouselTrack.addEventListener('pointerup', endDrag);
+        carouselTrack.addEventListener('pointerleave', endDrag); // Handle leaving the carousel area while dragging
+        carouselTrack.addEventListener('pointermove', drag);
     }
 
     /**
      * Moves the carousel to a specific slide index.
      * @param {number} targetIndex - The index of the slide to move to (adjusted for clones).
      */
-    function moveToSlide(targetIndex) {
-        if (isTransitioning) return;
+    function moveToSlide(targetIndex, smooth = true) {
+        if (isTransitioning && smooth) return;
         isTransitioning = true;
         currentIndex = targetIndex;
+        // Ensure transition is applied for smooth movement
+        carouselTrack.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
         carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentTranslate = -currentIndex * carouselTrack.offsetWidth; // Update currentTranslate
         stopAutoScroll();
         startAutoScroll();
     }
@@ -146,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isTransitioning = true;
         currentIndex++;
         carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentTranslate = -currentIndex * carouselTrack.offsetWidth; // Update currentTranslate
         stopAutoScroll();
         startAutoScroll();
     }
@@ -158,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isTransitioning = true;
         currentIndex--;
         carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        currentTranslate = -currentIndex * carouselTrack.offsetWidth; // Update currentTranslate
         stopAutoScroll();
         startAutoScroll();
     }
@@ -182,6 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function startAutoScroll() {
         if (autoScrollTimer) clearInterval(autoScrollTimer);
+        // Only auto-scroll if not currently dragging
         autoScrollTimer = setInterval(moveToNextSlide, scrollInterval);
     }
 
@@ -190,6 +216,55 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function stopAutoScroll() {
         clearInterval(autoScrollTimer);
+    }
+
+    // --- Swipe Functionality ---
+
+    function startDrag(event) {
+        // Prevent default browser dragging behavior for images etc.
+        event.preventDefault(); 
+        isDragging = true;
+        startX = event.clientX || event.touches[0].clientX;
+        stopAutoScroll(); // Stop auto-scroll when user starts dragging
+        cancelAnimationFrame(animationID); // Stop any ongoing animation
+
+        // Disable transition during drag for immediate response
+        carouselTrack.style.transition = 'none';
+        prevTranslate = currentTranslate; // Capture current position
+    }
+
+    function drag(event) {
+        if (!isDragging) return;
+
+        const currentX = event.clientX || event.touches[0].clientX;
+        const dragAmount = currentX - startX;
+        currentTranslate = prevTranslate + dragAmount;
+
+        setSliderPosition();
+    }
+
+    function endDrag() {
+        if (!isDragging) return;
+
+        isDragging = false;
+        startAutoScroll(); // Resume auto-scroll after drag ends
+
+        const movedBy = currentTranslate - prevTranslate;
+        const slideWidth = carouselTrack.offsetWidth; // Get current width of the carousel track
+
+        // Determine if a significant swipe occurred
+        if (movedBy < -slideWidth / 4) { // Swiped left enough (more than 25% of slide width)
+            moveToNextSlide();
+        } else if (movedBy > slideWidth / 4) { // Swiped right enough
+            moveToPrevSlide();
+        } else {
+            // Not enough swipe, snap back to current slide
+            moveToSlide(currentIndex); 
+        }
+    }
+
+    function setSliderPosition() {
+        carouselTrack.style.transform = `translateX(${currentTranslate}px)`;
     }
 
     // Start the process
