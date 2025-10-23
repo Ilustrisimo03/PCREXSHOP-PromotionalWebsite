@@ -611,6 +611,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000); // Display for 3 seconds
     };
 
+    // --- Download Build Function ---
+    const downloadBuild = () => {
+        let buildText = '--- PC Build Summary ---\n\n';
+        let totalPrice = 0;
+
+        if (Object.keys(selectedComponents).length === 0) {
+            showToast(errorToast, errorToastMessage, "Your build is empty. Nothing to download.");
+            return;
+        }
+
+        componentStructure.forEach(slot => {
+            const product = selectedComponents[slot.id];
+            if (product) {
+                buildText += `${slot.name}: ${product.name} - ${formatPrice(product.price)}\n`;
+                totalPrice += parseFloat(product.price);
+            } else {
+                buildText += `${slot.name}: Not Selected\n`;
+            }
+        });
+
+        buildText += `\nTotal Price: ${formatPrice(totalPrice)}\n\n`;
+
+        const { status, message, details } = checkOverallBuildCompatibility();
+        buildText += `Compatibility Status: ${message}\n`;
+        if (details.length > 0) {
+            buildText += 'Compatibility Details:\n';
+            details.forEach(issue => {
+                buildText += `- ${issue}\n`;
+            });
+        }
+
+        const blob = new Blob([buildText], { type: 'text/plain;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'pc-build-summary.txt';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+
+        showToast(successToast, toastMessage, "Build summary downloaded successfully!");
+    };
+
+
     // --- EVENT HANDLERS ---
     const selectComponent = (productId) => {
         const product = allProducts.find(p => p.id === productId);
@@ -660,11 +704,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 "text-orange-500",
                 () => {
                     localStorage.setItem('savedPcBuild', JSON.stringify(selectedComponents));
+                    downloadBuild(); // Call download here after saving to local storage
                     showToast(successToast, toastMessage, "Build saved successfully (with warnings)!");
                 }
             );
         } else {
             localStorage.setItem('savedPcBuild', JSON.stringify(selectedComponents));
+            downloadBuild(); // Call download here after saving to local storage
             showToast(successToast, toastMessage, "Build saved successfully!");
         }
     });
@@ -710,7 +756,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- DATA FETCHING ---
     // Assuming Item.json is in the same directory or a known path like '../data/Item.json'
-    fetch('../data/Item.json') // Adjust path if necessary
+    fetch('/src/data/Item.json') // Adjust path if necessary
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
