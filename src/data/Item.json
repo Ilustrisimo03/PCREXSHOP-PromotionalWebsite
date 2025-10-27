@@ -62,7 +62,7 @@
   {
     "id": 5,
     "images": [
-      "/src/assets/image/ImagesP/Biostar A520MHP Socket AM4 DDR4 Motherboard1.png"
+      "/src/assets/image/ImagesP/Biostar A520MHP Socket Am4 DDR4 Motherboard1.png"
     ],
     "name": "Biostar A520MHP Socket AM4 DDR4 Motherboard",
     "price": "3500",
@@ -92,7 +92,7 @@
   {
     "id": 7,
     "images": [
-      "/src/assets/image/ImagesP/MSI GeForce RTX 3060 Ventus 2X OC 12GB GDDR6 Gaming Graphics Card1.png"
+      "/src/assets/image/ImagesP/msi geforce rtx 3060 ventus 2x oc 12gb gddr6 gaming graphics card1.png"
     ],
     "name": "MSI GeForce RTX 3060 Ventus 2X OC 12GB GDDR6 Gaming Graphics Card",
     "price": "20",
@@ -646,7 +646,7 @@
   {
     "id": 40,
     "images": [
-     "/src/assets/image/ImagesP/Ramsta Solid State Drive SSD 128GB1.png"
+     "/src/assets/image/ImagesP/Ramsta solid state drive ssd 128gb1.png"
     ],
     "name": "Ramsta Solid State Drive SSD 128GB",
     "price": "700",
@@ -663,7 +663,7 @@
   {
     "id": 41,
     "images": [
-     "/src/assets/image/ImagesP/Ramsta Solid State Drive SSD 256GB1.png"
+     "/src/assets/image/ImagesP/Ramsta solid state drive ssd 256gb1.png"
     ],
     "name": "Ramsta Solid State Drive SSD 256GB",
     "price": "900",
@@ -680,7 +680,7 @@
   {
     "id": 42,
     "images": [
-      "/src/assets/image/ImagesP/Ramsta Solid State Drive SSD 512GB1.png"
+      "/src/assets/image/ImagesP/Ramsta solid state drive ssd 512gb1.png"
     ],
     "name": "Ramsta Solid State Drive SSD 512GB",
     "price": "1200",
@@ -697,7 +697,7 @@
   {
     "id": 43,
     "images": [
-      "/src/assets/image/ImagesP/Ramsta Solid State Drive SSD 1TB1.png"
+      "/src/assets/image/ImagesP/Ramsta solid state srive ssd 1TB1.png"
     ],
     "name": "Ramsta Solid State Drive SSD 1TB",
     "price": "3600",
@@ -790,7 +790,7 @@
   {
     "id": 48,
     "images": [
-      "/src/assets/image/ImagesP/HSF MA400 CPU Cooler Series 1500RPM 4 Copper Pipes Black and White1.png"
+      "/src/assets/image/ImagesP/HSF ma400 cpu cooler series 1500rpm 4 copper pipes black and white1.png"
     ],
     "name": "HSF MA400 CPU Cooler Series 1500RPM 4 Copper Pipes Black and White",
     "price": "450",
@@ -807,7 +807,7 @@
   {
     "id": 49,
     "images": [
-      "/src/assets/image/ImagesP/MMA Gaming Glass Case1.png"
+      "/src/assets/image/ImagesP/MMA gaming glass case1.png"
     ],
     "name": "MMA Gaming Glass Case",
     "price": "850",
@@ -938,7 +938,7 @@
   {
     "id": 56,
     "images": [
-     "/src/assets/image/ImagesP/Ramsta M.2 SSD 128GB1.png"
+     "/src/assets/image/ImagesP/Ramsta M.2 ssd 128gb1.png"
     ],
     "name": "Ramsta M.2 SSD 128GB",
     "price": "800",
@@ -955,7 +955,7 @@
   {
     "id": 57,
     "images": [
-     "/src/assets/image/ImagesP/Ramsta M.2 SSD 256GB1.png"
+     "/src/assets/image/ImagesP/Ramsta M.2 ssd 256gb1.png"
     ],
     "name": "Ramsta M.2 SSD 256GB",
     "price": "1500",
@@ -1048,7 +1048,7 @@
   {
     "id": 62,
     "images": [
-      "/src/assets/image/ImagesP/Inplay Lite X10 Generic Case Black with Power Supply1.png"
+      "/src/assets/image/ImagesP/Inplay Lite x10 generic case black with power supply1.png"
     ],
     "name": "Inplay Lite X10 Generic Case Black with Power Supply",
     "price": "750",
@@ -1173,7 +1173,7 @@
   {
     "id": 69,
     "images": [
-      "/src/assets/image/ImagesP/Cyborg Case Keytech1.png"
+      "/src/assets/image/ImagesP/Cyborg case keytech1.png"
     ],
     "name": "Cyborg Case Keytech",
     "price": "2600",
