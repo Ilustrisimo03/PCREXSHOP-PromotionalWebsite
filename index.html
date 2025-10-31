@@ -76,12 +76,27 @@
         </div>
   
         <div class="flex items-center">
-            <!-- Download Mobile App Button -->
-            <a href="your-app.apk" download
-              class="hidden md:inline-block bg-[#074ec2] text-white font-bold py-2 px-4 rounded-[15px] transition-all duration-300 text-md shadow-md hover:scale-105">
-              Download Mobile App (APK)
-            </a>
-
+            <!-- Download Mobile App Button with QR Code Dropdown -->
+            <div class="relative group">
+                <button id="downloadAppBtn"
+                  class="hidden md:inline-block bg-[#074ec2] text-white font-bold py-2 px-4 rounded-[15px] transition-all duration-300 text-md shadow-md">
+                  Download Mobile App (APK)
+                </button>
+                <!-- QR CODE Dropdown -->
+                <div id="qrCodeDropdown" class="absolute left-0 right-0 mx-auto mt-2 w-72 bg-white p-4 rounded-2xl shadow-xl border-4 border-[#074ec2] hidden group-hover:block transition-all duration-300 ease-in-out origin-top">
+                    <div class="flex flex-col items-center">
+                        <div class="relative w-48 h-48 bg-white p-2 rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                            <img
+                              src="/src/assets/image/QrCodeImage/web.png"
+                              alt="QR Code for App Download"
+                              class="w-full h-full object-contain"
+                            >
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#074ec2] to-transparent animate-scan-modern origin-top"></div>
+                        </div>
+                        <p class="text-sm text-[#1C1C1C] font-medium mt-3 text-center">Scan to download for Android</p>
+                    </div>
+                </div>
+            </div>
             <!-- Mobile Menu Button -->
             <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#074ec2] focus:outline-none">
               <span class="material-icons text-3xl">menu</span>
@@ -115,7 +130,7 @@
         <a href="src/html/builder.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Build A PC</a>
         <a href="#contact-section" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Contact</a>
 
-        <!-- Download App Button for Sidebar -->
+        <!-- Download App Button for Sidebar (Consider if you want QR here too) -->
         <a href="your-app.apk" download
           class="BG-gradient text-[#FFFFFF] transition-all duration-300 w-12 h-12 rounded-full flex items-center justify-center hover:scale-105 transform mt-4"
           title="Download Mobile App (APK)">
@@ -263,9 +278,8 @@
 
 
 
+<!-- 
 
-
-<!-- NEW TUTORIAL SECTION -->
 <section class="bg-[#FAFAFA] py-12 sm:py-16 opacity-0 transition-opacity duration-1000 ease-in-out"> 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="BG-gradient p-6 sm:p-8 lg:p-10 rounded-xl shadow-2xl overflow-hidden"> 
@@ -280,7 +294,7 @@
             </header>
 
             <div class="aspect-w-16 aspect-h-9 rounded-[15px] overflow-hidden shadow-xl mx-auto max-w-4xl">
-                <!-- Corrected YouTube embed URL -->
+               
                 <iframe 
                     src="https://www.youtube.com/embed/dWE1Hmf1XPc" 
                     title="PC Building Tutorial for Beginners" 
@@ -292,7 +306,7 @@
             </div>
 
             <div class="mt-8 prose prose-lg sm:prose-xl text-slate-300 max-w-3xl mx-auto text-center">
-                <!-- Using Tailwind Typography plugin classes for better text rendering -->
+                
                 <p>
                     This tutorial will walk you through everything from unboxing your components to the thrill of your first successful boot-up.
                 </p>
@@ -304,7 +318,7 @@
     </div>
     <script src="https://cdn.tailwindcss.com"></script>
 </section>
-<!-- END OF NEW TUTORIAL SECTION -->
+ -->
 
 
 
@@ -431,82 +445,153 @@
 </section>
 
 
-<footer class="bg-[#1C1C1C] text-[#FFFFFF] pt-12 pb-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+
+<!-- Experience OuR App Section -->
+<section 
+  class="py-16 bg-[#FAFAFA] relative overflow-hidden" 
+>
+  <!-- Background Elements (Optional: subtle patterns or shapes) -->
+  <div class="absolute inset-0 z-0 opacity-10">
+    <svg class="w-full h-full" fill="none" viewBox="0 0 100 100">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="#1C1C1C" stroke-width="0.1"></path>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#1C1C1C] z-10">
+    <h2 class="text-3xl md:text-4xl mb-12 heading text-[#1C1C1C]">Experience Our App</h2>
+
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
       
-      <!-- Left Column: Logo, About & Social -->
-      <div class="md:col-span-1">
-        <div class="flex items-center mb-2">
-          <img src="/src/assets/image/PCREXBIGLOGOFINAL.png" alt="PC Rex Logo" class="h-28 w-auto" />
-          
-        </div>
-        <p class="text-gray-400 mb-6 text-sm">
-          Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
+      <!-- LEFT COLUMN -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Download Our <br><span class="text-[#074ec2]">Revolutionary</span> Mobile App</h3>
+        <p class="text-lg text-[#1C1C1C] mb-8 max-w-md mx-auto lg:mx-0">
+          Shop top PC parts, build your dream setup, and checkout seamlessly — anytime, anywhere.
         </p>
-        <div class="flex gap-4">
-          <a href="https://www.facebook.com/pcrex.abdon" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
-          <a href="mailto:laisheenn@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fas fa-envelope"></i></a>
+
+        <!-- QR + Button -->
+        <div class="flex flex-col items-center lg:items-start mb-10 relative">
+          <!-- QR Code Wrapper -->
+          <div class="relative w-48 h-48 mb-6 bg-white p-2 rounded-xl shadow-xl border-4 border-[#074ec2] overflow-hidden group">
+            <img 
+              src="src/assets/image/QrCodeImage/web.png" 
+              alt="QR Code for App Download" 
+              class="w-full h-full object-contain"
+            >
+            <!-- Enhanced Scanning Line Animation -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#074ec2] to-transparent animate-scan-modern origin-top"></div>
+            <div class="absolute inset-0 border border-dashed border-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <p class="text-md text-[#1C1C1C] mb-4 font-medium">Scan the QR code to download for Android</p>
+        </div>
+
+        <p class="text-md text-[#1C1C1C] font-medium">Available soon on Google Play Store!</p>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="lg:w-1/2 flex justify-center lg:justify-end">
+        <div class="relative w-[250px] h-[520px] sm:w-[280px] sm:h-[580px] rounded-[15px] bg-gray-900 border-[7px] border-gray-900 shadow-[0_0_25px_#074ec2] ring-4 ring-offset-4 ring-offset-[#FAFAFA] p-1.5 sm:p-2 overflow-hidden">
+          <!-- Phone Screen Area -->
+          <div class="relative w-full h-full rounded-[12px] bg-white overflow-hidden">
+            <img 
+              id="appImage" 
+              src="src/assets/image/SampleUIMobile/Splash.png" 
+              alt="App UI" 
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+            >
+          </div>
         </div>
       </div>
 
-      <!-- Column 1: Useful Links -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
-        <ul class="space-y-3 text-gray-400">
-          <li><a href="index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+    </div>
+  </div>
+
+  <script src="src/js/AppImages.js" ></script>
+
+
+</section>
+
+
+
+<footer class="bg-[#1C1C1C] text-white pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+        
+        <!-- Left Column: Logo, About & Social -->
+        <div class="md:col-span-1">
+          <div class="flex items-center mb-2">
+             <img src="src/assets/image/PCREXBIGLOGOFINAL.png" alt="PC Rex Logo" class="h-28 w-auto" />
+            
+          </div>
+          <p class="text-gray-400 mb-6 text-sm">
+            Your one-stop shop for all things PC. We're passionate about building the best custom PCs and providing top-notch components and peripherals.
+          </p>
+          <div class="flex gap-4">
+            <a href="https://www.facebook.com/pcrex.abdon" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:laisheenn@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+  
+        <!-- Column 1: Useful Links -->
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="../../index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
             <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
             <li><a href="location.html" class="hover:text-white transition-colors duration-300">Location</a></li>
             <li><a href="services.html" class="hover:text-white transition-colors duration-300">Services</a></li>
             <li><a href="exploreProducts.html" class="hover:text-white transition-colors duration-300">Explore Products</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 2: Categories -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Categories</h4>
-        <ul class="space-y-3 text-gray-400">
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Furniture</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Accessories</a></li>
-          <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-Built</a></li>
-        </ul>
-      </div>
-      
-        <!-- Column 3: Download Our App (Adjusted for Footer) -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Download Our App</h4>
-        <p class="text-gray-400 mb-4 text-sm">Get the full experience on your Android device. Scan the QR or click to download.</p>
-        
-        <div class="flex flex-col items-start mb-6">
-          <!-- Placeholder for QR Code - In a real app, this would be dynamically generated -->
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://your-app-download-link.com/your-app.apk" alt="QR Code for App Download" class="mb-3 w-24 h-24 border border-gray-700 p-1 rounded-sm bg-white"> <!-- Smaller QR, adjusted border and added bg-white for contrast -->
-          <p class="text-sm text-gray-500 mb-4">Scan for Android</p>
-
-          <a href="your-app.apk" download class="bg-[#074ec2] text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 inline-block text-sm shadow-md"> <!-- Smaller button, text size, padding -->
-            Download Mobile App (APK)
-          </a>
-          <p class="text-xs text-gray-500 mt-2">Direct APK Download for Android</p>
+          </ul>
         </div>
+  
+        <!-- Column 2: Categories -->
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Categories</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Components</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Peripherals</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Furniture</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Accessories</a></li>
+            <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-Built</a></li>
+          </ul>
+        </div>
+  
+        <!-- QR CODE -->
+        <div class="flex flex-col items-start lg:items-center relative">
+          <!-- QR Code Wrapper -->
+          <div class="relative w-60 h-60 mb-6 bg-white p-3 rounded-2xl shadow-xl border-4 border-[#074ec2] overflow-hidden group">
+            <img 
+              src="src/assets/image/QrCodeImage/web.png" 
+              alt="QR Code for App Download" 
+              class="w-full h-full object-contain"
+            >
+            <!-- Enhanced Scanning Line Animation -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#074ec2] to-transparent animate-scan-modern origin-top"></div>
+            <div class="absolute inset-0 border border-dashed border-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
 
+          <p class="text-sm text-[#FFFFFF] font-medium">Scan the QR code to download for Android</p>
+        </div>
       </div>
-    </div>   
-
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-      <p>&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</p>
-      <div class="flex space-x-4 mt-4 md:mt-0">
-        <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
-        <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
-        <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
+  
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>&copy; <span id="currentYear"></span> PC Rex Shop. All rights reserved.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-    <script src="/src/js/footer.js"></script>
+  </footer>
+  <script src="../js/footer.js"></script>
 
   <script src="/src/js/html.js"></script>
 

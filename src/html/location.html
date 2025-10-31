@@ -75,12 +75,28 @@
         <a href="contact.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] font-semibold transition relative">Contact</a>
       </div>
 
-      <div class="flex items-center">
-            <!-- Download Mobile App Button -->
-            <a href="your-app.apk" download
-              class="hidden md:inline-block bg-[#074ec2] text-white font-bold py-2 px-4 rounded-[15px] transition-all duration-300 text-md shadow-md hover:scale-105">
-              Download Mobile App (APK)
-            </a>
+              <div class="flex items-center">
+            <!-- Download Mobile App Button with QR Code Dropdown -->
+            <div class="relative group">
+                <button id="downloadAppBtn"
+                  class="hidden md:inline-block bg-[#074ec2] text-white font-bold py-2 px-4 rounded-[15px] transition-all duration-300 text-md shadow-md">
+                  Download Mobile App (APK)
+                </button>
+                <!-- QR CODE Dropdown -->
+                <div id="qrCodeDropdown" class="absolute left-0 right-0 mx-auto mt-2 w-72 bg-white p-4 rounded-2xl shadow-xl border-4 border-[#074ec2] hidden group-hover:block transition-all duration-300 ease-in-out origin-top">
+                    <div class="flex flex-col items-center">
+                        <div class="relative w-48 h-48 bg-white p-2 rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                            <img
+                              src="/src/assets/image/QrCodeImage/web.png"
+                              alt="QR Code for App Download"
+                              class="w-full h-full object-contain"
+                            >
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#074ec2] to-transparent animate-scan-modern origin-top"></div>
+                        </div>
+                        <p class="text-sm text-[#1C1C1C] font-medium mt-3 text-center">Scan to download for Android</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Mobile Menu Button -->
             <button id="burger" class="md:hidden ml-4 p-2 rounded-md text-[#1C1C1C] hover:text-[#074ec2] focus:outline-none">
@@ -210,23 +226,22 @@
         </ul>
       </div>
 
-       <!-- Column 3: Download Our App (Adjusted for Footer) -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 text-white">Download Our App</h4>
-        <p class="text-gray-400 mb-4 text-sm">Get the full experience on your Android device. Scan the QR or click to download.</p>
-        
-        <div class="flex flex-col items-start mb-6">
-          <!-- Placeholder for QR Code - In a real app, this would be dynamically generated -->
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://your-app-download-link.com/your-app.apk" alt="QR Code for App Download" class="mb-3 w-24 h-24 border border-gray-700 p-1 rounded-sm bg-white"> <!-- Smaller QR, adjusted border and added bg-white for contrast -->
-          <p class="text-sm text-gray-500 mb-4">Scan for Android</p>
+        <!-- QR CODE -->
+        <div class="flex flex-col items-start lg:items-center relative">
+          <!-- QR Code Wrapper -->
+          <div class="relative w-60 h-60 mb-6 bg-white p-3 rounded-2xl shadow-xl border-4 border-[#074ec2] overflow-hidden group">
+            <img 
+              src="../assets/image/QrCodeImage/web.png" 
+              alt="QR Code for App Download" 
+              class="w-full h-full object-contain"
+            >
+            <!-- Enhanced Scanning Line Animation -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#074ec2] to-transparent animate-scan-modern origin-top"></div>
+            <div class="absolute inset-0 border border-dashed border-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
 
-          <a href="your-app.apk" download class="bg-[#074ec2] text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 inline-block text-sm shadow-md"> <!-- Smaller button, text size, padding -->
-            Download Mobile App (APK)
-          </a>
-          <p class="text-xs text-gray-500 mt-2">Direct APK Download for Android</p>
+          <p class="text-sm text-[#FFFFFF] font-medium">Scan the QR code to download for Android</p>
         </div>
-
-      </div>
     </div>
 
     <!-- Footer Bottom -->
