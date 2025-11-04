@@ -7,23 +7,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBody = document.getElementById('modalBody');
 
   const cardLayouts = [
-    "sm:col-span-2 sm:row-span-1 h-72",
-    "sm:col-span-1 sm:row-span-1 h-72",
-    "sm:col-span-1 sm:row-span-1 h-72",
-    "sm:col-span-1 sm:row-span-1 h-72",
-    "sm:col-span-1 sm:row-span-1 h-72",
-    "sm:col-span-2 sm:row-span-1 h-72",
+    "sm:col-span-2 sm:row-span-1 h-72 animate-fade-left",
+    "sm:col-span-1 sm:row-span-1 h-72 animate-fade-down",
+    "sm:col-span-1 sm:row-span-1 h-72 animate-fade-right",
+    "sm:col-span-1 sm:row-span-1 h-72 animate-fade-left",
+    "sm:col-span-1 sm:row-span-1 h-72 animate-fade-down",
+    "sm:col-span-2 sm:row-span-1 h-72 animate-fade-right",
   ];
 
   let allItems = [];
 
-  const renderGalleryCards = (products) => {
+  const renderGalleryCards = (products) => { 
     if (!galleryGrid) return;
     galleryGrid.innerHTML = products.map((product, index) => {
-      // Logic para sa special image sizes
-      const isSpecialImage = product.title === "Processors" || product.title === "Memory (RAM)";
-      const imageContainerClasses = isSpecialImage ? "absolute -right-2 bottom-0" : "absolute right-4 bottom-0 w-40 h-40 sm:w-52 sm:h-52";
-      const imageTagClasses = isSpecialImage ? "object-contain w-60 h-60" : "object-contain w-full h-full";
+   
+      const isWideImage = ["Motherboards", "Power Supplies"].includes(product.title);
+      const isTallImage = ["Graphics Cards", "Processors" ].includes(product.title);
+      const isSmallImage = ["Memory (RAM)", "Storage Drives"].includes(product.title);
+
+      let imageContainerClasses = "absolute bottom-0 right-0 flex justify-end items-end transition-all duration-300 ease-out";
+      let imageTagClasses = "object-contain drop-shadow-2xl transition-transform duration-300 ease-out hover:scale-105";
+
+
+      if (isWideImage) {
+        imageContainerClasses += " w-[270px] sm:w-[320px] h-[220px]";
+        imageTagClasses += " translate-y-2 sm:translate-y-4";
+      } else if (isTallImage) {
+        imageContainerClasses += " w-[240px] sm:w-[260px] h-[260px] sm:h-[280px]";
+        imageTagClasses += " translate-x-2 sm:translate-x-4";
+      } else if (isSmallImage) {
+        imageContainerClasses += " w-[240px] sm:w-[260px] h-[240px] sm:h-[260px]";
+        imageTagClasses += " translate-y-4 sm:translate-y-6";
+      }
+
       return `
         <div class="relative rounded-2xl p-6 flex flex-col justify-between shadow-lg overflow-hidden
                     transition-transform duration-300 hover:scale-[1.03] ${cardLayouts[index % cardLayouts.length]}"
@@ -145,3 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadAllData();
 });
+
+
