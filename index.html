@@ -46,17 +46,17 @@
 
 
 <!-- Navbar -->
-<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-3 rounded-[15px]">
+<nav class="bg-[#FFFFFF] shadow-lg fixed top-0 left-0 right-0 z-50 sm:mx-16 mx-4 my-3 rounded-[15px] animate-fade-down">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
+        <a href="#Home" class="flex-shrink-0 flex items-center hover:opacity-85 transition">
           <img src="/src/assets/image/PCREXBIGLOGOFINAL.png" alt="PC REX Logo" class="h-14 w-auto lg:h-20">
         </a>
   
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-[30px]">
-          <a href="index.html" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] transition duration-150 ease-in-out font-semibold relative">Home</a>
+          <a href="#Home" class="nav-link text-[#1C1C1C] hover:text-[#074ec2] transition duration-150 ease-in-out font-semibold relative">Home</a>
   
           <!-- About Us Dropdown -->
           <div class="relative" id="about-us-wrapper">
@@ -79,7 +79,7 @@
             <!-- Download Mobile App Button with QR Code Dropdown -->
             <div class="relative group">
                 <button id="downloadAppBtn"
-                  class="hidden md:inline-block bg-[#074ec2] text-white font-bold py-2 px-4 rounded-[15px] transition-all duration-300 text-md shadow-md">
+                  class="hidden md:inline-block bg-[#074ec2] text-white font-bold py-3 px-6 rounded-[15px] transition-all duration-300 text-md shadow-md">
                   Download Mobile App (APK)
                 </button>
                 <!-- QR CODE Dropdown -->
@@ -115,7 +115,7 @@
         </button>
     </div>
     <div class="p-4 space-y-3">
-        <a href="index.html" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Home</a>
+        <a href="#Home" class="block text-[#1C1C1C] hover:text-[#074ec2] font-semibold sidebar-link relative">Home</a>
 
         <!-- About Us (with nested links) -->
         <div>
@@ -155,28 +155,26 @@
 
 
 <!-- Hero Section -->
-<section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center fade-in-section py-16">
-  <!-- Added py-16 for consistent vertical padding on all screens -->
+<section id="Home" class="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 w-full min-h-[600px] md:min-h-[700px] flex items-center py-16">
 
   <!-- Background Text -->
-  <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-50 md:opacity-40">
-    <!-- Adjusted font size for better responsiveness across different breakpoints -->
+  <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none opacity-50 md:opacity-40 animate-fade-down">
+   
     <h2 class="text-[80px] sm:text-[130px] md:text-[140px] lg:text-[200px] xl:text-[250px] heading font-black text-gray-300 leading-none -translate-y-10 sm:-translate-y-10 whitespace-nowrap tracking-tighter">
       PCREXSHOP
     </h2>
   </div>
 
   <!-- Main Content Container -->
-  <!-- Adjusted max-w and padding for better control on smaller screens -->
+ 
   <div class="relative z-10 max-w-xl mx-auto md:max-w-7xl w-full flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 px-4 sm:px-6 lg:px-8">
 
-    <!-- Text Content -->
-    <!-- Used md:w-1/2 and lg:w-[45%] for responsive width, added text-center on small screens, md:text-left for larger -->
-    <div class="text-center md:text-left space-y-6 md:space-y-8 md:w-1/2 lg:w-[45%] mt-10 md:mt-0">
+   
+    <div class="text-center md:text-left space-y-6 md:space-y-8 md:w-1/2 lg:w-[45%] mt-10 md:mt-0 animate-fade-left">
       <h3 class="text-lg sm:text-xl text-[#074ec2] font-regular tracking-wider uppercase heading-font">
         Powered by PC REX
       </h3>
-      <!-- Adjusted font sizes for h1 to scale better -->
+     
       <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl heading text-[#1C1C1C] leading-tight">
         BUY PC<br class="hidden sm:inline">PARTS
       </h1>
@@ -185,7 +183,7 @@
       </p>
 
       <!-- Custom Build A PC Button -->
-      <!-- Centered button on small screens, left-aligned on medium and up -->
+   
       <div class="flex justify-center pt-2 md:justify-start">
         <a href="src/html/builder.html" class="inline-flex items-center justify-center BG-gradient py-3 px-6 rounded-[15px] text-md shadow-md font-bold text-[#FFFFFF] transition-all duration-300 hover:scale-105 sm:text-md">
           <span>Build Your Own PC</span>
@@ -195,22 +193,22 @@
     </div>
 
 
- <div class="carousel-container relative w-full md:w-1/2 lg:w-[55%] my-8 md:my-0 overflow-hidden rounded-2xl shadow-xl group">
-    <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+ <div class="carousel-container relative w-full md:w-1/2 lg:w-[55%] my-8 md:my-0 overflow-hidden rounded-2xl shadow-xl group animate-fade-right">
+    <div class="carousel-track flex transition-transform duration-500">
         <!-- Slides will be inserted here by JavaScript -->
     </div>
-    <div class="carousel-dots absolute flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+    <div class="carousel-dots absolute flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <!-- Dots will be inserted here by JavaScript -->
     </div>
 
     <!-- New container to center both buttons -->
-    <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 md:px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+    <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 md:px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <!-- Previous button -->
-        <button id="prevBtn" class="carousel-btn prev-btn bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 transition-all duration-300 ease-in-out hover:bg-[#FAFAFA] ">
+        <button id="prevBtn" class="carousel-btn prev-btn bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 transition-all duration-300 hover:bg-[#FAFAFA] ">
             <span class="material-icons">chevron_left</span>
         </button>
         <!-- Next button -->
-        <button id="nextBtn" class="carousel-btn next-btn bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 transition-all duration-300 ease-in-out hover:bg-[#FAFAFA] ">
+        <button id="nextBtn" class="carousel-btn next-btn bg-[#FFFFFF] text-[#074ec2] p-3 rounded-full cursor-pointer text-2xl flex items-center justify-center z-10 transition-all duration-300 hover:bg-[#FAFAFA] ">
             <span class="material-icons">chevron_right</span>
         </button>
     </div>
@@ -242,18 +240,15 @@
 
 
 <!-- BAGONG UI: Explore Products Gallery Section -->
-<section id="ExploreProducts" class="py-16 sm:py-24 bg-[#FAFAFA] fade-in-section">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Ang grid kung saan ilalagay ng JS ang mga bagong category card -->
-    <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Ang JavaScript ang maglalagay ng mga product card dito -->
+<section id="ExploreProducts" class="py-16 sm:py-24 bg-[#FAFAFA]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-up">
+    <div id="ExploreProducts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
     </div>
   </div>
 </section>
 
 <!-- BAGONG UI: "For Viewing Only" Modal -->
-<div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 transition-opacity duration-300">
+<div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70 animate-fade-up">
   <!-- Modal content -->
   <div class="m-4 max-h-[90vh] w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 flex flex-col">
     <!-- Modal Header -->
@@ -278,54 +273,13 @@
 
 
 
-<!-- 
-
-<section class="bg-[#FAFAFA] py-12 sm:py-16 opacity-0 transition-opacity duration-1000 ease-in-out"> 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="BG-gradient p-6 sm:p-8 lg:p-10 rounded-xl shadow-2xl overflow-hidden"> 
-            <header class="mb-8 text-center">
-                
-                <h2 class="text-3xl md:text-4xl heading text-[#FFFFFF]">
-                    New to PC Building?
-                </h2>
-                <p class="mt-3 text-lg text-gray-300 max-w-2xl mx-auto">
-                    Don't worry, we've got you covered! Watch our comprehensive step-by-step guide designed specifically for beginners.
-                </p>
-            </header>
-
-            <div class="aspect-w-16 aspect-h-9 rounded-[15px] overflow-hidden shadow-xl mx-auto max-w-4xl">
-               
-                <iframe 
-                    src="https://www.youtube.com/embed/dWE1Hmf1XPc" 
-                    title="PC Building Tutorial for Beginners" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    class="w-full h-full"
-                ></iframe>
-            </div>
-
-            <div class="mt-8 prose prose-lg sm:prose-xl text-slate-300 max-w-3xl mx-auto text-center">
-                
-                <p>
-                    This tutorial will walk you through everything from unboxing your components to the thrill of your first successful boot-up.
-                </p>
-                <p class="font-bold text-[#FFFFFF] mt-4">
-                    Ready to build your dream PC? Let's get started!
-                </p>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.tailwindcss.com"></script>
-</section>
- -->
 
 
 
 <!-- Services Section -->
-<section id="services-modern" class="py-16 sm:py-24 bg-[#FAFAFA] fade-in-section">
+<section id="services-modern" class="py-16 sm:py-24 bg-[#FAFAFA]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center ">
+        <div class="text-center animate-fade-down">
             <h2 class="text-2xl font-bold text-[#074ec2] tracking-wide uppercase">Our Services</h2>
             <p class="mt-2 text-3xl md:text-4xl heading text-[#1C1C1C]">
                 Comprehensive Tech Expertise
@@ -336,17 +290,17 @@
         </div>
 
         <!-- Services Grid - Populated by JavaScript -->
-        <div id="services-grid" class="mt-16 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-x-6 lg:gap-x-8 lg:gap-y-12">
+        <div id="services-grid" class="mt-16 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:gap-x-6 lg:gap-x-8 lg:gap-y-12 animate-fade-up">
             <!-- Service cards will be inserted here by JavaScript -->
         </div>
 
         <!-- Why Choose Us Section -->
         <div class="mt-24 text-center">
-             <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C]">Why Choose PC Rex?</h2>
-            <p class="mt-4 max-w-2xl mx-auto font-regular text-lg text-gray-600">
+             <h2 class="text-3xl md:text-4xl heading text-[#1C1C1C] animate-fade-down">Why Choose PC Rex?</h2>
+            <p class="mt-4 max-w-2xl mx-auto font-regular text-lg text-gray-600 animate-fade-down">
                  Experience, dedication, and a passion for technology set us apart.
             </p>
-            <div id="why-choose-us-grid" class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div id="why-choose-us-grid" class="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 animate-fade-up">
                 <!-- Why Choose Us cards will be inserted here by JavaScript -->
             </div>
         </div>
@@ -358,9 +312,9 @@
 
 
 <!-- CONTACT Section -->
-<section id="contact-section" class="bg-[#FAFAFA] text-gray-800 py-16 sm:py-24 fade-in-section">
+<section id="contact-section" class="bg-[#FAFAFA] text-gray-800 py-16 sm:py-24">
   <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 md:mb-16">
+    <div class="text-center mb-12 md:mb-16 animate-fade-down">
       <h2 class="text-3xl md:text-4xl text-[#1C1C1C] heading">Get in Touch</h2>
       <p class="text-lg mt-4 max-w-2xl text-gray-600 mx-auto">
         Have questions or need assistance? Contact us today – we're ready to help.
@@ -370,7 +324,7 @@
     <!-- Grid Layout -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
       <!-- Left: Contact Info -->
-      <div class="bg-[#FFFFFF] text-gray-800 p-8 rounded-xl shadow-md">
+      <div class="bg-[#FFFFFF] text-gray-800 p-8 rounded-xl shadow-md animate-fade-left">
         <h3 class="text-2xl heading text-[#1C1C1C]">Contact Details</h3>
         <div class="mt-5 space-y-4 text-gray-700">
           <p class="flex items-center text-lg">
@@ -395,7 +349,7 @@
       </div>
 
       <!-- Right: Visit Our Store -->
-      <div class="bg-[#FFFFFF] text-gray-800 p-8 rounded-xl shadow-md">
+      <div class="bg-[#FFFFFF] text-gray-800 p-8 rounded-xl shadow-md animate-fade-right">
         <h3 class="text-2xl heading text-[#1C1C1C]">Visit Our Store</h3>
         <p class="mt-3 text-gray-700">Find us easily using the map below or click for directions.</p>
         <a href="#location" class="mt-5 inline-flex items-center justify-center BG-gradient text-white px-6 py-2.5 rounded-[15px] shadow-md font-semibold transition duration-300 hover:bg-[#1307c2] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-[#074ec2]">
@@ -426,11 +380,11 @@
 
 
 <!-- Location Map Section -->
-<section id="location" class="py-16 sm:py-24 bg-[#074ec2] opacity-0 transition-opacity duration-1000 ease-in-out">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl heading text-[#FFFFFF]">Our Store Location</h2>
-        <p class="mt-4 text-lg text-[#FAFAFA] max-w-2xl mx-auto">Visit us in person to explore our products and talk to our experts.</p>
-        <div class="mt-10 rounded-[15px] overflow-hidden shadow-xl border border-gray-200">
+<section id="location" class="py-16 sm:py-24 bg-[#074ec2] ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
+        <h2 class="text-3xl md:text-4xl heading text-[#FFFFFF] animate-fade-down">Our Store Location</h2>
+        <p class="mt-4 text-lg text-[#FAFAFA] max-w-2xl mx-auto animate-fade-down">Visit us in person to explore our products and talk to our experts.</p>
+        <div class="mt-10 rounded-[15px] overflow-hidden shadow-xl border border-gray-200 animate-fade-up">
              <iframe
                 class="w-full h-96 md:h-[500px]"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509315!2d144.9537353153159!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c920fd286a9f%3A0x1c6e3463e77d131d!2sPC%20Rex%20Computer%20Sales!5e0!3m2!1sen!2us!4v1640174211445"
@@ -448,7 +402,7 @@
 
 <!-- Experience OuR App Section -->
 <section 
-  class="py-16 bg-[#FAFAFA] relative overflow-hidden fade-in-section" 
+  class="py-16 bg-[#FAFAFA] relative overflow-hidden" 
 >
   <!-- Background Elements (Optional: subtle patterns or shapes) -->
   <div class="absolute inset-0 z-0 opacity-10">
@@ -463,12 +417,12 @@
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#1C1C1C] z-10">
-    <h2 class="text-3xl md:text-4xl mb-12 heading text-[#1C1C1C]">Experience Our App</h2>
+    <h2 class="text-3xl md:text-4xl mb-12 heading text-[#1C1C1C] animate-fade-down ">Experience Our App</h2>
 
     <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
       
       <!-- LEFT COLUMN -->
-      <div class="lg:w-1/2 text-center lg:text-left">
+      <div class="lg:w-1/2 text-center lg:text-left animate-fade-left">
         <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Download Our <br><span class="text-[#074ec2]">Revolutionary</span> Mobile App</h3>
         <p class="text-lg text-[#1C1C1C] mb-8 max-w-md mx-auto lg:mx-0">
           Shop top PC parts, build your dream setup, and checkout seamlessly — anytime, anywhere.
@@ -495,7 +449,7 @@
       </div>
 
       <!-- RIGHT COLUMN -->
-      <div class="lg:w-1/2 flex justify-center lg:justify-end">
+      <div class="lg:w-1/2 flex justify-center lg:justify-end animate-fade-right">
         <div class="relative w-[250px] h-[520px] sm:w-[280px] sm:h-[580px] rounded-[15px] bg-gray-900 border-[7px] border-gray-900 shadow-[0_0_25px_#074ec2] ring-4 ring-offset-4 ring-offset-[#FAFAFA] p-1.5 sm:p-2 overflow-hidden">
           <!-- Phone Screen Area -->
           <div class="relative w-full h-full rounded-[12px] bg-white overflow-hidden">
@@ -542,7 +496,7 @@
         <div>
           <h4 class="font-bold text-lg mb-4 text-white">Useful Links</h4>
           <ul class="space-y-3 text-gray-400">
-            <li><a href="../../index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+            <li><a href="../../#Home" class="hover:text-white transition-colors duration-300">Home</a></li>
             <li><a href="src/html/contact.html" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
             <li><a href="src/html/location.html" class="hover:text-white transition-colors duration-300">Location</a></li>
             <li><a href="src/html/services.html" class="hover:text-white transition-colors duration-300">Services</a></li>
@@ -593,7 +547,7 @@
   </footer>
   <script src="../js/footer.js"></script>
 
-  <script src="/src/js/html.js"></script>
+ 
 
  <!--  NO INTERNET CONNECTION TOAST  -->
     <div id="network-status-toast-offline" class="fixed bottom-5 right-5 z-[9999] hidden">
@@ -630,5 +584,9 @@
     </div>
 <script src="/src/js/networkStatus.js"></script>
 
+
+ <script src="src/js/html.js"></script>
+
+ <script src="src/js/fade.js"></script>
 </body>
 </html>
