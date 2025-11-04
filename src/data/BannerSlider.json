@@ -1,22 +1,22 @@
 [
   {
-    "src": "/src/assets/image/PROMOTIONAL(1).png",
+    "src": "/src/assets/image/PromotionalImage/PROMOTIONAL(1).png",
     "alt": "Pre-Built 1"
   },
   {
-    "src": "/src/assets/image/PROMOTIONAL(2).png",
+    "src": "/src/assets/image/PromotionalImage/PROMOTIONAL(2).png",
     "alt": "Pre-Built 2"
   },
   {
-    "src": "/src/assets/image/PROMOTIONAL(3).png",
+    "src": "/src/assets/image/PromotionalImage/PROMOTIONAL(3).png",
     "alt": "Pre-Built 3"
   },
   {
-    "src": "/src/assets/image/PROMOTIONAL(4).png",
+    "src": "/src/assets/image/PromotionalImage/PROMOTIONAL(4).png",
     "alt": "Pre-Built 4"
   },
     {
-    "src": "/src/assets/image/PROMOTIONAL(5).png",
+    "src": "/src/assets/image/PromotionalImage/PROMOTIONAL(5).png",
     "alt": "Pre-Built"
   }
 ]
