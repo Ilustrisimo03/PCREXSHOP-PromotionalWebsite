@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
           entry.target.style.animation = "";
 
           if (entry.target.classList.contains("animate-fade-left")) {
-            entry.target.style.animation = "fadeLeft 1s ease-out forwards";
+            entry.target.style.animation = "fadeLeft 2s ease-out forwards";
           } else if (entry.target.classList.contains("animate-fade-right")) {
-            entry.target.style.animation = "fadeRight 1s ease-out forwards";
+            entry.target.style.animation = "fadeRight 2s ease-out forwards";
           } else if (entry.target.classList.contains("animate-fade-up")) {
-            entry.target.style.animation = "fadeUp 1s ease-out forwards";
+            entry.target.style.animation = "fadeUp 2s ease-out forwards";
           } else if (entry.target.classList.contains("animate-fade-down")) {
-            entry.target.style.animation = "fadeDown 1s ease-out forwards";
+            entry.target.style.animation = "fadeDown 2s ease-out forwards";
           }
         }
       });
