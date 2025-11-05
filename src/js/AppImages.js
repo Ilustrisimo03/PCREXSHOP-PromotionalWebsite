@@ -6,7 +6,6 @@
       "src/assets/image/SampleUImobile/Home (1).png",
       "src/assets/image/SampleUImobile/Products.png",
       "src/assets/image/SampleUImobile/Products (1).png",
-      "src/assets/image/SampleUImobile/My Account.png",
       "src/assets/image/SampleUImobile/DetailProduct.png",
       "src/assets/image/SampleUImobile/DetailProduct (1).png",
       "src/assets/image/SampleUImobile/Build a PC.png",
