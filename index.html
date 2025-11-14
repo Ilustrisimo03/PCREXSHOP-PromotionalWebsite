@@ -231,6 +231,25 @@
     </div>
   </div>
 </section>
+
+<!-- Item Modal -->
+<div id="item-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 p-4">
+    <div class="bg-gray-100 rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center p-4 bg-blue-700 text-white rounded-t-lg">
+            <h2 id="item-modal-title" class="text-2xl font-bold">Category Products</h2>
+            <button id="close-modal-btn" class="text-white hover:text-gray-200 text-3xl leading-none">
+                &times;
+            </button>
+        </div>
+        <!-- Modal Body (Scrollable) -->
+        <div id="item-modal-body" class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-6 overflow-y-auto flex-grow">
+            <!-- Items will be loaded here -->
+            <p class="text-center text-gray-600">Select a category to view items.</p>
+        </div>
+    </div>
+</div>
+
 <script src="/src/js/categoryScroll.js"></script>
 
 
@@ -311,6 +330,30 @@
 
 
 
+
+
+<!-- Location Map Section -->
+<section id="location" class="py-24 sm:py-24 bg-[#074ec2] ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
+        <h2 class="text-3xl md:text-4xl heading text-[#FFFFFF] animate-fade-down">Our Store Location</h2>
+        <p class="mt-4 text-lg text-[#FAFAFA] max-w-2xl mx-auto animate-fade-down">Visit us in person to explore our products and talk to our experts.</p>
+        <div class="mt-10 rounded-[15px] overflow-hidden shadow-xl border border-gray-200 animate-fade-up">
+             <iframe
+                class="w-full h-96 md:h-[500px]"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509315!2d144.9537353153159!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c920fd286a9f%3A0x1c6e3463e77d131d!2sPC%20Rex%20Computer%20Sales!5e0!3m2!1sen!2us!4v1640174211445"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map Location">
+             </iframe>
+             <!-- Note: Replaced the src with a generic placeholder URL. Use your specific embed URL -->
+        </div>
+    </div>
+</section>
+
+
+
+
 <!-- CONTACT Section -->
 <section id="contact-section" class="bg-[#FAFAFA] text-gray-800 py-24 sm:py-24">
   <div id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -379,24 +422,6 @@
 
 
 
-<!-- Location Map Section -->
-<section id="location" class="py-24 sm:py-24 bg-[#074ec2] ">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center ">
-        <h2 class="text-3xl md:text-4xl heading text-[#FFFFFF] animate-fade-down">Our Store Location</h2>
-        <p class="mt-4 text-lg text-[#FAFAFA] max-w-2xl mx-auto animate-fade-down">Visit us in person to explore our products and talk to our experts.</p>
-        <div class="mt-10 rounded-[15px] overflow-hidden shadow-xl border border-gray-200 animate-fade-up">
-             <iframe
-                class="w-full h-96 md:h-[500px]"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509315!2d144.9537353153159!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c920fd286a9f%3A0x1c6e3463e77d131d!2sPC%20Rex%20Computer%20Sales!5e0!3m2!1sen!2us!4v1640174211445"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Google Map Location">
-             </iframe>
-             <!-- Note: Replaced the src with a generic placeholder URL. Use your specific embed URL -->
-        </div>
-    </div>
-</section>
 
 
 
