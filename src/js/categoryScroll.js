@@ -111,8 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="text-lg font-semibold text-gray-900">${item.name}</h3>
                         <p class="text-[#074ec2] font-semibold">Price: ₱${item.price}</p>
                         <p class="text-gray-600 text-sm mt-2">${item.description}</p>
-                        <p class="text-sm text-yellow-500">Rating: ${item.rate} (${item.review} reviews)</p>
-                        <p class="text-sm text-gray-500">Stock: ${item.stock}</p>
                     </div>
                 `).join('');
             } else {
