@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // First filter by category, then filter out items with 0 stock
             const filteredItems = allItems.filter(item => 
-                item.category.name === categoryName && item.stock > 0
+                item.category.name === categoryName
             );
 
             if (filteredItems.length > 0) {
