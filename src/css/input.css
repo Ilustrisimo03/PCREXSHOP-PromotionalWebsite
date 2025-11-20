@@ -178,7 +178,7 @@ body {
       display: flex;
       align-items: center;
       white-space: nowrap;
-      animation: scroll 15s linear infinite; /* Slightly slower scroll */
+      animation: scroll 100s linear infinite; /* Slightly slower scroll */
       width: max-content;
     }
     .scroll-content {
@@ -224,7 +224,7 @@ body {
         .animate-scroll {
             /* Adjust duration based on content width and desired speed */
             /* More content or slower speed = longer duration */
-            animation: scroll 40s linear infinite;
+            animation: scroll 90s linear infinite;
         }
 
         /* Pause animation on hover */
