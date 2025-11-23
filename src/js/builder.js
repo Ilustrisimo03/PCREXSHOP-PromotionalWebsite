@@ -521,7 +521,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="min-w-0">
                         <h5 class="font-bold text-gray-800">${product.name}</h5>
                         <p class="text-sm text-gray-500 mt-1">${product.description || ''}</p>
-                        <p class="text-sm text-gray-400 mt-2">Rating: ${product.rate}/5 (${product.review} reviews)</p>
                         ${compatibilityHTML}
                     </div>
                 </div>
