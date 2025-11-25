@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Component Structure (Updated to match the provided React structure more closely for IDs and types) ---
     const componentStructure = [
         { id: 'cpu', name: 'Processor (CPU)', type: 'Processor', required: false, icon: 'fa-microchip' },
-        { id: 'motherboard', name: 'Motherboard', type: 'Motherboard', required: false, icon: 'fa-server' },
+        { id: 'motherboard', name: 'Motherboard', type: 'Motherboard', required: false, icon: 'fa-network-wired' },
         { id: 'memory', name: 'Memory (RAM)', type: 'Memory (RAM)', required: false, icon: 'fa-memory' },
         { id: 'ssd_sata', name: 'SSD (SATA)', type: 'SSD', subType: 'SATA', required: false, icon: 'fa-hard-drive' },
         { id: 'ssd_m2', name: 'SSD (M.2)', type: 'SSD', subType: 'M.2', required: false, icon: 'fa-hard-drive' },
-        { id: 'hdd', name: 'HDD', type: 'HDD', required: false, icon: 'fa-hdd' },
+        { id: 'hdd', name: 'HDD', type: 'HDD', required: false, icon: 'fa-compact-disc' },
         { id: 'gpu', name: 'Graphics Card (GPU)', type: 'Graphics Card', required: false, icon: 'fa-gamepad' },
-        { id: 'pccase', name: 'PC Case', type: 'PC Case', required: false, icon: 'fa-box-open' }, // Changed from 'case' to 'pccase'
+        { id: 'pccase', name: 'PC Case', type: 'PC Case', required: false, icon: 'fa-box' }, 
         { id: 'psu', name: 'Power Supply (PSU)', type: 'Power Supply', required: false, icon: 'fa-power-off' },
         { id: 'cpu_cooler', name: 'CPU Cooler', type: 'CPU Cooling', required: false, icon: 'fa-fan' }
     ];
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const slotDiv = document.createElement('div');
             // ... (previous builder.js content up to slotDiv.className)
 
-            slotDiv.className = 'component-slot flex items-center justify-between p-4 border border-gray-200 rounded-xl transition-all duration-300 hover:shadow-sm';
+            slotDiv.className = 'component-slot flex items-center justify-between p-4 border-b border-gray-200 transition-all duration-300 hover:shadow-sm';
             slotDiv.id = `slot-${slot.id}`;
             
             const requiredText = slot.required ? `<span class="text-red-500 text-xs font-bold ml-2">(REQUIRED)</span>` : '';
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  const imageUrl = (product.images && product.images.length > 0) ? product.images[0] : 'https://via.placeholder.com/150/f1f5f9/94a3b8?text=No+Image';
                  slotDiv.innerHTML = `
                     <div class="flex items-center gap-4 min-w-0">
-                       <img src="${imageUrl}" alt="${product.name}" class="w-16 h-16 object-contain rounded-lg flex-shrink-0 bg-white p-1 border border-gray-200">
+                       <img src="${imageUrl}" alt="${product.name}" class="w-16 h-16 object-contain rounded-lg flex-shrink-0 bg-white p-1">
                         <div class="min-w-0">
                             <h4 class="text-[#1C1C1C] truncate text-lg font-bold">${product.name}</h4>
                             <p class="text-md text-gray-800">${slot.name}</p>
