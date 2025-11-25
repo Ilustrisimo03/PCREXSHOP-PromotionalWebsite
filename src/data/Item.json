@@ -95,7 +95,7 @@
       "/src/assets/image/ImagesP/msi geforce rtx 3060 ventus 2x oc 12gb gddr6 gaming graphics card1.png"
     ],
     "name": "MSI GeForce RTX 3060 Ventus 2X OC 12GB GDDR6 Gaming Graphics Card",
-    "price": "20",
+    "price": "17000",
     "description": "A 12GB GDDR6 graphics card featuring a dual-fan thermal design. It delivers excellent performance for 1080p and 1440p gaming, with real-time ray tracing and AI-enhanced graphics.",
     "rate": 4.7,
     "stock": 2,
@@ -170,7 +170,7 @@
       "/src/assets/image/ImagesP/Kingston SSDNow A400 480GB SATA 2.5 SSD1.png"
     ],
     "name": "Kingston SSDNow A400 480GB SATA 2.5 SSD",
-    "price": "34",
+    "price": "2000",
     "description": "A 480GB SATA 2.5-inch solid-state drive that dramatically improves the responsiveness of your existing system with incredible boot, loading, and transfer times. It's a reliable and affordable upgrade for laptops and desktops.",
     "rate": 4.6,
     "stock": 0,
@@ -185,7 +185,7 @@
       "/src/assets/image/ImagesP/Ramsta R600 256GB M.2 SATA SSD1.png"
     ],
     "name": "Ramsta R600 256GB M.2 SATA SSD",
-    "price": "19",
+    "price": "865",
     "description": "A 256GB M.2 SATA solid-state drive offering a compact form factor and faster performance than traditional hard drives. It's a cost-effective choice for improving boot times and application loading.",
     "rate": 4.2,
     "stock": 0,
@@ -350,7 +350,7 @@
       "/src/assets/image/ImagesP/A4Tech KRS-85 USB Keyboard Black2.png"
     ],
     "name": "A4Tech KRS-85 USB Keyboard Black",
-    "price": "7",
+    "price": "400",
     "description": "A reliable and comfortable wired USB keyboard with laser-engraved keys and a spill-resistant design. Its round-edge keycaps and adjustable height provide a comfortable typing experience for everyday use. [14, 23, 26, 28, 38]",
     "rate": 4.4,
     "stock": 0,
@@ -365,7 +365,7 @@
       "/src/assets/image/ImagesP/Fantech MK890 V2 Atom 96 Hot-Swappable Mechanical Keyboard Sky Blue2.png"
     ],
     "name": "Fantech MK890 V2 Atom 96 Hot-Swappable Mechanical Keyboard Sky Blue",
-    "price": "49",
+    "price": "1400",
     "description": "A 96% layout hot-swappable mechanical keyboard with a sky blue color scheme. It features pre-lubed switches for a smoother typing experience, customizable RGB lighting, and a compact yet functional design.",
     "rate": 4.8,
     "stock": 0,
@@ -425,7 +425,7 @@
       "/src/assets/image/ImagesP/Secure 220V AVR Ad-link HDMI 1.5m Cable Redmesh2.png"
     ],
     "name": "Secure 220V AVR",
-    "price": "9",
+    "price": "250",
     "description": "An automatic voltage regulator (AVR) designed to protect your electronic devices from voltage fluctuations and power surges. It provides stable 220V output, ensuring the longevity and performance of your computer and other sensitive equipment. [15, 20, 22, 30, 40]",
     "rate": 4.9,
     "stock": 0,
@@ -440,7 +440,7 @@
       "/src/assets/image/ImagesP/Vga 5m Cable1.png"
     ],
     "name": "VGA 5m Cable",
-    "price": "100",
+    "price": "170",
     "description": "A 5-meter VGA cable for connecting analog video signals between computers and monitors, projectors, or other displays. It provides a reliable connection for older or legacy devices.",
     "rate": 4.5,
     "stock": 20,
@@ -455,7 +455,7 @@
       "/src/assets/image/ImagesP/Secure 220V AVR Ad-link HDMI 1.5m Cable Redmesh1.png"
     ],
     "name": "Ad-link HDMI 1.5m Cable Redmesh",
-    "price": "3",
+    "price": "100",
     "description": "A 1.5-meter HDMI cable with a durable red mesh jacket for connecting high-definition audio and video devices. It supports various resolutions and is ideal for a clean and organized setup.",
     "rate": 4.6,
     "stock": 0,
@@ -470,7 +470,7 @@
       "/src/assets/image/ImagesP/Adlink Cat5 100m UTP Cable Gray1.png"
     ],
     "name": "Adlink Cat5 100m UTP Cable Gray",
-    "price": "19",
+    "price": "500",
     "description": "A 100-meter roll of Cat5 UTP (Unshielded Twisted Pair) Ethernet cable in gray. It's suitable for creating custom-length network cables for home or office networking.",
     "rate": 4.5,
     "stock": 0,
