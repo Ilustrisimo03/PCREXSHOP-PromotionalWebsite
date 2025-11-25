@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const slotDiv = document.createElement('div');
             // ... (previous builder.js content up to slotDiv.className)
 
-            slotDiv.className = 'component-slot flex items-center justify-between p-4 border-b border-gray-200 transition-all duration-300 hover:shadow-sm';
+            slotDiv.className = 'component-slot flex items-center justify-between p-3 border-b border-gray-200 transition-all duration-300 hover:shadow-sm';
             slotDiv.id = `slot-${slot.id}`;
             
             const requiredText = slot.required ? `<span class="text-red-500 text-xs font-bold ml-2">(REQUIRED)</span>` : '';
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas ${slot.icon} text-xl sm:text-xl text-gray-400 w-6 text-center"></i>
                         <h3 class="text-[17px] sm:text-lg font-bold text-gray-600">${slot.name} ${requiredText}</h3>
                     </div>
-                    <button class="choose-btn BG-gradient text-white font-bold py-3 px-3 sm:py-3 sm:px-6 rounded-lg text-[10px] sm:text-sm transition-colors hover:opacity-90" data-slot-id="${slot.id}" data-type="${slot.type}" data-subtype="${slot.subType || ''}">
+                    <button class="choose-btn BG-gradient text-white font-bold py-3 px-3 sm:py-3 sm:px-6 rounded-lg text-[8px] sm:text-sm transition-colors hover:opacity-90" data-slot-id="${slot.id}" data-type="${slot.type}" data-subtype="${slot.subType || ''}">
                         Choose 
                         <i class="fas fa-chevron-right text-[8px] md:text-sm sm:text-sm"></i> <!-- Responsive icon size -->
                     </button>
