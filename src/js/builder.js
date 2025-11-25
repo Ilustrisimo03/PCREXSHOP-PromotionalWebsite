@@ -421,10 +421,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 slotDiv.innerHTML = `
                     <div class="flex items-center gap-4">
-                        <i class="fas ${slot.icon} text-md sm:text-xl text-gray-400 w-6 text-center"></i>
-                        <h3 class="text-[12px] sm:text-lg font-bold text-gray-600">${slot.name} ${requiredText}</h3>
+                        <i class="fas ${slot.icon} text-xl sm:text-xl text-gray-400 w-6 text-center"></i>
+                        <h3 class="text-[17px] sm:text-lg font-bold text-gray-600">${slot.name} ${requiredText}</h3>
                     </div>
-                    <button class="choose-btn BG-gradient text-white font-bold py-2 px-2 sm:py-3 sm:px-6 rounded-lg text-[8px] sm:text-sm transition-colors hover:opacity-90" data-slot-id="${slot.id}" data-type="${slot.type}" data-subtype="${slot.subType || ''}">
+                    <button class="choose-btn BG-gradient text-white font-bold py-3 px-3 sm:py-3 sm:px-6 rounded-lg text-[10px] sm:text-sm transition-colors hover:opacity-90" data-slot-id="${slot.id}" data-type="${slot.type}" data-subtype="${slot.subType || ''}">
                         Choose 
                         <i class="fas fa-chevron-right text-[8px] md:text-sm sm:text-sm"></i> <!-- Responsive icon size -->
                     </button>
